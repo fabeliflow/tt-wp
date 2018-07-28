@@ -1,0 +1,172 @@
+.tt-btn--menu {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  padding: 10px;
+  position: fixed;
+  will-change: transform;
+  top: 5px;
+  right: 5px;
+  transform: translateY(0);
+  display: inline-block;
+  z-index: 999999999;
+  background: $tt-black-transp;
+  border: none;
+  border-radius: 100%;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease-in;
+
+  @media (min-width: 768px) {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+.tt-btn--menu__icon {
+  height: 4px;
+  top: 50%;
+  left: 0;
+  right: 12px;
+  transform: perspective(90px) rotateX(33deg) translateY(-4px);
+  display: block;
+  background: $tt-yellow;
+  border-radius: 0;
+  transition: background 0.4s;
+
+  &:before,
+  &:after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    display: block;
+    background-color: $tt-yellow;
+    border-radius: 0;
+  }
+
+  &:before {
+    top: -10px;
+    transition: top 0.3s 0.3s, transform 0.3s 0s;
+  }
+
+  &:after {
+    bottom: -10px;
+    transition: bottom 0.3s 0.3s, transform 0.3s 0s;
+  }
+}
+
+.tt-btn--menu--active {
+  background: transparent;
+  box-shadow: none;
+  transition: background 0.2s;
+  overflow: hidden;
+
+  .tt-btn--menu__icon {
+    background: transparent;
+    transition: background 0.2s;
+
+    &:before,
+    &:after {
+      transition: top 0.3s 0s, bottom 0.3s 0s, transform 0.3s 0.3s,
+        -webkit-transform 0.3s 0.3s;
+    }
+
+    &:before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      bottom: 0;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.tt-menu {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  position: fixed;
+  will-change: transform;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 99999999;
+  overflow: hidden;
+}
+
+.tt-menu__cont {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999999;
+  background-color: black;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  // overflow: hidden;
+}
+
+.tt-menu__logo-wrapper {
+  margin-top: 40px;
+}
+
+.tt-menu__logo {
+  width: 100%;
+  height: 0;
+  padding-bottom: 26%;
+  background-image: url("../img/tt-logo.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tt-menu__list {
+  margin: 0;
+  padding: 0;
+  transform: perspective(360px) rotateX(35deg) translateY(-15%);
+  text-align: center;
+  list-style-type: none;
+}
+
+.tt-menu__item {
+  a {
+    color: $tt-yellow;
+    font: 700 3.3rem "News Cycle", sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+.tt-menu__social {
+  margin-bottom: 40px;
+
+  .tt-social {
+    margin-top: 0;
+  }
+}
+
+.tt-menu__logo-wrapper,
+.tt-menu__social {
+  width: 70%;
+
+  @media (min-width: 768px) {
+    width: 40%;
+  }
+
+  @media (min-width: 992px) {
+    width: 30%;
+  }
+}

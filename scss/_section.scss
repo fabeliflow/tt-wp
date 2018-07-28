@@ -1,0 +1,133 @@
+.tt-sect {
+  background-color: $tt-sand-light;
+}
+
+.tt-sect__cont {
+  padding: 70px 15px;
+}
+
+.tt-sect__cards {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.tt-sect__cards__item {
+  width: 100%;
+  padding: 0.6rem 0;
+  display: flex;
+
+  @media (min-width: 768px) {
+    width: 50%;
+    padding: 0.6rem;
+  }
+
+  @media (min-width: 992px) {
+    width: 33.3333%;
+  }
+}
+
+.tt-sect__card {
+  width: 100%;
+  padding-bottom: 30px;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: $tt-card-bg;
+  color: $tt-text-dark;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease-in;
+
+  &:hover,
+  &:focus {
+    box-shadow: $tt-black-transp 0px 0px 20px 0px;
+    text-decoration: none;
+    color: $tt-text-dark;
+  }
+
+  &:hover {
+    .tt-sect__card__img {
+      filter: contrast(100%);
+    }
+  }
+}
+
+.tt-sect__card__img {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: contrast(70%);
+  overflow: hidden;
+  transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+
+  &:before {
+    content: "";
+    padding-top: 56.25%;
+    display: block;
+  }
+}
+
+.tt-sect__card__cont {
+  padding: 15px 15px 30px 15px;
+  z-index: 9;
+}
+
+.tt-sect__card__title {
+  margin: -35px 0 15px 0 !important;
+  padding: 15px 20px;
+  background-color: $tt-red-dark;
+  color: white;
+  z-index: 1;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tt-sect__card__descr {
+  max-height: 100px;
+  margin: 0;
+  padding: 0 10px;
+  position: relative;
+  flex: 1 1 auto;
+  font-size: 0.8em;
+  line-height: 1.25rem;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to top,
+      $tt-card-bg 0%,
+      rgba(198, 194, 185, 0) 30%
+    );
+  }
+}
+
+.tt-sect__card__auth {
+  padding: 15px;
+  background-color: $tt-card-author;
+  color: white;
+  font-size: 0.7em;
+  position: relative;
+  background-image: url(../img/cargo-scratches.png);
+  background-size: cover;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  transition-property: max-height;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}

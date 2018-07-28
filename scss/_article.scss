@@ -1,0 +1,263 @@
+.tt-article {
+  background-color: $tt-sand-light;
+
+  h1,
+  h2,
+  h3 {
+    margin-bottom: 0;
+    font-weight: bold;
+    text-transform: inherit;
+  }
+}
+
+.tt-article__header {
+  margin: -25px 0 50px 0;
+  padding: 15px 25px;
+  position: relative;
+  background-color: $tt-red-dark;
+  color: white;
+  font-size: 2.5em;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.4px;
+
+  @media (min-width: 768px) {
+    padding: 20px 35px;
+  }
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.tt-article__aside {
+  @media (min-width: 768px) {
+    padding: 0 15px;
+  }
+}
+
+.tt-article__aside__list {
+  margin-bottom: 40px;
+  padding: 0 0 10px 0;
+  border-bottom: dotted 5px $tt-blue-transp;
+  font-size: 0.8em;
+
+  li {
+    list-style-type: none;
+  }
+}
+
+.tt-article__aside__list__item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.tt-article__cont {
+  ul:not(.tt-article__aside__list):not(.tt-social--share) {
+    padding-left: 20px;
+    list-style-type: none;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+
+    .fa-dot-circle {
+      padding-right: 15px;
+      color: $tt-red-dark;
+    }
+
+    li {
+      display: table-row;
+
+      &:before {
+        content: " \f192";
+        padding-right: 10px;
+        display: table-cell;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: $tt-red-dark;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  ol {
+    margin: 30px 0 40px 0;
+    padding-left: 20px;
+    list-style-type: none;
+
+    li {
+      padding-bottom: 20px;
+      border-bottom: solid 2px $tt-blue-transp;
+      position: relative;
+      counter-increment: step-counter;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+
+      &:before {
+        content: counter(step-counter);
+        padding-right: 15px;
+        color: $tt-red-dark;
+        font-size: 2.5rem;
+        font-family: Aurebesh;
+      }
+
+      h3 {
+        margin: 0;
+        display: inline;
+      }
+    }
+  }
+
+  blockquote {
+    width: 100%;
+    margin: 20px 0;
+    padding: 40px 0;
+    border-top: solid 7px $tt-blue-transp;
+    border-left: none;
+    border-bottom: dotted 7px $tt-blue-transp;
+    font-size: 2.5em;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: -0.4px;
+
+    p {
+      margin: 0;
+      padding: 0;
+      display: inline;
+    }
+
+    &:before {
+      content: "“";
+    }
+
+    &:after {
+      content: "”";
+    }
+
+    &:before,
+    &:after {
+      position: relative;
+      top: 0.1em;
+      font-family: Aurebesh;
+      font-size: 1.4em;
+      line-height: 0;
+      vertical-align: middle;
+      color: $tt-red-dark;
+    }
+  }
+
+  a:not(.tt-video__btn):not(.tt-social--share__item__btn) {
+    padding: 1px 0;
+    font-weight: bold;
+    color: $tt-text-dark;
+    box-shadow: inset 0 -3px 0 $tt-blue-transp;
+    transition: all 0.3s ease-in-out;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $tt-text-dark;
+      box-shadow: inset 0 -3px 0 $tt-blue;
+    }
+  }
+}
+
+.tt-article__img {
+  margin: 20px 0;
+  text-align: center;
+
+  img {
+    width: 100%;
+  }
+}
+
+.tt-article__img--full,
+.tt-article__img--left,
+.tt-article__img--right {
+  height: 0;
+  padding-bottom: 56.25%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    padding-bottom: 45.25%;
+  }
+
+  @media (min-width: 1600px) {
+    padding-bottom: 40.25%;
+  }
+}
+
+.tt-article__img--full__cont {
+  text-align: center;
+
+  @media (min-width: 768px) {
+    padding: 0;
+  }
+}
+
+.tt-article__img--left__cont {
+  @media (min-width: 768px) {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: right;
+  }
+}
+
+.tt-article__img--right__cont {
+  @media (min-width: 768px) {
+    float: right;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+  }
+}
+
+.tt-article__img--carousel {
+  margin: 20px 0;
+
+  .slick-slide {
+    height: 200px;
+    padding: 5px;
+    opacity: 0.2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      transform: scale(0.9);
+      transition: transform 0.4s ease-in-out;
+    }
+
+    @media (min-width: 768px) {
+      height: 300px;
+    }
+
+    @media (min-width: 992px) {
+      height: 500px;
+    }
+  }
+
+  .slick-current {
+    opacity: 1;
+
+    img {
+      transform: scale(1);
+    }
+
+    z-index: 10;
+  }
+
+  .slick-slide img {
+    width: auto;
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: initial;
+  }
+}
