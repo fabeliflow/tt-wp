@@ -60,7 +60,6 @@
 }
 
 .tt-home__mission {
-  background-image: url("../img/mission-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -168,21 +167,6 @@
   }
 }
 
-.tt-home__card--one {
-  background-image: url("../img/collectibles-bg.jpg");
-  background-position: left;
-}
-
-.tt-home__card--two {
-  background-image: url("../img/news-bg.jpg");
-  background-position: right;
-}
-
-.tt-home__card--three {
-  background-image: url("../img/reviews-bg.jpg");
-  background-position: left;
-}
-
 .tt-home__card__cont {
   padding: 50px 50px 85px 50px;
   display: flex;
@@ -227,7 +211,6 @@
   position: absolute;
   bottom: 0;
   opacity: 0;
-  background-image: url("../img/orbit.png");
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;

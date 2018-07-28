@@ -1,16 +1,17 @@
 {
-  "name": "tt-prototype",
+  "name": "tt-wp",
   "version": "1.0.0",
-  "description": "Configured gulpfile.js with dependencies installed for Sass and Browsersync including folder structure",
+  "description": "Configured gulpfile.js with dependencies installed for Sass including folder structure",
   "main": "gulpfile.js",
   "dependencies": {
-    "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-sass": "^3.1.0"
   },
   "devDependencies": {
     "gulp-autoprefixer": "^4.0.0",
     "gulp-minify-css": "^1.2.4",
+    "gulp-uglify": "^3.0.1",
+    "gulp-rename": "^1.4.0",
     "gulp-plumber": "^1.1.0",
     "gulp-svgmin": "^1.2.4"
   },
@@ -19,12 +20,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alaw989/sassgulp-setup.git"
+    "url": "git+https://github.com/fabeliflow/tt-wp.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alaw989/sassgulp-setup/issues"
+    "url": "https://github.com/fabeliflow/tt-wp/issues"
   },
-  "homepage": "https://github.com/alaw989/sassgulp-setup#readme"
+  "homepage": "https://github.com/fabeliflow/tt-wp#readme"
 }

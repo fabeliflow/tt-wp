@@ -27,18 +27,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
 
-    <!-- Slick carousel -->
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/vendor/slick/slick.css" />
-
-    <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.1/css/swiper.css">
-
-    <!-- Perfect Scrollbar CSS -->
+        <!-- Perfect Scrollbar CSS -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/vendor/perfect-scrollbar/css/perfect-scrollbar.css">
 
     <!-- Magnific Popup core CSS file -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/vendor/magnific-popup/css/magnific-popup.css">
 
+    <!-- Slick carousel -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/vendor/slick/slick.css" />
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.1/css/swiper.css">
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/main.css">
 
@@ -112,4 +112,3 @@
         </div>
 
     </div>
-    
