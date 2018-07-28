@@ -122,25 +122,35 @@
                         </div>
 
                         <!--  check if the repeater field has rows of data -->
-                        <?php if( have_rows('orbit_section_social_links') ): ?>
+                        <?php if( have_rows('orbit_section') ): ?>
 
-                            <!-- TT Social Media Icons -->
-                            <ul class="tt-social">
+                            <!--  loop through the rows of data -->
+                            <?php while ( have_rows('orbit_section') ) : the_row(); ?>
 
-                                <!--  loop through the rows of data -->
-                                <?php while ( have_rows('orbit_section_social_links') ) : the_row(); ?>
+                                <!--  check if the repeater field has rows of data -->
+                                <?php if( have_rows('orbit_section_social_links') ): ?>
 
-                                    <li>
-                                        <a class="tt-social__icon" href="<?php the_sub_field('orbit_section_social_url'); ?>" target="_blank">
-                                            <i class="fab fa-<?php the_sub_field('orbit_section_social_class'); ?>"></i>
-                                        </a>
-                                    </li>
+                                    <!-- TT Social Media Icons -->
+                                    <ul class="tt-social">
 
-                                <?php endwhile; ?>
+                                        <!--  loop through the rows of data -->
+                                        <?php while ( have_rows('orbit_section_social_links') ) : the_row(); ?>
 
-                            </ul>
+                                            <li>
+                                                <a class="tt-social__icon" href="<?php the_sub_field('orbit_section_social_url'); ?>" target="_blank">
+                                                    <i class="<?php the_sub_field('orbit_section_social_class'); ?>"></i>
+                                                </a>
+                                            </li>
 
-                        <?php endif; ?>                        
+                                        <?php endwhile; ?>
+
+                                    </ul>
+
+                                <?php endif; ?>
+                        
+                            <?php endwhile; ?>
+
+                        <?php endif; ?>
 
                     </div>
                 </div>
