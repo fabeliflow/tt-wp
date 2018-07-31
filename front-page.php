@@ -128,7 +128,7 @@
                             <?php while ( have_rows('orbit_section') ) : the_row(); ?>
 
                                 <!--  check if the repeater field has rows of data -->
-                                <?php if( have_rows('orbit_section_social_links') ): ?>
+                                <?php if( have_rows('orbit_section_social') ): ?>
 
                                     <!-- TT Social Media Icons -->
                                     <ul class="tt-social">
