@@ -134,7 +134,7 @@
                                     <ul class="tt-social">
 
                                         <!--  loop through the rows of data -->
-                                        <?php while ( have_rows('orbit_section_social_links') ) : the_row(); ?>
+                                        <?php while ( have_rows('orbit_section_social') ) : the_row(); ?>
 
                                             <li>
                                                 <a class="tt-social__icon" href="<?php the_sub_field('orbit_section_social_url'); ?>" target="_blank">
