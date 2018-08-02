@@ -61,8 +61,13 @@
                             <div class="tt-home__card__body tt-scrollable">
                                 <?php the_sub_field('card_section_description'); ?>
                             </div>
+
                             <div class="tt-home__card__footer">
-                                <a class="tt-btn" href="<?php the_sub_field('card_section_button_url'); ?>"><?php the_sub_field('card_section_button_text'); ?></a>
+
+                                <?php $term = get_sub_field('card_section_button_category'); ?>
+
+                                <a class="tt-btn" href="<?php echo get_term_link( $term ); ?>"><?php the_sub_field('card_section_button_text'); ?></a>
+                                
                             </div>
                         </div>
                     </div>

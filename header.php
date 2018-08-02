@@ -61,52 +61,41 @@
             <div id="starfield" class="starfield"></div>
 
             <!-- Menu Logo -->
-            <a href="#" class="tt-menu__logo-wrapper">
+            <a href="<?php echo get_home_url(); ?>" class="tt-menu__logo-wrapper">
                 <div class="tt-menu__logo" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/tt-logo.svg');"></div>
             </a>
 
             <!-- Menu List -->
-            <div>
-                <ul class="tt-menu__list">
-                    <li class="tt-menu__item">
-                        <a href="#">About</a>
-                    </li>
-                    <li class="tt-menu__item">
-                        <a href="#">Collectibles</a>
-                    </li>
-                    <li class="tt-menu__item">
-                        <a href="#">News</a>
-                    </li>
-                    <li class="tt-menu__item">
-                        <a href="#">Reviews</a>
-                    </li>
-                </ul>
-            </div>
+            <?php 
+                $args = array(
+                    'theme_location' => 'primary',
+                    'menu_class' => 'tt-menu__list'
+                );
+                wp_nav_menu( $args ); 
+            ?>
 
             <!-- Menu Social -->
             <div class="tt-menu__social">
-                <ul class="tt-social">
-                    <li>
-                        <a class="tt-social__icon" href="https://facebook.com/tatooinetimes" target="_blank">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="tt-social__icon" href="https://twitter.com/tatooine_times" target="_blank">
-                            <i class="fab fa-twitter" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="tt-social__icon" href="https://www.instagram.com/tatooinetimes" target="_blank">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="tt-social__icon" href="mailto:tatooinetimes@gmail.com" target="_top">
-                            <i class="fas fa-envelope" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                </ul>
+
+                <?php if( have_rows('menu_social', 'header') ): ?>
+
+                    <ul class="tt-social">
+                        
+                        <!--  loop through the rows of data -->
+                        <?php while ( have_rows('menu_social', 'header') ) : the_row(); ?>
+
+                            <li>
+                                <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
+                                    <i class="<?php the_sub_field('menu_social_class'); ?>"></i>
+                                </a>
+                            </li>
+
+                        <?php endwhile; ?>
+
+                    </ul>
+                    
+                <?php endif; ?>
+
             </div>
 
         </div>
