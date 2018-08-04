@@ -82,7 +82,7 @@
                     <ul class="tt-social">
                         
                         <!--  loop through the rows of data -->
-                        <?php while ( have_rows('menu_social', 'header') ) : the_row(); ?>
+                        <?php while ( have_rows('menu_social', 'social-media') ) : the_row(); ?>
 
                             <li>
                                 <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
@@ -93,7 +93,7 @@
                         <?php endwhile; ?>
 
                     </ul>
-                    
+
                 <?php endif; ?>
 
             </div>

@@ -67,7 +67,7 @@
                                 <?php $term = get_sub_field('card_section_button_category'); ?>
 
                                 <a class="tt-btn" href="<?php echo get_term_link( $term ); ?>"><?php the_sub_field('card_section_button_text'); ?></a>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -126,34 +126,22 @@
                             </svg>
                         </div>
 
-                        <!--  check if the repeater field has rows of data -->
-                        <?php if( have_rows('orbit_section') ): ?>
+                        <?php if( have_rows('menu_social', 'header') ): ?>
 
-                            <!--  loop through the rows of data -->
-                            <?php while ( have_rows('orbit_section') ) : the_row(); ?>
+                            <ul class="tt-social">
+                                
+                                <!--  loop through the rows of data -->
+                                <?php while ( have_rows('menu_social', 'social-media') ) : the_row(); ?>
 
-                                <!--  check if the repeater field has rows of data -->
-                                <?php if( have_rows('orbit_section_social') ): ?>
+                                    <li>
+                                        <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
+                                            <i class="<?php the_sub_field('menu_social_class'); ?>"></i>
+                                        </a>
+                                    </li>
 
-                                    <!-- TT Social Media Icons -->
-                                    <ul class="tt-social">
+                                <?php endwhile; ?>
 
-                                        <!--  loop through the rows of data -->
-                                        <?php while ( have_rows('orbit_section_social') ) : the_row(); ?>
-
-                                            <li>
-                                                <a class="tt-social__icon" href="<?php the_sub_field('orbit_section_social_url'); ?>" target="_blank">
-                                                    <i class="<?php the_sub_field('orbit_section_social_class'); ?>"></i>
-                                                </a>
-                                            </li>
-
-                                        <?php endwhile; ?>
-
-                                    </ul>
-
-                                <?php endif; ?>
-                        
-                            <?php endwhile; ?>
+                            </ul>
 
                         <?php endif; ?>
 

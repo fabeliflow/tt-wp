@@ -15,16 +15,18 @@ if( function_exists('acf_add_options_page') ) {
 	
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Theme Header Settings',
-        'menu_title'	=> 'Header',
-        'post_id'       => 'header',
+        'menu_title'	=> 'Social Media',
+        'post_id'       => 'social-media',
 		'parent_slug'	=> 'theme-general-settings',
-	));
-	
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Theme Footer Settings',
-		'menu_title'	=> 'Footer',
+    ));
+    
+    acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme Header Settings',
+        'menu_title'	=> 'Footer',
+        'post_id'       => 'footer',
 		'parent_slug'	=> 'theme-general-settings',
 	));
 	
 }
+
 ?>
