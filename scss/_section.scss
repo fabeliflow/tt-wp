@@ -1,12 +1,12 @@
-.tt-sect {
+.tt-cat {
   background-color: $tt-sand-light;
 }
 
-.tt-sect__cont {
+.tt-cat__cont {
   padding: 70px 15px;
 }
 
-.tt-sect__cards {
+.tt-cat__cards {
   margin: 0;
   padding: 0;
   display: flex;
@@ -14,7 +14,7 @@
   list-style: none;
 }
 
-.tt-sect__cards__item {
+.tt-cat__cards__item {
   width: 100%;
   padding: 0.6rem 0;
   display: flex;
@@ -29,7 +29,7 @@
   }
 }
 
-.tt-sect__card {
+.tt-cat__card {
   width: 100%;
   padding-bottom: 30px;
   border-radius: 0.25rem;
@@ -51,13 +51,13 @@
   }
 
   &:hover {
-    .tt-sect__card__img {
+    .tt-cat__card__img {
       filter: contrast(100%);
     }
   }
 }
 
-.tt-sect__card__img {
+.tt-cat__card__img {
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
   position: relative;
@@ -75,12 +75,12 @@
   }
 }
 
-.tt-sect__card__cont {
+.tt-cat__card__cont {
   padding: 15px 15px 30px 15px;
   z-index: 9;
 }
 
-.tt-sect__card__title {
+.tt-cat__card__title {
   margin: -35px 0 15px 0 !important;
   padding: 15px 20px;
   background-color: $tt-red-dark;
@@ -92,7 +92,7 @@
   text-overflow: ellipsis;
 }
 
-.tt-sect__card__descr {
+.tt-cat__card__descr {
   max-height: 100px;
   margin: 0;
   padding: 0 10px;
@@ -117,7 +117,7 @@
   }
 }
 
-.tt-sect__card__auth {
+.tt-cat__card__auth {
   padding: 15px;
   background-color: $tt-card-author;
   color: white;

@@ -71,3 +71,7 @@
 
 <!-- article JS -->
 <script src="<?php echo get_template_directory_uri(); ?>/js/minified/article.min.js"></script>
+
+</body>
+
+</html>

@@ -73,7 +73,7 @@ body {
   align-items: center;
 }
 
-p:not(.tt-sect__card__descr):not(.tt-home__orbit__disclaimer):not(.tt-footer__disclaimer) {
+p:not(.tt-cat__card__descr):not(.tt-home__orbit__disclaimer):not(.tt-footer__disclaimer) {
   line-height: 1.75rem;
 }
 
@@ -563,6 +563,7 @@ $scan-opacity: 0.75;
   margin-top: 40px !important;
   margin-bottom: 40px !important;
   padding-top: 10px !important;
+  justify-content: flex-end;
 }
 
 // Video Module Styles
@@ -656,7 +657,7 @@ $scan-opacity: 0.75;
   left: 50%;
   display: flex;
   transform: translate(-50%, -45%);
-  font-size: 1.8em;
+  font-size: 3em;
   outline: 0 !important;
   transition: all 0.3s ease-in-out;
 
