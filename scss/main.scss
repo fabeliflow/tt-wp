@@ -1,13 +1,5 @@
 @charset 'UTF-8';
 
 // 1. Configuration and helpers.
-@import
-  'mixins-functions',
-  'general',
-  'menu',
-  'footer',
-  'home',
-  'about',
-  '404',
-  'section',
-  'article';
+@import "mixins-functions", "general", "menu", "footer", "home", "about", "404",
+  "category", "article";

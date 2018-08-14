@@ -44,12 +44,12 @@ Template Name: Post
                             <!-- Aside List Item: Author -->
                             <li class="tt-article__aside__list__item">
                                 <span class="text-muted">By</span>
-                                <strong><?php echo get_the_author_meta('display_name'); ?></strong>
+                                <strong><?php $id = get_the_author_meta( 'ID' ); the_author_meta('display_name', $id); ?></strong>
                             </li>
 
                             <!-- Aside List Item: Date -->
                             <li class="tt-article__aside__list__item">
-                                <div class="text-muted"><?php echo get_the_date(); ?></div>
+                                <div class="text-muted">Updated <?php echo get_the_time('F j, Y g:ia T') ?></div>
                             </li>
 
                             <!-- Aside List Item: Social Share -->
@@ -167,6 +167,67 @@ Template Name: Post
 
                                 <?php endif; ?>
 
+                                <?php elseif( get_row_layout() == 'gallery' ): ?>
+
+                                <?php 
+
+                                    $images = get_sub_field('gallery');
+                                    $size = 'full';
+
+                                    if( $images ): ?>
+                                        <div class="col-sm-12 tt-article__img--carousel__cont">
+
+                                            <div class="tt-article__img--carousel">
+
+                                                <?php foreach( $images as $image ): ?>
+                                                    <div>
+                                                        <?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
+                                                    </div>
+                                                <?php endforeach; ?>
+                                                
+                                            </div>
+
+                                            <span class="tt-caption"><?php the_sub_field('gallery_caption'); ?></span>
+                                            
+                                            <!-- Arrows -->
+                                            <div class="tt-arrow tt-arrow--left">
+                                                <div></div>
+                                            </div>
+
+                                            <div class="tt-arrow tt-arrow--right">
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
+
+                                    <?php if( have_rows('images') ): ?>
+
+                                        <div class="col-sm-12">
+
+                                            <div class="tt-article__img--carousel">
+
+                                            <?php while ( have_rows('images') ) : the_row(); ?>
+
+                                                <?php $image = get_sub_field('image'); ?>
+
+                                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+
+                                            <?php endwhile; ?>
+
+                                        </div>
+                                        <span class="tt-caption"><?php the_sub_field('gallery_caption'); ?></span>
+
+                                        <!-- Arrows -->
+                                        <div class="tt-arrow tt-arrow--left">
+                                            <div></div>
+                                        </div>
+
+                                        <div class="tt-arrow tt-arrow--right">
+                                            <div></div>
+                                        </div>
+
+                                    <?php  endif; ?>
+
                             <?php elseif( get_row_layout() == 'video' ): ?>
 
                                 <div class="col-sm-6 col-sm-offset-3">
@@ -258,4 +319,73 @@ Template Name: Post
             </div>
         </div>
     </article>
+
+    <?php
+    $rand_posts = get_posts( array(
+        'author'         =>  the_author_meta( 'ID' ),
+        'posts_per_page' => 3,
+        'post_status' => 'publish',
+        'post__not_in' => array( get_the_ID() ),
+        'orderby'        => 'rand'
+    ) ); ?>
+     
+    <?php if ( $rand_posts ) : ?>
+
+        <section class="tt-cat__cont">
+
+            <!-- Section Cards -->
+            <ul class="tt-cat__cards">
+            
+                <?php  foreach ( $rand_posts as $post ) : setup_postdata( $post ); ?>
+
+                    <!-- Section Card -->
+                    <li class="tt-cat__cards__item">
+                        <a href="<?php the_permalink() ?>" class="tt-cat__card">
+
+                        <!--  check if the repeater field has rows of data -->
+                        <?php if( have_rows('post_masthead') ): ?>
+
+                            <!--  loop through the rows of data -->
+                            <?php while ( have_rows('post_masthead') ) : the_row(); ?>
+                                <!-- Section Card Image -->
+                                <div class="tt-cat__card__img" style="background-image: url('<?php the_sub_field('post_masthead_background'); ?>');"></div>
+
+                            <?php endwhile; ?>
+
+                        <?php endif; ?>
+
+                            <div class="tt-cat__card__cont">
+
+                                <!-- Section Card Title -->
+                                <h3 class="tt-cat__card__title">
+                                    <?php the_title(); ?>
+                                </h3>
+
+                                <!-- Section Card Description -->
+                                <p class="tt-cat__card__descr">
+                                    <?php echo custom_field_excerpt('post_excerpt'); ?>
+                                </p>
+
+                            </div>
+
+                            <!-- Section Card Author -->
+                            <div class="tt-cat__card__auth">
+                                <span>By</span>
+                                <strong><?php the_author_meta('display_name'); ?></strong>
+                            </div>
+
+                        </a>
+                    </li>
+
+                <?php endforeach; ?>
+
+                <?php wp_reset_postdata(); ?>
+
+            </ul>
+
+        </section>
+
+    <?php endif; ?>
+    
+
 <?php get_footer(); ?>

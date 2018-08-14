@@ -4,9 +4,14 @@
   h1,
   h2,
   h3 {
-    margin-bottom: 0;
+    margin: 10px 0;
     font-weight: bold;
     text-transform: inherit;
+  }
+
+  h2,
+  h3:not(.tt-cat__card__title) {
+    color: $tt-red-dark;
   }
 }
 
@@ -218,9 +223,12 @@
   }
 }
 
-.tt-article__img--carousel {
+.tt-article__img--carousel__cont {
   margin: 20px 0;
+  text-align: center;
+}
 
+.tt-article__img--carousel {
   .slick-slide {
     height: 200px;
     padding: 5px;
@@ -255,7 +263,7 @@
 
   .slick-slide img {
     width: auto;
-    height: 90%;
+    height: 100%;
     margin-left: auto;
     margin-right: auto;
     display: initial;

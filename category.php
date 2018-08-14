@@ -29,224 +29,65 @@ $logo_svg = get_field('category_logo_svg', $term);
 
 <section class="tt-cat__cont">
 
-    <!-- Section Cards -->
-    <ul class="tt-cat__cards">
+    <?php if ( have_posts() ) : ?>
 
-        <!-- Section Card -->
-        <li class="tt-cat__cards__item">
-            <a href="#" class="tt-cat__card">
+        <!-- Section Cards -->
+        <ul class="tt-cat__cards">
 
-                <!-- Section Card Image -->
-                <div class="tt-cat__card__img" style="background-image: url('https://images6.alphacoders.com/726/thumb-1920-726263.jpg');"></div>
+            <?php while ( have_posts() ) : the_post(); ?>
 
-                <div class="tt-cat__card__cont">
+            <!-- Section Card -->
+            <li class="tt-cat__cards__item">
+                <a href="<?php the_permalink() ?>" class="tt-cat__card">
 
-                    <!-- Section Card Title -->
-                    <h3 class="tt-cat__card__title">
-                        What was that? Oh, it's nothing. Don't worry about it.
-                    </h3>
+                <!--  check if the repeater field has rows of data -->
+                <?php if( have_rows('post_masthead') ): ?>
 
-                    <!-- Section Card Description -->
-                    <p class="tt-cat__card__descr">
-                        Help me, Obi-Wan Kenobi. You're my only hope. What's this? What is what?!? He asked you a question... What is that? Help
-                        me, Obi-Wan Kenobi. You're my only hope. Help me, Obi-Wan Kenobi. You're my only hope. Oh, he
-                        says it's nothing, sir. Merely a malfunction. Old data. Pay it no mind. Who is she? She's beautiful.
-                        I'm afraid I'm not quite sure, sir. Help me, Obi-Wan Kenobi... I think she was a passenger on
-                        our last voyage. A person of some importance, sir -- I believe. Our captain was attached to...
-                        Is there more to this recording? Behave yourself, Artoo. You're going to get us in trouble.
-                    </p>
+                    <!--  loop through the rows of data -->
+                    <?php while ( have_rows('post_masthead') ) : the_row(); ?>
+                        <!-- Section Card Image -->
+                        <div class="tt-cat__card__img" style="background-image: url('<?php the_sub_field('post_masthead_background'); ?>');"></div>
 
-                </div>
+                    <?php endwhile; ?>
 
-                <!-- Section Card Author -->
-                <div class="tt-cat__card__auth">
-                    <span>By</span>
-                    <strong>Darth Vader</strong>
-                </div>
+                <?php endif; ?>
 
-            </a>
-        </li>
+                    <div class="tt-cat__card__cont">
 
-        <!-- Section Card -->
-        <li class="tt-cat__cards__item">
-            <a href="#" class="tt-cat__card">
+                        <!-- Section Card Title -->
+                        <h3 class="tt-cat__card__title">
+                            <?php the_title(); ?>
+                        </h3>
 
-                <!-- Section Card Image -->
-                <div class="tt-cat__card__img" style="background-image: url('https://pmcvariety.files.wordpress.com/2018/05/star-wars-bts.jpg?w=1000&h=563&crop=1');"></div>
+                        <!-- Section Card Description -->
+                        <p class="tt-cat__card__descr">
+                            <?php echo custom_field_excerpt('post_excerpt'); ?>
+                        </p>
 
-                <div class="tt-cat__card__cont">
+                    </div>
 
-                    <!-- Section Card Title -->
-                    <h3 class="tt-cat__card__title">
-                        We're Doomed
-                    </h3>
+                    <!-- Section Card Author -->
+                    <div class="tt-cat__card__auth">
+                        <span>By</span>
+                        <strong><?php $id = get_current_user_id(); the_author_meta('display_name', $id); ?></strong>
+                    </div>
 
-                    <!-- Section Card Description -->
-                    <p class="tt-cat__card__descr">
-                        Wake up! Wake up! We're doomed. Do you think they'll melt us down? Don't shoot! Don't shoot! Will this never end? Luke, tell
-                        Owen that if he gets a translator to be sure it speaks Bocce. It looks like we don't have much
-                        of a choice but I'll remind him. I have no need for a protocol droid. Sir -- not in an environment
-                        such as this -- that's why I've also been programmed for over thirty secondary functions that...
-                        What I really need is a droid that understands the binary language of moisture vaporators. Vaporators!
-                        Sir -- My first job was programming binary load lifter...very similar to your vaporators. You
-                        could say... Do you speak Bocce? Of course I can, sir. It's like a second language for me...I'm
-                        as fluent in... All right shut up! I'll take this one.
-                    </p>
+                </a>
+            </li>
 
-                </div>
+            <?php endwhile; ?>
 
-                <!-- Section Card Author -->
-                <div class="tt-cat__card__auth">
-                    <span>By</span>
-                    <strong>Artoo Deetoo</strong>
-                </div>
+        </ul>
 
-            </a>
-        </li>
+        <?php if(function_exists('wp_paginate')): wp_paginate(); endif; ?>
 
-        <!-- Section Card -->
-        <li class="tt-cat__cards__item">
-            <a href="#" class="tt-cat__card">
+    <?php else: ?>
 
-                <!-- Section Card Image -->
-                <div class="tt-cat__card__img" style="background-image: url('https://i.pinimg.com/originals/5a/15/ff/5a15ff56476820faceb111d4021e9378.jpg');"></div>
-
-                <div class="tt-cat__card__cont">
-
-                    <!-- Section Card Title -->
-                    <h3 class="tt-cat__card__title">
-                        That Old Man
-                    </h3>
-
-                    <!-- Section Card Description -->
-                    <p class="tt-cat__card__descr">
-                        Hello there! Come here my little friend. Don't be afraid. Don't worry, he'll be all right. What happened? Rest easy, son,
-                        you've had a busy day. You're fortunate you're still in one piece. Ben? Ben Kenobi! Boy, am I
-                        glad to see you! The Jundland wastes are not to be traveled lightly. Tell me young Luke, what
-                        brings you out this far? Oh, this little droid! I think he's searching for his former master...I've
-                        never seen such devotion in a droid before...there seems to be no stopping him. He claims to
-                        be the property of an Obi-Wan Kenobi. Is he a relative of yours? Do you know who he's talking
-                        about?
-                    </p>
-
-                </div>
-
-                <!-- Section Card Author -->
-                <div class="tt-cat__card__auth">
-                    <span>By</span>
-                    <strong>Ben Kenobi</strong>
-                </div>
-
-            </a>
-        </li>
-
-        <!-- Section Card -->
-        <li class="tt-cat__cards__item">
-            <a href="#" class="tt-cat__card">
-
-                <!-- Section Card Image -->
-                <div class="tt-cat__card__img" style="background-image: url('http://www.mikeverta.com/Posts/R2_Tantive_900.jpg');"></div>
-
-                <div class="tt-cat__card__cont">
-
-                    <!-- Section Card Title -->
-                    <h3 class="tt-cat__card__title">
-                        Evil Sandpeople
-                    </h3>
-
-                    <!-- Section Card Description -->
-                    <p class="tt-cat__card__descr">
-                        It looks like Sandpeople did this, all right. Look, here are Gaffi sticks, Bantha tracks. It's just...I never heard of them
-                        hitting anything this big before. They didn't. But we are meant to think they did. These tracks
-                        are side by side. Sandpeople always ride single file to hide there numbers. These are the same
-                        Jawas that sold us Artoo and Threepio. And these blast points, too accurate for Sandpeople. Only
-                        Imperial stormtroopers are so precise. Why would Imperial troops want to slaughter Jawas? If
-                        they traced the robots here, they may have learned who they sold them to. And that would lead
-                        them home! Wait, Luke! It's too dangerous. Uncle Owen! Aunt Beru! Uncle Owen!
-                    </p>
-
-                </div>
-
-                <!-- Section Card Author -->
-                <div class="tt-cat__card__auth">
-                    <span>By</span>
-                    <strong>Han Solo</strong>
-                </div>
-
-            </a>
-        </li>
-
-        <!-- Section Card -->
-        <li class="tt-cat__cards__item">
-            <a href="#" class="tt-cat__card">
-
-                <!-- Section Card Image -->
-                <div class="tt-cat__card__img" style="background-image: url('https://starwarsblog.starwars.com/wp-content/uploads/2018/04/Chewbacca-header.jpg');"></div>
-
-                <div class="tt-cat__card__cont">
-
-                    <!-- Section Card Title -->
-                    <h3 class="tt-cat__card__title">
-                        Red Leader, Standing By
-                    </h3>
-
-                    <!-- Section Card Description -->
-                    <p class="tt-cat__card__descr">
-                        Red Leader... This is Gold Leader. We're starting out attack run. I copy, Gold Leader. Move into position. Stay in attack
-                        formation! The exhaust post is... marked and locked in! Switch power to front deflector screens.
-                        How many guns do you think, Gold Five. I'd say about twenty guns. Some on the surface, some on
-                        the towers. Death Star will be in range in five minutes. Switching to targeting computer. Computer's
-                        locked. Getting a signal. The guns...they've stopped! Stabilize your read deflectors. Watch for
-                        enemy fighters.
-                    </p>
-
-                </div>
-
-                <!-- Section Card Author -->
-                <div class="tt-cat__card__auth">
-                    <span>By</span>
-                    <strong>Wedge Antilles</strong>
-                </div>
-
-            </a>
-        </li>
-
-        <!-- Section Card -->
-        <li class="tt-cat__cards__item">
-            <a href="#" class="tt-cat__card">
-
-                <!-- Section Card Image -->
-                <div class="tt-cat__card__img" style="background-image: url('https://images.tbs.com/tbs/w_1800/https%3A%2F%2Fi.cdn.tbs.com%2Fassets%2Fimages%2F2017%2F04%2FStarWarsThePhantomMenace-1600x900.jpg');"></div>
-
-                <div class="tt-cat__card__cont">
-
-                    <!-- Section Card Title -->
-                    <h3 class="tt-cat__card__title">
-                        They're On Dantooine
-                    </h3>
-
-                    <!-- Section Card Description -->
-                    <p class="tt-cat__card__descr">
-                        Not after we demonstrate the power of this station. In a way, you have determined the choice of the planet that'll be destroyed
-                        first. Since you are reluctant to provide us with the location of the Rebel base, I have chosen
-                        to test this station's destructive power... on your home planet of Alderaan. No! Alderaan is
-                        peaceful. We have no weapons. You can't possibly... You would prefer another target? A military
-                        target? Then name the system! I grow tired of asking this. So it'll be the last time. Where is
-                        the Rebel base? Dantooine. They're on Dantooine.
-                    </p>
-
-                </div>
-
-                <!-- Section Card Author -->
-                <div class="tt-cat__card__auth">
-                    <span>By</span>
-                    <strong>Leia Organa</strong>
-                </div>
-
-            </a>
-        </li>
-
-    </ul>
+        <div class="tt-cat__cards--not-found">
+            <h2>Our team is working on writing some cool articles. Come back later!</h2>
+        </div>
+        
+    <?php endif; ?>
 
 </section>
 
