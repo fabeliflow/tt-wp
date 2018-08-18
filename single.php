@@ -54,13 +54,17 @@ Template Name: Post
 
                         </ul>
 
-                        <?php 
+                        <div class="tt-article__info__social">
 
-                            if(function_exists('social_warfare')):
-                                social_warfare();
-                            endif;
-                        
-                        ?>
+                            <?php 
+
+                                if(function_exists('social_warfare')):
+                                    social_warfare();
+                                endif;
+                            
+                            ?>
+
+                        </div>
 
                     </div>
 
@@ -288,24 +292,24 @@ Template Name: Post
 
                     <?php endif; ?>
 
-                    <div class="col-sm-6 col-sm-offset-3">
+                </section>
 
-                        <!-- Aside -->
-                        <div class="tt-article__info">
+                <div class="col-sm-6 col-sm-offset-3">
 
-                            <?php 
+                    <div class="tt-article__info__social">
 
-                                if(function_exists('social_warfare')):
-                                    social_warfare();
-                                endif;
-                            
-                            ?>
+                        <?php 
 
-                        </div>
+                            if(function_exists('social_warfare')):
+                                social_warfare();
+                            endif;
+
+                        ?>
 
                     </div>
 
-                </section>
+                </div>
+
             </div>
         </div>
     </article>
