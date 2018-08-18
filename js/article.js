@@ -1,6 +1,8 @@
-$(document).ready(function() {
+var $jq = jQuery.noConflict();
+
+$jq(document).ready(function() {
   // Video popup
-  $(".tt-video__btn").magnificPopup({
+  $jq(".tt-video__btn").magnificPopup({
     type: "iframe",
     mainClass: "mfp-fade",
     removalDelay: 200,
@@ -20,12 +22,12 @@ $(document).ready(function() {
   });
 
   // Image Carousel
-  $(".tt-article__img--carousel").slick({
+  $jq(".tt-article__img--carousel").slick({
     infinite: true,
     arrows: true,
     speed: 500,
-    prevArrow: $(".tt-arrow--left"),
-    nextArrow: $(".tt-arrow--right"),
+    prevArrow: $jq(".tt-arrow--left"),
+    nextArrow: $jq(".tt-arrow--right"),
     centerMode: true,
     variableWidth: true,
     mobileFirst: true,
@@ -48,12 +50,12 @@ $(document).ready(function() {
   });
 
   // More Articles Card Carousel
-  $(".tt-article__card--carousel").slick({
+  $jq(".tt-article__card--carousel").slick({
     infinite: true,
     arrows: true,
     speed: 500,
-    prevArrow: $(".tt-arrow--left"),
-    nextArrow: $(".tt-arrow--right"),
+    prevArrow: $jq(".tt-arrow--left"),
+    nextArrow: $jq(".tt-arrow--right"),
     centerMode: true,
     variableWidth: true,
     mobileFirst: true,

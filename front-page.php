@@ -66,7 +66,7 @@
 
                                 <?php $term = get_sub_field('card_section_button_category'); ?>
 
-                                <a class="tt-btn" href="<?php echo get_term_link( $term ); ?>"><?php the_sub_field('card_section_button_text'); ?></a>
+                                
 
                             </div>
                         </div>
@@ -166,31 +166,6 @@
     <div></div>
 </div>
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- THIS IS WHERE FOOTER SHOULD GO -->
 
-<!-- Font Awesome 5 -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S"
-    crossorigin="anonymous">
-
-<!-- Scrollbar -->
-<script src="<?php echo get_template_directory_uri(); ?>/vendor/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
-
-<!-- Mousewheel -->
-<script src="<?php echo get_template_directory_uri(); ?>/vendor/mousewheel/jquery.mousewheel.min.js"></script>
-
-<!-- Slick Carousel -->
-<script src="<?php echo get_template_directory_uri(); ?>/vendor/slick/slick.min.js"></script>
-
-<!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
-<script src="<?php echo get_template_directory_uri(); ?>/vendor/particles/particles.min.js"></script>
-
-<!-- Menu JS -->
-<script src="<?php echo get_template_directory_uri(); ?>/js/minified/menu.min.js"></script>
-
-<!-- Home JS -->
-<script src="<?php echo get_template_directory_uri(); ?>/js/minified/home.min.js"></script>
-
-</body>
-
-</html>
+<?php get_footer(); ?>

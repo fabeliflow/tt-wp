@@ -36,41 +36,33 @@ Template Name: Post
                 <div class="col-sm-6 col-sm-offset-3">
 
                     <!-- Aside -->
-                    <aside class="tt-article__aside">
+                    <div class="tt-article__info">
 
                         <!-- Aside List -->
-                        <ul class="tt-article__aside__list">
+                        <ul class="tt-article__info__list">
 
                             <!-- Aside List Item: Author -->
-                            <li class="tt-article__aside__list__item">
+                            <li class="tt-article__info__list__item">
                                 <span class="text-muted">By</span>
-                                <strong><?php $id = get_the_author_meta( 'ID' ); the_author_meta('display_name', $id); ?></strong>
+                                <strong><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ) ?></strong>
                             </li>
 
                             <!-- Aside List Item: Date -->
-                            <li class="tt-article__aside__list__item">
+                            <li class="tt-article__info__list__item">
                                 <div class="text-muted">Updated <?php echo get_the_time('F j, Y g:ia T') ?></div>
-                            </li>
-
-                            <!-- Aside List Item: Social Share -->
-                            <li class="tt-article__aside__list__item">
-                                <ul class="tt-social--share">
-                                    <li class="tt-social--share__item">
-                                        <a class="tt-social--share__item__btn" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(); ?>" target="_blank">
-                                            <i class="fab fa-facebook-square"></i>
-                                        </a>
-                                    </li>
-                                    <li class="tt-social--share__item">
-                                        <a class="tt-social--share__item__btn" href="https://twitter.com/home?status=<?php echo get_permalink(); ?>" target="_blank">
-                                            <i class="fab fa-twitter-square"></i>
-                                        </a>
-                                    </li>
-                                </ul>
                             </li>
 
                         </ul>
 
-                    </aside>
+                        <?php 
+
+                            if(function_exists('social_warfare')):
+                                social_warfare();
+                            endif;
+                        
+                        ?>
+
+                    </div>
 
                 </div>
 
@@ -296,23 +288,21 @@ Template Name: Post
 
                     <?php endif; ?>
 
-                    <!-- Article Social Share Module -->
                     <div class="col-sm-6 col-sm-offset-3">
-                        <ul class="tt-social--share tt-social--share--bottom">
-                            <li class="tt-social--share__item">
-                                <span class="tt-social--share__title">Share</span>
-                            </li>
-                            <li class="tt-social--share__item">
-                                <a class="tt-social--share__item__btn" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(); ?>" target="_blank">
-                                    <i class="fab fa-facebook-square"></i>
-                                </a>
-                            </li>
-                            <li class="tt-social--share__item">
-                                <a class="tt-social--share__item__btn" href="https://twitter.com/home?status=<?php echo get_permalink(); ?>" target="_blank">
-                                    <i class="fab fa-twitter-square"></i>
-                                </a>
-                            </li>
-                        </ul>
+
+                        <!-- Aside -->
+                        <div class="tt-article__info">
+
+                            <?php 
+
+                                if(function_exists('social_warfare')):
+                                    social_warfare();
+                                endif;
+                            
+                            ?>
+
+                        </div>
+
                     </div>
 
                 </section>
@@ -322,7 +312,7 @@ Template Name: Post
 
     <?php
     $rand_posts = get_posts( array(
-        'author'         =>  the_author_meta( 'ID' ),
+        'author'         =>  get_post_field( 'post_author', get_the_ID() ),
         'posts_per_page' => 3,
         'post_status' => 'publish',
         'post__not_in' => array( get_the_ID() ),
@@ -371,7 +361,7 @@ Template Name: Post
                             <!-- Section Card Author -->
                             <div class="tt-cat__card__auth">
                                 <span>By</span>
-                                <strong><?php the_author_meta('display_name'); ?></strong>
+                                <strong><?php the_author_meta('display_name', $author); ?></strong>
                             </div>
 
                         </a>
@@ -387,5 +377,4 @@ Template Name: Post
 
     <?php endif; ?>
     
-
 <?php get_footer(); ?>

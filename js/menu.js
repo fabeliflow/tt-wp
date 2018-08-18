@@ -1,21 +1,22 @@
 // This file contains all the required javascript for the TT menu.
+var $jq = jQuery.noConflict();
 
-$(document).ready(function() {
+$jq(document).ready(function() {
   // Hide menu at start
-  $(".tt-menu").hide();
+  $jq(".tt-menu").hide();
 
   // Menu button click event
-  $("#tt-menu__btn").click(function(e) {
+  $jq("#tt-menu__btn").click(function(e) {
     e.preventDefault();
 
     // Toggle fade
-    $(".tt-menu").fadeToggle();
+    $jq(".tt-menu").fadeToggle();
 
     // Menu icon open animation
-    $(this).toggleClass("tt-btn--menu--active");
+    $jq(this).toggleClass("tt-btn--menu--active");
 
     // Apply hidden overflow on parent
-    $("html").toggleClass("cont--hidden");
+    $jq("html").toggleClass("cont--hidden");
 
     // Create starfield
     particlesJS("starfield", {

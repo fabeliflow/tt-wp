@@ -69,7 +69,7 @@ $logo_svg = get_field('category_logo_svg', $term);
                     <!-- Section Card Author -->
                     <div class="tt-cat__card__auth">
                         <span>By</span>
-                        <strong><?php $id = get_current_user_id(); the_author_meta('display_name', $id); ?></strong>
+                        <strong><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ) ?></strong>
                     </div>
 
                 </a>
@@ -78,8 +78,6 @@ $logo_svg = get_field('category_logo_svg', $term);
             <?php endwhile; ?>
 
         </ul>
-
-        <?php if(function_exists('wp_paginate')): wp_paginate(); endif; ?>
 
     <?php else: ?>
 

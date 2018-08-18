@@ -1,6 +1,8 @@
-$(document).ready(function() {
+var $jq = jQuery.noConflict();
+
+$jq(document).ready(function() {
   // Activate scrollable functionality
-  $(".tt-scrollable").each(function() {
+  $jq(".tt-scrollable").each(function() {
     new PerfectScrollbar(this, {
       wheelPropagation: true
     });
@@ -24,10 +26,12 @@ $(document).ready(function() {
     },
     on: {
       transitionStart: function() {
-        $(".swiper-slide-active .tt-about__card__num").html(this.realIndex + 1);
+        $jq(".swiper-slide-active .tt-about__card__num").html(
+          this.realIndex + 1
+        );
       },
       init: function(swiper) {
-        $(".swiper-container").css("opacity", 1);
+        $jq(".swiper-container").css("opacity", 1);
       }
     },
     speed: 600,
@@ -42,7 +46,7 @@ $(document).ready(function() {
   });
 
   //   Image glitch
-  $(".tt-about__card__img").mgGlitch({
+  $jq(".tt-about__card__img").mgGlitch({
     // set 'true' to stop the plugin
     destroy: false,
     // set 'false' to stop glitching

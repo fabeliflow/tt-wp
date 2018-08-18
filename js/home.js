@@ -1,13 +1,15 @@
-$(document).ready(function() {
+var $jq = jQuery.noConflict();
+
+$jq(document).ready(function() {
   // Activate scrollable functionality
-  $(".tt-scrollable").each(function() {
+  $jq(".tt-scrollable").each(function() {
     new PerfectScrollbar(this, {
       wheelPropagation: true
     });
   });
 
   // Initialize home slider (Slick carousel)
-  $(".tt-home__slider")
+  $jq(".tt-home__slider")
     .slick({
       cssEase: "ease-in-out",
       mobileFirst: true,
@@ -21,15 +23,15 @@ $(document).ready(function() {
     })
     .on("init", function() {
       // Make slider visible when slick is ready
-      $(this).css("visibility", "visible");
+      $jq(this).css("visibility", "visible");
     })
     .on("afterChange", function(E, slick, cur) {
       // If last slide, hide scroll arrow
-      if (cur === slick.$slides.length - 1) {
-        $(".slick-current").addClass("last-slide");
-        $(".tt-arrow--scroll").fadeOut(1000);
+      if (cur === slick.$jqslides.length - 1) {
+        $jq(".slick-current").addClass("last-slide");
+        $jq(".tt-arrow--scroll").fadeOut(1000);
       } else {
-        $(".tt-arrow--scroll").fadeIn(1000);
+        $jq(".tt-arrow--scroll").fadeIn(1000);
       }
     })
     .bind("mousewheel", function(e) {
@@ -41,27 +43,27 @@ $(document).ready(function() {
       console.log(scrollDistance);
 
       if (scrollDistance > 50) {
-        $(this).slick("slickPrev");
+        $jq(this).slick("slickPrev");
       } else if (scrollDistance < -50) {
-        $(this).slick("slickNext");
+        $jq(this).slick("slickNext");
       }
     });
 
   // Fade in scroll arrow
-  $(".tt-arrow--scroll").fadeIn(5000);
+  $jq(".tt-arrow--scroll").fadeIn(5000);
 
   // Scroll to next slide on scroll arrow click
-  $(".tt-arrow--scroll").on("click", function() {
-    $(".tt-home__slider").slick("slickNext");
+  $jq(".tt-arrow--scroll").on("click", function() {
+    $jq(".tt-home__slider").slick("slickNext");
   });
 
-  $(".tt-home__cards")
+  $jq(".tt-home__cards")
     .slick({
       arrows: true,
       infinite: true,
       speed: 300,
-      prevArrow: $(".tt-arrow--left"),
-      nextArrow: $(".tt-arrow--right"),
+      prevArrow: $jq(".tt-arrow--left"),
+      nextArrow: $jq(".tt-arrow--right"),
       mobileFirst: true,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -84,9 +86,9 @@ $(document).ready(function() {
     })
     .on("init", function(event, slick, direction) {
       // check to see if there are one or less slides
-      if (!($(".slider .slick-slide").length > 1)) {
+      if (!($jq(".slider .slick-slide").length > 1)) {
         // remove arrows
-        $(".slider__arrow").hide();
+        $jq(".slider__arrow").hide();
       }
     });
 });
