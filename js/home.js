@@ -27,7 +27,7 @@ $jq(document).ready(function() {
     })
     .on("afterChange", function(E, slick, cur) {
       // If last slide, hide scroll arrow
-      if (cur === slick.$jqslides.length - 1) {
+      if (cur === slick.$slides.length - 1) {
         $jq(".slick-current").addClass("last-slide");
         $jq(".tt-arrow--scroll").fadeOut(1000);
       } else {

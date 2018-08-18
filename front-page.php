@@ -47,34 +47,38 @@
         <!-- Sections Card Carousel -->
         <div class="tt-home__cards">
 
-            <!--  check if the repeater field has rows of data -->
-            <?php if( have_rows('card_section') ): ?>
+            <?php
 
-                <!--  loop through the rows of data -->
-                <?php while ( have_rows('card_section') ) : the_row(); ?>
+            $categories = get_categories( array(
+                'orderby' => 'name'
+            ) );
+             
+            foreach ( $categories as $category ) : 
 
-                    <div class="tt-home__card" style="background-image: url('<?php the_sub_field('card_section_background'); ?>'); background-position: <?php the_sub_field('card_section_background_position'); ?>">
-                        <div class="tt-home__card__cont">
-                            <div class="tt-home__card__logo-wrapper">
-                                <div class="tt-home__card__logo" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/<?php the_sub_field('card_section_logo_svg'); ?>.svg');"></div>
-                            </div>
-                            <div class="tt-home__card__body tt-scrollable">
-                                <?php the_sub_field('card_section_description'); ?>
-                            </div>
+            $background = get_field('category_background', $category);
+            $background_position = get_field('category_background_position', $category);
+            $logo_svg = get_field('category_logo_svg', $category);
+            $description = $category->category_description;
+            $link = get_category_link( $category );
+            $link_label = get_field('category_link_label', $category);
+            ?>
 
-                            <div class="tt-home__card__footer">
+                <div class="tt-home__card" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
+                    <div class="tt-home__card__cont">
+                        <div class="tt-home__card__logo-wrapper">
+                            <div class="tt-home__card__logo" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/<?php echo $logo_svg ?>.svg');"></div>
+                        </div>
+                        <div class="tt-home__card__body tt-scrollable">
+                            <?php echo $description ?>
+                        </div>
 
-                                <?php $term = get_sub_field('card_section_button_category'); ?>
-
-                                
-
-                            </div>
+                        <div class="tt-home__card__footer">
+                            <a class="tt-btn" href="<?php echo $link ?>"><?php echo $link_label ?></a>
                         </div>
                     </div>
+                </div>
 
-                <?php endwhile; ?>
-
-            <?php endif; ?>
+            <?php endforeach; ?>
 
         </div>
 
