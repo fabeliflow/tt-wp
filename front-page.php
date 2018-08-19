@@ -21,7 +21,7 @@
     </div>
 
     <!-- Home Page Slide Two -->
-    <div class="tt-home__slide tt-home__mission" style="background-image: url('<?php the_field('mission_section_background'); ?>')">
+    <div class="tt-home__slide tt-home__mission" style="background-image: url('<?php the_field('mission_section_background'); ?>'); background-position: <?php the_field('mission_section_background_position'); ?>">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-offset-5 col-sm-7 col-md-offset-5 col-md-6 col-lg-offset-5 col-lg-5 tt-home__slide__wrap vertical-align">

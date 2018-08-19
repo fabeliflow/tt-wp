@@ -9,7 +9,7 @@ Template Name: About
 <body>
 
 <!-- About Page Cards -->
-<div class="tt-about__cards" style="background-image: url('<?php the_field('about_background'); ?>');">
+<div class="tt-about__cards" style="background-image: url('<?php the_field('about_background'); ?>'); background-position: <?php the_field('about_background_position'); ?>">
 
     <!-- Swiper -->
     <div class="swiper-container">

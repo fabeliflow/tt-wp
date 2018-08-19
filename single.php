@@ -8,13 +8,23 @@ Template Name: Post
 
 <body class="tt-article">
 
+    <!-- Facebook Comments -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1';
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
     <!--  check if the repeater field has rows of data -->
-    <?php if( have_rows('post_masthead') ): ?>
+    <?php if( have_rows('article_masthead') ): ?>
 
         <!--  loop through the rows of data -->
-        <?php while ( have_rows('post_masthead') ) : the_row(); ?>
+        <?php while ( have_rows('article_masthead') ) : the_row(); ?>
 
-            <div class="tt-masthead" style="background-image: url('<?php the_sub_field('post_masthead_background'); ?>'); background-position: <?php the_sub_field('post_masthead_background_position'); ?>"></div>
+            <div class="tt-masthead" style="background-image: url('<?php the_sub_field('article_masthead_background'); ?>'); background-position: <?php the_sub_field('article_masthead_background_position'); ?>"></div>
 
         <?php endwhile; ?>
 
@@ -74,10 +84,10 @@ Template Name: Post
                     
 
                     <!--  check if the flexible content field has rows of data -->
-                    <?php if( have_rows('post_content') ): ?>
+                    <?php if( have_rows('article_content') ): ?>
 
                         <!-- loop through the rows of data -->
-                        <?php while ( have_rows('post_content') ) : the_row(); ?>
+                        <?php while ( have_rows('article_content') ) : the_row(); ?>
 
                             <?php if( get_row_layout() == 'text' ): ?>
 
@@ -308,6 +318,8 @@ Template Name: Post
 
                     </div>
 
+                    <div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
+
                 </div>
 
             </div>
@@ -337,12 +349,12 @@ Template Name: Post
                         <a href="<?php the_permalink() ?>" class="tt-cat__card">
 
                         <!--  check if the repeater field has rows of data -->
-                        <?php if( have_rows('post_masthead') ): ?>
+                        <?php if( have_rows('article_masthead') ): ?>
 
                             <!--  loop through the rows of data -->
-                            <?php while ( have_rows('post_masthead') ) : the_row(); ?>
+                            <?php while ( have_rows('article_masthead') ) : the_row(); ?>
                                 <!-- Section Card Image -->
-                                <div class="tt-cat__card__img" style="background-image: url('<?php the_sub_field('post_masthead_background'); ?>');"></div>
+                                <div class="tt-cat__card__img" style="background-image: url('<?php the_sub_field('article_masthead_background'); ?>');"></div>
 
                             <?php endwhile; ?>
 
@@ -357,7 +369,7 @@ Template Name: Post
 
                                 <!-- Section Card Description -->
                                 <p class="tt-cat__card__descr">
-                                    <?php echo custom_field_excerpt('post_excerpt'); ?>
+                                    <?php echo custom_field_excerpt('article_excerpt'); ?>
                                 </p>
 
                             </div>

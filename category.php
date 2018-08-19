@@ -29,63 +29,74 @@ $logo_svg = get_field('category_logo_svg', $term);
 
 <section class="tt-cat__cont">
 
-    <?php if ( have_posts() ) : ?>
+    <?php
 
-        <!-- Section Cards -->
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+    $args = array(
+        'paged' => $paged
+    );
+    $category_posts = new WP_Query($args);
+
+    if($category_posts->have_posts()) : ?>
+
         <ul class="tt-cat__cards">
 
-            <?php while ( have_posts() ) : the_post(); ?>
+            <?php while($category_posts->have_posts()) : $category_posts->the_post(); ?>
+                <!-- Section Cards -->
+                
+                <!-- Section Card -->
+                <li class="tt-cat__cards__item">
+                    <a href="<?php the_permalink() ?>" class="tt-cat__card">
 
-            <!-- Section Card -->
-            <li class="tt-cat__cards__item">
-                <a href="<?php the_permalink() ?>" class="tt-cat__card">
+                    <!--  check if the repeater field has rows of data -->
+                    <?php if( have_rows('post_masthead') ): ?>
 
-                <!--  check if the repeater field has rows of data -->
-                <?php if( have_rows('post_masthead') ): ?>
+                        <!--  loop through the rows of data -->
+                        <?php while ( have_rows('post_masthead') ) : the_row(); ?>
+                            <!-- Section Card Image -->
+                            <div class="tt-cat__card__img" style="background-image: url('<?php the_sub_field('post_masthead_background'); ?>');"></div>
 
-                    <!--  loop through the rows of data -->
-                    <?php while ( have_rows('post_masthead') ) : the_row(); ?>
-                        <!-- Section Card Image -->
-                        <div class="tt-cat__card__img" style="background-image: url('<?php the_sub_field('post_masthead_background'); ?>');"></div>
+                        <?php endwhile; ?>
 
-                    <?php endwhile; ?>
+                    <?php endif; ?>
 
-                <?php endif; ?>
+                        <div class="tt-cat__card__cont">
 
-                    <div class="tt-cat__card__cont">
+                            <!-- Section Card Title -->
+                            <h3 class="tt-cat__card__title">
+                                <?php the_title(); ?>
+                            </h3>
 
-                        <!-- Section Card Title -->
-                        <h3 class="tt-cat__card__title">
-                            <?php the_title(); ?>
-                        </h3>
+                            <!-- Section Card Description -->
+                            <p class="tt-cat__card__descr">
+                                <?php echo custom_field_excerpt('post_excerpt'); ?>
+                            </p>
 
-                        <!-- Section Card Description -->
-                        <p class="tt-cat__card__descr">
-                            <?php echo custom_field_excerpt('post_excerpt'); ?>
-                        </p>
+                        </div>
 
-                    </div>
+                        <!-- Section Card Author -->
+                        <div class="tt-cat__card__auth">
+                            <span>By</span>
+                            <strong><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ) ?></strong>
+                        </div>
 
-                    <!-- Section Card Author -->
-                    <div class="tt-cat__card__auth">
-                        <span>By</span>
-                        <strong><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ) ?></strong>
-                    </div>
+                    </a>
+                </li>
 
-                </a>
-            </li>
-
-            <?php endwhile; ?>
+            <?php endwhile;  wp_paginate($category_posts); ?>
 
         </ul>
+
+
 
     <?php else: ?>
 
         <div class="tt-cat__cards--not-found">
             <h2>Our team is working on writing some cool articles. Come back later!</h2>
         </div>
-        
-    <?php endif; ?>
+
+    <?php endif; wp_reset_postdata(); ?>
 
 </section>
 
