@@ -34,8 +34,15 @@ $logo_svg = get_field('category_logo_svg', $term);
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
     $args = array(
-        'paged' => $paged
+        'category'          => $term->category,
+        'post_type'         => 'post',
+        'orderby'           => 'date',
+        'order'             => 'DESC',
+        'post_status'       => 'publish',
+        'posts_per_page'    => 3,
+        'paged'             => $paged,
     );
+
     $category_posts = new WP_Query($args);
 
     if($category_posts->have_posts()) : ?>
@@ -84,7 +91,11 @@ $logo_svg = get_field('category_logo_svg', $term);
                     </a>
                 </li>
 
-            <?php endwhile;  wp_paginate($category_posts); ?>
+            <?php endwhile; ?>
+
+            <?php if ( function_exists( 'pgntn_display_pagination' ) ) pgntn_display_pagination( array( 'query' => $category_posts ) ); ?>
+
+            <?php wp_reset_postdata(); ?>
 
         </ul>
 
