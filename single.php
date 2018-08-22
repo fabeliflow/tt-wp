@@ -45,36 +45,21 @@ Template Name: Post
                 </div>
                 <div class="col-sm-6 col-sm-offset-3">
 
-                    <!-- Aside -->
-                    <div class="tt-article__info">
+                    <!-- Article Info -->
+                    <ul class="tt-article__info">
+                        <li class="text-muted">By <strong><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ) ?></strong></li>
+                        <li class="text-muted"><?php echo get_the_time('F j, Y g:ia T') ?></li>
+                    </ul>
 
-                        <!-- Aside List -->
-                        <ul class="tt-article__info__list">
+                    <div class="tt-article__info__social">
 
-                            <!-- Aside List Item: Author -->
-                            <li class="tt-article__info__list__item">
-                                <span class="text-muted">By</span>
-                                <strong><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ) ?></strong>
-                            </li>
+                        <?php 
 
-                            <!-- Aside List Item: Date -->
-                            <li class="tt-article__info__list__item">
-                                <div class="text-muted">Updated <?php echo get_the_time('F j, Y g:ia T') ?></div>
-                            </li>
-
-                        </ul>
-
-                        <div class="tt-article__info__social">
-
-                            <?php 
-
-                                if(function_exists('social_warfare')):
-                                    social_warfare();
-                                endif;
-                            
-                            ?>
-
-                        </div>
+                            if(function_exists('social_warfare')):
+                                social_warfare();
+                            endif;
+                        
+                        ?>
 
                     </div>
 
@@ -338,6 +323,13 @@ Template Name: Post
     <?php if ( $rand_posts ) : ?>
 
         <section class="tt-cat__cont">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 tt-article__more">
+                        <span>More articles by </span><span><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ) ?></span>
+                    </div>
+                </div>
+            </div>
 
             <!-- Section Cards -->
             <ul class="tt-cat__cards">
