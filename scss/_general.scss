@@ -656,9 +656,13 @@ $scan-opacity: 0.75;
   left: 50%;
   display: flex;
   transform: translate(-50%, -45%);
-  font-size: 3em;
   outline: 0 !important;
   transition: all 0.3s ease-in-out;
+  font-size: 2em;
+
+  @media (min-width: 992px) {
+    font-size: 3em;
+  }
 
   &:hover,
   &:focus {

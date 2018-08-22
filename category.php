@@ -30,26 +30,25 @@ $logo_svg = get_field('category_logo_svg', $term);
 <section class="tt-cat__cont">
 
     <?php
+        $current_page = get_queried_object();
+        $category     = $current_page->slug;
 
-    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+        $query = new WP_Query( 
+            array(
+                'paged'         => $paged, 
+                'category_name' => $category,
+                'order'         => 'asc',
+                'post_type'     => 'post',
+                'post_status'   => 'publish',
+            )
+        );
 
-    $args = array(
-        'category'          => $term->category,
-        'post_type'         => 'post',
-        'orderby'           => 'date',
-        'order'             => 'DESC',
-        'post_status'       => 'publish',
-        'posts_per_page'    => 3,
-        'paged'             => $paged,
-    );
-
-    $category_posts = new WP_Query($args);
-
-    if($category_posts->have_posts()) : ?>
+        if ($query->have_posts()) : ?>
 
         <ul class="tt-cat__cards">
 
-            <?php while($category_posts->have_posts()) : $category_posts->the_post(); ?>
+            <?php while($query->have_posts()) : $query->the_post(); ?>
                 <!-- Section Cards -->
                 
                 <!-- Section Card -->
@@ -57,12 +56,12 @@ $logo_svg = get_field('category_logo_svg', $term);
                     <a href="<?php the_permalink() ?>" class="tt-cat__card">
 
                     <!--  check if the repeater field has rows of data -->
-                    <?php if( have_rows('post_masthead') ): ?>
+                    <?php if( have_rows('article_masthead') ): ?>
 
                         <!--  loop through the rows of data -->
-                        <?php while ( have_rows('post_masthead') ) : the_row(); ?>
+                        <?php while ( have_rows('article_masthead') ) : the_row(); ?>
                             <!-- Section Card Image -->
-                            <div class="tt-cat__card__img" style="background-image: url('<?php the_sub_field('post_masthead_background'); ?>');"></div>
+                            <div class="tt-cat__card__img" style="background-image: url('<?php echo the_sub_field('article_masthead_background'); ?>');"></div>
 
                         <?php endwhile; ?>
 
@@ -77,7 +76,7 @@ $logo_svg = get_field('category_logo_svg', $term);
 
                             <!-- Section Card Description -->
                             <p class="tt-cat__card__descr">
-                                <?php echo custom_field_excerpt('post_excerpt'); ?>
+                                <?php echo custom_field_excerpt('article_excerpt'); ?>
                             </p>
 
                         </div>
@@ -93,13 +92,11 @@ $logo_svg = get_field('category_logo_svg', $term);
 
             <?php endwhile; ?>
 
-            <?php if ( function_exists( 'pgntn_display_pagination' ) ) pgntn_display_pagination( array( 'query' => $category_posts ) ); ?>
-
-            <?php wp_reset_postdata(); ?>
-
         </ul>
 
+        <?php if ( function_exists( 'wp_pagenavi' ) ) wp_pagenavi( array( 'query' => $query ) ); ?>
 
+        <?php wp_reset_postdata(); ?>
 
     <?php else: ?>
 
@@ -107,7 +104,7 @@ $logo_svg = get_field('category_logo_svg', $term);
             <h2>Our team is working on writing some cool articles. Come back later!</h2>
         </div>
 
-    <?php endif; wp_reset_postdata(); ?>
+    <?php endif; ?>
 
 </section>
 
