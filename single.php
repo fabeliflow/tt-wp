@@ -18,10 +18,8 @@ Template Name: Post
     fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 
-    <!--  check if the repeater field has rows of data -->
     <?php if( have_rows('article_masthead') ): ?>
 
-        <!--  loop through the rows of data -->
         <?php while ( have_rows('article_masthead') ) : the_row(); ?>
 
             <div class="tt-masthead" style="background-image: url('<?php the_sub_field('article_masthead_background'); ?>'); background-position: <?php the_sub_field('article_masthead_background_position'); ?>"></div>
@@ -67,13 +65,12 @@ Template Name: Post
 
                 <section class="tt-article__cont">
                     
-
-                    <!--  check if the flexible content field has rows of data -->
+                    <!-- Article Content -->
                     <?php if( have_rows('article_content') ): ?>
 
-                        <!-- loop through the rows of data -->
                         <?php while ( have_rows('article_content') ) : the_row(); ?>
 
+                            <!-- Text Module -->
                             <?php if( get_row_layout() == 'text' ): ?>
 
                                 <div class="col-sm-6 col-sm-offset-3">
@@ -81,17 +78,8 @@ Template Name: Post
                                     <?php the_sub_field('text'); ?>
 
                                 </div>
-
-                            <?php elseif( get_row_layout() == 'blockquote' ): ?>
-
-                                <div class="col-sm-6 col-sm-offset-3">
-
-                                    <blockquote>
-                                        <?php the_sub_field('blockquote'); ?>
-                                    </blockquote>
-
-                                </div>
-
+                            
+                            <!-- Image Module -->
                             <?php elseif( get_row_layout() == 'image' ): ?>
 
                                 <?php 
@@ -100,6 +88,7 @@ Template Name: Post
 
                                 if( !empty($image) ): ?>
 
+                                    <!-- Regular Image -->
                                     <?php if( get_sub_field('image_type') == 'regular' ): ?>
 
                                     <div class="col-sm-6 col-sm-offset-3">
@@ -115,6 +104,7 @@ Template Name: Post
                                         </div>
                                     </div>
 
+                                    <!-- Full Image -->
                                     <?php elseif( get_sub_field('image_type') == 'full' ): ?>
 
                                     <div class="col-sm-12 tt-article__img tt-article__img--<?php the_sub_field('image_type'); ?>__cont">
@@ -128,6 +118,7 @@ Template Name: Post
 
                                     </div>
 
+                                    <!-- Full Left Image -->
                                     <?php elseif( get_sub_field('image_type') == 'left' ): ?>
 
                                     <div class="col-sm-9 tt-article__img tt-article__img--<?php the_sub_field('image_type'); ?>__cont">
@@ -141,6 +132,7 @@ Template Name: Post
 
                                     </div>
 
+                                    <!-- Full Right Image -->
                                     <?php elseif( get_sub_field('image_type') == 'right' ): ?>
 
                                     <div class="col-sm-9 tt-article__img tt-article__img--<?php the_sub_field('image_type'); ?>__cont">
@@ -158,56 +150,29 @@ Template Name: Post
 
                                 <?php endif; ?>
 
+                                <!-- Gallery Module -->
                                 <?php elseif( get_row_layout() == 'gallery' ): ?>
 
                                 <?php 
 
-                                    $images = get_sub_field('gallery');
-                                    $size = 'full';
+                                $images = get_sub_field('gallery');
+                                $size = 'full';
 
-                                    if( $images ): ?>
-                                        <div class="col-sm-12 tt-article__img--carousel__cont">
+                                if( $images ): ?>
+                                    <div class="col-sm-12 tt-article__img--carousel__cont">
 
-                                            <div class="tt-article__img--carousel">
+                                        <div class="tt-article__img--carousel">
 
-                                                <?php foreach( $images as $image ): ?>
-                                                    <div>
-                                                        <?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
-                                                    </div>
-                                                <?php endforeach; ?>
-                                                
-                                            </div>
-
-                                            <span class="tt-caption"><?php the_sub_field('gallery_caption'); ?></span>
+                                            <?php foreach( $images as $image ): ?>
+                                                <div>
+                                                    <?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
+                                                </div>
+                                            <?php endforeach; ?>
                                             
-                                            <!-- Arrows -->
-                                            <div class="tt-arrow tt-arrow--left">
-                                                <div></div>
-                                            </div>
-
-                                            <div class="tt-arrow tt-arrow--right">
-                                                <div></div>
-                                            </div>
                                         </div>
-                                    <?php endif; ?>
 
-                                    <?php if( have_rows('images') ): ?>
-
-                                        <div class="col-sm-12">
-
-                                            <div class="tt-article__img--carousel">
-
-                                            <?php while ( have_rows('images') ) : the_row(); ?>
-
-                                                <?php $image = get_sub_field('image'); ?>
-
-                                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-
-                                            <?php endwhile; ?>
-
-                                        </div>
                                         <span class="tt-caption"><?php the_sub_field('gallery_caption'); ?></span>
-
+                                        
                                         <!-- Arrows -->
                                         <div class="tt-arrow tt-arrow--left">
                                             <div></div>
@@ -216,9 +181,10 @@ Template Name: Post
                                         <div class="tt-arrow tt-arrow--right">
                                             <div></div>
                                         </div>
-
-                                    <?php  endif; ?>
-
+                                    </div>
+                                <?php endif; ?>
+                            
+                            <!-- Video Module -->
                             <?php elseif( get_row_layout() == 'video' ): ?>
 
                                 <div class="col-sm-6 col-sm-offset-3">
@@ -259,7 +225,7 @@ Template Name: Post
                                                     <span><?php the_sub_field('video_timestamp'); ?></span>
                                                 </div>
 
-                                                <!-- Play button -->
+                                                <!-- Play Button -->
                                                 <a href="<?php the_sub_field('video_link'); ?>" data-effect="mfp-zoom-in" class="tt-video__btn">
                                                     <i class="fas fa-play"></i>
                                                 </a>
@@ -283,12 +249,13 @@ Template Name: Post
 
                     <?php else : ?>
 
-                        <!-- no layouts found -->
+                        <!-- No layouts found -->
 
                     <?php endif; ?>
 
                 </section>
-
+                
+                <!-- Social Media Share -->
                 <div class="col-sm-6 col-sm-offset-3">
 
                     <div class="tt-article__info__social">
@@ -311,6 +278,7 @@ Template Name: Post
         </div>
     </article>
 
+    <!-- More Articles By The Author -->
     <?php
     $rand_posts = get_posts( array(
         'author'         =>  get_post_field( 'post_author', get_the_ID() ),
@@ -326,26 +294,25 @@ Template Name: Post
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-6 col-sm-offset-3 tt-article__more">
-                        <span>More articles by </span><span><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ) ?></span>
+                        <span>More by the author</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Section Cards -->
+            <!-- Category Cards -->
             <ul class="tt-cat__cards">
             
                 <?php  foreach ( $rand_posts as $post ) : setup_postdata( $post ); ?>
 
-                    <!-- Section Card -->
+                    <!-- Category Card -->
                     <li class="tt-cat__cards__item">
                         <a href="<?php the_permalink() ?>" class="tt-cat__card">
 
-                        <!--  check if the repeater field has rows of data -->
                         <?php if( have_rows('article_masthead') ): ?>
 
-                            <!--  loop through the rows of data -->
                             <?php while ( have_rows('article_masthead') ) : the_row(); ?>
-                                <!-- Section Card Image -->
+
+                                <!-- Category Card Image -->
                                 <div class="tt-cat__card__img" style="background-image: url('<?php the_sub_field('article_masthead_background'); ?>');"></div>
 
                             <?php endwhile; ?>
@@ -354,19 +321,19 @@ Template Name: Post
 
                             <div class="tt-cat__card__cont">
 
-                                <!-- Section Card Title -->
+                                <!-- Category Card Title -->
                                 <h3 class="tt-cat__card__title">
                                     <?php the_title(); ?>
                                 </h3>
 
-                                <!-- Section Card Description -->
+                                <!-- Category Card Description -->
                                 <p class="tt-cat__card__descr">
                                     <?php echo custom_field_excerpt('article_excerpt'); ?>
                                 </p>
 
                             </div>
 
-                            <!-- Section Card Author -->
+                            <!-- Category Card Author -->
                             <div class="tt-cat__card__auth">
                                 <span>By</span>
                                 <strong><?php the_author_meta('display_name', $author); ?></strong>

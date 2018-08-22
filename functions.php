@@ -39,6 +39,7 @@ function custom_field_excerpt($field) {
     return wp_trim_words( $text, $excerpt_length );
 }
 
+// Add styles and scripts
 function wpb_adding_styles_scripts() {
 	
 	// general styles

@@ -26,58 +26,57 @@
 
 <!-- Menu -->
 
-    <!-- Menu Button -->
-    <button id="tt-menu__btn" class="tt-btn--menu">
-        <i class="tt-btn--menu__icon"></i>
-    </button>
+<!-- Menu Button -->
+<button id="tt-menu__btn" class="tt-btn--menu">
+    <i class="tt-btn--menu__icon"></i>
+</button>
 
-    <!-- Menu Popup -->
-    <div class="tt-menu">
+<!-- Menu Popup -->
+<div class="tt-menu">
 
-        <!-- Menu Container -->
-        <div class="tt-menu__cont">
+    <!-- Menu Container -->
+    <div class="tt-menu__cont">
 
-            <!-- Starfield -->
-            <div id="starfield" class="starfield"></div>
+        <!-- Starfield -->
+        <div id="starfield" class="starfield"></div>
 
-            <!-- Menu Logo -->
-            <a href="<?php echo get_home_url(); ?>" class="tt-menu__logo-wrapper">
-                <div class="tt-menu__logo" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/tt-logo.svg');"></div>
-            </a>
+        <!-- Menu Logo -->
+        <a href="<?php echo get_home_url(); ?>" class="tt-menu__logo-wrapper">
+            <div class="tt-menu__logo" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/tt-logo.svg');"></div>
+        </a>
 
-            <!-- Menu List -->
-            <?php 
-                $args = array(
-                    'theme_location' => 'primary',
-                    'menu_class' => 'tt-menu__list'
-                );
-                wp_nav_menu( $args ); 
-            ?>
+        <!-- Menu List -->
+        <?php 
+            $args = array(
+                'theme_location' => 'primary',
+                'menu_class' => 'tt-menu__list'
+            );
+            wp_nav_menu( $args ); 
+        ?>
 
-            <!-- Menu Social -->
-            <div class="tt-menu__social">
+        <!-- Menu Social -->
+        <div class="tt-menu__social">
 
-                <?php if( have_rows('menu_social', 'header') ): ?>
+            <?php if( have_rows('menu_social', 'header') ): ?>
 
-                    <ul class="tt-social">
-                        
-                        <!--  loop through the rows of data -->
-                        <?php while ( have_rows('menu_social', 'social-media') ) : the_row(); ?>
+                <ul class="tt-social">
+                    
+                    <?php while ( have_rows('menu_social', 'social-media') ) : the_row(); ?>
 
-                            <li>
-                                <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
-                                    <i class="<?php the_sub_field('menu_social_class'); ?>"></i>
-                                </a>
-                            </li>
+                        <li>
+                            <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
+                                <i class="<?php the_sub_field('menu_social_class'); ?>"></i>
+                            </a>
+                        </li>
 
-                        <?php endwhile; ?>
+                    <?php endwhile; ?>
 
-                    </ul>
+                </ul>
 
-                <?php endif; ?>
-
-            </div>
+            <?php endif; ?>
 
         </div>
 
     </div>
+
+</div>
