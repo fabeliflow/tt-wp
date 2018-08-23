@@ -1,6 +1,4 @@
 .tt-article {
-  background-color: $tt-sand-light;
-
   h1,
   h2,
   h3 {
@@ -11,7 +9,7 @@
 
   h2,
   h3:not(.tt-cat__card__title) {
-    color: $tt-red-dark;
+    color: $tt-red;
   }
 }
 
@@ -19,7 +17,7 @@
   margin: -25px 0 50px 0;
   padding: 15px 25px;
   position: relative;
-  background-color: $tt-red-dark;
+  background-color: $tt-red;
   color: white;
   font-size: 2.5em;
   font-weight: 700;
@@ -47,7 +45,7 @@
   list-style-type: none;
 
   strong {
-    color: $tt-red-dark;
+    color: $tt-red;
   }
 }
 
@@ -60,7 +58,7 @@
 
     .fa-dot-circle {
       padding-right: 15px;
-      color: $tt-red-dark;
+      color: $tt-red;
     }
 
     li {
@@ -72,7 +70,7 @@
         display: table-cell;
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
-        color: $tt-red-dark;
+        color: $tt-red;
       }
 
       &:not(:last-child) {
@@ -99,7 +97,7 @@
       &:before {
         content: counter(step-counter);
         padding-right: 15px;
-        color: $tt-red-dark;
+        color: $tt-red;
         font-size: 2.5rem;
         font-family: Aurebesh;
       }
@@ -162,7 +160,7 @@
         font-size: 1.4em;
         line-height: 0;
         vertical-align: sub;
-        color: $tt-red-dark;
+        color: $tt-red;
       }
     }
 

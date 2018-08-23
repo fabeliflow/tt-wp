@@ -1,7 +1,3 @@
-.tt-cat {
-  background-color: $tt-sand-light;
-}
-
 .tt-cat__cont {
   padding: 70px 15px;
 }
@@ -20,18 +16,19 @@
     font-weight: bold;
     text-align: center;
     text-transform: capitalize;
-    color: $tt-red-dark;
+    color: $tt-red;
   }
 }
 
 .tt-cat__cards__item {
   width: 100%;
-  padding: 0.6rem 0;
+  margin: 0 !important;
+  padding: 0.6rem 0 !important;
   display: flex;
 
   @media (min-width: 768px) {
     width: 50%;
-    padding: 0.6rem;
+    padding: 0.6rem !important;
   }
 
   @media (min-width: 992px) {
@@ -93,7 +90,7 @@
 .tt-cat__card__title {
   margin: -35px 0 15px 0 !important;
   padding: 15px 20px;
-  background-color: $tt-red-dark;
+  background-color: $tt-red;
   color: white;
   z-index: 1;
   font-weight: bold;
@@ -140,34 +137,4 @@
   transition-property: max-height;
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
-}
-
-.wp-pagenavi {
-  margin-top: 40px;
-  text-align: center;
-
-  span,
-  a {
-    border-color: $tt-blue-light !important;
-    color: $tt-text-dark;
-  }
-
-  a {
-    transition: all 0.2s ease-in;
-
-    &:hover,
-    &:focus {
-      background-color: $tt-blue-light;
-      color: white;
-      box-shadow: 0 0 5px 0 $tt-blue-transp;
-      text-decoration: none;
-      transition: all 0.2s ease-out;
-    }
-  }
-
-  .current {
-    background-color: $tt-red-dark;
-    border-color: $tt-red-dark !important;
-    color: white;
-  }
 }

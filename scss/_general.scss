@@ -11,19 +11,14 @@ $tt-blue-super-transp: transparentize($tt-blue, 0.9);
 $tt-green: #159a32;
 $tt-green-light: #91f7a7;
 $tt-green-transp: transparentize($tt-green, 0.4);
-$tt-sand-light: #f9f6ef;
 $tt-card-bg: #c6c2b9;
 $tt-card-author: #696060;
 $tt-yellow: #ffdb11;
 $tt-red: #f63222;
-$tt-red-dark: darken($tt-red, 15%);
 $tt-red-transp: transparentize($tt-red, 0.7);
 $tt-orange: #f77529;
 $tt-orange-transp: transparentize($tt-orange, 0.7);
 $tt-pink: #edccca;
-$facebook: #3b5998;
-$twitter: #1da1f2;
-$pinterest: #bd081c;
 
 // Aurebesh Font
 @font-face {
@@ -194,6 +189,30 @@ h3 {
     color: white;
     background-color: $tt-red;
     box-shadow: 0 0 30px 0 $tt-red-transp;
+  }
+}
+
+// Search bar styles
+.tt-search-bar {
+  padding: 40px 20px;
+  text-align: center;
+
+  input {
+    padding: 5px 15px;
+    border-radius: 10em;
+    border: 1.5px solid $tt-blue-transp;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+
+    &::placeholder {
+      color: $tt-blue-transp;
+      font-family: Aurebesh;
+    }
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 5px 0 $tt-blue-transp;
+    }
   }
 }
 
@@ -523,46 +542,6 @@ $scan-opacity: 0.75;
     color: white;
     text-shadow: 0 0 30px $tt-blue-transp;
   }
-}
-
-.tt-social--share {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  list-style-type: none;
-
-  .tt-social--share__title {
-    font-family: Aurebesh;
-    color: $tt-blue-transp;
-  }
-
-  .tt-social--share__item:not(:last-child) {
-    margin-right: 5px;
-  }
-
-  .fab {
-    font-size: 2.5rem;
-  }
-
-  .fa-facebook-square {
-    color: $facebook;
-  }
-
-  .fa-twitter-square {
-    color: $twitter;
-  }
-
-  .fa-pinterest-square {
-    color: $pinterest;
-  }
-}
-
-.tt-social--share--bottom {
-  border-top: dotted 5px $tt-blue-transp;
-  margin-top: 40px !important;
-  margin-bottom: 40px !important;
-  padding-top: 10px !important;
-  justify-content: flex-end;
 }
 
 // Video Module Styles

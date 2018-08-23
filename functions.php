@@ -39,11 +39,19 @@ function custom_field_excerpt($field) {
     return wp_trim_words( $text, $excerpt_length );
 }
 
+function my_alm_query_args_searchwp($args){   
+	$engine = 'default'; // default = default
+	$args = apply_filters('alm_searchwp', $args, $engine); // Make call to alm_searchwp filter
+	return $args;
+}
+
+add_filter( 'alm_query_args_searchwp', 'my_alm_query_args_searchwp');
+
 // Add styles and scripts
 function wpb_adding_styles_scripts() {
 	
 	// general styles
-	wp_register_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Roboto:300,300i,700%7CNews+Cycle:400,700' );
+	wp_register_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Lato:400,400i,700%7CNews+Cycle:400,700' );
 
 	wp_register_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.0.8/css/all.css' );
 

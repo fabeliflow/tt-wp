@@ -9,6 +9,8 @@ get_header();
 // get the current taxonomy term
 $term = get_queried_object();
 
+$custom_search = (isset($_GET['custom_search'])) ? $_GET['custom_search'] : ''; // Get 'custom_search' querystring param
+
 
 // vars
 $background = get_field('category_background', $term);
@@ -25,83 +27,16 @@ $logo_svg = get_field('category_logo_svg', $term);
         </div>
     </div>
 
+    <form class="tt-search-bar" method="get">
+        <input type="text" name="custom_search" id="custom_search" value="<?php echo esc_attr( $custom_search ); ?>" placeholder="Search"/><span></span>
+    </form>
+
     <section class="tt-cat__cont">
 
         <?php
-            $current_page = get_queried_object();
-            $category     = $current_page->slug;
-
-            $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-            $query = new WP_Query( 
-                array(
-                    'paged'         => $paged, 
-                    'category_name' => $category,
-                    'order'         => 'asc',
-                    'post_type'     => 'post',
-                    'post_status'   => 'publish',
-                )
-            );
-
-            if ($query->have_posts()) : ?>
-
-            <!-- Category Cards -->
-            <ul class="tt-cat__cards">
-
-                <?php while($query->have_posts()) : $query->the_post(); ?>
-                       
-                    <!-- Category Card -->
-                    <li class="tt-cat__cards__item">
-                        <a href="<?php the_permalink() ?>" class="tt-cat__card">
-
-                        <?php if( have_rows('article_masthead') ): ?>
-
-                            <?php while ( have_rows('article_masthead') ) : the_row(); ?>
-
-                                <!-- Category Card Image -->
-                                <div class="tt-cat__card__img" style="background-image: url('<?php echo the_sub_field('article_masthead_background'); ?>');"></div>
-
-                            <?php endwhile; ?>
-
-                        <?php endif; ?>
-
-                            <div class="tt-cat__card__cont">
-
-                                <!-- Category Card Title -->
-                                <h3 class="tt-cat__card__title">
-                                    <?php the_title(); ?>
-                                </h3>
-
-                                <!-- Category Card Description -->
-                                <p class="tt-cat__card__descr">
-                                    <?php echo custom_field_excerpt('article_excerpt'); ?>
-                                </p>
-
-                            </div>
-
-                            <!-- Category Card Author -->
-                            <div class="tt-cat__card__auth">
-                                <span>By</span>
-                                <strong><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ) ?></strong>
-                            </div>
-
-                        </a>
-                    </li>
-
-                <?php endwhile; ?>
-
-            </ul>
-
-            <?php if ( function_exists( 'wp_pagenavi' ) ) wp_pagenavi( array( 'query' => $query ) ); ?>
-
-            <?php wp_reset_postdata(); ?>
-
-        <?php else: ?>
-
-            <div class="tt-cat__cards--not-found">
-                <h2>Our team is working on writing some cool articles. Come back later!</h2>
-            </div>
-
-        <?php endif; ?>
+        $current_page = get_queried_object();
+        $category     = $current_page->slug;
+        echo do_shortcode('[ajax_load_more id="searchwp" container_type="ul" css_classes="tt-cat__cards" post_type="post" posts_per_page="6" category="' . $category . '" search="' . $custom_search . '" transition_container="false" images_loaded="true" button_label="More Articles" button_loading_label="Loading Articles"]'); ?>
 
     </section>
 
