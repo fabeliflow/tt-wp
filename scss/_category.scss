@@ -10,16 +10,6 @@
   list-style: none;
 }
 
-.tt-cat__cards--not-found {
-  h2 {
-    margin: 0;
-    font-weight: bold;
-    text-align: center;
-    text-transform: capitalize;
-    color: $tt-red;
-  }
-}
-
 .tt-cat__cards__item {
   width: 100%;
   margin: 0 !important;

@@ -28,7 +28,7 @@ $logo_svg = get_field('category_logo_svg', $term);
     </div>
 
     <form class="tt-search-bar" method="get">
-        <input type="text" name="custom_search" id="custom_search" value="<?php echo esc_attr( $custom_search ); ?>" placeholder="Search"/><span></span>
+        <input type="text" name="custom_search" id="custom_search" value="<?php echo esc_attr( $custom_search ); ?>" placeholder="&#xf002; Search"/>
     </form>
 
     <section class="tt-cat__cont">

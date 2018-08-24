@@ -44,6 +44,10 @@
   font-size: 0.9em;
   list-style-type: none;
 
+  i {
+    color: $tt-text-light;
+  }
+
   strong {
     color: $tt-red;
   }
@@ -319,5 +323,14 @@
   span {
     font-family: Aurebesh;
     color: $tt-blue-transp;
+  }
+}
+
+.alm-load-more-btn {
+  border-radius: 0 !important;
+  background-color: $tt-red !important;
+
+  &:before {
+    border-radius: 0 !important;
   }
 }

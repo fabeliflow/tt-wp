@@ -1,5 +1,6 @@
 // Colors
 $tt-text-dark: #333;
+$tt-text-light: lighten($tt-text-dark, 40%);
 $tt-black-transp: transparentize(black, 0.3);
 $tt-white-transp: transparentize(white, 0.9);
 $tt-blue: #0db8fe;
@@ -198,7 +199,7 @@ h3 {
   text-align: center;
 
   input {
-    padding: 5px 15px;
+    padding: 7px 17px;
     border-radius: 10em;
     border: 1.5px solid $tt-blue-transp;
     outline: none;
@@ -206,7 +207,8 @@ h3 {
 
     &::placeholder {
       color: $tt-blue-transp;
-      font-family: Aurebesh;
+      font-family: "Font Awesome 5 Free", Aurebesh, sans-serif;
+      font-weight: 900;
     }
 
     &:hover,

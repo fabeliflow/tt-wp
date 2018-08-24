@@ -45,8 +45,9 @@ Template Name: Post
 
                     <!-- Article Info -->
                     <ul class="tt-article__info">
-                        <li class="text-muted">By <strong><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ) ?></strong></li>
-                        <li class="text-muted"><?php echo get_the_time('F j, Y g:ia T') ?></li>
+                        <li><i>By </i><strong><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ) ?></strong></li>
+                        <li><i>Published </i><?php echo get_the_time('F j, Y @ g:ia') ?></li>
+                        <li><i>Last Updated </i><?php echo get_the_modified_date('F j, Y @ g:ia') ?></li>
                     </ul>
 
                     <div class="tt-article__info__social">
