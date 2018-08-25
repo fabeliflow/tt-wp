@@ -297,6 +297,22 @@ h3 {
   }
 }
 
+.tt-arrow--scroll-top {
+  position: fixed;
+  bottom: -10px;
+  right: 15px;
+  will-change: transform;
+  display: none;
+
+  @media (min-width: 768px) {
+    right: 25px;
+  }
+
+  div {
+    transform: rotate(225deg);
+  }
+}
+
 @include keyframes-compatible(top-arrow) {
   0% {
     transform: translate(-6px, -6px);
