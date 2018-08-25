@@ -259,7 +259,7 @@
 }
 
 .tt-logo__sun {
-  transform-origin: 310.92px 47.84px;
+  transform-origin: 283.25px 40px;
 }
 
 .tt-logo__sun--first {
@@ -314,7 +314,7 @@
   }
 
   .tt-logo__border--right {
-    animation: draw 3.5s ease-in-out 4s forwards;
+    animation: draw 3.9s ease-in-out 3.9s forwards;
   }
 
   .tt-logo__title--main {
@@ -325,7 +325,6 @@
 
   @for $i from 1 to 5 {
     .tt-social li:nth-child(#{$i}) {
-      -webkit-animation: fadeIn 2s $delay forwards;
       animation: fadeIn 2s $delay forwards;
     }
 
