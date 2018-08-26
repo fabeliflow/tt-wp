@@ -53,7 +53,9 @@ get_header(); ?>
                 <?php
 
                 $categories = get_categories( array(
-                    'orderby' => 'name'
+                    'orderby'    => 'name',
+                    'hide_empty' => 0,
+                    'exclude'    => array( 1 )
                 ) );
                 
                 foreach ( $categories as $category ) : 
