@@ -39,14 +39,6 @@
                                 <?php endif; ?>
 
                             </div>
-                            <div class="col-xs-10 col-xs-offset-1">
-
-                                <!-- Footer Disclaimer -->
-                                <p class="tt-footer__disclaimer">
-                                    <?php the_field('footer_disclaimer', 'footer'); ?>
-                                </p>
-
-                            </div>
                         </div>
                     </div>
                 </div>

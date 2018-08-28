@@ -165,12 +165,8 @@ get_header(); ?>
                 </div>
             </div>
 
-            <!-- Orbit and Disclaimer -->
-            <footer class="tt-home__orbit" style="background-image: url('<?php the_field('orbit_section_image'); ?>')">
-                <div class="tt-home__orbit__disclaimer">
-                    <?php the_field('orbit_section_disclaimer'); ?>
-                </div>
-            </footer>
+            <!-- Orbit -->
+            <footer class="tt-home__orbit" style="background-image: url('<?php the_field('orbit_section_image'); ?>')"></footer>
 
         </div>
 

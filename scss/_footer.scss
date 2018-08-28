@@ -1,10 +1,14 @@
+.tt-footer {
+  margin-top: 50px;
+}
+
 .tt-footer__img {
   width: 100%;
   margin-bottom: -5px;
 }
 
 .tt-footer__cont {
-  padding: 100px 0;
+  padding: 100px 0 30px 0;
 }
 
 .tt-footer__logo {
@@ -15,11 +19,4 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-.tt-footer__disclaimer {
-  margin: 8vh 0 0 0;
-  color: white;
-  font-size: 0.45em;
-  text-align: center;
 }
