@@ -16,15 +16,39 @@
   }
 }
 
-.wpautoterms-footer {
-  padding: 30px 0;
-  background-color: #252935;
-
-  p {
-    margin: 0;
-  }
+.wpautoterms-update-notice {
+  padding: 20px 10px;
+  text-align: center;
+  background-color: $tt-black-transp;
+  color: white;
 
   a {
-    color: white;
+    color: $tt-blue;
+
+    &:hover,
+    &:focus {
+      color: $tt-blue;
+    }
+  }
+}
+
+.menu-legal-links-container {
+  margin-top: 8vh;
+  text-align: center;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    a {
+      color: white;
+      font-size: .8em;
+
+      &:hover,
+      &:focus {
+        color: white;
+      }
+    }
   }
 }

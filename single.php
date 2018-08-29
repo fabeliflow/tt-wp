@@ -46,8 +46,12 @@ Template Name: Post
                     <!-- Article Info -->
                     <ul class="tt-article__info">
                         <li><i>By </i><strong><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ) ?></strong></li>
-                        <li><i>Published </i><?php echo get_the_time('F j, Y @ g:ia') ?></li>
-                        <li><i>Last Updated </i><?php echo get_the_modified_date('F j, Y @ g:ia') ?></li>
+                        <li><i>Published </i><?php echo get_the_date('F j, Y @ g:ia') ?></li>
+
+                        <?php if ( get_the_modified_date() > get_the_date() ) : ?>
+                            <li><i>Last Updated </i><?php echo get_the_modified_date('F j, Y @ g:ia') ?></li>
+                        <?php endif  ?>
+                        
                     </ul>
 
                     <div class="tt-article__info__social">

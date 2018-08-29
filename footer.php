@@ -38,6 +38,15 @@
 
                                 <?php endif; ?>
 
+                                <!-- Legal Links -->
+                                <?php 
+                                    $args = array(
+                                        'theme_location' => 'legal-links',
+                                        'menu_class' => 'tt-legal'
+                                    );
+                                    wp_nav_menu( $args ); 
+                                ?>
+
                             </div>
                         </div>
                     </div>

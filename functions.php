@@ -1,6 +1,7 @@
 <?php
 register_nav_menus( array(
-	'primary' => 'Primary'
+	'primary'   => 'Primary',
+	'legal-links' => __( 'Legal Links' ),
 ) );
 
 if( function_exists('acf_add_options_page') ) {
