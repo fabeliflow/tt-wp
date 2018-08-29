@@ -48,10 +48,10 @@ Template Name: Post
                         <li><i>By </i><strong><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ) ?></strong></li>
                         <li><i>Published </i><?php echo get_the_date('F j, Y @ g:ia') ?></li>
 
-                        <?php if ( get_the_modified_date() > get_the_date() ) : ?>
+                        <?php if ( get_the_modified_date('F j, Y @ g:ia') > get_the_date('F j, Y @ g:ia') ): ?>
                             <li><i>Last Updated </i><?php echo get_the_modified_date('F j, Y @ g:ia') ?></li>
-                        <?php endif  ?>
-                        
+                        <?php endif;  ?>
+
                     </ul>
 
                     <div class="tt-article__info__social">
