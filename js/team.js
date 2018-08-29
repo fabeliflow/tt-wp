@@ -26,7 +26,7 @@ $jq(document).ready(function() {
     },
     on: {
       transitionStart: function() {
-        $jq(".swiper-slide-active .tt-about__card__num").html(
+        $jq(".swiper-slide-active .tt-team__card__num").html(
           this.realIndex + 1
         );
       },
@@ -46,7 +46,7 @@ $jq(document).ready(function() {
   });
 
   //   Image glitch
-  $jq(".tt-about__card__img").mgGlitch({
+  $jq(".tt-team__card__img").mgGlitch({
     // set 'true' to stop the plugin
     destroy: false,
     // set 'false' to stop glitching

@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: About
+Template Name: Team
 */
 ?>
 
@@ -8,8 +8,8 @@ Template Name: About
 
 <body>
 
-    <!-- About Page Cards -->
-    <div class="tt-about__cards" style="background-image: url('<?php the_field('about_background'); ?>'); background-position: <?php the_field('about_background_position'); ?>">
+    <!-- Team Page Cards -->
+    <div class="tt-team__cards" style="background-image: url('<?php the_field('team_background'); ?>'); background-position: <?php the_field('team_background_position'); ?>">
 
         <!-- Swiper -->
         <div class="swiper-container">
@@ -20,16 +20,16 @@ Template Name: About
 
                     <?php while ( have_rows('member_card') ) : the_row(); ?>
 
-                        <!-- About Page Card -->
-                        <div class="swiper-slide tt-about__card">
+                        <!-- Team Page Card -->
+                        <div class="swiper-slide tt-team__card">
 
                             <!-- Biography -->
-                            <div class="tt-about__card__cont tt-about__card__cont--bio">
-                            <div class="tt-about__card__bio__wrap">
-                                <div class="tt-about__card__bio">
-                                <div class="tt-about__card__headline">
-                                    <span class="tt-about__card__member">Member</span>
-                                    <div class="tt-about__card__name">
+                            <div class="tt-team__card__cont tt-team__card__cont--bio">
+                            <div class="tt-team__card__bio__wrap">
+                                <div class="tt-team__card__bio">
+                                <div class="tt-team__card__headline">
+                                    <span class="tt-team__card__member">Member</span>
+                                    <div class="tt-team__card__name">
                                     <h2><?php the_sub_field('member_name'); ?></h2>
                                     </div>
                                 </div>
@@ -42,24 +42,24 @@ Template Name: About
                             </div>
 
                             <!-- Image and Social -->
-                            <div class="tt-about__card__cont tt-about__card__cont--media">
-                            <div class="tt-about__card__media">
-                                <div class="tt-about__card__img__cont">
-                                <div class="tt-about__card__img" style="background-image: url('<?php the_sub_field('member_picture'); ?>');"></div>
+                            <div class="tt-team__card__cont tt-team__card__cont--media">
+                            <div class="tt-team__card__media">
+                                <div class="tt-team__card__img__cont">
+                                <div class="tt-team__card__img" style="background-image: url('<?php the_sub_field('member_picture'); ?>');"></div>
                                 </div>
-                                <div class="tt-about__card__social__cont">
-                                <div class="tt-about__card__num"></div>
-                                <div class="tt-about__card__social">
-                                    <h3 class="tt-about__card__social__headline">Connect</h3>
+                                <div class="tt-team__card__social__cont">
+                                <div class="tt-team__card__num"></div>
+                                <div class="tt-team__card__social">
+                                    <h3 class="tt-team__card__social__headline">Connect</h3>
 
                                     <?php if( have_rows('member_social') ): ?>
 
-                                        <ul class="tt-about__card__social__list">
+                                        <ul class="tt-team__card__social__list">
                                             
                                             <?php while ( have_rows('member_social') ) : the_row(); ?>
 
                                                 <li>
-                                                    <a class="tt-about__card__social__icon" href="<?php the_sub_field('member_social_url'); ?>" target="_blank">
+                                                    <a class="tt-team__card__social__icon" href="<?php the_sub_field('member_social_url'); ?>" target="_blank">
                                                         <i class="<?php the_sub_field('member_social_class'); ?>"></i>
                                                     </a>
                                                 </li>
@@ -84,7 +84,7 @@ Template Name: About
             </div>
 
             <!-- Navigation -->
-            <div class="tt-about__card__nav">
+            <div class="tt-team__card__nav">
 
                 <!-- Arrows -->
                 <div class="tt-arrow tt-arrow--left">

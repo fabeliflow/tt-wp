@@ -1,4 +1,4 @@
-.tt-about__cards {
+.tt-team__cards {
   height: 100%;
   overflow: hidden;
   display: flex;
@@ -31,10 +31,10 @@
       position: relative;
       overflow: hidden;
       .swiper-container,
-      .tt-about__card__img,
-      .tt-about__card__num,
-      .tt-about__card__social,
-      .tt-about__card__headline,
+      .tt-team__card__img,
+      .tt-team__card__num,
+      .tt-team__card__social,
+      .tt-team__card__headline,
       .tt-scrollable {
         opacity: 1;
       }
@@ -70,7 +70,7 @@
     }
   }
 }
-.tt-about__card {
+.tt-team__card {
   width: 90vw;
   opacity: 0.95;
   @media (min-width: 1400px) {
@@ -94,10 +94,10 @@
     flex-wrap: nowrap;
   }
 }
-.tt-about__card__cont {
+.tt-team__card__cont {
   overflow: hidden;
 }
-.tt-about__card__cont--bio {
+.tt-team__card__cont--bio {
   height: 100%;
   border-top: 2px solid $tt-blue;
   border-left: 2px solid $tt-blue;
@@ -143,7 +143,7 @@
     flex: 1.3;
   }
 }
-.tt-about__card__bio__wrap {
+.tt-team__card__bio__wrap {
   width: 100%;
   height: 100%;
   box-shadow: 4px 2px 0px -2px $tt-blue;
@@ -172,14 +172,14 @@
     display: block;
   }
 }
-.tt-about__card__bio {
+.tt-team__card__bio {
   height: 100%;
   padding: 10px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
 }
-.tt-about__card__headline {
+.tt-team__card__headline {
   margin-bottom: 5px;
   text-transform: uppercase;
   cursor: auto;
@@ -187,7 +187,7 @@
   flex-grow: 0;
   flex-shrink: 0;
 }
-.tt-about__card__member {
+.tt-team__card__member {
   margin: 0;
   margin-top: calc((#{$baseline} - #{$h2}) + #{$baseline} * 2);
   margin-bottom: $baseline;
@@ -197,7 +197,7 @@
   text-transform: uppercase;
   @include fluid-type($min-width, $max-width, $min-font * 1.5, $max-font * 1.9);
 }
-.tt-about__card__name {
+.tt-team__card__name {
   width: 100%;
   margin: 0;
   padding: 0 10px;
@@ -215,7 +215,7 @@
     text-overflow: ellipsis;
   }
 }
-.tt-about__card__cont--media {
+.tt-team__card__cont--media {
   display: flex;
   flex: 1.8;
   @media (min-width: 768px) {
@@ -226,12 +226,12 @@
     flex: 2;
   }
 }
-.tt-about__card__media {
+.tt-team__card__media {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-.tt-about__card__img__cont {
+.tt-team__card__img__cont {
   border-radius: 10px;
   position: relative;
   flex: 5;
@@ -241,7 +241,7 @@
     flex: 6;
   }
 }
-.tt-about__card__img {
+.tt-team__card__img {
   width: 100%;
   height: 90%;
   position: absolute;
@@ -251,32 +251,32 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-.tt-about__card,
-.tt-about__card__img__cont {
+.tt-team__card,
+.tt-team__card__img__cont {
   border: 2px solid $tt-blue;
 }
-.tt-about__card__cont--bio,
-.tt-about__card__img__cont,
-.tt-about__card__social__cont {
+.tt-team__card__cont--bio,
+.tt-team__card__img__cont,
+.tt-team__card__social__cont {
   background-color: $tt-blue-dark;
 }
-.tt-about__cards .swiper-container,
-.tt-about__card__img,
-.tt-about__card__num,
-.tt-about__card__social,
-.tt-about__card__headline,
-.tt-about__card__bio .tt-scrollable {
+.tt-team__cards .swiper-container,
+.tt-team__card__img,
+.tt-team__card__num,
+.tt-team__card__social,
+.tt-team__card__headline,
+.tt-team__card__bio .tt-scrollable {
   transition: opacity 0.7s linear;
   opacity: 0;
 }
-.tt-about__card__bio,
-.tt-about__card__img__cont {
+.tt-team__card__bio,
+.tt-team__card__img__cont {
   padding: 5px;
   @media (min-width: 768px) {
     padding: 10px;
   }
 }
-.tt-about__card__social__cont {
+.tt-team__card__social__cont {
   margin: 5px 0;
   padding: 10px;
   border: 2px solid $tt-blue;
@@ -291,7 +291,7 @@
     margin: 10px 0 0 0;
   }
 }
-.tt-about__card__num {
+.tt-team__card__num {
   color: $tt-red;
   font-family: "Aurebesh";
   font-size: 2em !important;
@@ -300,18 +300,18 @@
   }
   pointer-events: none;
 }
-.tt-about__card__social {
+.tt-team__card__social {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
-.tt-about__card__social__headline {
+.tt-team__card__social__headline {
   margin: 0;
   color: $tt-red;
   font-family: "Aurebesh";
   cursor: auto;
 }
-.tt-about__card__social__list {
+.tt-team__card__social__list {
   margin: 0;
   padding-left: 0;
   display: flex;
@@ -320,7 +320,7 @@
     margin-right: 25px;
   }
 }
-.tt-about__card__social__icon {
+.tt-team__card__social__icon {
   color: $tt-blue-light;
   font-size: 1.5em;
   outline: none !important;
@@ -331,7 +331,7 @@
     text-shadow: 0 0 30px $tt-blue-transp;
   }
 }
-.tt-about__card__nav {
+.tt-team__card__nav {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);

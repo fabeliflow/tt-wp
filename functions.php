@@ -87,10 +87,10 @@ function wpb_adding_styles_scripts() {
 	wp_register_script('header', get_template_directory_uri() . '/js/minified/header.min.js', array('jquery', 'particles'), null, true);
 	wp_enqueue_script('header');
 
-	if (is_page('about')) {
+	if (is_page('the-team')) {
 
-		wp_register_script('about', get_template_directory_uri() . '/js/minified/about.min.js', array('jquery', 'swiper', 'mg-glitch', 'perfect-scrollbar'), null, true);
-		wp_enqueue_script('about');
+		wp_register_script('team', get_template_directory_uri() . '/js/minified/team.min.js', array('jquery', 'swiper', 'mg-glitch', 'perfect-scrollbar'), null, true);
+		wp_enqueue_script('team');
 
 	} elseif (is_front_page()) {
 
