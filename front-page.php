@@ -24,25 +24,33 @@ get_header(); ?>
         </div>
 
         <!-- Home Page Slide Two -->
-        <div class="tt-home__slide tt-home__mission" style="background-image: url('<?php the_field('mission_section_background'); ?>'); background-position: <?php the_field('mission_section_background_position'); ?>">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-offset-5 col-sm-7 col-md-offset-5 col-md-6 col-lg-offset-5 col-lg-5 tt-home__slide__wrap vertical-align">
-                        <div class="tt-home__mission__cont">
-                            <div class="tt-home__mission__header">
-                                <h2 class="tt-home__header--underline"><?php the_field('mission_section_header'); ?></h2>
-                            </div>
-                            <div class="tt-scrollable">
-                                <?php the_field('mission_section_description');?>
-                            </div>
-                            <div class="tt-home__mission__footer">
-                                <a class="tt-btn" href="<?php the_field('mission_section_button_url');?>"><?php the_field('mission_section_button_text'); ?></a>
+        <?php if( have_rows('mission_section') ): ?>
+
+            <?php while( have_rows('mission_section') ): the_row(); ?>
+
+                <div class="tt-home__slide tt-home__mission" style="background-image: url('<?php the_sub_field('mission_section_background'); ?>'); background-position: <?php the_sub_field('mission_section_background_position'); ?>">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-offset-5 col-sm-7 col-md-offset-5 col-md-6 col-lg-offset-5 col-lg-5 tt-home__slide__wrap vertical-align">
+                                <div class="tt-home__mission__cont">
+                                    <div class="tt-home__mission__header">
+                                        <h2 class="tt-home__header--underline"><?php the_sub_field('mission_section_header'); ?></h2>
+                                    </div>
+                                    <div class="tt-scrollable">
+                                        <?php the_sub_field('mission_section_description');?>
+                                    </div>
+                                    <div class="tt-home__mission__footer">
+                                        <a class="tt-btn" href="<?php the_sub_field('mission_section_button_url');?>"><?php the_sub_field('mission_section_button_text'); ?></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+
+            <?php endwhile; ?>
+	
+        <?php endif; ?>
 
         <!-- Home Page Slide Three-->
         <div class="tt-home__slide">
