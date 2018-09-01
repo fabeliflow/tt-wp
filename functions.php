@@ -106,4 +106,10 @@ function wpb_adding_styles_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'wpb_adding_styles_scripts' );
 
+// extend Public Post Preview link time
+add_filter( 'ppp_nonce_life', 'my_nonce_life' );
+function my_nonce_life() {
+ return 60 * 60 * 24 * 14; // 14 days
+}
+
 ?>
