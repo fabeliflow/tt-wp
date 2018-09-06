@@ -1,13 +1,6 @@
 var $jq = jQuery.noConflict();
 
 $jq(document).ready(function() {
-  // Activate scrollable functionality
-  $jq(".tt-scrollable").each(function() {
-    new PerfectScrollbar(this, {
-      wheelPropagation: true
-    });
-  });
-
   // Initialize home slider (Slick carousel)
   $jq(".tt-home__slider")
     .slick({

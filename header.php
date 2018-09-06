@@ -57,13 +57,15 @@
         </a>
 
         <!-- Menu List -->
-        <?php 
-            $args = array(
-                'theme_location' => 'primary',
-                'menu_class' => 'tt-menu__list'
-            );
-            wp_nav_menu( $args ); 
-        ?>
+        <div class="tt-menu__scrollable tt-scrollable">
+            <?php 
+                $args = array(
+                    'theme_location' => 'primary',
+                    'menu_class' => 'tt-menu__list'
+                );
+                wp_nav_menu( $args ); 
+            ?>
+        </div>
 
         <!-- Menu Social -->
         <div class="tt-menu__social">

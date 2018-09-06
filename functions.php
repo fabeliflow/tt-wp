@@ -84,7 +84,7 @@ function wpb_adding_styles_scripts() {
 
 	wp_register_script('particles', get_template_directory_uri() . '/vendor/particles/particles.min.js', null, null, true);
 
-	wp_register_script('header', get_template_directory_uri() . '/js/minified/header.min.js', array('jquery', 'particles'), null, true);
+	wp_register_script('header', get_template_directory_uri() . '/js/minified/header.min.js', array('jquery', 'particles', 'perfect-scrollbar'), null, true);
 	wp_enqueue_script('header');
 
 	if (is_page('the-team')) {
