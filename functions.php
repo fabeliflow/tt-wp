@@ -11,7 +11,8 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_title'	=> 'Theme Settings',
 		'menu_slug' 	=> 'theme-general-settings',
 		'capability'	=> 'edit_posts',
-		'redirect'		=> false
+		'redirect'		=> false,
+		'capability'	=> 'edit_themes'
 	));
 	
 	acf_add_options_sub_page(array(
@@ -19,6 +20,7 @@ if( function_exists('acf_add_options_page') ) {
         'menu_title'	=> 'Social Media',
         'post_id'       => 'social-media',
 		'parent_slug'	=> 'theme-general-settings',
+		'capability'	=> 'edit_themes'
     ));
     
     acf_add_options_sub_page(array(
@@ -26,6 +28,7 @@ if( function_exists('acf_add_options_page') ) {
         'menu_title'	=> 'Footer',
         'post_id'       => 'footer',
 		'parent_slug'	=> 'theme-general-settings',
+		'capability'	=> 'edit_themes'
 	));
 	
 }
