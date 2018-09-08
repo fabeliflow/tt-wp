@@ -33,7 +33,7 @@ Template Name: Team
                                     <h2><?php the_sub_field('member_name'); ?></h2>
                                     </div>
                                 </div>
-                                <div class="tt-scrollable">
+                                <div class="tt-scrollable" data-simplebar data-simplebar-auto-hide="false">
                                     <?php the_sub_field('member_biography'); ?>
                                 </div>
                                 </div>

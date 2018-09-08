@@ -681,6 +681,10 @@ $scan-opacity: 0.75;
 }
 
 // Scrollable Area Styles
+.simplebar-scrollbar:before {
+  background: $tt-blue-transp;
+}
+
 .tt-scrollable {
   position: relative;
   overflow: hidden;
@@ -691,52 +695,5 @@ $scan-opacity: 0.75;
 
   p {
     margin-top: 0;
-  }
-
-  .ps__rail-y {
-    .ps__thumb-y {
-      background-color: $tt-blue-transp;
-    }
-
-    &:hover,
-    &:focus {
-      background-color: transparent !important;
-      outline: none;
-
-      .ps__thumb-y {
-        width: 6px !important;
-
-        &:focus {
-          outline: none;
-        }
-      }
-    }
-  }
-
-  .ps__rail-x {
-    .ps__thumb-x {
-      background-color: $tt-blue-transp;
-    }
-
-    &:hover,
-    &:focus {
-      background-color: transparent !important;
-
-      .ps__thumb-x {
-        height: 6px !important;
-      }
-    }
-  }
-
-  .ps--clicking {
-    background-color: transparent !important;
-
-    .ps__thumb-y {
-      width: 6px !important;
-    }
-
-    .ps__thumb-x {
-      height: 6px !important;
-    }
   }
 }

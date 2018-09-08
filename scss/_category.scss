@@ -40,9 +40,15 @@
   text-decoration: none;
   transition: all 0.3s ease-in;
 
+  @media (min-width: 768px) {
+    &:hover,
+    &:focus {
+      box-shadow: 0px 0px 16px -2px $tt-black-transp;
+    }
+  }
+
   &:hover,
   &:focus {
-    box-shadow: $tt-black-transp 0px 0px 20px 0px;
     text-decoration: none;
     color: $tt-text-dark;
   }

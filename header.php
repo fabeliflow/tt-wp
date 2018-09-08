@@ -57,7 +57,7 @@
         </a>
 
         <!-- Menu List -->
-        <div class="tt-menu__scrollable tt-scrollable">
+        <div class="tt-menu__scrollable tt-scrollable" data-simplebar data-simplebar-auto-hide="false">
             <?php 
                 $args = array(
                     'theme_location' => 'primary',

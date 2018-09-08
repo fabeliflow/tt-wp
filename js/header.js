@@ -2,14 +2,6 @@
 var $jq = jQuery.noConflict();
 
 $jq(document).ready(function() {
-  // Activate scrollable functionality
-  $jq(".tt-scrollable").each(function() {
-    new PerfectScrollbar(this, {
-      wheelPropagation: true,
-      suppressScrollX: true
-    });
-  });
-
   // Hide menu at start
   $jq(".tt-menu").hide();
 

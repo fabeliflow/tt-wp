@@ -36,7 +36,7 @@ get_header(); ?>
                                     <div class="tt-home__mission__header">
                                         <h2 class="tt-home__header--underline"><?php the_sub_field('mission_section_header'); ?></h2>
                                     </div>
-                                    <div class="tt-scrollable">
+                                    <div class="tt-scrollable" data-simplebar data-simplebar-auto-hide="false">
                                         <?php the_sub_field('mission_section_description');?>
                                     </div>
                                     <div class="tt-home__mission__footer">
@@ -81,7 +81,7 @@ get_header(); ?>
                             <div class="tt-home__card__logo-wrapper">
                                 <div class="tt-home__card__logo" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/<?php echo $logo_svg ?>.svg');"></div>
                             </div>
-                            <div class="tt-home__card__body tt-scrollable">
+                            <div class="tt-home__card__body tt-scrollable" data-simplebar data-simplebar-auto-hide="false">
                                 <?php echo $description ?>
                             </div>
 

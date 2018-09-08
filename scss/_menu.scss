@@ -111,7 +111,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  // overflow: hidden;
 }
 
 .tt-menu__logo-wrapper {
@@ -131,7 +130,7 @@
 .tt-menu__list {
   margin: 0;
   padding: 0;
-
+  overflow: hidden;
   text-align: center;
   list-style-type: none;
 }
@@ -141,9 +140,13 @@
 
   a {
     color: $tt-yellow;
-    font: 700 3rem "News Cycle", sans-serif;
+    font: 700 2.5rem "News Cycle", sans-serif;
     text-transform: uppercase;
     text-decoration: none;
+
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
 
     &:hover,
     &:focus {
@@ -153,7 +156,7 @@
 }
 
 .tt-menu__scrollable {
-  margin: 30px;
+  margin: 20px 0;
 }
 
 .tt-menu__social {
@@ -177,5 +180,17 @@
 
   @media (min-width: 992px) {
     width: 25%;
+  }
+}
+
+.tt-menu__scrollable {
+  width: 85%;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+
+  @media (min-width: 992px) {
+    width: 40%;
   }
 }
