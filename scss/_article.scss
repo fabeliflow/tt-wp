@@ -1,3 +1,5 @@
+$tt-media-margin: 20px;
+
 .tt-article {
   h1,
   h2,
@@ -113,7 +115,7 @@
   }
 
   .sw-click-to-tweet {
-    margin: 20px 0 !important;
+    margin: $tt-media-margin 0 !important;
     padding: 40px 0 !important;
     border-radius: 0 !important;
     border-top: solid 7px $tt-blue-transp !important;
@@ -181,7 +183,7 @@
     }
   }
 
-  a:not(.tt-video__btn) {
+  a {
     padding: 1px 0;
     font-weight: bold;
     color: $tt-text-dark;
@@ -198,7 +200,7 @@
 }
 
 .tt-article__img {
-  margin: 20px 0;
+  margin: $tt-media-margin 0;
   text-align: center;
 
   img {
@@ -237,7 +239,10 @@
   @media (min-width: 768px) {
     padding-left: 0;
     padding-right: 0;
-    text-align: right;
+
+    .tt-caption {
+      text-align: right;
+    }
   }
 }
 
@@ -246,61 +251,51 @@
     float: right;
     padding-left: 0;
     padding-right: 0;
-    text-align: left;
+
+    .tt-caption {
+      text-align: left;
+    }
   }
 }
 
 .tt-article__img--carousel__cont {
-  margin: 20px 0;
+  margin: $tt-media-margin 0;
   text-align: center;
 }
 
 .tt-article__img--carousel {
   .slick-slide {
-    height: 200px;
-    padding: 5px;
     opacity: 0.2;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transform: scale(0.9);
+    transition: transform 0.3s;
 
     img {
-      transform: scale(0.9);
-      transition: transform 0.4s ease-in-out;
-    }
+      width: auto;
+      height: 200px;
 
-    @media (min-width: 768px) {
-      height: 300px;
-    }
+      @media (min-width: 768px) {
+        height: 300px;
+      }
 
-    @media (min-width: 992px) {
-      height: 500px;
+      @media (min-width: 992px) {
+        height: 500px;
+      }
     }
   }
 
   .slick-current {
+    transform: scale(1);
     opacity: 1;
-
-    img {
-      transform: scale(1);
-    }
-
-    z-index: 10;
-  }
-
-  .slick-slide img {
-    width: auto;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    display: initial;
   }
 }
 
 .fb-post,
 .twitter-tweet,
 .instagram-media {
-  margin: 20px auto !important;
+  margin: $tt-media-margin auto !important;
 }
 
 .fb-post {
@@ -332,4 +327,8 @@
   &:before {
     border-radius: 0 !important;
   }
+}
+
+.dad-youtube-responsive {
+  margin: $tt-media-margin 0 !important;
 }

@@ -63,23 +63,19 @@ function wpb_adding_styles_scripts() {
 
 	wp_register_style( 'simplebar', get_template_directory_uri() . '/vendor/simplebar/simplebar.css' );
 
-	wp_register_style( 'magnific-popup', get_template_directory_uri() . '/vendor/magnific-popup/css/magnific-popup.css' );
-
-	wp_register_style( 'slick', get_template_directory_uri() . '/vendor/slick/slick.css' );
+	wp_register_style( 'slick', get_template_directory_uri() . '/vendor/mod/slick/slick.css' );
 
 	wp_register_style( 'swiper', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.1/css/swiper.css' );
 
-	wp_register_style( 'main', get_template_directory_uri() . '/css/main.css',  array('google-fonts', 'font-awesome', 'bootstrap', 'simplebar', 'magnific-popup', 'slick', 'swiper') );
+	wp_register_style( 'main', get_template_directory_uri() . '/css/main.css',  array('google-fonts', 'font-awesome', 'bootstrap', 'simplebar', 'slick', 'swiper') );
 	wp_enqueue_style( 'main' );
 
 	// general scripts
-	wp_register_script('slick', get_template_directory_uri() . '/vendor/slick/slick.min.js',  array('jquery'), null, true);
+	wp_register_script('slick', get_template_directory_uri() . '/vendor/mod/slick/slick.min.js',  array('jquery'), null, true);
 
 	wp_register_script('swiper', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.1/js/swiper.min.js', null, null, true);
 
-	wp_register_script('mg-glitch', get_template_directory_uri() . '/vendor/mg-glitch/mgGlitch.min.js',  array('jquery'), null, true);
-
-	wp_register_script('magnific-popup', get_template_directory_uri() . '/vendor/magnific-popup/js/jquery.magnific-popup.min.js',  array('jquery'), null, true);
+	wp_register_script('mg-glitch', get_template_directory_uri() . '/vendor/mod/mg-glitch/mgGlitch.min.js',  array('jquery'), null, true);
 
 	wp_register_script('simplebar', get_template_directory_uri() . '/vendor/simplebar/simplebar.min.js', null, null, true);
 	
@@ -102,7 +98,7 @@ function wpb_adding_styles_scripts() {
 
 	} elseif (is_single()) {
 
-		wp_register_script('article', get_template_directory_uri() . '/js/minified/article.min.js', array('jquery', 'magnific-popup', 'slick'), null, true);
+		wp_register_script('article', get_template_directory_uri() . '/js/minified/article.min.js', array('jquery', 'slick'), null, true);
 		wp_enqueue_script('article');
 	}
 }
