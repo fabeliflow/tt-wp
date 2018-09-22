@@ -114,6 +114,55 @@ $tt-media-margin: 20px;
     }
   }
 
+  blockquote {
+    width: 100%;
+    margin: $tt-media-margin 0 !important;
+    padding: 40px 0;
+    border-top: solid 7px $tt-blue-transp;
+    border-left: none;
+    border-bottom: dotted 7px $tt-blue-transp;
+    font-family: $header-font-family !important;
+    font-size: 1.7em !important;
+    font-weight: bold;
+    font-style: inherit !important;
+    line-height: 1.2;
+    letter-spacing: -0.4px;
+
+    @media (min-width: 992px) {
+      font-size: 2em !important;
+      line-height: 1;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 2.5em !important;
+    }
+
+    &:before {
+      content: "“";
+      margin-right: 0.1em !important;
+    }
+
+    &:after {
+      content: "”";
+      margin-left: 0.2em !important;
+    }
+
+    &:before,
+    &:after {
+      position: relative;
+      top: 0.1em;
+      font-family: Aurebesh;
+      font-size: 1.4em;
+      line-height: 0;
+      vertical-align: sub;
+      color: $tt-red;
+    }
+
+    p {
+      display: inline;
+    }
+  }
+
   .sw-click-to-tweet {
     margin: $tt-media-margin 0 !important;
     padding: 40px 0 !important;
