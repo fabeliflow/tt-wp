@@ -57,7 +57,7 @@ function wpb_adding_styles_scripts() {
 	// general styles
 	wp_register_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Lato:400,400i,700%7CNews+Cycle:400,700' );
 
-	wp_register_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.0.8/css/all.css' );
+	wp_register_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.0.13/css/all.css' );
 
 	wp_register_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
 
