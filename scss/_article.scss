@@ -382,3 +382,8 @@ $tt-media-margin: 20px;
 .dad-youtube-responsive {
   margin: $tt-media-margin 0 !important;
 }
+
+.saboxplugin-wrap .saboxplugin-authorname .author {
+  color: $tt-red;
+  font-weight: bold;
+}
