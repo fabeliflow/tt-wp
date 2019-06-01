@@ -33,8 +33,6 @@ $jq(document).ready(function() {
 
       var scrollDistance = e.deltaY * e.deltaFactor;
 
-      console.log(scrollDistance);
-
       if (scrollDistance > 50) {
         $jq(this).slick("slickPrev");
       } else if (scrollDistance < -50) {

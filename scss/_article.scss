@@ -15,8 +15,7 @@ $tt-media-margin: 20px;
     &:before {
       content: "";
       width: 20%;
-      margin-top: -5px;
-      border-bottom: solid 2px $tt-red-transp;
+      border-bottom: solid 2px $tt-red;
       position: absolute;
     }
   
@@ -24,7 +23,7 @@ $tt-media-margin: 20px;
       content: "";
       width: 10%;
       margin-bottom: -12px;
-      border-bottom: dotted 4px $tt-red-transp;
+      border-bottom: dotted 4px $tt-red;
       position: absolute;
       left: 0;
       bottom: 0;

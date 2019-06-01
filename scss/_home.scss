@@ -106,7 +106,6 @@
   &:before {
     content: "";
     width: 30%;
-    margin-top: -5px;
     border-bottom: solid 2px $tt-blue;
     position: absolute;
   }
@@ -114,7 +113,7 @@
   &:after {
     content: "";
     width: 15%;
-    margin-bottom: -5px;
+    margin-bottom: -12px;
     border-bottom: dotted 4px $tt-blue;
     position: absolute;
     left: 0;
