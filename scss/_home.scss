@@ -106,14 +106,14 @@
   &:before {
     content: "";
     width: 30%;
-    border-bottom: solid 2px $tt-blue;
+    border-bottom: solid 3px $tt-blue;
     position: absolute;
   }
 
   &:after {
     content: "";
     width: 15%;
-    margin-bottom: -12px;
+    margin-bottom: -10px;
     border-bottom: dotted 4px $tt-blue;
     position: absolute;
     left: 0;
