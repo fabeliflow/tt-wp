@@ -34,7 +34,7 @@ get_header(); ?>
                             <div class="col-sm-offset-5 col-sm-7 col-md-offset-5 col-md-6 col-lg-offset-5 col-lg-5 tt-home__slide__wrap vertical-align">
                                 <div class="tt-home__mission__cont">
                                     <div class="tt-home__mission__header">
-                                        <h2 class="tt-home__header--underline"><?php the_sub_field('mission_section_header'); ?></h2>
+                                        <h2><?php the_sub_field('mission_section_header'); ?></h2>
                                     </div>
                                     <div class="tt-scrollable" data-simplebar data-simplebar-auto-hide="false">
                                         <?php the_sub_field('mission_section_description');?>

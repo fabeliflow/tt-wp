@@ -1,6 +1,7 @@
 // Colors
 $tt-text-dark: #333;
 $tt-text-light: lighten($tt-text-dark, 40%);
+$tt-text-light-transp: transparentize($tt-text-light, 0.3);
 $tt-black-transp: transparentize(black, 0.3);
 $tt-white-transp: transparentize(white, 0.9);
 $tt-blue: #0db8fe;
@@ -12,14 +13,15 @@ $tt-blue-super-transp: transparentize($tt-blue, 0.9);
 $tt-green: #159a32;
 $tt-green-light: #91f7a7;
 $tt-green-transp: transparentize($tt-green, 0.4);
-$tt-card-bg: #c6c2b9;
-$tt-card-author: #696060;
+$tt-card-bg: #f3f3f3;
 $tt-yellow: #ffdb11;
 $tt-red: #f63222;
 $tt-red-transp: transparentize($tt-red, 0.7);
 $tt-orange: #f77529;
 $tt-orange-transp: transparentize($tt-orange, 0.7);
 $tt-pink: #edccca;
+$tt-sand: #d2b218;
+$tt-sand-transp: transparentize($tt-sand, 0.7);
 
 // Aurebesh Font
 @font-face {
@@ -40,12 +42,13 @@ $max-font: 20px;
 
 $h1: 2em;
 $h2: 1.7em;
-$h3: 1.3em;
+$h3: 1em;
 
 $baseline: 1.5rem;
 
-$header-font-family: "News Cycle", sans-serif;
+$header-font-family: "Carter One", cursive;
 $body-font-family: "Lato", sans-serif;
+$link-font-family: "News Cycle", sans-serif;
 $watermark-font-family: "Aurebesh";
 
 // General styles
@@ -80,7 +83,6 @@ h1 {
 
 h2 {
   margin-top: calc((#{$baseline} - #{$h2}) + #{$baseline} * 2);
-  font-family: $header-font-family;
   @include fluid-type($min-width, $max-width, $min-font * 1.5, $max-font * 2.1);
   text-transform: uppercase;
 }
@@ -95,13 +97,8 @@ h1,
 h2,
 h3 {
   margin-bottom: $baseline / 2;
-  font-weight: bold;
-}
-
-h1,
-h2,
-h3 {
   font-family: $header-font-family;
+  font-weight: bold;
 }
 
 // Slick Slide Base Styles
@@ -120,7 +117,7 @@ h3 {
   box-shadow: 0 0 0 0 transparent;
   position: relative;
   display: inline-block;
-  font-family: $header-font-family;
+  font-family: $link-font-family;
   font-weight: 300;
   text-transform: uppercase;
   text-align: center;

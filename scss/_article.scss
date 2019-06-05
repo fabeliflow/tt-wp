@@ -9,70 +9,70 @@ $tt-media-margin: 20px;
   }
 
   h2 {
+    border-left: solid 3px $tt-sand-transp;
+    padding-left: 10px;
+  }
+}
+
+.tt-article__header {
+  text-align: center;
+  padding: 50px 0 40px;
+
+  @media (min-width: 992px) {
+    padding: 80px 0 40px;
+  }
+
+  h1 {
     display: block;
     position: relative;
-  
-    &:before {
-      content: "";
-      width: 20%;
-      border-bottom: solid 3px $tt-red;
-      position: absolute;
-    }
+    margin: 10px 0 60px 0;
   
     &:after {
       content: "";
       width: 10%;
-      margin-bottom: -10px;
-      border-bottom: dotted 4px $tt-red;
+      margin-bottom: -25px;
+      border-bottom: solid 3px $tt-sand-transp;
       position: absolute;
-      left: 0;
+      left: 45%;
       bottom: 0;
     }
   }
 }
 
-.tt-article__header {
-  margin: -25px 0 50px 0;
-  padding: 15px 25px;
-  position: relative;
-  background-color: $tt-red;
-  color: white;
-  font-size: 2.5em;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.4px;
-
-  @media (min-width: 768px) {
-    padding: 20px 35px;
-  }
-
-  h1 {
-    margin: 0;
-  }
+.tt-article__category {
+  font-family: Aurebesh;
+  letter-spacing: 5px;
+  color: $tt-sand;
 }
 
 .tt-article__info__social {
   margin: 50px 0;
-  border-top: dotted 5px $tt-blue-transp;
 }
 
 .tt-article__info {
-  margin: 0 0 -40px 0;
   padding: 0;
   font-size: 0.9em;
   list-style-type: none;
+  text-align: center;
+
+  li:first-child {
+    margin-bottom: 10px;
+    position: relative;
+  }
 
   i {
+    display: inherit;
     color: $tt-text-light;
   }
 
   strong {
-    color: $tt-red;
+    font-family: $header-font-family;
+    font-size: 1.3em;
   }
 }
 
 .tt-article__cont {
-  ul {
+  ul:not(.tt-article__info) {
     padding-left: 20px;
     list-style-type: none;
     border-collapse: separate;
@@ -80,7 +80,7 @@ $tt-media-margin: 20px;
 
     .fa-dot-circle {
       padding-right: 15px;
-      color: $tt-red;
+      color: $tt-sand;
     }
 
     li {
@@ -92,7 +92,7 @@ $tt-media-margin: 20px;
         display: table-cell;
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
-        color: $tt-red;
+        color: $tt-sand;
       }
 
       &:not(:last-child) {
@@ -119,7 +119,7 @@ $tt-media-margin: 20px;
       &:before {
         content: counter(step-counter);
         padding-right: 15px;
-        color: $tt-red;
+        color: $tt-sand-transp;
         font-size: 2.5rem;
         font-family: Aurebesh;
       }
@@ -134,20 +134,19 @@ $tt-media-margin: 20px;
   blockquote {
     width: 100%;
     margin: $tt-media-margin 0 !important;
-    padding: 40px 0;
-    border-top: solid 7px $tt-blue-transp;
+    padding: 40px 30px;
+    border-top: solid 3px $tt-sand-transp !important;
     border-left: none;
-    border-bottom: dotted 7px $tt-blue-transp;
+    border-bottom: solid 3px $tt-sand-transp !important;
     font-family: $header-font-family !important;
     font-size: 1.7em !important;
     font-weight: bold;
     font-style: inherit !important;
-    line-height: 1.2;
+    line-height: 1.3;
     letter-spacing: -0.4px;
 
     @media (min-width: 992px) {
       font-size: 2em !important;
-      line-height: 1;
     }
 
     @media (min-width: 1440px) {
@@ -172,7 +171,7 @@ $tt-media-margin: 20px;
       font-size: 1.4em;
       line-height: 0;
       vertical-align: sub;
-      color: $tt-red;
+      color: $tt-sand;
     }
 
     p {
@@ -182,12 +181,12 @@ $tt-media-margin: 20px;
 
   .sw-click-to-tweet {
     margin: $tt-media-margin 0 !important;
-    padding: 40px 0 !important;
+    padding: 40px 30px !important;
     border-radius: 0 !important;
-    border-top: solid 7px $tt-blue-transp !important;
+    border-top: solid 3px $tt-sand-transp !important;
     border-left: none !important;
     border-right: none !important;
-    border-bottom: dotted 7px $tt-blue-transp !important;
+    border-bottom: solid 3px $tt-sand-transp !important;
     background-color: transparent !important;
 
     .sw-ctt-text,
@@ -201,12 +200,11 @@ $tt-media-margin: 20px;
       font-size: 1.7em !important;
       font-weight: bold;
       font-style: inherit !important;
-      line-height: 1.2;
+      line-height: 1.3;
       letter-spacing: -0.4px;
 
       @media (min-width: 992px) {
         font-size: 2em !important;
-        line-height: 1;
       }
 
       @media (min-width: 1440px) {
@@ -231,7 +229,7 @@ $tt-media-margin: 20px;
         font-size: 1.4em;
         line-height: 0;
         vertical-align: sub;
-        color: $tt-red;
+        color: $tt-sand;
       }
     }
 
@@ -377,30 +375,21 @@ $tt-media-margin: 20px;
 .tt-article__more {
   margin-bottom: 30px;
   padding: 5px 15px;
-  border-top: solid 5px $tt-blue-transp;
+  border-top: solid 3px $tt-sand-transp;
   font-size: 1.2em;
   text-align: center;
 
   span {
     font-family: Aurebesh;
-    color: $tt-blue-transp;
+    letter-spacing: 5px;
+    color: $tt-sand;
   }
 }
 
 .alm-load-more-btn {
-  border-radius: 0 !important;
-  background-color: $tt-red !important;
-
-  &:before {
-    border-radius: 0 !important;
-  }
+  background-color: $tt-blue !important;
 }
 
 .dad-youtube-responsive {
   margin: $tt-media-margin 0 !important;
-}
-
-.saboxplugin-wrap .saboxplugin-authorname .author {
-  color: $tt-red;
-  font-weight: bold;
 }

@@ -29,7 +29,6 @@
 
 .tt-cat__card {
   width: 100%;
-  padding-bottom: 30px;
   border-radius: 0.25rem;
   display: flex;
   flex-direction: column;
@@ -80,17 +79,11 @@
 }
 
 .tt-cat__card__cont {
-  padding: 15px 15px 30px 15px;
-  z-index: 9;
+  padding: 30px;
 }
 
 .tt-cat__card__title {
-  margin: -35px 0 15px 0 !important;
-  padding: 15px 20px;
-  background-color: $tt-red;
-  color: white;
-  z-index: 1;
-  font-weight: bold;
+  margin: 0 0 20px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -98,7 +91,7 @@
 
 .tt-cat__card__descr {
   min-height: 100px;
-  max-height: 100px;
+  max-height: 150px;
   margin: 0;
   padding: 0 10px;
   position: relative;
@@ -117,22 +110,18 @@
     background: linear-gradient(
       to top,
       $tt-card-bg 0%,
-      rgba(198, 194, 185, 0) 30%
+      rgba(243, 243, 243, 0) 30%
     );
   }
 }
 
 .tt-cat__card__auth {
-  padding: 15px;
-  background-color: $tt-card-author;
-  color: white;
-  font-size: 0.7em;
-  position: relative;
-  background-image: url(../img/cargo-scratches.png);
-  background-size: cover;
-  background-position: bottom right;
-  background-repeat: no-repeat;
-  transition-property: max-height;
-  transition-duration: 0.4s;
-  transition-timing-function: ease-in-out;
+  padding: 25px 30px;
+  text-align: right;
+  color: $tt-sand;
+
+  strong {
+    font-family: Aurebesh;
+    letter-spacing: 5px;
+  }
 }

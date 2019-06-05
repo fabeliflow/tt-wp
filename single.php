@@ -31,44 +31,28 @@ Template Name: Post
     <article>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-10 col-sm-offset-1">
+                <section class="tt-article__cont">
 
-                    <!-- Article Header -->
-                    <header class="tt-article__header">
-                        <h1>
-                            <?php the_title(); ?>
-                        </h1>
-                    </header>
+                    <div class="col-sm-8 col-sm-offset-2">
 
-                </div>
-                <div class="col-sm-6 col-sm-offset-3">
+                        <!-- Article Header -->
+                        <header class="tt-article__header">
+                            <span class="tt-article__category">
+                            <?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?>
+                            </span>
+                            <h1>
+                                <?php the_title(); ?>
+                            </h1>
+                            <!-- Article Info -->
+                            <ul class="tt-article__info">
+                                <li><i>Written by</i>
+                                <strong><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ) ?></strong></li>
+                                <li><i>Published on</i><?php echo get_the_date('F j, Y @ g:ia') ?></li>
 
-                    <!-- Article Info -->
-                    <ul class="tt-article__info">
-                        <li><i>By </i><strong><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ) ?></strong></li>
-                        <li><i>Published </i><?php echo get_the_date('F j, Y @ g:ia') ?></li>
-
-                        <?php if ( get_the_modified_date('F j, Y @ g:ia') > get_the_date('F j, Y @ g:ia') ): ?>
-                            <li><i>Last Updated </i><?php echo get_the_modified_date('F j, Y @ g:ia') ?></li>
-                        <?php endif;  ?>
-
-                    </ul>
-
-                    <div class="tt-article__info__social">
-
-                        <?php 
-
-                            if(function_exists('social_warfare')):
-                                social_warfare();
-                            endif;
-                        
-                        ?>
+                            </ul>
+                        </header>
 
                     </div>
-
-                </div>
-
-                <section class="tt-article__cont">
                     
                     <!-- Article Content -->
                     <?php if( have_rows('article_content') ): ?>
@@ -277,8 +261,7 @@ Template Name: Post
 
                             <!-- Category Card Author -->
                             <div class="tt-cat__card__auth">
-                                <span>By</span>
-                                <strong><?php the_author_meta('display_name', $author); ?></strong>
+                                <strong><?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?></strong>
                             </div>
 
                         </a>

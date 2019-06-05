@@ -192,7 +192,8 @@
   margin-top: calc((#{$baseline} - #{$h2}) + #{$baseline} * 2);
   margin-bottom: $baseline;
   color: $tt-red;
-  font-family: "Aurebesh";
+  font-family: Aurebesh;
+  letter-spacing: 5px;
   font-weight: bold;
   text-transform: uppercase;
   @include fluid-type($min-width, $max-width, $min-font * 1.5, $max-font * 1.9);
@@ -210,6 +211,7 @@
   box-sizing: border-box;
   h2 {
     margin: 0;
+    font-family: $link-font-family;
     display: initial;
     white-space: nowrap;
     overflow: hidden;
@@ -310,6 +312,7 @@
   margin: 0;
   color: $tt-red;
   font-family: "Aurebesh";
+  letter-spacing: 5px;
   cursor: auto;
 }
 .tt-team__card__social__list {
