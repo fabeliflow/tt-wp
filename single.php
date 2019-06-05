@@ -259,9 +259,9 @@ Template Name: Post
 
                             </div>
 
-                            <!-- Category Card Author -->
-                            <div class="tt-cat__card__auth">
-                                <strong><?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?></strong>
+                            <!-- Category Card Category Name -->
+                            <div class="tt-cat__card__cat-name">
+                                <span><?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?></span>
                             </div>
 
                         </a>
