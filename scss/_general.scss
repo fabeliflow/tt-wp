@@ -26,12 +26,12 @@ $tt-sand-transp: transparentize($tt-sand, 0.7);
 // Aurebesh Font
 @font-face {
   font-family: "Aurebesh";
-  src: url("../fonts/Aurebesh.eot");
-  src: url("../fonts/Aurebesh.eot") format("embedded-opentype"),
-    url("../fonts/Aurebesh.woff2") format("woff2"),
-    url("../fonts/Aurebesh.woff") format("woff"),
-    url("../fonts/Aurebesh.ttf") format("truetype"),
-    url("../fonts/Aurebesh.svg#Aurebesh") format("svg");
+  src: url("../fonts/Aurebesh/Aurebesh.eot");
+  src: url("../fonts/Aurebesh/Aurebesh.eot") format("embedded-opentype"),
+    url("../fonts/Aurebesh/Aurebesh.woff2") format("woff2"),
+    url("../fonts/Aurebesh/Aurebesh.woff") format("woff"),
+    url("../fonts/Aurebesh/Aurebesh.ttf") format("truetype"),
+    url("../fonts/Aurebesh/Aurebesh.svg#Aurebesh") format("svg");
 }
 
 // Fluid Typography Styles
@@ -46,7 +46,7 @@ $h3: 1em;
 
 $baseline: 1.5rem;
 
-$header-font-family: "Carter One", cursive;
+$header-font-family: "SerifGothicStd-Heavy", serif;
 $body-font-family: "Lato", sans-serif;
 $link-font-family: "News Cycle", sans-serif;
 $watermark-font-family: "Aurebesh";
@@ -98,7 +98,8 @@ h2,
 h3 {
   margin-bottom: $baseline / 2;
   font-family: $header-font-family;
-  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 // Slick Slide Base Styles
@@ -120,6 +121,7 @@ h3 {
   font-family: $link-font-family;
   font-weight: 300;
   text-transform: uppercase;
+  letter-spacing: 3px;
   text-align: center;
   outline: none !important;
   text-decoration: none;

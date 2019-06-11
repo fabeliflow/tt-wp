@@ -51,6 +51,7 @@
     display: initial;
     font-family: $link-font-family;
     font-weight: 400;
+    text-transform: inherit;
     animation: fadeIn 2s forwards;
   }
 }
@@ -97,7 +98,6 @@
   h2 {
     padding-left: 10px;
     border-left: solid 4px $tt-blue;
-    font-family: $link-font-family;
   }
 }
 

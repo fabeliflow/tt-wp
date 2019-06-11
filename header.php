@@ -13,6 +13,31 @@
 		<?php bloginfo('name'); ?>
     </title>
 
+    <!--
+    /**
+    * @license
+    * MyFonts Webfont Build ID 3771796, 2019-06-11T06:14:37-0400
+    * 
+    * The fonts listed in this notice are subject to the End User License
+    * Agreement(s) entered into by the website owner. All other parties are 
+    * explicitly restricted from using the Licensed Webfonts(s).
+    * 
+    * You may obtain a valid license at the URLs below.
+    * 
+    * Webfont: SerifGothicStd-Heavy by ITC
+    * URL: https://www.myfonts.com/fonts/itc/serif-gothic/std-heavy/
+    * Copyright: Copyright &#x00A9; 2014 Monotype ITC Inc. All rights reserved.
+    * Licensed pageviews: 250,000
+    * 
+    * 
+    * License: https://www.myfonts.com/viewlicense?type=web&buildid=3771796
+    * 
+    * © 2019 MyFonts Inc
+    */
+
+    -->
+    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/vendor/myfonts/MyFontsWebfontsKit.css">
+
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/img/favicons/favicon-32x32.png">
