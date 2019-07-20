@@ -18,6 +18,7 @@ $jq(document).ready(function() {
       nextEl: ".tt-arrow--right",
       prevEl: ".tt-arrow--left"
     },
+    hashNavigation: true,
     on: {
       transitionStart: function() {
         $jq(".swiper-slide-active .tt-team__card__num").html(

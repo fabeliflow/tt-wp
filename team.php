@@ -21,7 +21,7 @@ Template Name: Team
                     <?php while ( have_rows('member_card') ) : the_row(); ?>
 
                         <!-- Team Page Card -->
-                        <div class="swiper-slide tt-team__card">
+                        <div class="swiper-slide tt-team__card" data-hash="<?php the_sub_field('member_page_name'); ?>">
 
                             <!-- Biography -->
                             <div class="tt-team__card__cont tt-team__card__cont--bio">

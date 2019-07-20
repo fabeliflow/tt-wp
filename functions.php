@@ -63,7 +63,7 @@ function wpb_adding_styles_scripts() {
 
 	wp_register_style( 'simplebar', get_template_directory_uri() . '/vendor/simplebar/simplebar.css' );
 
-	wp_register_style( 'slick', get_template_directory_uri() . '/vendor/mod/slick/slick.css' );
+	wp_register_style( 'slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' );
 
 	wp_register_style( 'swiper', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.1/css/swiper.css' );
 
@@ -71,7 +71,7 @@ function wpb_adding_styles_scripts() {
 	wp_enqueue_style( 'main' );
 
 	// general scripts
-	wp_register_script('slick', get_template_directory_uri() . '/vendor/mod/slick/slick.min.js',  array('jquery'), null, true);
+	wp_register_script('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', null, null, true);
 
 	wp_register_script('swiper', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.1/js/swiper.min.js', null, null, true);
 
