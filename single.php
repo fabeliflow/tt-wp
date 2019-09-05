@@ -193,9 +193,21 @@ Template Name: Post
                         ?>
 
                     </div>
+                    
+                    <div class="fb-content">
 
-                    <div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
+                        <div class="fb-legal">
+                            Use a Facebook account to add a comment, subject to Facebook's
+                            <a href="https://www.facebook.com/legal/terms" target="_blank">Terms of Service</a> 
+                            and <a href="https://www.facebook.com/about/privacy" target="_blank">Privacy Policy</a>. 
+                            Your Facebook name, profile photo and other personal information you make public on Facebook 
+                            (e.g., school, work, current city, age) will appear with your comment. 
+                            <a href="https://tatooinetimes.com/wpautoterms/terms-and-conditions/#facebook-comments-faq">Learn More</a>.
+                        </div>
 
+                        <div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
+                    </div>
+                    
                     <?php if ( function_exists( 'wpsabox_author_box' ) ) echo wpsabox_author_box(); ?>
                     
                 </div>
