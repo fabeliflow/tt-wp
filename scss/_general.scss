@@ -220,6 +220,10 @@ h3 {
 
 // Arrow styles
 .tt-arrow {
+  &:focus {
+    outline: none;
+  }
+  
   div {
     width: 30px;
     height: 30px;

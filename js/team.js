@@ -30,7 +30,6 @@ $jq(document).ready(function() {
       }
     },
     speed: 600,
-    dynamicBullets: true,
     coverflowEffect: {
       rotate: 50,
       stretch: 1,

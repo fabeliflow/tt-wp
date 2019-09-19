@@ -138,15 +138,36 @@ Template Name: Post
                                 $size = 'full';
 
                                 if( $images ): ?>
-                                    <div class="col-sm-12 tt-article__img--carousel__cont">
+                                    <div class="col-sm-8 col-sm-offset-2 tt-article__img--gallery__cont">
 
-                                        <div class="tt-article__img--carousel">
+                                        <div class="tt-article__img--gallery swiper-container">
 
-                                            <?php foreach( $images as $image ): ?>
-                                                <figure>
-                                                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-                                                </figure>
-                                            <?php endforeach; ?>
+                                            <div class="swiper-wrapper">
+
+                                                <?php foreach( $images as $image ): ?>
+                                                    <div class="swiper-slide">
+
+                                                        <figure>
+                                                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                                                        </figure>
+
+                                                    </div>
+                                                <?php endforeach; ?>
+                                            </div>
+
+                                            <!-- Navigation -->
+                                        <div class="tt-article__img--gallery__nav">
+
+                                            <!-- Arrows -->
+                                            <div class="tt-arrow tt-arrow--left">
+                                                <div></div>
+                                            </div>
+
+                                            <div class="tt-arrow tt-arrow--right">
+                                                <div></div>
+                                            </div>
+
+                                            </div>
                                             
                                         </div>
 
@@ -155,15 +176,7 @@ Template Name: Post
                                             <figcaption class="tt-caption"><?php the_sub_field('gallery_caption'); ?></figcaption>
 
                                         <?php endif; ?>
-                                        
-                                        <!-- Arrows -->
-                                        <div class="tt-arrow tt-arrow--left">
-                                            <div></div>
-                                        </div>
 
-                                        <div class="tt-arrow tt-arrow--right">
-                                            <div></div>
-                                        </div>
                                     </div>
                                 <?php endif; ?>
                             

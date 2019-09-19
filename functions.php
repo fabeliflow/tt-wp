@@ -65,7 +65,7 @@ function wpb_adding_styles_scripts() {
 
 	wp_register_style( 'slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' );
 
-	wp_register_style( 'swiper', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.1/css/swiper.css' );
+	wp_register_style( 'swiper', 'https://unpkg.com/swiper/css/swiper.css' );
 
 	wp_register_style( 'main', get_template_directory_uri() . '/css/main.css',  array('google-fonts', 'font-awesome', 'bootstrap', 'simplebar', 'slick', 'swiper') );
 	wp_enqueue_style( 'main' );
@@ -73,7 +73,7 @@ function wpb_adding_styles_scripts() {
 	// general scripts
 	wp_register_script('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', null, null, true);
 
-	wp_register_script('swiper', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.1/js/swiper.min.js', null, null, true);
+	wp_register_script('swiper', 'https://unpkg.com/swiper/js/swiper.min.js', null, null, true);
 
 	wp_register_script('mg-glitch', get_template_directory_uri() . '/vendor/mod/mg-glitch/mgGlitch.min.js',  array('jquery'), null, true);
 
@@ -88,17 +88,17 @@ function wpb_adding_styles_scripts() {
 
 	if (is_page('the-team')) {
 
-		wp_register_script('team', get_template_directory_uri() . '/js/minified/team.min.js', array('jquery', 'swiper', 'mg-glitch', 'simplebar'), null, true);
+		wp_register_script('team', get_template_directory_uri() . '/js/minified/team.min.js', array('jquery', 'swiper', 'mg-glitch'), null, true);
 		wp_enqueue_script('team');
 
 	} elseif (is_front_page()) {
 
-		wp_register_script('home', get_template_directory_uri() . '/js/minified/home.min.js', array('jquery', 'simplebar', 'mousewheel', 'slick', 'particles'), null, true);
+		wp_register_script('home', get_template_directory_uri() . '/js/minified/home.min.js', array('jquery', 'mousewheel', 'slick', 'particles'), null, true);
 		wp_enqueue_script('home');
 
 	} elseif (is_single()) {
 
-		wp_register_script('article', get_template_directory_uri() . '/js/minified/article.min.js', array('jquery', 'slick'), null, true);
+		wp_register_script('article', get_template_directory_uri() . '/js/minified/article.min.js', array('jquery', 'swiper'), null, true);
 		wp_enqueue_script('article');
 	}
 }
