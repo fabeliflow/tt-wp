@@ -138,44 +138,52 @@ Template Name: Post
                                 $size = 'full';
 
                                 if( $images ): ?>
-                                    <div class="col-sm-8 col-sm-offset-2 tt-article__img--gallery__cont">
+                                    <div class="col-md-8 col-md-offset-2">
 
-                                        <div class="tt-article__img--gallery swiper-container">
+                                        <div class="tt-article__img--gallery__cont">
 
-                                            <div class="swiper-wrapper">
+                                            <div class="gallery__cont">
 
-                                                <?php foreach( $images as $image ): ?>
-                                                    <div class="swiper-slide">
+                                                <div class="tt-article__img--gallery swiper-container">
 
-                                                        <figure>
-                                                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-                                                        </figure>
+                                                    <div class="swiper-wrapper">
 
+                                                        <?php foreach( $images as $image ): ?>
+                                                            <div class="swiper-slide">
+
+                                                                <figure>
+                                                                    <img class="swiper-lazy" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                                                                </figure>
+
+                                                            </div>
+                                                        <?php endforeach; ?>
                                                     </div>
-                                                <?php endforeach; ?>
+                                                    
+                                                </div>
+
+                                                <!-- Navigation -->
+                                                <div class="tt-article__img--gallery__nav">
+
+                                                    <!-- Arrows -->
+                                                    <div class="tt-arrow tt-arrow--left">
+                                                        <div></div>
+                                                    </div>
+
+                                                    <div class="tt-arrow tt-arrow--right">
+                                                        <div></div>
+                                                    </div>
+
+                                                </div>
+
                                             </div>
 
-                                            <!-- Navigation -->
-                                        <div class="tt-article__img--gallery__nav">
+                                            <?php if( $image['caption'] ):?>
 
-                                            <!-- Arrows -->
-                                            <div class="tt-arrow tt-arrow--left">
-                                                <div></div>
-                                            </div>
+                                                <figcaption class="tt-caption"><?php the_sub_field('gallery_caption'); ?></figcaption>
 
-                                            <div class="tt-arrow tt-arrow--right">
-                                                <div></div>
-                                            </div>
+                                            <?php endif; ?>
 
-                                            </div>
-                                            
                                         </div>
-
-                                        <?php if( $image['caption'] ):?>
-
-                                            <figcaption class="tt-caption"><?php the_sub_field('gallery_caption'); ?></figcaption>
-
-                                        <?php endif; ?>
 
                                     </div>
                                 <?php endif; ?>

@@ -8,10 +8,8 @@ $jq(document).ready(function() {
     loop: true,
     grabCursor: true,
     keyboardControl: true,
-    lazyLoading: true,
     preventClicks: false,
     preventClicksPropagation: false,
-    lazyLoadingInPrevNext: true,
     centeredSlides: true,
     slidesPerView: "auto",
     navigation: {
