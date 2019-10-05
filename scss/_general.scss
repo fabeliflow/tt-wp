@@ -10,9 +10,8 @@ $tt-blue-dark: #021855;
 $tt-blue-dark-transp: transparentize($tt-blue-dark, 0.1);
 $tt-blue-transp: transparentize($tt-blue, 0.7);
 $tt-blue-super-transp: transparentize($tt-blue, 0.9);
-$tt-green: #159a32;
-$tt-green-light: #91f7a7;
-$tt-green-transp: transparentize($tt-green, 0.4);
+$tt-green: #00ffc7;
+$tt-green-transp: transparentize($tt-green, 0.7);
 $tt-card-bg: #f3f3f3;
 $tt-yellow: #ffdb11;
 $tt-red: #f63222;
@@ -114,7 +113,7 @@ h3 {
   padding: 15px 30px;
   border-radius: 10px;
   color: white;
-  border: 2px solid $tt-blue;
+  border: 2px solid $tt-green;
   box-shadow: 0 0 0 0 transparent;
   position: relative;
   display: inline-block;
@@ -148,8 +147,8 @@ h3 {
   &:hover,
   &:focus {
     color: white;
-    box-shadow: 0 0 30px 0 $tt-blue-transp;
-    background-color: $tt-blue;
+    box-shadow: 0 0 30px 0 $tt-green-transp;
+    background-color: $tt-green;
     text-decoration: none;
     transition: all 0.2s ease-out;
 
@@ -555,7 +554,7 @@ $scan-opacity: 0.75;
 
 .tt-social__icon {
   color: white;
-  font-size: 1.5em;
+  font-size: 2em;
   outline: none !important;
   transition: all 0.3s ease-in-out;
 

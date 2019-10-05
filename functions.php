@@ -55,7 +55,7 @@ add_filter( 'alm_query_args_searchwp', 'my_alm_query_args_searchwp');
 function wpb_adding_styles_scripts() {
 	
 	// general styles
-	wp_register_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Lato:400,400i,700%7CNews+Cycle:400,700' );
+	wp_register_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Lato:400,400i,700%7CNews+Cycle:400,700%7CMontserrat:900' );
 
 	wp_register_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.0.13/css/all.css' );
 
@@ -83,7 +83,7 @@ function wpb_adding_styles_scripts() {
 
 	wp_register_script('particles', get_template_directory_uri() . '/vendor/particles/particles.min.js', null, null, true);
 
-	wp_register_script('header', get_template_directory_uri() . '/js/minified/header.min.js', array('jquery', 'particles', 'simplebar'), null, true);
+	wp_register_script('header', get_template_directory_uri() . '/js/minified/header.min.js', array('jquery', 'slick'), null, true);
 	wp_enqueue_script('header');
 
 	if (is_page('the-team')) {

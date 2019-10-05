@@ -64,55 +64,76 @@
 
 <!-- Menu Button -->
 <button id="tt-menu__btn" class="tt-btn--menu">
-    <i class="tt-btn--menu__icon"></i>
+    <i class="far fa-dot-circle"></i>
 </button>
 
 <!-- Menu Popup -->
-<div class="tt-menu">
+<div class="tt-menu scanline">
 
     <!-- Menu Container -->
     <div class="tt-menu__cont">
 
-        <!-- Starfield -->
-        <div id="starfield" class="starfield"></div>
-
         <!-- Menu Logo -->
-        <a href="<?php echo get_home_url(); ?>" class="tt-menu__logo-wrapper">
-            <div class="tt-menu__logo" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/tt-logo.svg');"></div>
+        <a href="<?php echo get_home_url(); ?>" class="tt-menu__logo">
+            Tatooine Times
         </a>
 
-        <!-- Menu List -->
-        <div class="tt-menu__scrollable tt-scrollable" data-simplebar data-simplebar-auto-hide="false">
-            <?php 
-                $args = array(
-                    'theme_location' => 'primary',
-                    'menu_class' => 'tt-menu__list'
-                );
-                wp_nav_menu( $args ); 
-            ?>
+        <div class="tt-menu__list">
+
+            <span class="tt-arrow--up">
+                <i class="fas fa-caret-up"></i>
+            </span>
+
+            <div class="tt-menu__list-wrapper">
+
+                <span class="tt-menu__item">
+                    <a href="#">Home</a>
+                </span>
+                <span class="tt-menu__item">
+                    <a href="#">The Team</a>
+                </span>
+                <span class="tt-menu__item">
+                    <a href="#">Journeys</a>
+                </span>
+                <span class="tt-menu__item">
+                    <a href="#">Reviews</a>
+                </span>
+                <span class="tt-menu__item">
+                    <a href="#">Collectibles</a>
+                </span>
+
+            </div>
+
+            <span class="tt-arrow--down">
+                <i class="fas fa-caret-down"></i>
+            </span>
+        
         </div>
 
         <!-- Menu Social -->
         <div class="tt-menu__social">
-
-            <?php if( have_rows('menu_social', 'header') ): ?>
-
                 <ul class="tt-social">
-                    
-                    <?php while ( have_rows('menu_social', 'social-media') ) : the_row(); ?>
-
                         <li>
-                            <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
-                                <i class="<?php the_sub_field('menu_social_class'); ?>"></i>
+                            <a class="tt-social__icon" href="https://twitter.com/tatooine_times" target="_blank">
+                                <i class="fab fa-twitter"></i>
                             </a>
-                        </li>
-
-                    <?php endwhile; ?>
-
-                </ul>
-
-            <?php endif; ?>
-
+                        </li>                    
+                        <li>
+                            <a class="tt-social__icon" href="https://www.instagram.com/tatooinetimes" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>                    
+                        <li>
+                            <a class="tt-social__icon" href="https://facebook.com/tatooinetimes" target="_blank">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>                    
+                        <li>
+                            <a class="tt-social__icon" href="https://www.youtube.com/channel/UCx3iZoCBLIaTZWfyYPyq7Dg" target="_blank">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>                    
+                </ul>            
         </div>
 
     </div>

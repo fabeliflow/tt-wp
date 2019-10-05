@@ -192,6 +192,7 @@
   margin-top: calc((#{$baseline} - #{$h2}) + #{$baseline} * 2);
   margin-bottom: $baseline;
   color: $tt-red;
+  text-shadow: 0 0 10px $tt-red;
   font-family: Aurebesh;
   letter-spacing: 5px;
   font-weight: bold;
@@ -203,7 +204,9 @@
   margin: 0;
   padding: 0 10px;
   border: 2px solid $tt-red;
+  box-shadow: 0 0 10px $tt-red;
   color: $tt-red;
+  text-shadow: 0 0 10px $tt-red;
   font-size: 1.5em;
   font-weight: 700;
   display: inline-block;
@@ -297,6 +300,7 @@
 }
 .tt-team__card__num {
   color: $tt-red;
+  text-shadow: 0 0 10px $tt-red;
   font-family: "Aurebesh";
   font-size: 2em !important;
   @media (min-width: 768px) {
@@ -312,6 +316,7 @@
 .tt-team__card__social__headline {
   margin: 0;
   color: $tt-red;
+  text-shadow: 0 0 10px $tt-red;
   font-family: "Aurebesh";
   font-weight: bold;
   letter-spacing: 5px;
@@ -328,13 +333,15 @@
 }
 .tt-team__card__social__icon {
   color: $tt-blue-light;
+  text-shadow: 0 0 10px $tt-blue-light;
+  transition: text-shadow 0.3s ease;
   font-size: 1.5em;
   outline: none !important;
   transition: all 0.3s ease-in-out;
   &:hover,
   &:focus {
-    color: $tt-blue;
-    text-shadow: 0 0 30px $tt-blue-transp;
+    color: $tt-blue-light;
+    text-shadow: 0 0 15px $tt-blue-light;
   }
 }
 .tt-team__card__nav {
