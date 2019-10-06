@@ -51,68 +51,6 @@
   }
 }
 
-// .tt-btn--menu__icon {
-//   height: 4px;
-//   top: 50%;
-//   left: 0;
-//   right: 12px;
-//   transform: perspective(90px) rotateX(33deg) translateY(-4px);
-//   display: block;
-//   background: $tt-yellow;
-//   border-radius: 0;
-//   transition: background 0.4s;
-
-//   &:before,
-//   &:after {
-//     content: "";
-//     width: 100%;
-//     height: 4px;
-//     position: absolute;
-//     left: 0;
-//     display: block;
-//     background-color: $tt-yellow;
-//     border-radius: 0;
-//   }
-
-//   &:before {
-//     top: -10px;
-//     transition: top 0.3s 0.3s, transform 0.3s 0s;
-//   }
-
-//   &:after {
-//     bottom: -10px;
-//     transition: bottom 0.3s 0.3s, transform 0.3s 0s;
-//   }
-// }
-
-// .tt-btn--menu--active {
-//   background: transparent;
-//   box-shadow: none;
-//   transition: background 0.2s;
-//   overflow: hidden;
-
-//   // .tt-btn--menu__icon {
-//   //   background: transparent;
-//   //   transition: background 0.2s;
-
-//   //   &:before,
-//   //   &:after {
-//   //     transition: top 0.3s 0s, bottom 0.3s 0s, transform 0.3s 0.3s,
-//   //       -webkit-transform 0.3s 0.3s;
-//   //   }
-
-//   //   &:before {
-//   //     top: 0;
-//   //     transform: rotate(45deg);
-//   //   }
-
-//   //   &:after {
-//   //     bottom: 0;
-//   //     transform: rotate(-45deg);
-//   //   }
-//   // }
-// }
-
 .tt-menu {
   width: 100%;
   height: 100%;
@@ -124,6 +62,7 @@
   display: none;
   z-index: 99999999;
   overflow: hidden;
+  letter-spacing: 5px;
 }
 
 .tt-menu__cont {
@@ -144,10 +83,14 @@
   margin-top: 40px;
   text-align: center;
   font-family: $watermark-font-family;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: $tt-green;
   text-shadow: 0 0 10px $tt-green;
   transition: text-shadow 0.3s ease;
+
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
 
   &:hover,
   &:focus {
@@ -156,16 +99,6 @@
     text-shadow: 0 0 15px $tt-green;
   }
 }
-
-// .tt-menu__logo {
-//   width: 100%;
-//   height: 0;
-//   padding-bottom: 26%;
-//   background-image: url("../img/tt-logo.svg");
-//   background-size: contain;
-//   background-position: center;
-//   background-repeat: no-repeat;
-// }
 
 .tt-menu__list {
   margin: 40px 0;
@@ -209,26 +142,47 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0px 15px 0px 15px;
+  text-transform: uppercase;
 
   a {
-    padding: 0px 15px 0px 15px;
-    color: $tt-red;
-    text-shadow: 0 0 10px $tt-red;
-    font: 700 2.5rem $header-font-family;
-    text-transform: uppercase;
     text-decoration: none;
-    transition: text-shadow 0.3s ease;
-    box-shadow: 0 0 10px $tt-yellow;
-    border: 7px solid $tt-yellow;
-    border-radius: 20px;
-
-    @media (min-width: 768px) {
-      font-size: 3rem;
-    }
-
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
     &:hover,
     &:focus {
-      text-shadow: 0 0 15px $tt-red;
+      outline: none;
+    }
+
+    &:hover .tt-menu__item-title,
+    &:focus .tt-menu__item-title {
+      text-shadow: 0 0 15px $tt-yellow;
+    }
+
+    &:hover .tt-menu__item-head,
+    &:focus .tt-menu__item-head {
+      text-shadow: 0 0 15px white;
+    }
+
+    .tt-menu__item-head {
+      margin-bottom: -5px;
+      color: white;
+      text-shadow: 0 0 10px white;
+      transition: text-shadow 0.3s ease;
+      font: 700 0.7rem $watermark-font-family;
+    }
+
+    .tt-menu__item-title {
+      color: $tt-yellow;
+      text-shadow: 0 0 10px $tt-yellow;
+      transition: text-shadow 0.3s ease;
+      font: 700 2.2rem $header-font-family;
+
+      @media (min-width: 768px) {
+        font-size: 3rem;
+      }
     }
   }
 }
@@ -238,15 +192,18 @@
 
   .tt-social {
     margin-top: 0;
+    box-shadow: 0 0 10px $tt-green;
+    border: 4px solid $tt-green;
+    border-radius: 20px;
 
     .tt-social__icon {
-      color: $tt-yellow;
-      text-shadow: 0 0 10px $tt-yellow;
+      color: $tt-green;
+      text-shadow: 0 0 10px $tt-green;
       transition: text-shadow 0.3s ease;
 
       &:hover,
       &:focus {
-        text-shadow: 0 0 15px $tt-yellow;
+        text-shadow: 0 0 15px $tt-green;
       }
     }
   }

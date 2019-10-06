@@ -112,19 +112,34 @@
             <div class="tt-menu__list-wrapper">
 
                 <span class="tt-menu__item">
-                    <a href="#">Home</a>
+                    <a href="#">
+                        <span class="tt-menu__item-head">Home</span>
+                        <span class="tt-menu__item-title">Home</span>
+                    </a>
                 </span>
                 <span class="tt-menu__item">
-                    <a href="#">The Team</a>
+                    <a href="#">
+                        <span class="tt-menu__item-head">The Team</span>
+                        <span class="tt-menu__item-title">The Team</span>
+                    </a>
                 </span>
                 <span class="tt-menu__item">
-                    <a href="#">Journeys</a>
+                    <a href="#">
+                        <span class="tt-menu__item-head">Journeys</span>
+                        <span class="tt-menu__item-title">Journeys</span>
+                    </a>
                 </span>
                 <span class="tt-menu__item">
-                    <a href="#">Reviews</a>
+                    <a href="#">
+                        <span class="tt-menu__item-head">Reviews</span>
+                        <span class="tt-menu__item-title">Reviews</span>
+                    </a>
                 </span>
                 <span class="tt-menu__item">
-                    <a href="#">Collectibles</a>
+                    <a href="#">
+                        <span class="tt-menu__item-head">Collectibles</span>
+                        <span class="tt-menu__item-title">Collectibles</span>
+                    </a>
                 </span>
 
             </div>
