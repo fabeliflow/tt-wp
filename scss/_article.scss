@@ -5,6 +5,7 @@ $tt-media-margin: 20px;
   h1,
   h2,
   h3 {
+    font-family: $article-header-font-family;
     text-transform: uppercase;
   }
 
@@ -66,7 +67,7 @@ $tt-media-margin: 20px;
   }
 
   strong {
-    font-family: $header-font-family;
+    font-family: $article-header-font-family;
     font-size: 1.3em;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -141,7 +142,7 @@ $tt-media-margin: 20px;
     border-top: solid 3px $tt-sand-transp !important;
     border-left: none;
     border-bottom: solid 3px $tt-sand-transp !important;
-    font-family: $header-font-family !important;
+    font-family: $article-header-font-family !important;
     font-size: 1.7em !important;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -199,7 +200,7 @@ $tt-media-margin: 20px;
 
     .sw-ctt-text {
       margin-bottom: 20px !important;
-      font-family: $header-font-family !important;
+      font-family: $article-header-font-family !important;
       font-size: 1.7em !important;
       letter-spacing: 3px;
       text-transform: uppercase;

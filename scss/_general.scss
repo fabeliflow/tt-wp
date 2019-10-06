@@ -45,9 +45,10 @@ $h3: 1em;
 
 $baseline: 1.5rem;
 
-$header-font-family: "SerifGothicStd-Heavy", serif;
+$header-font-family: "Purista-Bold", serif;
+$article-header-font-family: "SerifGothicStd-Heavy", serif;
 $body-font-family: "Lato", sans-serif;
-$link-font-family: "News Cycle", sans-serif;
+$link-font-family: "Purista-Bold", sans-serif;
 $watermark-font-family: "Aurebesh";
 
 // General styles
@@ -199,12 +200,12 @@ h3 {
   input {
     padding: 7px 17px;
     border-radius: 10em;
-    border: 1.5px solid $tt-blue-transp;
+    border: 1.5px solid $tt-green-transp;
     outline: none;
     transition: all 0.2s ease-in-out;
 
     &::placeholder {
-      color: $tt-blue-transp;
+      color: $tt-green-transp;
       font-family: "Font Awesome 5 Free", Aurebesh, sans-serif;
       font-weight: 900;
       letter-spacing: 3px;
@@ -212,7 +213,7 @@ h3 {
 
     &:hover,
     &:focus {
-      box-shadow: 0 0 5px 0 $tt-blue-transp;
+      box-shadow: 0 0 5px 0 $tt-green-transp;
     }
   }
 }
@@ -239,8 +240,8 @@ h3 {
       content: "";
       width: inherit;
       height: inherit;
-      border-bottom: 3px solid $tt-blue-transp;
-      border-right: 3px solid $tt-blue-transp;
+      border-bottom: 3px solid $tt-green-transp;
+      border-right: 3px solid $tt-green-transp;
       position: absolute;
       top: 0;
       left: 0;
@@ -260,7 +261,7 @@ h3 {
     &:focus {
       &:before,
       &:after {
-        border-color: $tt-blue;
+        border-color: $tt-green;
       }
     }
   }

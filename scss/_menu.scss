@@ -20,21 +20,34 @@
 
   .fa-dot-circle {
     font-size: 2em;
-    color: $tt-red;
-    text-shadow: 0 0 10px $tt-red;
+    color: $tt-green;
+    text-shadow: 0 0 10px $tt-green;
     transition: text-shadow 0.3s ease;
 
     &:hover,
     &:focus {
-      color: $tt-red;
+      color: $tt-green;
       text-decoration: none;
-      text-shadow: 0 0 15px $tt-red;
+      text-shadow: 0 0 15px $tt-green;
     }
   }
 
   @media (min-width: 768px) {
     top: 10px;
     right: 10px;
+  }
+}
+
+.tt-btn--menu--active {
+  .fa-dot-circle {
+    color: $tt-red;
+    text-shadow: 0 0 10px $tt-red;
+
+    &:hover,
+    &:focus {
+      color: $tt-red;
+      text-shadow: 0 0 15px $tt-red;
+    }
   }
 }
 
@@ -201,7 +214,7 @@
     padding: 0px 15px 0px 15px;
     color: $tt-red;
     text-shadow: 0 0 10px $tt-red;
-    font: 700 2.5rem $link-font-family;
+    font: 700 2.5rem $header-font-family;
     text-transform: uppercase;
     text-decoration: none;
     transition: text-shadow 0.3s ease;
