@@ -98,6 +98,10 @@
       rgba(243, 243, 243, 0) 30%
     );
   }
+
+  h3 {
+    font-family: $article-header-font-family;
+  }
 }
 
 .tt-cat__card__title {

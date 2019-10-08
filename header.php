@@ -100,7 +100,7 @@
 
         <!-- Menu Logo -->
         <a href="<?php echo get_home_url(); ?>" class="tt-menu__logo">
-            Tatooine Times
+            <?php echo get_bloginfo( 'name' ); ?>
         </a>
 
         <span class="tt-arrow--up">
@@ -111,36 +111,7 @@
 
             <div class="tt-menu__list-wrapper swiper-wrapper">
 
-                <div class="tt-menu__item swiper-slide">
-                    <a href="#">
-                        <span class="tt-menu__item-head">Home</span>
-                        <span class="tt-menu__item-title">Home</span>
-                    </a>
-                </div>
-                <div class="tt-menu__item swiper-slide">
-                    <a href="#">
-                        <span class="tt-menu__item-head">The Team</span>
-                        <span class="tt-menu__item-title">The Team</span>
-                    </a>
-                </div>
-                <div class="tt-menu__item swiper-slide">
-                    <a href="#">
-                        <span class="tt-menu__item-head">Journeys</span>
-                        <span class="tt-menu__item-title">Journeys</span>
-                    </a>
-                </div>
-                <div class="tt-menu__item swiper-slide">
-                    <a href="#">
-                        <span class="tt-menu__item-head">Reviews</span>
-                        <span class="tt-menu__item-title">Reviews</span>
-                    </a>
-                </div>
-                <div class="tt-menu__item swiper-slide">
-                    <a href="#">
-                        <span class="tt-menu__item-head">Collectibles</span>
-                        <span class="tt-menu__item-title">Collectibles</span>
-                    </a>
-                </div>
+                <?php echo wp_generate_menu('primary'); ?>
 
             </div>
 
@@ -152,28 +123,25 @@
 
         <!-- Menu Social -->
         <div class="tt-menu__social">
+
+            <?php if( have_rows('menu_social', 'header') ): ?>
+
                 <ul class="tt-social">
+
+                    <?php while ( have_rows('menu_social', 'social-media') ) : the_row(); ?>
+
                         <li>
-                            <a class="tt-social__icon" href="https://twitter.com/tatooine_times" target="_blank">
-                                <i class="fab fa-twitter"></i>
+                            <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
+                                <i class="<?php the_sub_field('menu_social_class'); ?>"></i>
                             </a>
-                        </li>                    
-                        <li>
-                            <a class="tt-social__icon" href="https://www.instagram.com/tatooinetimes" target="_blank">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </li>                    
-                        <li>
-                            <a class="tt-social__icon" href="https://facebook.com/tatooinetimes" target="_blank">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </li>                    
-                        <li>
-                            <a class="tt-social__icon" href="https://www.youtube.com/channel/UCx3iZoCBLIaTZWfyYPyq7Dg" target="_blank">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                        </li>                    
-                </ul>            
+                        </li>
+
+                    <?php endwhile; ?>
+
+                </ul>
+
+            <?php endif; ?>
+
         </div>
 
     </div>

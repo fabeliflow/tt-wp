@@ -55,7 +55,7 @@ add_filter( 'alm_query_args_searchwp', 'my_alm_query_args_searchwp');
 function wpb_adding_styles_scripts() {
 	
 	// general styles
-	wp_register_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Lato:400,400i,700' );
+	wp_register_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Lato:400,400i,700%7CNews+Cycle:400,700' );
 
 	wp_register_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.0.13/css/all.css' );
 
@@ -109,6 +109,24 @@ add_action( 'wp_enqueue_scripts', 'wpb_adding_styles_scripts' );
 add_filter( 'ppp_nonce_life', 'my_nonce_life' );
 function my_nonce_life() {
  return 60 * 60 * 24 * 14; // 14 days
+}
+
+function wp_generate_menu($menu_name) {
+	if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
+		$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+	 
+		$menu_items = wp_get_nav_menu_items($menu->term_id);
+	 
+		foreach ( (array) $menu_items as $key => $menu_item ) {
+			$title = $menu_item->title;
+			$url = $menu_item->url;
+			$menu_list .= '<div class="tt-menu__item swiper-slide"><a href="' . $url . '"><span class="tt-menu__item-head">' . $title . '</span><span class="tt-menu__item-title">' . $title . '</span></a></div>';
+		}
+		$menu_list .= '</ul>';
+	} else {
+		$menu_list = '<div class="tt-menu__item swiper-slide">Menu "' . $menu_name . '" not defined.</div>';
+	}
+	return $menu_list;
 }
 
 ?>
