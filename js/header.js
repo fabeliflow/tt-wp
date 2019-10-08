@@ -2,6 +2,23 @@
 var $jq = jQuery.noConflict();
 
 $jq(document).ready(function() {
+
+  var swiper = new Swiper(".tt-menu__list", {
+    direction: "vertical",
+    loop: true,
+    grabCursor: true,
+    keyboardControl: true,
+    preventClicks: false,
+    preventClicksPropagation: false,
+    observer: true, 
+    observeParents: true,
+    navigation: {
+      nextEl: ".tt-arrow--down",
+      prevEl: ".tt-arrow--up"
+    },
+    speed: 600
+  });
+
   // Hide menu at start
   $jq(".tt-menu").hide();
 
@@ -17,17 +34,6 @@ $jq(document).ready(function() {
 
     // Apply hidden overflow on parent
     $jq("html").toggleClass("cont--hidden");
-  });
-
-  $jq('.tt-menu__list-wrapper').slick({
-    vertical: true,
-    verticalSwiping: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    infinite: true,
-    prevArrow: $jq(".tt-arrow--up"),
-    nextArrow: $jq(".tt-arrow--down")
   });
 
   // ===== Scroll to Top ====

@@ -101,7 +101,6 @@
 }
 
 .tt-menu__list {
-  margin: 40px 0;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -114,6 +113,12 @@
 
 .tt-arrow--up,
 .tt-arrow--down {
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+
   i {
     font-size: 4em;
     color: $tt-red;
@@ -124,16 +129,23 @@
     &:hover,
     &:focus {
       color: $tt-red;
-      outline: none;
       text-shadow: 0 0 15px $tt-red;
     }
   }
 }
 
+.tt-arrow--up {
+  margin-top: 40px;
+}
+
+.tt-arrow--down {
+  margin-bottom: 40px;
+}
+
 .tt-menu__list,
 .tt-menu__list-wrapper,
 .tt-menu__item {
-  width: 100%;
+  // width: 100%;
   height: 100%;
 }
 

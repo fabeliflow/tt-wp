@@ -103,52 +103,52 @@
             Tatooine Times
         </a>
 
-        <div class="tt-menu__list">
+        <span class="tt-arrow--up">
+            <i class="fas fa-caret-up"></i>
+        </span>
 
-            <span class="tt-arrow--up">
-                <i class="fas fa-caret-up"></i>
-            </span>
+        <div class="tt-menu__list swiper-container">
 
-            <div class="tt-menu__list-wrapper">
+            <div class="tt-menu__list-wrapper swiper-wrapper">
 
-                <span class="tt-menu__item">
+                <div class="tt-menu__item swiper-slide">
                     <a href="#">
                         <span class="tt-menu__item-head">Home</span>
                         <span class="tt-menu__item-title">Home</span>
                     </a>
-                </span>
-                <span class="tt-menu__item">
+                </div>
+                <div class="tt-menu__item swiper-slide">
                     <a href="#">
                         <span class="tt-menu__item-head">The Team</span>
                         <span class="tt-menu__item-title">The Team</span>
                     </a>
-                </span>
-                <span class="tt-menu__item">
+                </div>
+                <div class="tt-menu__item swiper-slide">
                     <a href="#">
                         <span class="tt-menu__item-head">Journeys</span>
                         <span class="tt-menu__item-title">Journeys</span>
                     </a>
-                </span>
-                <span class="tt-menu__item">
+                </div>
+                <div class="tt-menu__item swiper-slide">
                     <a href="#">
                         <span class="tt-menu__item-head">Reviews</span>
                         <span class="tt-menu__item-title">Reviews</span>
                     </a>
-                </span>
-                <span class="tt-menu__item">
+                </div>
+                <div class="tt-menu__item swiper-slide">
                     <a href="#">
                         <span class="tt-menu__item-head">Collectibles</span>
                         <span class="tt-menu__item-title">Collectibles</span>
                     </a>
-                </span>
+                </div>
 
             </div>
 
-            <span class="tt-arrow--down">
-                <i class="fas fa-caret-down"></i>
-            </span>
-        
         </div>
+
+        <span class="tt-arrow--down">
+            <i class="fas fa-caret-down"></i>
+        </span>
 
         <!-- Menu Social -->
         <div class="tt-menu__social">
