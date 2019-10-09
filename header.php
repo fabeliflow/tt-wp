@@ -107,14 +107,16 @@
             <i class="fas fa-caret-up"></i>
         </span>
 
-        <div class="tt-menu__list swiper-container">
+        <div class="tt-menu__list-cont">
+            <div class="tt-menu__list swiper-container">
 
-            <div class="tt-menu__list-wrapper swiper-wrapper">
+                <div class="tt-menu__list-wrapper swiper-wrapper">
 
-                <?php echo wp_generate_menu('primary'); ?>
+                    <?php echo wp_generate_menu('primary'); ?>
+
+                </div>
 
             </div>
-
         </div>
 
         <span class="tt-arrow--down">
