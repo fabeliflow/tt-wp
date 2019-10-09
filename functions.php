@@ -88,7 +88,7 @@ function wpb_adding_styles_scripts() {
 
 	if (is_page('the-team')) {
 
-		wp_register_script('team', get_template_directory_uri() . '/js/minified/team.min.js', array('jquery', 'swiper', 'mg-glitch'), null, true);
+		wp_register_script('team', get_template_directory_uri() . '/js/minified/team.min.js', array('jquery', 'swiper', 'mg-glitch', 'simplebar'), null, true);
 		wp_enqueue_script('team');
 
 	} elseif (is_front_page()) {
