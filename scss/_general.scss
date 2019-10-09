@@ -10,7 +10,7 @@ $tt-blue-dark: #021855;
 $tt-blue-dark-transp: transparentize($tt-blue-dark, 0.1);
 $tt-blue-transp: transparentize($tt-blue, 0.7);
 $tt-blue-super-transp: transparentize($tt-blue, 0.9);
-$tt-green: #00ffc7;
+$tt-green: #39e09b;
 $tt-green-transp: transparentize($tt-green, 0.7);
 $tt-card-bg: #f3f3f3;
 $tt-yellow: #ffdb11;
@@ -113,9 +113,9 @@ h3 {
   min-width: 200px;
   margin-top: 20px;
   padding: 15px 30px;
-  border-radius: 10px;
   color: white;
-  border: 4px solid $tt-green;
+  border: 3px solid $tt-green;
+  border-radius: 10px;
   box-shadow: 0 0 0 0 transparent;
   position: relative;
   display: inline-block;
@@ -556,7 +556,7 @@ $scan-opacity: 0.75;
 
 .tt-social__icon {
   color: white;
-  font-size: 2em;
+  font-size: 1.8em;
   outline: none !important;
   transition: all 0.3s ease-in-out;
 
