@@ -59,8 +59,24 @@ Template Name: Post
 
                         <?php while ( have_rows('article_content') ) : the_row(); ?>
 
+                            <!-- Spoiler Warning Module -->
+                            <?php if( get_row_layout() == 'spoiler' ): ?>
+
+                                <div class="col-sm-6 col-sm-offset-3">
+
+                                    <div class="tt-article__spoiler">
+                                        
+                                    <span>Spoiler Warning</span>
+                                    <h2>Spoiler Warning</h2>
+
+                                    </div>
+
+                                    <?php the_sub_field('text'); ?>
+
+                                </div>
+
                             <!-- Text Module -->
-                            <?php if( get_row_layout() == 'text' ): ?>
+                            <?php elseif( get_row_layout() == 'text' ): ?>
 
                                 <div class="col-sm-6 col-sm-offset-3">
 
