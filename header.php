@@ -9,8 +9,8 @@
 
     <title>
         <?php wp_title(''); ?>
-		<?php if(wp_title('', false)) { echo ' :'; } ?>
-		<?php bloginfo('name'); ?>
+        <?php if(wp_title('', false)) { echo ' :'; } ?>
+        <?php bloginfo('name'); ?>
     </title>
 
     <!--
@@ -36,7 +36,8 @@
     */
 
     -->
-    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/vendor/myfonts/Purista-Bold/MyFontsWebfontsKit.css">
+    <link rel="stylesheet" type="text/css"
+        href="<?php echo get_template_directory_uri(); ?>/vendor/myfonts/Purista-Bold/MyFontsWebfontsKit.css">
 
     <!--
     /**
@@ -61,12 +62,16 @@
     */
 
     -->
-    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/vendor/myfonts/SerifGothicStd-Heavy/MyFontsWebfontsKit.css">
+    <link rel="stylesheet" type="text/css"
+        href="<?php echo get_template_directory_uri(); ?>/vendor/myfonts/SerifGothicStd-Heavy/MyFontsWebfontsKit.css">
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/img/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="<?php echo get_template_directory_uri(); ?>/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="<?php echo get_template_directory_uri(); ?>/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="<?php echo get_template_directory_uri(); ?>/img/favicons/favicon-16x16.png">
     <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/img/favicons/manifest.json">
     <meta name="theme-color" content="#ffffff">
 
@@ -74,7 +79,10 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124638163-1"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
     gtag('js', new Date());
 
     gtag('config', 'UA-124638163-1');
@@ -86,11 +94,11 @@
 </head>
 
 <!-- Menu -->
-
-<!-- Menu Button -->
-<button id="tt-menu__btn" class="tt-btn--menu">
-    <i class="far fa-dot-circle"></i>
-</button>
+<nav class="tt-navigation">
+    <button id="tt-menu__btn" class="tt-btn--menu">
+        <i class="fas fa-bars"></i>
+    </button>
+</nav>
 
 <!-- Menu Popup -->
 <div class="tt-menu scanline">
@@ -128,19 +136,19 @@
 
             <?php if( have_rows('menu_social', 'header') ): ?>
 
-                <ul class="tt-social">
+            <ul class="tt-social">
 
-                    <?php while ( have_rows('menu_social', 'social-media') ) : the_row(); ?>
+                <?php while ( have_rows('menu_social', 'social-media') ) : the_row(); ?>
 
-                        <li>
-                            <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
-                                <i class="<?php the_sub_field('menu_social_class'); ?>"></i>
-                            </a>
-                        </li>
+                <li>
+                    <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
+                        <i class="<?php the_sub_field('menu_social_class'); ?>"></i>
+                    </a>
+                </li>
 
-                    <?php endwhile; ?>
+                <?php endwhile; ?>
 
-                </ul>
+            </ul>
 
             <?php endif; ?>
 

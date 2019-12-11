@@ -1,28 +1,39 @@
+.tt-navigation {
+  position: fixed;
+  width: 100%;
+  z-index: 999999999;
+  will-change: transform;
+  transition: all 0.5s ease;
+}
+
+.tt-navigation.scrolled {
+  background-color: $tt-matte-black-transp;
+}
+
 .tt-btn--menu {
   padding: 10px;
-  position: fixed;
-  will-change: transform;
+  // position: fixed;
+  // will-change: transform;
   top: 5px;
   right: 5px;
   display: inline-block;
-  z-index: 999999999;
   background: transparent;
   border: none;
   border-radius: 100%;
   outline: none;
   cursor: pointer;
 
-  .fa-dot-circle {
+  .fa-bars {
     font-size: 2em;
-    color: $tt-green;
-    text-shadow: 0 0 10px $tt-green;
+    color: $tt-yellow;
+    text-shadow: 0 0 10px $tt-yellow;
     transition: text-shadow 0.3s ease;
 
     &:hover,
     &:focus {
-      color: $tt-green;
+      color: $tt-yellow;
       text-decoration: none;
-      text-shadow: 0 0 15px $tt-green;
+      text-shadow: 0 0 15px $tt-yellow;
     }
   }
 
@@ -33,7 +44,7 @@
 }
 
 .tt-btn--menu--active {
-  .fa-dot-circle {
+  .fa-bars {
     color: $tt-red;
     text-shadow: 0 0 10px $tt-red;
 

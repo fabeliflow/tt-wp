@@ -16,19 +16,32 @@ $custom_search = (isset($_GET['custom_search'])) ? $_GET['custom_search'] : ''; 
 $background = get_field('category_background', $term);
 $background_position = get_field('category_background_position', $term);
 $logo_svg = get_field('category_logo_svg', $term);
+$description = get_field('category_description', $term);
 ?>
 
 <body class="tt-cat">
 
     <!-- Category Masthead -->
-    <div class="tt-masthead tt-masthead--overlay" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
+    <div class="tt-masthead tt-masthead--overlay"
+        style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
         <div class="tt-masthead__logo-wrapper">
-            <div class="tt-masthead__logo" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/<?php echo $logo_svg ?>.svg');"></div>
+            <div class="tt-masthead__logo"
+                style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/<?php echo $logo_svg ?>.svg');">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 tt-cat__descr">
+                <p><?php echo $description ?></p>
+            </div>
         </div>
     </div>
 
     <form class="tt-search-bar" method="get">
-        <input type="text" name="custom_search" id="custom_search" value="<?php echo esc_attr( $custom_search ); ?>" placeholder="&#xf002; Search"/>
+        <input type="text" name="custom_search" id="custom_search" value="<?php echo esc_attr( $custom_search ); ?>"
+            placeholder="&#xf002; Search" />
     </form>
 
     <section class="tt-cat__cont">
@@ -45,7 +58,4 @@ $logo_svg = get_field('category_logo_svg', $term);
         <div></div>
     </a>
 
-<?php get_footer(); ?>
-
-
-
+    <?php get_footer(); ?>

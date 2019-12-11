@@ -1,4 +1,6 @@
 // Colors
+$tt-matte-black: #333;
+$tt-matte-black-transp: transparentize($tt-matte-black, 0.02);
 $tt-text-dark: #333;
 $tt-text-light: lighten($tt-text-dark, 40%);
 $tt-text-light-transp: transparentize($tt-text-light, 0.3);
@@ -12,15 +14,16 @@ $tt-blue-transp: transparentize($tt-blue, 0.7);
 $tt-blue-super-transp: transparentize($tt-blue, 0.9);
 $tt-green: #39e09b;
 $tt-green-transp: transparentize($tt-green, 0.7);
-$tt-card-bg: #f3f3f3;
-$tt-yellow: #ffdb11;
+$tt-card-bg: #333;
+$tt-yellow: #f2ae0a;
+$tt-yellow-transp: transparentize($tt-yellow, 0.3);
 $tt-red: #f63222;
 $tt-red-transp: transparentize($tt-red, 0.7);
 $tt-orange: #f77529;
 $tt-orange-transp: transparentize($tt-orange, 0.7);
 $tt-pink: #edccca;
-$tt-sand: #d2b218;
-$tt-sand-transp: transparentize($tt-sand, 0.7);
+$tt-sand: #d2b597;
+$tt-sand-dark: darken($tt-sand, 5%);
 
 // Aurebesh Font
 @font-face {
@@ -114,12 +117,13 @@ h3 {
   margin-top: 20px;
   padding: 15px 30px;
   color: white;
-  border: 3px solid $tt-green;
-  border-radius: 10px;
+  border: 3px solid white;
+  border-radius: 10em;
   box-shadow: 0 0 0 0 transparent;
   position: relative;
   display: inline-block;
-  font-family: $link-font-family;
+  font-size: 0.7em;
+  // font-family: $link-font-family;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -149,8 +153,9 @@ h3 {
   &:hover,
   &:focus {
     color: white;
-    box-shadow: 0 0 30px 0 $tt-green-transp;
-    background-color: $tt-green;
+    border-color: $tt-yellow;
+    box-shadow: 0 0 30px 0 $tt-yellow-transp;
+    background-color: $tt-yellow;
     text-decoration: none;
     transition: all 0.2s ease-out;
 
@@ -193,6 +198,42 @@ h3 {
   }
 }
 
+.tt-header {
+  margin-bottom: 40px;
+
+  @media (min-width: 992px) {
+    margin-bottom: 40px;
+  }
+
+  text-align: center;
+
+  h1,
+  h2 {
+    display: block;
+    position: relative;
+    margin: 0 0 60px 0;
+    border-left: none !important;
+    font-family: $article-header-font-family;
+
+    &:after {
+      content: "";
+      width: 10%;
+      margin-bottom: -25px;
+      border-bottom: solid 3px $tt-yellow;
+      position: absolute;
+      left: 45%;
+      bottom: 0;
+    }
+  }
+
+  span {
+    font-family: Aurebesh;
+    font-size: 0.7em;
+    letter-spacing: 5px;
+    color: $tt-yellow;
+  }
+}
+
 // Search bar styles
 .tt-search-bar {
   padding-top: 40px;
@@ -201,12 +242,12 @@ h3 {
   input {
     padding: 7px 17px;
     border-radius: 10em;
-    border: 4px solid $tt-green-transp;
+    border: 3px solid $tt-yellow;
     outline: none;
     transition: all 0.2s ease-in-out;
 
     &::placeholder {
-      color: $tt-green-transp;
+      color: $tt-yellow;
       font-family: "Font Awesome 5 Free", Aurebesh, sans-serif;
       font-weight: 900;
       letter-spacing: 3px;
@@ -214,7 +255,7 @@ h3 {
 
     &:hover,
     &:focus {
-      box-shadow: 0 0 5px 0 $tt-green-transp;
+      box-shadow: 0 0 5px 0 $tt-yellow;
     }
   }
 }
@@ -224,7 +265,7 @@ h3 {
   &:focus {
     outline: none;
   }
-  
+
   div {
     width: 30px;
     height: 30px;
@@ -241,8 +282,8 @@ h3 {
       content: "";
       width: inherit;
       height: inherit;
-      border-bottom: 3px solid $tt-green-transp;
-      border-right: 3px solid $tt-green-transp;
+      border-bottom: 3px solid $tt-yellow-transp;
+      border-right: 3px solid $tt-yellow-transp;
       position: absolute;
       top: 0;
       left: 0;
@@ -262,7 +303,7 @@ h3 {
     &:focus {
       &:before,
       &:after {
-        border-color: $tt-green;
+        border-color: $tt-yellow;
       }
     }
   }
@@ -294,13 +335,18 @@ h3 {
   position: absolute;
   bottom: 50px;
   left: 50%;
-  display: none;
   transform: translateX(-50%);
 
   div {
     transform: rotate(45deg);
   }
 }
+
+// .tt-arrow--scroll-bottom {
+//   div {
+//     cursor: initial;
+//   }
+// }
 
 .tt-arrow--scroll-top {
   position: fixed;
@@ -402,8 +448,6 @@ h3 {
 
 // Starfield Styles
 .starfield {
-  width: 100vw;
-  height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
@@ -490,6 +534,12 @@ $scan-opacity: 0.75;
 .tt-masthead {
   height: 0;
   padding-bottom: 56.25%;
+  margin-bottom: 50px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 80px;
+  }
+
   position: relative;
   background-size: cover;
   background-position: center;
@@ -568,9 +618,9 @@ $scan-opacity: 0.75;
 }
 
 // Scrollable Area Styles
-.simplebar-scrollbar:before {
-  background: $tt-green-transp;
-}
+// .simplebar-scrollbar:before {
+//   background: $tt-green-transp;
+// }
 
 .tt-scrollable {
   position: relative;

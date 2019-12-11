@@ -20,3 +20,17 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.wpautoterms-footer {
+  background-color: $tt-sand-dark;
+  color: white;
+
+  a,
+  .separator {
+    color: white;
+  }
+
+  p {
+    margin: 0;
+  }
+}

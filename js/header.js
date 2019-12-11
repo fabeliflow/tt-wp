@@ -3,6 +3,13 @@ var $jq = jQuery.noConflict();
 
 $jq(document).ready(function() {
 
+  var $nav = $jq(".tt-navigation");
+
+    $jq(window).scroll(function () {
+      
+      $nav.toggleClass("scrolled", $jq(this).scrollTop() > $nav.height());
+    });
+
   var swiper = new Swiper(".tt-menu__list", {
     direction: "vertical",
     loop: true,
@@ -28,6 +35,8 @@ $jq(document).ready(function() {
 
     // Toggle fade
     $jq(".tt-menu").fadeToggle();
+
+    $nav.removeClass("scrolled");
 
     // Menu icon open animation
     $jq(this).toggleClass("tt-btn--menu--active");

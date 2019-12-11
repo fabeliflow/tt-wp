@@ -93,7 +93,7 @@ function wpb_adding_styles_scripts() {
 
 	} elseif (is_front_page()) {
 
-		wp_register_script('home', get_template_directory_uri() . '/js/minified/home.min.js', array('jquery', 'mousewheel', 'slick', 'particles', 'simplebar'), null, true);
+		wp_register_script('home', get_template_directory_uri() . '/js/minified/home.min.js', array('jquery', 'mousewheel', 'swiper', 'particles'), null, true);
 		wp_enqueue_script('home');
 
 	} elseif (is_single()) {

@@ -13,8 +13,8 @@
     padding: 0 15px;
     color: $tt-blue;
     font-family: $crawl-font-family;
-    font-weight: 400;
-    text-transform: inherit;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 }
 
@@ -25,11 +25,11 @@
   color: white;
 
   a {
-    color: $tt-green;
+    color: $tt-yellow;
 
     &:hover,
     &:focus {
-      color: $tt-green;
+      color: $tt-yellow;
     }
   }
 }

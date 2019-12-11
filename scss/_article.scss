@@ -10,40 +10,15 @@ $tt-media-margin: 20px;
   }
 
   h2 {
-    border-left: solid 3px $tt-sand-transp;
+    border-left: solid 3px $tt-yellow;
     padding-left: 10px;
-  }
-}
-
-.tt-article__header {
-  text-align: center;
-  padding: 50px 0 40px;
-
-  @media (min-width: 992px) {
-    padding: 80px 0 40px;
-  }
-
-  h1 {
-    display: block;
-    position: relative;
-    margin: 10px 0 60px 0;
-  
-    &:after {
-      content: "";
-      width: 10%;
-      margin-bottom: -25px;
-      border-bottom: solid 3px $tt-sand-transp;
-      position: absolute;
-      left: 45%;
-      bottom: 0;
-    }
   }
 }
 
 .tt-article__category {
   font-family: Aurebesh;
   letter-spacing: 5px;
-  color: $tt-sand;
+  color: $tt-yellow;
 }
 
 .tt-article__info__social {
@@ -84,7 +59,7 @@ $tt-media-margin: 20px;
 
     .fa-dot-circle {
       padding-right: 15px;
-      color: $tt-sand;
+      color: $tt-yellow;
     }
 
     li {
@@ -96,7 +71,7 @@ $tt-media-margin: 20px;
         display: table-cell;
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
-        color: $tt-sand;
+        color: $tt-yellow;
       }
 
       &:not(:last-child) {
@@ -123,7 +98,7 @@ $tt-media-margin: 20px;
       &:before {
         content: counter(step-counter);
         padding-right: 15px;
-        color: $tt-sand-transp;
+        color: $tt-yellow;
         font-size: 2.5rem;
         font-family: Aurebesh;
       }
@@ -139,9 +114,9 @@ $tt-media-margin: 20px;
     width: 100%;
     margin: $tt-media-margin 0 !important;
     padding: 40px 30px;
-    border-top: solid 3px $tt-sand-transp !important;
+    border-top: solid 3px $tt-yellow !important;
     border-left: none;
-    border-bottom: solid 3px $tt-sand-transp !important;
+    border-bottom: solid 3px $tt-yellow !important;
     font-family: $article-header-font-family !important;
     font-size: 1.7em !important;
     letter-spacing: 3px;
@@ -175,7 +150,7 @@ $tt-media-margin: 20px;
       font-size: 1.4em;
       line-height: 0;
       vertical-align: sub;
-      color: $tt-sand;
+      color: $tt-yellow;
     }
 
     p {
@@ -187,10 +162,10 @@ $tt-media-margin: 20px;
     margin: $tt-media-margin 0 !important;
     padding: 40px 30px !important;
     border-radius: 0 !important;
-    border-top: solid 3px $tt-sand-transp !important;
+    border-top: solid 3px $tt-yellow !important;
     border-left: none !important;
     border-right: none !important;
-    border-bottom: solid 3px $tt-sand-transp !important;
+    border-bottom: solid 3px $tt-yellow !important;
     background-color: transparent !important;
 
     .sw-ctt-text,
@@ -233,7 +208,7 @@ $tt-media-margin: 20px;
         font-size: 1.4em;
         line-height: 0;
         vertical-align: sub;
-        color: $tt-sand;
+        color: $tt-yellow;
       }
     }
 
@@ -255,14 +230,14 @@ $tt-media-margin: 20px;
     padding: 1px 0;
     font-weight: bold;
     color: $tt-text-dark;
-    box-shadow: inset 0 -3px 0 $tt-green-transp;
+    box-shadow: inset 0 -3px 0 $tt-yellow-transp;
     transition: all 0.3s ease-in-out;
 
     &:hover,
     &:focus {
       text-decoration: none;
       color: $tt-text-dark;
-      box-shadow: inset 0 -3px 0 $tt-green;
+      box-shadow: inset 0 -3px 0 $tt-yellow;
     }
   }
 }
@@ -438,22 +413,35 @@ $tt-media-margin: 20px;
   }
 }
 
-.tt-article__more {
-  margin-bottom: 30px;
-  padding: 5px 15px;
-  border-top: solid 3px $tt-sand-transp;
-  font-size: 1.2em;
-  text-align: center;
+// .tt-article__more {
+//   text-align: center;
 
-  span {
-    font-family: Aurebesh;
-    letter-spacing: 5px;
-    color: $tt-sand;
-  }
-}
+//   h2 {
+//     display: block;
+//     position: relative;
+//     margin: 0 0 60px 0;
+//     border-left: none;
+  
+//     &:after {
+//       content: "";
+//       width: 10%;
+//       margin-bottom: -25px;
+//       border-bottom: solid 3px $tt-yellow;
+//       position: absolute;
+//       left: 45%;
+//       bottom: 0;
+//     }
+//   }
+
+//   span {
+//     font-family: Aurebesh;
+//     letter-spacing: 5px;
+//     color: $tt-yellow;
+//   }
+// }
 
 .alm-load-more-btn {
-  background-color: $tt-green !important;
+  background-color: $tt-yellow !important;
   font-family: $watermark-font-family;
   letter-spacing: 3px;
 }
@@ -472,7 +460,7 @@ $tt-media-margin: 20px;
     padding: 1px 0;
     font-weight: bold;
     color: $tt-text-dark;
-    box-shadow: inset 0 -3px 0 $tt-green-transp;
+    box-shadow: inset 0 -3px 0 $tt-yellow-transp;
     transition: all 0.3s ease-in-out;
 
     &:hover,
@@ -480,7 +468,7 @@ $tt-media-margin: 20px;
       text-decoration: none;
       outline: none;
       color: $tt-text-dark;
-      box-shadow: inset 0 -3px 0 $tt-green;
+      box-shadow: inset 0 -3px 0 $tt-yellow;
     }
   }
 }
