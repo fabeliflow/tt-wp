@@ -33,10 +33,12 @@ $jq(document).ready(function() {
   $jq("#tt-menu__btn").click(function(e) {
     e.preventDefault();
 
+    $jq(this).find('i').toggleClass('fa-bars fa-times')
+
     // Toggle fade
     $jq(".tt-menu").fadeToggle();
 
-    $nav.removeClass("scrolled");
+    $jq(".tt-navigation").removeClass("scrolled");
 
     // Menu icon open animation
     $jq(this).toggleClass("tt-btn--menu--active");

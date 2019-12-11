@@ -8,22 +8,25 @@
 
 .tt-navigation.scrolled {
   background-color: $tt-matte-black-transp;
+  box-shadow: 0 2px 2px -2px $tt-black-transp;
 }
 
 .tt-btn--menu {
+  float: right;
   padding: 10px;
   // position: fixed;
   // will-change: transform;
-  top: 5px;
-  right: 5px;
-  display: inline-block;
+  // top: 5px;
+  // right: 5px;
+  // display: inline-block;
   background: transparent;
   border: none;
   border-radius: 100%;
   outline: none;
   cursor: pointer;
+  transition: all 0.5s ease;
 
-  .fa-bars {
+  i {
     font-size: 2em;
     color: $tt-yellow;
     text-shadow: 0 0 10px $tt-yellow;
@@ -44,7 +47,7 @@
 }
 
 .tt-btn--menu--active {
-  .fa-bars {
+  i {
     color: $tt-red;
     text-shadow: 0 0 10px $tt-red;
 
