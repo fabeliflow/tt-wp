@@ -3,12 +3,16 @@ var $jq = jQuery.noConflict();
 $jq(document).ready(function() {
 
   var swiper = new Swiper(".swiper-container", {
+    effect: "fade",
     loop: true,
     centeredSlides: true,
-    // autoplay: {
-    //   delay: 3000,
-    //   disableOnInteraction: false,
-    // },
+    fadeEffect: {
+      crossFade: true
+    },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,

@@ -13,8 +13,8 @@ get_header(); ?>
 
     <section class="tt-home__section">
 
-    <!-- TT Animated Logo -->
-    <div class="tt-logo__cont">
+        <!-- TT Animated Logo -->
+        <div class="tt-logo__cont">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
@@ -160,16 +160,18 @@ get_header(); ?>
                 <div class="swiper-slide tt-masthead--overlay"
                     style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
 
-                    <div class="container-fluid">
+                    <!-- <div class="container-fluid">
                         <div class="row">
-                            <div class="col-sm-12">
-                                <div class="tt-home__card__logo"
-                                    style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/<?php echo $logo_svg ?>.svg');">
-                                </div>
-                                <a class="tt-btn" href="<?php echo $link ?>"><?php echo $link_label ?></a>
-                            </div>
+                            <div class="col-sm-12"> -->
+                    <div class="tt-masthead__logo-wrapper">
+                        <div class="tt-masthead__logo"
+                            style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/<?php echo $logo_svg ?>.svg');">
                         </div>
+                        <a class="tt-btn" href="<?php echo $link ?>"><?php echo $link_label ?></a>
                     </div>
+                    <!-- </div>
+                        </div>
+                    </div> -->
                     <!-- 
                     <div class="tt-home__categories-cont">
                         

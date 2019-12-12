@@ -10,7 +10,7 @@ $tt-media-margin: 20px;
   }
 
   h2 {
-    border-left: solid 3px $tt-yellow;
+    border-left: solid 3px $tt-blue;
     padding-left: 10px;
   }
 }
@@ -114,9 +114,9 @@ $tt-media-margin: 20px;
     width: 100%;
     margin: $tt-media-margin 0 !important;
     padding: 40px 30px;
-    border-top: solid 3px $tt-yellow !important;
+    border-top: solid 3px $tt-blue !important;
     border-left: none;
-    border-bottom: solid 3px $tt-yellow !important;
+    border-bottom: solid 3px $tt-blue !important;
     font-family: $article-header-font-family !important;
     font-size: 1.7em !important;
     letter-spacing: 3px;
@@ -162,10 +162,10 @@ $tt-media-margin: 20px;
     margin: $tt-media-margin 0 !important;
     padding: 40px 30px !important;
     border-radius: 0 !important;
-    border-top: solid 3px $tt-yellow !important;
+    border-top: solid 3px $tt-blue !important;
     border-left: none !important;
     border-right: none !important;
-    border-bottom: solid 3px $tt-yellow !important;
+    border-bottom: solid 3px $tt-blue !important;
     background-color: transparent !important;
 
     .sw-ctt-text,
