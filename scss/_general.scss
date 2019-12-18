@@ -24,6 +24,10 @@ $tt-orange-transp: transparentize($tt-orange, 0.7);
 $tt-pink: #edccca;
 $tt-sand: #d2b597;
 $tt-sand-dark: darken($tt-sand, 5%);
+$tt-dark-theme-bg: #100e17;
+$tt-dark-theme-border: #201c29;
+$tt-dark-theme-bg-light: lighten(#201c29, 5%);
+$tt-dark-theme-text: #a1a1af;
 
 // Aurebesh Font
 @font-face {
@@ -650,3 +654,9 @@ $scan-opacity: 0.75;
 .nc_wrapper.bottom {
   background-color: transparent !important;
 }
+
+.particles-js-canvas-el {
+  // height: 100vmin !important;
+  // width: 100vmax !important;
+  // z-index: 0;
+  }

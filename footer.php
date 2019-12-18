@@ -98,7 +98,7 @@
                 </div>
             </div>
 
-            <img class="tt-footer__img" src="http://tatooinetimes.local/wp-content/uploads/2018/07/orbit-1.png"
+            <img class="tt-footer__img" src="<?php echo get_template_directory_uri(); ?>/img/tt-orbit.png"
                 alt="Tatooine Orbit" />
 
             <?php endif; ?>
@@ -108,5 +108,6 @@
         <?php wp_footer(); ?>
 
         </body>
+        </div>
 
         </html>

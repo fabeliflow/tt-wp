@@ -61,39 +61,43 @@ function wpb_adding_styles_scripts() {
 
 	wp_register_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
 
-	wp_register_style( 'simplebar', get_template_directory_uri() . '/vendor/simplebar/simplebar.css' );
+	// wp_register_style( 'simplebar', get_template_directory_uri() . '/vendor/simplebar/simplebar.css' );
 
-	wp_register_style( 'slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' );
+	// wp_register_style( 'slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' );
 
 	wp_register_style( 'swiper', 'https://unpkg.com/swiper/css/swiper.css' );
 
-	wp_register_style( 'main', get_template_directory_uri() . '/css/main.css',  array('google-fonts', 'font-awesome', 'bootstrap', 'simplebar', 'slick', 'swiper') );
+	wp_register_style( 'main', get_template_directory_uri() . '/css/main.css',  array('google-fonts', 'font-awesome', 'bootstrap', 'swiper') );
 	wp_enqueue_style( 'main' );
 
 	// general scripts
-	wp_register_script('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', null, null, true);
+	// wp_register_script('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', null, null, true);
 
 	wp_register_script('swiper', 'https://unpkg.com/swiper/js/swiper.min.js', null, null, true);
 
 	wp_register_script('mg-glitch', get_template_directory_uri() . '/vendor/mod/mg-glitch/mgGlitch.min.js',  array('jquery'), null, true);
 
-	wp_register_script('simplebar', get_template_directory_uri() . '/vendor/simplebar/simplebar.min.js', null, null, true);
+	// wp_register_script('simplebar', get_template_directory_uri() . '/vendor/simplebar/simplebar.min.js', null, null, true);
 	
-	wp_register_script('mousewheel', get_template_directory_uri() . '/vendor/mousewheel/jquery.mousewheel.min.js', array('jquery'), null, true);
+	// wp_register_script('mousewheel', get_template_directory_uri() . '/vendor/mousewheel/jquery.mousewheel.min.js', array('jquery'), null, true);
+
+	wp_register_script('superslide', get_template_directory_uri() . '/vendor/superslide/superslide-std.min.js', null, null, true);
+
+	wp_register_script('body-scroll-lock',  get_template_directory_uri() . '/vendor/body-scroll-lock/lib/bodyScrollLock.min.js', null, null, true);
 
 	wp_register_script('particles', get_template_directory_uri() . '/vendor/particles/particles.min.js', null, null, true);
 
-	wp_register_script('header', get_template_directory_uri() . '/js/minified/header.min.js', array('jquery', 'swiper'), null, true);
+	wp_register_script('header', get_template_directory_uri() . '/js/minified/header.min.js', array('jquery', 'superslide', 'body-scroll-lock', 'swiper'), null, true);
 	wp_enqueue_script('header');
 
 	if (is_page('the-team')) {
 
-		wp_register_script('team', get_template_directory_uri() . '/js/minified/team.min.js', array('jquery', 'swiper', 'mg-glitch', 'simplebar'), null, true);
+		wp_register_script('team', get_template_directory_uri() . '/js/minified/team.min.js', array('jquery', 'swiper', 'mg-glitch'), null, true);
 		wp_enqueue_script('team');
 
 	} elseif (is_front_page()) {
 
-		wp_register_script('home', get_template_directory_uri() . '/js/minified/home.min.js', array('jquery', 'mousewheel', 'swiper', 'particles'), null, true);
+		wp_register_script('home', get_template_directory_uri() . '/js/minified/home.min.js', array('jquery', 'swiper', 'particles'), null, true);
 		wp_enqueue_script('home');
 
 	} elseif (is_single()) {
@@ -116,15 +120,15 @@ function wp_generate_menu($menu_name) {
 		$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
 	 
 		$menu_items = wp_get_nav_menu_items($menu->term_id);
+
+		$menu_list .= '<ul class="tt-menu__items">';
 	 
 		foreach ( (array) $menu_items as $key => $menu_item ) {
 			$title = $menu_item->title;
 			$url = $menu_item->url;
-			$menu_list .= '<div class="tt-menu__item swiper-slide"><a href="' . $url . '"><span class="tt-menu__item-head">' . $title . '</span><span class="tt-menu__item-title">' . $title . '</span></a></div>';
+			$menu_list .= '<li class="tt-menu__item"><a href="' . $url . '">' . $title . '</a></li>';
 		}
 		$menu_list .= '</ul>';
-	} else {
-		$menu_list = '<div class="tt-menu__item swiper-slide">Menu "' . $menu_name . '" not defined.</div>';
 	}
 	return $menu_list;
 }

@@ -94,66 +94,66 @@
 </head>
 
 <!-- Menu -->
-<nav class="tt-navigation">
+<!-- <nav class="tt-navigation">
     <button id="tt-menu__btn" class="tt-btn--menu">
         <i class="fas fa-bars"></i>
     </button>
-</nav>
+</nav> -->
 
-<!-- Menu Popup -->
-<div class="tt-menu scanline">
+<div id='menu' class="tt-menu">
 
-    <!-- Menu Container -->
-    <div class="tt-menu__cont">
+    <!-- <button onclick='superslideMenu.close()'>Close</button> -->
 
-        <!-- Menu Logo -->
-        <a href="<?php echo get_home_url(); ?>" class="tt-menu__logo">
-            <?php echo get_bloginfo( 'name' ); ?>
-        </a>
-
-        <span class="tt-arrow--up">
-            <i class="fas fa-caret-up"></i>
-        </span>
-
-        <div class="tt-menu__list-cont">
-            <div class="tt-menu__list swiper-container">
-
-                <div class="tt-menu__list-wrapper swiper-wrapper">
-
-                    <?php echo wp_generate_menu('primary'); ?>
-
-                </div>
-
+    <a href="<?php echo get_home_url(); ?>">
+        <div class="tt-menu__logo-cont">
+            <div class="tt-menu__logo"
+                style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/tt-logo.svg');">
             </div>
         </div>
+    </a>
 
-        <span class="tt-arrow--down">
-            <i class="fas fa-caret-down"></i>
-        </span>
+    <!-- Menu Items Here -->
+    <?php echo wp_generate_menu('primary'); ?>
 
-        <!-- Menu Social -->
-        <div class="tt-menu__social">
+    <!-- CHANGE TO DINAMIC -->
+    <ul class="tt-social">
 
-            <?php if( have_rows('menu_social', 'header') ): ?>
+        <li>
+            <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
 
-            <ul class="tt-social">
+        <li>
+            <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </li>
 
-                <?php while ( have_rows('menu_social', 'social-media') ) : the_row(); ?>
+        <li>
+            <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
 
-                <li>
-                    <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
-                        <i class="<?php the_sub_field('menu_social_class'); ?>"></i>
-                    </a>
-                </li>
+        <li>
+            <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </li>
 
-                <?php endwhile; ?>
+    </ul>
+</div>
+<div id='content'>
 
-            </ul>
-
-            <?php endif; ?>
-
-        </div>
-
+    <div id="tt-menu__btn">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 
-</div>
+    <!-- Main content here -->
+
+
+
+    <!-- Menu Popup -->

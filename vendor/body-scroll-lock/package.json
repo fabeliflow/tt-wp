@@ -1,0 +1,107 @@
+{
+  "name": "body-scroll-lock",
+  "version": "2.6.4",
+  "description": "Enables body scroll locking (for iOS Mobile and Tablet, Android, desktop Safari/Chrome/Firefox) without breaking scrolling of a target element (eg. modal/lightbox/flyouts/nav-menus)",
+  "main": "lib/bodyScrollLock.min.js",
+  "author": {
+    "name": "Will Po"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/willmcpo/body-scroll-lock.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "body scroll",
+    "body scroll lock",
+    "react scroll lock",
+    "react scroll",
+    "scroll",
+    "lock",
+    "freeze",
+    "toggle",
+    "disable",
+    "overflow",
+    "modal",
+    "lightbox",
+    "react",
+    "vanilla-js",
+    "angular",
+    "vue",
+    "ios",
+    "mobile",
+    "desktop",
+    "tablet",
+    "bsl"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-babel": "^7.0.2",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-flowtype": "^2.41.0",
+    "eslint-plugin-import": "^2.8.0",
+    "flow-bin": "^0.86.0",
+    "husky": "^0.14.3",
+    "jest": "^22.1.2",
+    "lint-staged": "^6.0.1",
+    "prettier": "^1.10.2",
+    "rimraf": "^2.6.2",
+    "uglify-js": "^3.4.7"
+  },
+  "scripts": {
+    "clean": "rimraf lib/ && mkdir -p ./lib",
+    "release": "npm version",
+    "postrelease": "yarn publish && git push --follow-tags",
+    "buildEs6": "babel --plugins transform-flow-strip-types --no-babelrc src/bodyScrollLock.js > lib/bodyScrollLock.es6.js",
+    "buildEs5": "babel src/bodyScrollLock.js > lib/bodyScrollLock.js && uglifyjs --compress unused,dead_code --mangle reserved=['require','exports'] lib/bodyScrollLock.js > lib/bodyScrollLock.min.js",
+    "build": "yarn buildEs6 && yarn buildEs5",
+    "lint": "eslint ./src",
+    "prerelease": "yarn flow && yarn lint && yarn run clean && yarn build",
+    "flow": "flow",
+    "prettierAll": "prettier --write --single-quote --trailing-comma es5 --print-width 120 'src/**/*.js'",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write --single-quote --trailing-comma es5 --print-width 120",
+      "git add"
+    ]
+  },
+  "licenseText": "MIT License\n\nCopyright (c) 2018 Will Po\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+  "_id": "body-scroll-lock@2.6.4",
+  "dist": {
+    "shasum": "567abc60ef4d656a79156781771398ef40462e94",
+    "integrity": "sha512-NP08WsovlmxEoZP9pdlqrE+AhNaivlTrz9a0FF37BQsnOrpN48eNqivKkE7SYpM9N+YIPjsdVzfLAUQDBm6OQw==",
+    "tarball": "https://registry.npmjs.org/body-scroll-lock/-/body-scroll-lock-2.6.4.tgz",
+    "fileCount": 8,
+    "unpackedSize": 32450,
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdKjwPCRA9TVsSAnZWagAAyXYP/jUrMmSO1RZ4hH1teX+O\nAS3yiZAUBF2L2mq8nL06HVWF8OIgws+uKDYbQy/sBhUuwBOb8n7TBuL/USSG\n9pNWPCefjuGv8PtHXk9ZzL4THuySj+2z1Yy5vQFX6xcqlqydVlu9nbU6jL6I\n/nlPw5JSge/PCbdvQEObqFOviWBYEpltDFhwXNpXp80WTsk9Q6zd/Ji93a+B\npx2LkWzCYBzEADBeRcOyn76yLaMMVuqSRMyi6HDJpyppY3RmW6e7IephzR/w\n7nmOuutKoEANDl9tMI8cdQ2fne1MnQps0aa9I5R3md4PD2xOxhzqpLThAqFh\n6mx/qmeVYOWKUbF3R/uMbGseBKwoYGL5K83zbV1pW7mTGb52lkphmlATTLb6\n8RlGEMc2FBYImGrwEpb/i3vyumv5hmKt/eaI2jZfPHk9IAZgFFYmhofOjReX\nKzIbRKUuJO3CSPb+XgjPQGb7Z/Mj1z29yK49JKWbrO31AZ9YXZRM+HKiA/+p\nixycAWROzQ6SlGYc6z84RHF2AJ0bm/NOSTgnjljH8IVpokUeJGhNhg2L8BVn\n93HJYZda9xY+N2NYeSlC+vxsnXqPhkP3neO6iraRn6qpKU+mtJencxaCORKE\nH0K0y0+EO4NxT/g8Qw2j3uB0B1hVwhUi+mB0ZWrXjm3wXgYoy+HrLkTT3gIA\nB8Te\r\n=FUOk\r\n-----END PGP SIGNATURE-----\r\n"
+  },
+  "maintainers": [
+    {
+      "name": "willmcpo",
+      "email": "wilson.po@gmail.com"
+    }
+  ],
+  "_npmUser": {
+    "name": "willmcpo",
+    "email": "wilson.po@gmail.com"
+  },
+  "directories": {},
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/body-scroll-lock_2.6.4_1563048975122_0.47351925950008833"
+  },
+  "_hasShrinkwrap": false,
+  "_shasum": "567abc60ef4d656a79156781771398ef40462e94",
+  "_resolved": "https://registry.npmjs.org/body-scroll-lock/-/body-scroll-lock-2.6.4.tgz",
+  "_from": "body-scroll-lock@latest"
+}
