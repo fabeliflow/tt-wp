@@ -36,11 +36,11 @@
   .swiper-pagination-bullet {
     width: 10px;
     height: 10px;
-    background-color: $tt-yellow-transp;
+    background-color: $tt-orange-transp;
   }
 
   .swiper-pagination-bullet-active {
-    background-color: $tt-yellow;
+    background-color: $tt-orange;
   }
 
   .swiper-container {
@@ -382,12 +382,12 @@
   padding: 100px 0;
 
   .tt-social__icon {
-    color: $tt-yellow;
+    color: $tt-orange;
 
     &:hover,
     &:focus {
-      color: $tt-yellow;
-      text-shadow: 0 0 15px $tt-yellow;
+      color: $tt-orange;
+      text-shadow: 0 0 5px $tt-orange;
     }
   }
 }

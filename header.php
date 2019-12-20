@@ -100,7 +100,7 @@
     </button>
 </nav> -->
 
-<div id='menu' class="tt-menu">
+<div id='navigation' class="tt-menu">
 
     <!-- <button onclick='superslideMenu.close()'>Close</button> -->
 
@@ -115,30 +115,30 @@
     <!-- Menu Items Here -->
     <?php echo wp_generate_menu('primary'); ?>
 
-    <!-- CHANGE TO DINAMIC -->
+    <!-- CHANGE TO DINAMIC (ADD fa-fw to ALL ICONS!!!!) -->
     <ul class="tt-social">
 
         <li>
             <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
-                <i class="fab fa-twitter"></i>
+                <i class="fab fa-twitter fa-fw"></i>
             </a>
         </li>
 
         <li>
             <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
-                <i class="fab fa-instagram"></i>
+                <i class="fab fa-instagram fa-fw"></i>
             </a>
         </li>
 
         <li>
             <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
-                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-facebook-f fa-fw"></i>
             </a>
         </li>
 
         <li>
             <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
-                <i class="fab fa-youtube"></i>
+                <i class="fab fa-youtube fa-fw"></i>
             </a>
         </li>
 
@@ -146,11 +146,11 @@
 </div>
 <div id='content'>
 
-    <div id="tt-menu__btn">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+<button id="tt-menu__btn" class="hamburger hamburger--emphatic" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
 
     <!-- Main content here -->
 

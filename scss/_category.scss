@@ -37,19 +37,21 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: $tt-card-bg;
+  background-color: $tt-dark-theme-bg;
   color: white;
   overflow: hidden;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.3s ease-in;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
-  @media (min-width: 768px) {
-    &:hover,
-    &:focus {
-      box-shadow: 0px 0px 16px -2px $tt-black-transp;
-    }
-  }
+  // @media (min-width: 768px) {
+  //   &:hover,
+  //   &:focus {
+  //     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  //   }
+  // }
 
   &:hover,
   &:focus {
@@ -107,8 +109,8 @@
     bottom: 0;
     background: linear-gradient(
       to top,
-      $tt-card-bg 0%,
-      rgba(243, 243, 243, 0) 30%
+      $tt-dark-theme-bg 0%,
+      rgba(16, 14, 23, 0) 30%
     );
   }
 
@@ -120,7 +122,7 @@
 .tt-cat__card__title {
   margin: 0 0 20px 0;
   padding-left: 10px;
-  border-left: solid 3px $tt-blue;
+  border-left: solid 3px $tt-pink;
 }
 
 .tt-cat__card__descr {
@@ -133,10 +135,11 @@
 .tt-cat__card__cat-name {
   margin-top: 20px;
   text-align: right;
-  color: $tt-yellow;
+  color: $tt-orange;
 
   span {
     font-family: Aurebesh;
+    font-weight: bold;
     letter-spacing: 5px;
   }
 }

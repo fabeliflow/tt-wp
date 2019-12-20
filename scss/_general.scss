@@ -20,7 +20,7 @@ $tt-yellow-transp: transparentize($tt-yellow, 0.3);
 $tt-red: #f63222;
 $tt-red-transp: transparentize($tt-red, 0.7);
 $tt-orange: #f77529;
-$tt-orange-transp: transparentize($tt-orange, 0.7);
+$tt-orange-transp: transparentize($tt-orange, 0.1);
 $tt-pink: #edccca;
 $tt-sand: #d2b597;
 $tt-sand-dark: darken($tt-sand, 5%);
@@ -145,7 +145,7 @@ h3 {
     width: 0px;
     height: 86%;
     background-color: white;
-    box-shadow: 0 0 15px 3px white;
+    box-shadow: 0 0 5px 3px white;
     position: absolute;
     top: 7%;
     left: 0%;
@@ -157,9 +157,9 @@ h3 {
   &:hover,
   &:focus {
     color: white;
-    border-color: $tt-yellow;
-    box-shadow: 0 0 30px 0 $tt-yellow-transp;
-    background-color: $tt-yellow;
+    border-color: $tt-orange;
+    box-shadow: 0 0 30px 0 $tt-orange-transp;
+    background-color: $tt-orange;
     text-decoration: none;
     transition: all 0.2s ease-out;
 
@@ -223,7 +223,7 @@ h3 {
       content: "";
       width: 10%;
       margin-bottom: -25px;
-      border-bottom: solid 3px $tt-blue;
+      border-bottom: solid 3px $tt-pink;
       position: absolute;
       left: 45%;
       bottom: 0;
@@ -232,9 +232,10 @@ h3 {
 
   span {
     font-family: Aurebesh;
+    font-weight: bold;
     font-size: 0.7em;
     letter-spacing: 5px;
-    color: $tt-yellow;
+    color: $tt-orange;
   }
 }
 
@@ -246,12 +247,12 @@ h3 {
   input {
     padding: 7px 17px;
     border-radius: 10em;
-    border: 3px solid $tt-yellow;
+    border: 3px solid $tt-orange;
     outline: none;
     transition: all 0.2s ease-in-out;
 
     &::placeholder {
-      color: $tt-yellow;
+      color: $tt-orange;
       font-family: "Font Awesome 5 Free", Aurebesh, sans-serif;
       font-weight: 900;
       letter-spacing: 3px;
@@ -259,7 +260,7 @@ h3 {
 
     &:hover,
     &:focus {
-      box-shadow: 0 0 5px 0 $tt-yellow;
+      box-shadow: 0 0 5px 0 $tt-orange;
     }
   }
 }
@@ -286,8 +287,8 @@ h3 {
       content: "";
       width: inherit;
       height: inherit;
-      border-bottom: 3px solid $tt-yellow-transp;
-      border-right: 3px solid $tt-yellow-transp;
+      border-bottom: 3px solid $tt-orange-transp;
+      border-right: 3px solid $tt-orange-transp;
       position: absolute;
       top: 0;
       left: 0;
@@ -307,7 +308,7 @@ h3 {
     &:focus {
       &:before,
       &:after {
-        border-color: $tt-yellow;
+        border-color: $tt-orange;
       }
     }
   }
@@ -457,7 +458,7 @@ h3 {
   position: fixed;
   z-index: -10;
   top: 0;
-  left: 0
+  left: 0;
 
   canvas {
     display: block;
@@ -628,7 +629,7 @@ $scan-opacity: 0.75;
   &:hover,
   &:focus {
     color: white;
-    text-shadow: 0 0 15px white;
+    text-shadow: 0 0 5px white;
   }
 }
 
@@ -639,7 +640,7 @@ $scan-opacity: 0.75;
 
 .tt-scrollable {
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
   flex-grow: 0;
   flex-shrink: 1;
   flex-basis: auto;

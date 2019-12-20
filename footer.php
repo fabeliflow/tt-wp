@@ -52,9 +52,6 @@
 
             <?php elseif (is_front_page()) : ?>
 
-            <!-- Starfield Home -->
-            <div id="starfieldhome" class="starfield"></div>
-
             <div class="container tt-footer__home">
                 <div class="row">
                     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">

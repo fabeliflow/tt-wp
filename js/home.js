@@ -116,8 +116,7 @@ $jq(document).ready(function () {
   //     });
 });
 
-$jq(window).resize(function () {
-  // Starfiled Home Page
+
   particlesJS("starfieldhome", {
     particles: {
       number: {
@@ -228,4 +227,4 @@ $jq(window).resize(function () {
     },
     retina_detect: true
   });
-});
+

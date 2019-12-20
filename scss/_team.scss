@@ -194,6 +194,7 @@
   color: $tt-red;
   text-shadow: 0 0 10px $tt-red;
   font-family: Aurebesh;
+  font-weight: bold;
   letter-spacing: 5px;
   font-weight: bold;
   text-transform: uppercase;
@@ -302,6 +303,7 @@
   color: $tt-red;
   text-shadow: 0 0 10px $tt-red;
   font-family: "Aurebesh";
+  font-weight: bold;
   font-size: 2em !important;
   @media (min-width: 768px) {
     font-size: 2.5em !important;
@@ -318,6 +320,7 @@
   color: $tt-red;
   text-shadow: 0 0 10px $tt-red;
   font-family: "Aurebesh";
+  font-weight: bold;
   font-weight: bold;
   letter-spacing: 5px;
   cursor: auto;
@@ -341,7 +344,7 @@
   &:hover,
   &:focus {
     color: $tt-blue-light;
-    text-shadow: 0 0 15px $tt-blue-light;
+    text-shadow: 0 0 5px $tt-blue-light;
   }
 }
 .tt-team__card__nav {

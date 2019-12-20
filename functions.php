@@ -61,13 +61,13 @@ function wpb_adding_styles_scripts() {
 
 	wp_register_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
 
-	// wp_register_style( 'simplebar', get_template_directory_uri() . '/vendor/simplebar/simplebar.css' );
+	wp_register_style( 'simplebar', get_template_directory_uri() . '/vendor/simplebar/simplebar.css' );
 
 	// wp_register_style( 'slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' );
 
 	wp_register_style( 'swiper', 'https://unpkg.com/swiper/css/swiper.css' );
 
-	wp_register_style( 'main', get_template_directory_uri() . '/css/main.css',  array('google-fonts', 'font-awesome', 'bootstrap', 'swiper') );
+	wp_register_style( 'main', get_template_directory_uri() . '/css/main.css',  array('google-fonts', 'font-awesome', 'bootstrap', 'swiper', 'simplebar') );
 	wp_enqueue_style( 'main' );
 
 	// general scripts
@@ -77,7 +77,7 @@ function wpb_adding_styles_scripts() {
 
 	wp_register_script('mg-glitch', get_template_directory_uri() . '/vendor/mod/mg-glitch/mgGlitch.min.js',  array('jquery'), null, true);
 
-	// wp_register_script('simplebar', get_template_directory_uri() . '/vendor/simplebar/simplebar.min.js', null, null, true);
+	wp_register_script('simplebar', get_template_directory_uri() . '/vendor/simplebar/simplebar.min.js', null, null, true);
 	
 	// wp_register_script('mousewheel', get_template_directory_uri() . '/vendor/mousewheel/jquery.mousewheel.min.js', array('jquery'), null, true);
 
@@ -87,7 +87,7 @@ function wpb_adding_styles_scripts() {
 
 	wp_register_script('particles', get_template_directory_uri() . '/vendor/particles/particles.min.js', null, null, true);
 
-	wp_register_script('header', get_template_directory_uri() . '/js/minified/header.min.js', array('jquery', 'superslide', 'body-scroll-lock', 'swiper'), null, true);
+	wp_register_script('header', get_template_directory_uri() . '/js/minified/header.min.js', array('jquery', 'simplebar', 'superslide', 'body-scroll-lock'), null, true);
 	wp_enqueue_script('header');
 
 	if (is_page('the-team')) {
@@ -121,7 +121,7 @@ function wp_generate_menu($menu_name) {
 	 
 		$menu_items = wp_get_nav_menu_items($menu->term_id);
 
-		$menu_list .= '<ul class="tt-menu__items">';
+		$menu_list .= '<ul data-simplebar class="tt-menu__items">';
 	 
 		foreach ( (array) $menu_items as $key => $menu_item ) {
 			$title = $menu_item->title;

@@ -22,12 +22,21 @@
 }
 
 .wpautoterms-footer {
-  background-color: $tt-matte-black;
-  color: white;
+  background-color: $tt-dark-theme-bg;
+  color: $tt-dark-theme-text;
+
+  a {
+    transition: all 0.2s ease-in;
+    &:hover,
+    &:focus {
+      color: white;
+      text-decoration: none;
+    }
+  }
 
   a,
   .separator {
-    color: white;
+    color: $tt-dark-theme-text;
   }
 
   p {
