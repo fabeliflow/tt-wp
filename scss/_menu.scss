@@ -197,30 +197,31 @@
   display: flex;
   flex-direction: column;
   border-right: 1px solid $tt-dark-theme-border;
+  overflow-x: hidden;
 
   .tt-social {
     margin: 0;
-    padding: 0;
+    padding: 30px 10px;
     border-top: 1px solid $tt-dark-theme-border;
-    border-bottom: 1px solid $tt-dark-theme-border;
+    // border-bottom: 1px solid $tt-dark-theme-border;
 
     li {
-      padding: 30px;
+      // padding: 30px;
       cursor: pointer;
 
-      &:hover,
-      &:focus {
-        // background-color: $tt-dark-theme-bg-light;
+      // &:hover,
+      // &:focus {
+      //   // background-color: $tt-dark-theme-bg-light;
 
-        .tt-social__icon {
-          color: $tt-orange;
-          text-shadow: 0 0 5px $tt-orange;
-        }
-      }
+      //   .tt-social__icon {
+      //     color: $tt-orange;
+      //     text-shadow: 0 0 5px $tt-orange;
+      //   }
+      // }
 
-      &:not(:last-child) {
-        border-right: 1px solid $tt-dark-theme-border;
-      }
+      // &:not(:last-child) {
+      //   border-right: 1px solid $tt-dark-theme-border;
+      // }
 
       .tt-social__icon {
         color: $tt-orange;
@@ -499,7 +500,7 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
 
 .hamburger-box {
   width: $hamburger-layer-width;
-  height: $hamburger-layer-height * 3 + $hamburger-layer-spacing * 2;
+  height: $hamburger-layer-height * 3 + $hamburger-layer-spacing * 3;
   display: inline-block;
   position: relative;
 }

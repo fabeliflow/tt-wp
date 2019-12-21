@@ -121,6 +121,7 @@ get_header(); ?>
                         <!-- Category Card Category Name -->
                         <div class="tt-cat__card__cat-name">
                             <span><?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?></span>
+                            <span><?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?></span>
                         </div>
 
                     </div>

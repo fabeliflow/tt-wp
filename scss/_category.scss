@@ -135,11 +135,19 @@
 .tt-cat__card__cat-name {
   margin-top: 20px;
   text-align: right;
-  color: $tt-orange;
 
   span {
+    letter-spacing: 5px;
+    display: block;
+    font-family: $article-header-font-family;
+    text-transform: uppercase;
+    font-size: 1.3em;
+  }
+
+  span:first-child {
     font-family: Aurebesh;
     font-weight: bold;
-    letter-spacing: 5px;
+    color: $tt-orange;
+    font-size: .7em;
   }
 }

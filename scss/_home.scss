@@ -1,5 +1,5 @@
 .tt-home__section:not(.tt-home__section-logo) {
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 .tt-home__section {
@@ -44,7 +44,7 @@
   }
 
   .swiper-container {
-    height: 100vh;
+    height: 80vh;
   }
 
   .tt-arrow {
@@ -330,7 +330,9 @@
   fill: white;
 }
 
-.tt-logo__title--sub {
+.tt-logo__sun,
+.tt-logo__title--sub,
+.tt-logo__title--main {
   opacity: 0;
 }
 
@@ -342,24 +344,27 @@
 // }
 
 // .last-slide {
-.tt-logo__sun {
-  animation: rotate 2s 2;
-}
-
-.tt-logo__title--sub {
-  animation: show-title-sub 1s 5.9s forwards;
-}
-
-.tt-logo__border--left {
-  animation: draw 4s ease-in-out 4s forwards;
-}
-
-.tt-logo__border--right {
-  animation: draw 3.9s ease-in-out 3.9s forwards;
-}
-
-.tt-logo__title--main {
-  animation: show-title-main 4s forwards;
+.tt-logo--animate {
+  .tt-logo__sun {
+    opacity: 1;
+    animation: rotate 2s 2;
+  }
+  
+  .tt-logo__title--sub {
+    animation: show-title-sub 1s 5.9s forwards;
+  }
+  
+  .tt-logo__border--left {
+    animation: draw 4s ease-in-out 4s forwards;
+  }
+  
+  .tt-logo__border--right {
+    animation: draw 3.9s ease-in-out 3.9s forwards;
+  }
+  
+  .tt-logo__title--main {
+    animation: show-title-main 4s forwards;
+  }
 }
 
 // $delay: 7.1s;

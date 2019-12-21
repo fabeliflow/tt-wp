@@ -98,12 +98,12 @@
             <img class="tt-footer__img" src="<?php echo get_template_directory_uri(); ?>/img/tt-orbit.png"
                 alt="Tatooine Orbit" />
 
+            <!-- Starfield Home -->
+            <div id="starfieldhome" class="starfield"></div>
+
             <?php endif; ?>
 
         </footer>
-
-        <!-- Starfield Home -->
-<div id="starfieldhome" class="starfield"></div>
 
         <?php wp_footer(); ?>
 

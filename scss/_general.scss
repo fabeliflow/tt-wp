@@ -190,15 +190,12 @@ h3 {
 }
 
 .tt-btn--alt {
-  color: white;
-  background-color: $tt-red;
-  border: 2px solid $tt-red;
 
   &:hover,
   &:focus {
-    color: white;
-    background-color: $tt-red;
+    border-color: $tt-red;
     box-shadow: 0 0 30px 0 $tt-red-transp;
+    background-color: $tt-red;
   }
 }
 

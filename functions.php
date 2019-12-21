@@ -70,6 +70,8 @@ function wpb_adding_styles_scripts() {
 	wp_register_style( 'main', get_template_directory_uri() . '/css/main.css',  array('google-fonts', 'font-awesome', 'bootstrap', 'swiper', 'simplebar') );
 	wp_enqueue_style( 'main' );
 
+	wp_register_script('superslide', get_template_directory_uri() . '/vendor/superslide/superslide-std.min.js', null, null, true);
+
 	// general scripts
 	// wp_register_script('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', null, null, true);
 
@@ -80,8 +82,6 @@ function wpb_adding_styles_scripts() {
 	wp_register_script('simplebar', get_template_directory_uri() . '/vendor/simplebar/simplebar.min.js', null, null, true);
 	
 	// wp_register_script('mousewheel', get_template_directory_uri() . '/vendor/mousewheel/jquery.mousewheel.min.js', array('jquery'), null, true);
-
-	wp_register_script('superslide', get_template_directory_uri() . '/vendor/superslide/superslide-std.min.js', null, null, true);
 
 	wp_register_script('body-scroll-lock',  get_template_directory_uri() . '/vendor/body-scroll-lock/lib/bodyScrollLock.min.js', null, null, true);
 
@@ -106,6 +106,25 @@ function wpb_adding_styles_scripts() {
 		wp_enqueue_script('article');
 	}
 }
+
+// add_action('wp_head', function () {
+
+//     global $wp_scripts;
+
+//     foreach($wp_scripts->queue as $handle) {
+//         $script = $wp_scripts->registered[$handle];
+
+//         //-- Weird way to check if script is being enqueued in the footer.
+//         if($script->extra['group'] === 1) {
+
+//             //-- If version is set, append to end of source.
+//             $source = $script->src . ($script->ver ? "?ver={$script->ver}" : "");
+
+//             //-- Spit out the tag.
+//             echo "<link rel='preload' href='{$source}' as='script'/>\n";
+//         }
+//     }
+// }, 1);
 
 add_action( 'wp_enqueue_scripts', 'wpb_adding_styles_scripts' );
 
