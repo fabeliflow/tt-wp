@@ -10,7 +10,7 @@ $tt-media-margin: 20px;
   }
 
   h2 {
-    border-left: solid 3px $tt-pink;
+    border-left: solid 3px $tt-blue;
     padding-left: 10px;
   }
 }
@@ -74,7 +74,7 @@ $tt-media-margin: 20px;
         display: table-cell;
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
-        color: $tt-pink;
+        color: $tt-blue;
       }
 
       &:not(:last-child) {
@@ -103,9 +103,9 @@ $tt-media-margin: 20px;
         left: 0;
         font-size: 1.5625rem;
         line-height: 1.75rem;
-        color: $tt-pink;
+        color: $tt-orange;
         width: 3rem;
-        border-right: 3px solid $tt-pink;
+        border-right: 3px solid $tt-blue;
       }
     }
   }
@@ -144,9 +144,9 @@ $tt-media-margin: 20px;
     width: 100%;
     margin: $tt-media-margin 0 !important;
     padding: 40px 30px;
-    border-top: solid 3px $tt-pink !important;
+    border-top: solid 3px $tt-blue !important;
     border-left: none;
-    border-bottom: solid 3px $tt-pink !important;
+    border-bottom: solid 3px $tt-blue !important;
     font-family: $article-header-font-family !important;
     font-size: 1.7em !important;
     letter-spacing: 3px;
@@ -193,10 +193,10 @@ $tt-media-margin: 20px;
     margin: $tt-media-margin 0 !important;
     padding: 40px 30px !important;
     border-radius: 0 !important;
-    border-top: solid 3px $tt-pink !important;
+    border-top: solid 3px $tt-blue !important;
     border-left: none !important;
     border-right: none !important;
-    border-bottom: solid 3px $tt-pink !important;
+    border-bottom: solid 3px $tt-blue !important;
     background-color: transparent !important;
 
     .sw-ctt-text,

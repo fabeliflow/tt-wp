@@ -7,9 +7,6 @@ get_header(); ?>
 
 <body class="tt-home">
 
-<!-- Starfield Home -->
-<div id="starfieldhome" class="starfield"></div>
-
     <!-- <section class="tt-home__section tt-home__section-logo">
         
     </section> -->

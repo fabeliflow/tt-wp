@@ -59,6 +59,31 @@
   }
 }
 
+#navigation {
+  width: 70vw !important;
+  left: -70vw !important;
+
+  @media (min-width: 768px) {
+    width: 30vw !important;
+    left: -30vw !important;
+  }
+}
+
+.nav-open {
+  transform: translate3d(70vw, 0px, 0px) !important;
+  @media (min-width: 768px) {
+    transform: translate3d(30vw, 0px, 0px) !important;
+  }
+}
+
+.tt-content--overlay {
+  transform: translate3d(70vw, 0px, 0px) !important;
+
+  @media (min-width: 768px) {
+    transform: translate3d(30vw, 0px, 0px) !important;
+  }
+}
+
 // .tt-menu {
 //   width: 100%;
 //   height: 100%;
@@ -334,6 +359,8 @@
   top: 0;
   z-index: 999999;
   border-bottom-right-radius: 40%;
+  transition: all 0.5s ease 0s;
+  // transform: translate3d(-30vw, 0, 0);
 
   // &.is-active {
   //   position: sticky;
@@ -398,6 +425,7 @@
   right: 0;
   bottom: 0;
   background-color: transparentize($tt-dark-theme-bg, 0.2);
+  z-index: 99;
 }
 
 // MENU HAMBURGER
@@ -407,7 +435,7 @@ $hamburger-layer-width: 40px !default;
 $hamburger-layer-height: 4px !default;
 $hamburger-layer-spacing: 6px !default;
 $hamburger-layer-color: $tt-orange !default;
-$hamburger-layer-border-radius: 4px !default;
+$hamburger-layer-border-radius: 0 !default;
 $hamburger-hover-opacity: 0.7 !default;
 $hamburger-active-layer-color: $hamburger-layer-color !default;
 $hamburger-active-hover-opacity: $hamburger-hover-opacity !default;
@@ -443,6 +471,15 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
   }
 
   &.is-active {
+    // transition: all 0.5s ease 0s;
+        transform: translate3d(70vw, 0px, 0px);
+
+        @media (min-width: 768px) {
+          transform: translate3d(30vw, 0px, 0px);
+        }
+
+
+    // transition: all 0.5s ease 0s; -webkit-tap-highlight-color: transparent; transform: translate3d(30vw, 0px, 0px);
     &:hover {
       // @if $hamburger-hover-use-filter == true {
       //   filter: $hamburger-active-hover-filter;

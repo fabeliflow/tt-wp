@@ -65,28 +65,28 @@
                             <li>
                                 <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>"
                                     target="_blank">
-                                    <i class="fab fa-twitter"></i>
+                                    <i class="fab fa-twitter fa-fw"></i>
                                 </a>
                             </li>
 
                             <li>
                                 <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>"
                                     target="_blank">
-                                    <i class="fab fa-instagram"></i>
+                                    <i class="fab fa-instagram fa-fw"></i>
                                 </a>
                             </li>
 
                             <li>
                                 <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>"
                                     target="_blank">
-                                    <i class="fab fa-facebook-f"></i>
+                                    <i class="fab fa-facebook-f fa-fw"></i>
                                 </a>
                             </li>
 
                             <li>
                                 <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>"
                                     target="_blank">
-                                    <i class="fab fa-youtube"></i>
+                                    <i class="fab fa-youtube fa-fw"></i>
                                 </a>
                             </li>
 
@@ -101,6 +101,9 @@
             <?php endif; ?>
 
         </footer>
+
+        <!-- Starfield Home -->
+<div id="starfieldhome" class="starfield"></div>
 
         <?php wp_footer(); ?>
 

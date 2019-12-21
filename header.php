@@ -100,7 +100,15 @@
     </button>
 </nav> -->
 
+<button id="tt-menu__btn" class="hamburger hamburger--emphatic" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+
 <div id='navigation' class="tt-menu">
+
+
 
     <!-- <button onclick='superslideMenu.close()'>Close</button> -->
 
@@ -146,11 +154,7 @@
 </div>
 <div id='content'>
 
-<button id="tt-menu__btn" class="hamburger hamburger--emphatic" type="button">
-  <span class="hamburger-box">
-    <span class="hamburger-inner"></span>
-  </span>
-</button>
+
 
     <!-- Main content here -->
 

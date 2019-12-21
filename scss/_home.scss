@@ -273,8 +273,7 @@
 
 .tt-logo__cont {
   width: 100%;
-  margin-top: 100px;
-  margin-bottom: 50px;
+  margin: 100px 0;
   padding-top: 50px;
   // position: absolute;
   // left: 50%;
@@ -284,7 +283,7 @@
 }
 
 .tt-logo__wrap {
-  // padding-bottom: 32%;
+  padding-bottom: 32%;
   position: relative;
   height: 0;
   width: 100%;
@@ -293,11 +292,11 @@
 }
 
 .tt-logo {
-  // position: absolute;
-  // height: 100%;
-  // width: 100%;
-  // left: 0;
-  // bottom: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  bottom: 0;
 }
 
 .tt-logo__sun {
