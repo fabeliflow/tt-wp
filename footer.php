@@ -1,10 +1,8 @@
         <!-- Footer -->
 
-        <footer class="tt-footer">
+        <footer>
 
             <?php if (is_single() || is_category()) : ?>
-
-
 
             <?php $image = get_field('footer_image', 'footer'); ?>
 
