@@ -40,10 +40,16 @@ Template Name: Post
 
                     <div class="col-sm-8 col-sm-offset-2">
 
+                        <?php
+                            $category = get_the_category()[0];
+                            $category_name = $category->cat_name;
+                        ?>
+
                         <!-- Article Header -->
-                        <header class="tt-header tt-article__header">
+                        <header class="tt-header tt-article__header"
+                            style="--category-color:<?php the_field('category_color', $category); ?>;">
                             <span class="tt-article__category">
-                                <?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?>
+                                <?php echo $category_name  ?>
                             </span>
                             <h1>
                                 <?php the_title(); ?>
@@ -309,10 +315,16 @@ Template Name: Post
 
                     <div class="tt-cat__card__info">
 
+                        <?php
+                            $category = get_the_category()[0];
+                            $category_name = $category->cat_name;
+                        ?>
+
                         <div class="tt-cat__card__cont">
 
                             <!-- Category Card Title -->
-                            <h3 class="tt-cat__card__title">
+                            <h3 style="--category-color:<?php the_field('category_color', $category); ?>;"
+                                class="tt-cat__card__title">
                                 <?php the_title(); ?>
                             </h3>
 
@@ -324,9 +336,10 @@ Template Name: Post
                         </div>
 
                         <!-- Category Card Category Name -->
-                        <div class="tt-cat__card__cat-name">
-                            <span><?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?></span>
-                            <span><?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?></span>
+                        <div style="--category-color:<?php the_field('category_color', $category); ?>;"
+                            class="tt-cat__card__cat-name">
+                            <span><?php echo $category_name  ?></span>
+                            <span><?php echo $category_name  ?></span>
                         </div>
 
                     </div>

@@ -43,8 +43,8 @@
   cursor: pointer;
   text-decoration: none;
   transition: all 0.3s ease-in;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
   // @media (min-width: 768px) {
   //   &:hover,
@@ -96,7 +96,7 @@
     min-height: 250px;
     max-height: 250px;
   }
- 
+
   position: relative;
   overflow: hidden;
 
@@ -122,7 +122,7 @@
 .tt-cat__card__title {
   margin: 0 0 20px 0;
   padding-left: 10px;
-  border-left: solid 3px $tt-blue;
+  border-left: solid 3px var(--category-color);
 }
 
 .tt-cat__card__descr {
@@ -147,7 +147,7 @@
   span:first-child {
     font-family: Aurebesh;
     font-weight: bold;
-    color: $tt-orange;
-    font-size: .7em;
+    color: var(--category-color);
+    font-size: 0.7em;
   }
 }

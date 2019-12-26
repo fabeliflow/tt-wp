@@ -36,11 +36,11 @@
   .swiper-pagination-bullet {
     width: 10px;
     height: 10px;
-    background-color: $tt-orange-transp;
+    background-color: $tt-rose-transp;
   }
 
   .swiper-pagination-bullet-active {
-    background-color: $tt-orange;
+    background-color: $tt-rose;
   }
 
   .swiper-container {
@@ -95,83 +95,7 @@
       height: 100%;
     }
   }
-
-  // .tt-social {
-  //   li {
-  //     opacity: 0;
-  //   }
-  // }
 }
-
-// .tt-home__header {
-//   display: flex;
-//   justify-content: center;
-
-//   h1 {
-//     margin: 0;
-//     padding: 0 15px;
-//     color: $tt-blue;
-//     opacity: 0;
-//     display: initial;
-//     font-family: $crawl-font-family;
-//     font-weight: 400;
-//     letter-spacing: inherit;
-//     text-transform: inherit;
-//     animation: fadeIn 2s forwards;
-//   }
-// }
-
-// .tt-home__slide__wrap {
-//   background-color: $tt-black-transp;
-//   color: white;
-// }
-
-// .tt-home__mission {
-//   background-size: cover;
-//   background-position: center;
-//   background-repeat: no-repeat;
-
-//   .tt-home__slide__wrap {
-//     &:after {
-//       content: "Mission";
-//       width: 0;
-//       position: absolute;
-//       top: 50%;
-//       transform: translateY(-50%);
-//       color: $tt-white-transp;
-//       font-family: $watermark-font-family;
-//       font-size: 4em;
-//       word-wrap: break-word;
-//     }
-//   }
-// }
-
-// .tt-home__mission__cont {
-//   height: 100%;
-//   padding: 50px 30px 85px 65px;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-
-//   @media (min-width: 768px) {
-//     padding-left: 90px;
-//     padding-right: 40px;
-//   }
-// }
-
-// .tt-home__mission__header {
-//   h2 {
-//     padding-left: 10px;
-//     border-left: solid 3px $tt-green;
-//   }
-// }
-
-// .tt-home__mission__header,
-// .tt-home__mission__footer {
-//   flex-basis: auto;
-//   flex-grow: 0;
-//   flex-shrink: 0;
-// }
 
 .tt-home__card {
   width: 100%;
@@ -349,19 +273,19 @@
     opacity: 1;
     animation: rotate 2s 2;
   }
-  
+
   .tt-logo__title--sub {
     animation: show-title-sub 1s 5.9s forwards;
   }
-  
+
   .tt-logo__border--left {
     animation: draw 4s ease-in-out 4s forwards;
   }
-  
+
   .tt-logo__border--right {
     animation: draw 3.9s ease-in-out 3.9s forwards;
   }
-  
+
   .tt-logo__title--main {
     animation: show-title-main 4s forwards;
   }
@@ -386,12 +310,12 @@
   padding: 100px 0;
 
   .tt-social__icon {
-    color: $tt-orange;
+    color: $tt-rose;
 
     &:hover,
     &:focus {
-      color: $tt-orange;
-      text-shadow: 0 0 5px $tt-orange;
+      color: $tt-rose;
+      text-shadow: 0 0 5px $tt-rose;
     }
   }
 }

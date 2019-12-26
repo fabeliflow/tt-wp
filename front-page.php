@@ -104,10 +104,16 @@ get_header(); ?>
 
                     <div class="tt-cat__card__info">
 
+                        <?php
+                            $category = get_the_category()[0];
+                            $category_name = $category->cat_name;
+                        ?>
+
                         <div class="tt-cat__card__cont">
 
                             <!-- Category Card Title -->
-                            <h3 class="tt-cat__card__title">
+                            <h3 class="tt-cat__card__title"
+                                style="--category-color:<?php the_field('category_color', $category); ?>;">
                                 <?php the_title(); ?>
                             </h3>
 
@@ -119,9 +125,10 @@ get_header(); ?>
                         </div>
 
                         <!-- Category Card Category Name -->
-                        <div class="tt-cat__card__cat-name">
-                            <span><?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?></span>
-                            <span><?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?></span>
+                        <div style="--category-color:<?php the_field('category_color', $category); ?>;"
+                            class="tt-cat__card__cat-name">
+                            <span><?php echo $category_name  ?></span>
+                            <span><?php echo $category_name  ?></span>
                         </div>
 
                     </div>
@@ -161,23 +168,12 @@ get_header(); ?>
                 <div class="swiper-slide tt-masthead--overlay"
                     style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
 
-                    <!-- <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-sm-12"> -->
                     <div class="tt-masthead__logo-wrapper">
                         <div class="tt-masthead__logo"
                             style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/<?php echo $logo_svg ?>.svg');">
                         </div>
-                        <a class="tt-btn" href="<?php echo $link ?>"><?php echo $link_label ?></a>
+                        <a style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-btn tt-btn--cat" href="<?php echo $link ?>"><?php echo $link_label ?></a>
                     </div>
-                    <!-- </div>
-                        </div>
-                    </div> -->
-                    <!-- 
-                    <div class="tt-home__categories-cont">
-                        
-                        
-                    </div> -->
 
                 </div>
 

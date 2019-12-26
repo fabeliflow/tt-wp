@@ -28,15 +28,15 @@
 
   i {
     font-size: 2em;
-    color: $tt-orange;
-    text-shadow: 0 0 10px $tt-orange;
+    color: $tt-rose;
+    text-shadow: 0 0 10px $tt-rose;
     transition: text-shadow 0.3s ease;
 
     &:hover,
     &:focus {
-      color: $tt-orange;
+      color: $tt-rose;
       text-decoration: none;
-      text-shadow: 0 0 5px $tt-orange;
+      text-shadow: 0 0 5px $tt-rose;
     }
   }
 
@@ -203,33 +203,17 @@
     margin: 0;
     padding: 30px 10px;
     border-top: 1px solid $tt-dark-theme-border;
-    // border-bottom: 1px solid $tt-dark-theme-border;
 
     li {
-      // padding: 30px;
       cursor: pointer;
 
-      // &:hover,
-      // &:focus {
-      //   // background-color: $tt-dark-theme-bg-light;
-
-      //   .tt-social__icon {
-      //     color: $tt-orange;
-      //     text-shadow: 0 0 5px $tt-orange;
-      //   }
-      // }
-
-      // &:not(:last-child) {
-      //   border-right: 1px solid $tt-dark-theme-border;
-      // }
-
       .tt-social__icon {
-        color: $tt-orange;
+        color: $tt-rose;
 
         &:hover,
         &:focus {
-          color: $tt-orange;
-          text-shadow: 0 0 5px $tt-orange;
+          color: $tt-rose;
+          text-shadow: 0 0 5px $tt-rose;
         }
       }
     }
@@ -241,6 +225,15 @@
   padding: 0;
   margin: 0;
   flex: 2;
+}
+
+.tt-menu__items--cat {
+  a {
+    &:hover,
+    &:focus {
+      border-left: solid 3px var(--category-color);
+    }
+  }
 }
 
 .tt-menu__item {
@@ -267,7 +260,7 @@
     border-left: solid 3px transparent;
     &:hover,
     &:focus {
-      border-left: solid 3px $tt-orange;
+      border-left: solid 3px $tt-rose;
       text-decoration: none;
     }
   }
@@ -435,7 +428,7 @@ $hamburger-padding-y: 15px !default;
 $hamburger-layer-width: 40px !default;
 $hamburger-layer-height: 4px !default;
 $hamburger-layer-spacing: 6px !default;
-$hamburger-layer-color: $tt-orange !default;
+$hamburger-layer-color: $tt-rose !default;
 $hamburger-layer-border-radius: 0 !default;
 $hamburger-hover-opacity: 0.7 !default;
 $hamburger-active-layer-color: $hamburger-layer-color !default;

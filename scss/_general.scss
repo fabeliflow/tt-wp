@@ -22,11 +22,13 @@ $tt-red-transp: transparentize($tt-red, 0.7);
 $tt-orange: #f77529;
 $tt-orange-transp: transparentize($tt-orange, 0.1);
 $tt-pink: #edccca;
+$tt-rose: #f37257;
+$tt-rose-transp: transparentize($tt-rose, 0.5);
 $tt-sand: #d2b597;
 $tt-sand-dark: darken($tt-sand, 5%);
 $tt-dark-theme-bg: #100e17;
 $tt-dark-theme-border: #201c29;
-$tt-dark-theme-bg-light: lighten(#201c29, 5%);
+$tt-dark-theme-bg-light: lighten($tt-dark-theme-bg, 5%);
 $tt-dark-theme-text: #a1a1af;
 
 // Aurebesh Font
@@ -157,9 +159,9 @@ h3 {
   &:hover,
   &:focus {
     color: white;
-    border-color: $tt-orange;
-    box-shadow: 0 0 30px 0 $tt-orange-transp;
-    background-color: $tt-orange;
+    border-color: $tt-rose;
+    box-shadow: 0 0 30px 0 $tt-rose-transp;
+    background-color: $tt-rose;
     text-decoration: none;
     transition: all 0.2s ease-out;
 
@@ -171,6 +173,16 @@ h3 {
   &:active {
     box-shadow: 0 0 0 0 transparent;
     transition: box-shadow 0.2s ease-in;
+  }
+}
+
+.tt-btn--cat {
+  &:hover,
+  &:focus {
+    $cat-color: var(--category-color);
+    border-color: $cat-color;
+    box-shadow: 0 0 5px 0 $cat-color;
+    background-color: $cat-color;
   }
 }
 
@@ -220,7 +232,7 @@ h3 {
       content: "";
       width: 10%;
       margin-bottom: -25px;
-      border-bottom: solid 3px $tt-blue;
+      border-bottom: solid 3px $tt-sand;
       position: absolute;
       left: 45%;
       bottom: 0;
@@ -232,7 +244,7 @@ h3 {
     font-weight: bold;
     font-size: 0.7em;
     letter-spacing: 5px;
-    color: $tt-orange;
+    color: $tt-rose;
   }
 }
 
@@ -249,12 +261,12 @@ h3 {
   input {
     padding: 7px 17px;
     border-radius: 10em;
-    border: 3px solid $tt-orange;
+    border: 3px solid $tt-rose;
     outline: none;
     transition: all 0.2s ease-in-out;
 
     &::placeholder {
-      color: $tt-orange;
+      color: $tt-rose;
       font-family: "Font Awesome 5 Free", Aurebesh, sans-serif;
       font-weight: 900;
       letter-spacing: 3px;
@@ -262,7 +274,7 @@ h3 {
 
     &:hover,
     &:focus {
-      box-shadow: 0 0 5px 0 $tt-orange;
+      box-shadow: 0 0 5px 0 $tt-rose;
     }
   }
 }
@@ -289,8 +301,8 @@ h3 {
       content: "";
       width: inherit;
       height: inherit;
-      border-bottom: 3px solid $tt-orange-transp;
-      border-right: 3px solid $tt-orange-transp;
+      border-bottom: 3px solid $tt-rose-transp;
+      border-right: 3px solid $tt-rose-transp;
       position: absolute;
       top: 0;
       left: 0;
@@ -310,7 +322,7 @@ h3 {
     &:focus {
       &:before,
       &:after {
-        border-color: $tt-orange;
+        border-color: $tt-rose;
       }
     }
   }

@@ -93,13 +93,6 @@
 
 </head>
 
-<!-- Menu -->
-<!-- <nav class="tt-navigation">
-    <button id="tt-menu__btn" class="tt-btn--menu">
-        <i class="fas fa-bars"></i>
-    </button>
-</nav> -->
-
 <button id="tt-menu__btn" class="hamburger hamburger--emphatic" type="button">
   <span class="hamburger-box">
     <span class="hamburger-inner"></span>
@@ -107,10 +100,6 @@
 </button>
 
 <div id='navigation' class="tt-menu">
-
-
-
-    <!-- <button onclick='superslideMenu.close()'>Close</button> -->
 
     <a href="<?php echo get_home_url(); ?>">
         <div class="tt-menu__logo-cont">

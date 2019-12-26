@@ -7,10 +7,9 @@
             <?php $image = get_field('footer_image', 'footer'); ?>
 
             <!-- Footer Image -->
-            <img class="tt-footer__img" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+            <img class="tt-footer__img" src="<?php echo get_template_directory_uri(); ?>/img/tatooine-cityscape-footer.png" alt="Tatooine Cityscape" />
 
-            <div class="tt-footer__cont"
-                style="background-color:<?php the_field('footer_background_color', 'footer'); ?>;">
+            <div class="tt-footer__cont">
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
