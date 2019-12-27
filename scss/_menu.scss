@@ -266,6 +266,15 @@
   }
 }
 
+.tt-menu__item-cat {
+  a {
+    &:hover,
+    &:focus {
+      border-left: solid 3px var(--category-color);
+    }
+  }
+}
+
 // .tt-menu__list,
 // .tt-menu__list-wrapper,
 // .tt-menu__item {

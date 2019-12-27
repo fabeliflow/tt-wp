@@ -94,9 +94,9 @@
 </head>
 
 <button id="tt-menu__btn" class="hamburger hamburger--emphatic" type="button">
-  <span class="hamburger-box">
-    <span class="hamburger-inner"></span>
-  </span>
+    <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+    </span>
 </button>
 
 <div id='navigation' class="tt-menu">
@@ -110,7 +110,28 @@
     </a>
 
     <!-- Menu Items Here -->
-    <?php echo wp_generate_menu('primary'); ?>
+    <ul data-simplebar class="tt-menu__items">
+
+        <?php echo wp_generate_menu('primary'); ?>
+        <?php
+
+            $categories = get_categories( array(
+                'orderby'    => 'name',
+                'hide_empty' => 0,
+                'exclude'    => array( 1 )
+            ) );
+
+            foreach ( $categories as $category ) : 
+
+                $name = $category->cat_name;
+                $url = get_category_link( $category );
+        ?>
+
+            <li style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-menu__item tt-menu__item-cat"><a href="<?php echo $url ?>"><?php echo $name ?></a></li>
+
+        <?php endforeach; ?>
+        
+    </ul>
 
     <!-- CHANGE TO DINAMIC (ADD fa-fw to ALL ICONS!!!!) -->
     <ul class="tt-social">

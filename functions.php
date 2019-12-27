@@ -140,14 +140,14 @@ function wp_generate_menu($menu_name) {
 	 
 		$menu_items = wp_get_nav_menu_items($menu->term_id);
 
-		$menu_list .= '<ul data-simplebar class="tt-menu__items">';
+		// $menu_list .= '<ul data-simplebar class="tt-menu__items">';
 	 
 		foreach ( (array) $menu_items as $key => $menu_item ) {
 			$title = $menu_item->title;
 			$url = $menu_item->url;
 			$menu_list .= '<li class="tt-menu__item"><a href="' . $url . '">' . $title . '</a></li>';
 		}
-		$menu_list .= '</ul>';
+		// $menu_list .= '</ul>';
 	}
 	return $menu_list;
 }

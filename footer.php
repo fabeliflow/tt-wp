@@ -1,13 +1,15 @@
         <!-- Footer -->
 
-        <footer>
+        <?php if (is_single() || is_category()) : ?>
 
-            <?php if (is_single() || is_category()) : ?>
+        <footer>
 
             <?php $image = get_field('footer_image', 'footer'); ?>
 
             <!-- Footer Image -->
-            <img class="tt-footer__img" src="<?php echo get_template_directory_uri(); ?>/img/tatooine-cityscape-footer.png" alt="Tatooine Cityscape" />
+            <img class="tt-footer__img"
+                src="<?php echo get_template_directory_uri(); ?>/img/tatooine-cityscape-footer.png"
+                alt="Tatooine Cityscape" />
 
             <div class="tt-footer__cont">
                 <div class="container">
@@ -46,8 +48,11 @@
                 </div>
             </div>
 
+        </footer>
 
-            <?php elseif (is_front_page()) : ?>
+        <?php elseif (is_front_page()) : ?>
+
+        <footer>
 
             <div class="container tt-footer__home">
                 <div class="row">
@@ -98,9 +103,9 @@
             <!-- Starfield Home -->
             <div id="starfieldhome" class="starfield"></div>
 
-            <?php endif; ?>
-
         </footer>
+
+        <?php endif; ?>
 
         <?php wp_footer(); ?>
 
