@@ -16,7 +16,7 @@ $custom_search = (isset($_GET['custom_search'])) ? $_GET['custom_search'] : ''; 
 $background = get_field('category_background', $term);
 $background_position = get_field('category_background_position', $term);
 $logo_svg = get_field('category_logo_svg', $term);
-$description = get_field('category_description', $term);
+$description = $term->category_description;
 ?>
 
 <body class="tt-cat">
@@ -34,6 +34,10 @@ $description = get_field('category_description', $term);
     <div class="container">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2 tt-cat__descr">
+                <div class="tt-header">
+                    <span>The Story</span>
+                    <h1>The Story</h1>
+                </div>
                 <p><?php echo $description ?></p>
             </div>
         </div>

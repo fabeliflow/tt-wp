@@ -6,98 +6,70 @@ Template Name: Team
 
 <?php get_header(); ?>
 
-<body>
+<body class="tt-team">
 
-    <!-- Team Page Cards -->
-    <div class="tt-team__cards" style="background-image: url('<?php the_field('team_background'); ?>'); background-position: <?php the_field('team_background_position'); ?>">
-
-        <!-- Swiper -->
-        <div class="swiper-container">
-
-            <div class="swiper-wrapper">
-
-                <?php if( have_rows('member_card') ): ?>
-
-                    <?php while ( have_rows('member_card') ) : the_row(); ?>
-
-                        <!-- Team Page Card -->
-                        <div class="swiper-slide tt-team__card" data-hash="<?php the_sub_field('member_page_name'); ?>">
-
-                            <!-- Biography -->
-                            <div class="tt-team__card__cont tt-team__card__cont--bio">
-                            <div class="tt-team__card__bio__wrap">
-                                <div class="tt-team__card__bio">
-                                <div class="tt-team__card__headline">
-                                    <span class="tt-team__card__member">Member</span>
-                                    <div class="tt-team__card__name">
-                                    <h2><?php the_sub_field('member_name'); ?></h2>
-                                    </div>
-                                </div>
-                                <div class="tt-scrollable" data-simplebar data-simplebar-auto-hide="false">
-                                    <?php the_sub_field('member_biography'); ?>
-                                </div>
-                                </div>
-
-                            </div>
-                            </div>
-
-                            <!-- Image and Social -->
-                            <div class="tt-team__card__cont tt-team__card__cont--media">
-                            <div class="tt-team__card__media">
-                                <div class="tt-team__card__img__cont">
-                                <div class="tt-team__card__img" style="background-image: url('<?php the_sub_field('member_picture'); ?>');"></div>
-                                </div>
-                                <div class="tt-team__card__social__cont">
-                                <div class="tt-team__card__num"></div>
-                                <div class="tt-team__card__social">
-                                    <h3 class="tt-team__card__social__headline">Connect</h3>
-
-                                    <?php if( have_rows('member_social') ): ?>
-
-                                        <ul class="tt-team__card__social__list">
-                                            
-                                            <?php while ( have_rows('member_social') ) : the_row(); ?>
-
-                                                <li>
-                                                    <a class="tt-team__card__social__icon" href="<?php the_sub_field('member_social_url'); ?>" target="_blank">
-                                                        <i class="<?php the_sub_field('member_social_class'); ?>"></i>
-                                                    </a>
-                                                </li>
-
-                                            <?php endwhile; ?>
-
-                                        </ul>
-
-                                    <?php endif; ?>
-
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-
-                        </div>
-
-                    <?php endwhile; ?>
-
-                <?php endif; ?>
-
-            </div>
-
-            <!-- Navigation -->
-            <div class="tt-team__card__nav">
-
-                <!-- Arrows -->
-                <div class="tt-arrow tt-arrow--left">
-                    <div></div>
+    <section class="tt-team__descr">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="tt-header">
+                        <span><?php the_title(); ?></span>
+                        <h1><?php the_title(); ?></h1>
+                    </div>
+                    <p><?php the_field('team_description'); ?></p>
                 </div>
-
-                <div class="tt-arrow tt-arrow--right">
-                    <div></div>
-                </div>
-                
             </div>
+    </section>
 
-        </div>
+    <?php if( have_rows('member_card') ): ?>
+
+    <section class="tt-member-cards__cont">
+
+        <ul class="tt-member-cards">
+
+            <?php while ( have_rows('member_card') ) : the_row(); ?>
+
+            <li class="tt-member-card">
+                <div class="tt-member-card__inner">
+                    <div class="tt-member-card__img">
+                        <img class="img-responsive" src="<?php the_sub_field('member_picture'); ?>" />
+                    </div>
+                    <div class="tt-header">
+                        <span><?php the_sub_field('member_name'); ?></span>
+                        <h2><?php the_sub_field('member_name'); ?></h2>
+                    </div>
+                    <div data-simplebar class="tt-member--bio">
+                        <p><?php the_sub_field('member_biography'); ?></p>
+                    </div>
+                    <?php if( have_rows('member_social') ): ?>
+
+                    <ul class="tt-social">
+
+                        <?php while ( have_rows('member_social') ) : the_row(); ?>
+
+                        <li>
+                            <a class="tt-social__icon" href="<?php the_sub_field('member_social_url'); ?> fa-fw"
+                                target="_blank">
+                                <i class="<?php the_sub_field('member_social_class'); ?>"></i>
+                            </a>
+                        </li>
+
+                        <?php endwhile; ?>
+
+                    </ul>
+
+                    <?php endif; ?>
+                </div>
+            </li>
+
+            <?php endwhile; ?>
+
+            <ul>
+
+    </section>
+
+    <?php endif; ?>
+
     </div>
 
-<?php get_footer(); ?>
+    <?php get_footer(); ?>

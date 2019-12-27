@@ -50,7 +50,7 @@
 
         </footer>
 
-        <?php elseif (is_front_page()) : ?>
+        <?php elseif (is_front_page() || is_page( 'The Team' )) : ?>
 
         <footer>
 
