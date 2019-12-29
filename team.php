@@ -12,7 +12,7 @@ Template Name: Team
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3">
-                    <div class="tt-header">
+                    <div class="tt-header tt-header--center">
                         <span><?php the_title(); ?></span>
                         <h1><?php the_title(); ?></h1>
                     </div>
@@ -29,36 +29,38 @@ Template Name: Team
 
             <?php while ( have_rows('member_card') ) : the_row(); ?>
 
-            <li class="tt-member-card">
+            <li class="tt-member-card tt-member-card--portrait">
                 <div class="tt-member-card__inner">
                     <div class="tt-member-card__img">
-                        <img class="img-responsive" src="<?php the_sub_field('member_picture'); ?>" />
+                        <img src="<?php the_sub_field('member_picture'); ?>" />
                     </div>
-                    <div class="tt-header">
-                        <span><?php the_sub_field('member_name'); ?></span>
-                        <h2><?php the_sub_field('member_name'); ?></h2>
+                    <div class="tt-member-card__info">
+                        <div class="tt-header tt-header--center">
+                            <span><?php the_sub_field('member_name'); ?></span>
+                            <h2><?php the_sub_field('member_name'); ?></h2>
+                        </div>
+                        <div data-simplebar class="tt-member--bio">
+                            <p><?php the_sub_field('member_biography'); ?></p>
+                        </div>
+                        <?php if( have_rows('member_social') ): ?>
+
+                        <ul class="tt-social">
+
+                            <?php while ( have_rows('member_social') ) : the_row(); ?>
+
+                            <li>
+                                <a class="tt-social__icon" href="<?php the_sub_field('member_social_url'); ?> fa-fw"
+                                    target="_blank">
+                                    <i class="<?php the_sub_field('member_social_class'); ?>"></i>
+                                </a>
+                            </li>
+
+                            <?php endwhile; ?>
+
+                        </ul>
+
+                        <?php endif; ?>
                     </div>
-                    <div data-simplebar class="tt-member--bio">
-                        <p><?php the_sub_field('member_biography'); ?></p>
-                    </div>
-                    <?php if( have_rows('member_social') ): ?>
-
-                    <ul class="tt-social">
-
-                        <?php while ( have_rows('member_social') ) : the_row(); ?>
-
-                        <li>
-                            <a class="tt-social__icon" href="<?php the_sub_field('member_social_url'); ?> fa-fw"
-                                target="_blank">
-                                <i class="<?php the_sub_field('member_social_class'); ?>"></i>
-                            </a>
-                        </li>
-
-                        <?php endwhile; ?>
-
-                    </ul>
-
-                    <?php endif; ?>
                 </div>
             </li>
 

@@ -21,17 +21,16 @@
                                 <div class="tt-footer__logo"></div>
                             </a>
 
-                            <!-- TT Social Media Icons -->
-                            <?php if( have_rows('menu_social', 'header') ): ?>
+                            <?php if( have_rows('social_media', 'header') ): ?>
 
                             <ul class="tt-social">
 
-                                <?php while ( have_rows('menu_social', 'social-media') ) : the_row(); ?>
+                                <?php while ( have_rows('social_media', 'header') ) : the_row(); ?>
 
                                 <li>
-                                    <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>"
+                                    <a class="tt-social__icon" href="<?php the_sub_field('social_media_url'); ?> fa-fw"
                                         target="_blank">
-                                        <i class="<?php the_sub_field('menu_social_class'); ?>"></i>
+                                        <i class="<?php the_sub_field('social_media_class'); ?>"></i>
                                     </a>
                                 </li>
 
@@ -40,8 +39,6 @@
                             </ul>
 
                             <?php endif; ?>
-
-
 
                         </div>
                     </div>
@@ -57,42 +54,61 @@
             <div class="container tt-footer__home">
                 <div class="row">
                     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
-                        <div class="tt-header">
+                        <div class="tt-header tt-header--center">
                             <span>Follow Us</span>
                             <h2>Follow Us</h2>
                         </div>
-                        <!-- CHANGE TO DINAMIC -->
+                        <?php if( have_rows('social_media', 'header') ): ?>
+
                         <ul class="tt-social">
 
+                            <?php while ( have_rows('social_media', 'header') ) : the_row(); ?>
+
                             <li>
-                                <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>"
+                                <a class="tt-social__icon" href="<?php the_sub_field('social_media_url'); ?> fa-fw"
+                                    target="_blank">
+                                    <i class="<?php the_sub_field('social_media_class'); ?>"></i>
+                                </a>
+                            </li>
+
+                            <?php endwhile; ?>
+
+                        </ul>
+
+                        <?php endif; ?>
+
+                        <!-- DELETE ONCE LIVE -->
+                        <!-- <ul class="tt-social">
+
+                            <li>
+                                <a class="tt-social__icon" href=""
                                     target="_blank">
                                     <i class="fab fa-twitter fa-fw"></i>
                                 </a>
                             </li>
 
                             <li>
-                                <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>"
+                                <a class="tt-social__icon" href=""
                                     target="_blank">
                                     <i class="fab fa-instagram fa-fw"></i>
                                 </a>
                             </li>
 
                             <li>
-                                <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>"
+                                <a class="tt-social__icon" href=""
                                     target="_blank">
                                     <i class="fab fa-facebook-f fa-fw"></i>
                                 </a>
                             </li>
 
                             <li>
-                                <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>"
+                                <a class="tt-social__icon" href=""
                                     target="_blank">
                                     <i class="fab fa-youtube fa-fw"></i>
                                 </a>
                             </li>
 
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
             </div>

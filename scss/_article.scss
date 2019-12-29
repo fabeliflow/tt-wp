@@ -1,5 +1,14 @@
 $tt-media-margin: 20px;
 
+.tt-article {
+  .tt-member-card {
+    margin: 0 auto !important;
+    @media (min-width: 1200px) {
+      width: 70%;
+    }
+  }
+}
+
 .tt-article,
 .tt-legal__cont {
   h1,

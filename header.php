@@ -127,40 +127,31 @@
                 $url = get_category_link( $category );
         ?>
 
-            <li style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-menu__item tt-menu__item-cat"><a href="<?php echo $url ?>"><?php echo $name ?></a></li>
+        <li style="--category-color:<?php the_field('category_color', $category); ?>;"
+            class="tt-menu__item tt-menu__item-cat"><a href="<?php echo $url ?>"><?php echo $name ?></a></li>
 
         <?php endforeach; ?>
-        
+
     </ul>
 
-    <!-- CHANGE TO DINAMIC (ADD fa-fw to ALL ICONS!!!!) -->
+    <?php if( have_rows('social_media', 'header') ): ?>
+
     <ul class="tt-social">
 
+        <?php while ( have_rows('social_media', 'header') ) : the_row(); ?>
+
         <li>
-            <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
-                <i class="fab fa-twitter fa-fw"></i>
+            <a class="tt-social__icon" href="<?php the_sub_field('social_media_url'); ?> fa-fw" target="_blank">
+                <i class="<?php the_sub_field('social_media_class'); ?>"></i>
             </a>
         </li>
 
-        <li>
-            <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
-                <i class="fab fa-instagram fa-fw"></i>
-            </a>
-        </li>
-
-        <li>
-            <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
-                <i class="fab fa-facebook-f fa-fw"></i>
-            </a>
-        </li>
-
-        <li>
-            <a class="tt-social__icon" href="<?php the_sub_field('menu_social_url'); ?>" target="_blank">
-                <i class="fab fa-youtube fa-fw"></i>
-            </a>
-        </li>
+        <?php endwhile; ?>
 
     </ul>
+
+    <?php endif; ?>
+
 </div>
 <div id='content'>
 

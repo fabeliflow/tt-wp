@@ -22,14 +22,6 @@ if( function_exists('acf_add_options_page') ) {
 		'parent_slug'	=> 'theme-general-settings',
 		'capability'	=> 'edit_themes'
     ));
-    
-    acf_add_options_sub_page(array(
-		'page_title' 	=> 'Theme Header Settings',
-        'menu_title'	=> 'Footer',
-        'post_id'       => 'footer',
-		'parent_slug'	=> 'theme-general-settings',
-		'capability'	=> 'edit_themes'
-	));
 	
 }
 

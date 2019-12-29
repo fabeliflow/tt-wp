@@ -38,7 +38,7 @@ body:not(.tt-404) {
 
 .tt-cat__card {
   width: 100%;
-  border-radius: 0.25rem;
+  border-radius: 2rem;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -72,8 +72,8 @@ body:not(.tt-404) {
 }
 
 .tt-cat__card__img {
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
   position: relative;
   background-position: center center;
   background-size: cover;

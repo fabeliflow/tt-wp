@@ -68,7 +68,7 @@ get_header(); ?>
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-6 col-sm-offset-3 tt-header">
+                <div class="col-sm-6 col-sm-offset-3 tt-header tt-header--center">
                     <span>Latest Articles</span>
                     <h2>Latest Articles</h2>
                 </div>

@@ -46,7 +46,7 @@ Template Name: Post
                         ?>
 
                         <!-- Article Header -->
-                        <header class="tt-header tt-article__header"
+                        <header class="tt-header tt-header--center tt-article__header"
                             style="--category-color:<?php the_field('category_color', $category); ?>;">
                             <span class="tt-article__category">
                                 <?php echo $category_name  ?>
@@ -57,9 +57,9 @@ Template Name: Post
                             <!-- Article Info -->
                             <ul class="tt-article__info">
                                 <li><i>Written by</i>
-                                    <strong><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ) ?></strong>
+                                    <strong><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ); ?></strong>
                                 </li>
-                                <li><i>Published on</i><?php echo get_the_date('F j, Y @ g:ia') ?></li>
+                                <li><i>Published on</i><?php echo get_the_date('F j, Y @ g:ia'); ?></li>
 
                             </ul>
                         </header>
@@ -262,7 +262,43 @@ Template Name: Post
                             data-numposts="5"></div>
                     </div>
 
-                    <?php if ( function_exists( 'wpsabox_author_box' ) ) echo wpsabox_author_box(); ?>
+                    <div class="tt-member-card tt-member-card--portrait">
+                        <div class="tt-member-card__inner">
+                            <div class="tt-member-card__img">
+                            <?php echo get_wp_user_avatar(get_post_field('post_author', get_the_ID())); ?>
+                            </div>
+                            <div class="tt-member-card__info">
+                                <div class="tt-header tt-header--center">
+                                    <span><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ); ?></span>
+                                    <h2><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ); ?>
+                                    </h2>
+                                </div>
+                                <div data-simplebar class="tt-member--bio">
+                                    <p><?php the_author_meta( 'description', get_post_field( 'post_author', get_the_ID() ) ); ?>
+                                    </p>
+                                </div>
+
+                                <?php if( have_rows('social_media',  get_post_field( 'post_author', get_the_ID() )) ): ?>
+
+                                <ul class="tt-social">
+
+                                    <?php while ( have_rows('social_media',  get_post_field( 'post_author', get_the_ID() )) ) : the_row(); ?>
+
+                                    <li>
+                                        <a class="tt-social__icon"
+                                            href="<?php the_sub_field('social_media_url'); ?> fa-fw" target="_blank">
+                                            <i class="<?php the_sub_field('social_media_class'); ?>"></i>
+                                        </a>
+                                    </li>
+
+                                    <?php endwhile; ?>
+
+                                </ul>
+
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
 
@@ -285,7 +321,7 @@ Template Name: Post
     <section class="tt-cat__cont">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-6 col-sm-offset-3 tt-header">
+                <div class="col-sm-6 col-sm-offset-3 tt-header tt-header--center">
                     <span>More by the author</span>
                     <h2>More by the author</h2>
                 </div>

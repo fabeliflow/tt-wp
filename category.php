@@ -34,7 +34,7 @@ $description = $term->category_description;
     <div class="container">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2 tt-cat__descr">
-                <div class="tt-header">
+                <div class="tt-header tt-header--center">
                     <span>The Story</span>
                     <h1>The Story</h1>
                 </div>
