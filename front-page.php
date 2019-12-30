@@ -86,9 +86,15 @@ get_header(); ?>
 
             <?php  foreach ( $recent_posts as $post ) : setup_postdata( $post ); ?>
 
+            <?php
+                            $category = get_the_category()[0];
+                            $category_name = $category->cat_name;
+                        ?>
+
             <!-- Category Card -->
             <li class="tt-cat__cards__item">
-                <a href="<?php the_permalink() ?>" class="tt-cat__card">
+                <a href="<?php the_permalink() ?>" class="tt-cat__card"
+                    style="--category-color:<?php the_field('category_color', $category); ?>;">
 
                     <?php if( have_rows('article_masthead') ): ?>
 
@@ -103,11 +109,6 @@ get_header(); ?>
                     <?php endif; ?>
 
                     <div class="tt-cat__card__info">
-
-                        <?php
-                            $category = get_the_category()[0];
-                            $category_name = $category->cat_name;
-                        ?>
 
                         <div class="tt-cat__card__cont">
 
@@ -172,7 +173,8 @@ get_header(); ?>
                         <div class="tt-masthead__logo"
                             style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/<?php echo $logo_svg ?>.svg');">
                         </div>
-                        <a style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-btn tt-btn--cat" href="<?php echo $link ?>"><?php echo $link_label ?></a>
+                        <a style="--category-color:<?php the_field('category_color', $category); ?>;"
+                            class="tt-btn tt-btn--cat" href="<?php echo $link ?>"><?php echo $link_label ?></a>
                     </div>
 
                 </div>

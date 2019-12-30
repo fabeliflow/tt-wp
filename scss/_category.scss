@@ -37,6 +37,7 @@ body:not(.tt-404) {
 }
 
 .tt-cat__card {
+  border: 3px solid var(--category-color);
   width: 100%;
   border-radius: 2rem;
   display: flex;
@@ -62,23 +63,26 @@ body:not(.tt-404) {
   &:focus {
     text-decoration: none;
     color: white;
+    box-shadow: 0 0 5px 0 var(--category-color);
   }
 
-  &:hover {
-    .tt-cat__card__img {
-      filter: contrast(100%);
-    }
-  }
+  // &:hover {
+  //   .tt-cat__card__img {
+  //     filter: contrast(100%);
+  //     border-top-left-radius: 2rem;
+  // border-top-right-radius: 2rem;
+  //   }
+  // }
 }
 
 .tt-cat__card__img {
-  border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem;
+  // border-top-left-radius: 2rem;
+  // border-top-right-radius: 2rem;
   position: relative;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  filter: contrast(70%);
+  // filter: contrast(70%);
   overflow: hidden;
   transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
 

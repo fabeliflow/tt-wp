@@ -310,7 +310,7 @@ Template Name: Post
     <?php
     $rand_posts = get_posts( array(
         'author'         =>  get_post_field( 'post_author', get_the_ID() ),
-        'posts_per_page' => 3,
+        'posts_per_page' => 6,
         'post_status' => 'publish',
         'post__not_in' => array( get_the_ID() ),
         'orderby'        => 'rand'
@@ -333,9 +333,14 @@ Template Name: Post
 
             <?php  foreach ( $rand_posts as $post ) : setup_postdata( $post ); ?>
 
+            <?php
+                            $category = get_the_category()[0];
+                            $category_name = $category->cat_name;
+                        ?>
+
             <!-- Category Card -->
             <li class="tt-cat__cards__item">
-                <a href="<?php the_permalink() ?>" class="tt-cat__card">
+                <a href="<?php the_permalink() ?>" style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card">
 
                     <?php if( have_rows('article_masthead') ): ?>
 
@@ -350,11 +355,6 @@ Template Name: Post
                     <?php endif; ?>
 
                     <div class="tt-cat__card__info">
-
-                        <?php
-                            $category = get_the_category()[0];
-                            $category_name = $category->cat_name;
-                        ?>
 
                         <div class="tt-cat__card__cont">
 
