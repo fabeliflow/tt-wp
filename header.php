@@ -122,13 +122,13 @@
             ) );
 
             foreach ( $categories as $category ) : 
-
-                $name = $category->cat_name;
                 $url = get_category_link( $category );
+                $icon = get_field('category_icon_svg', $category);
+                $name = $category->cat_name;
         ?>
 
         <li style="--category-color:<?php the_field('category_color', $category); ?>;"
-            class="tt-menu__item tt-menu__item-cat"><a href="<?php echo $url ?>"><?php echo $name ?></a></li>
+            class="tt-menu__item tt-menu__item-cat"><a href="<?php echo $url ?>"><span><?php echo $name ?></span><img class="tt-cat__icon" src="<?php echo get_template_directory_uri(); ?>/img/<?php echo $icon ?>.svg"/></a></li>
 
         <?php endforeach; ?>
 

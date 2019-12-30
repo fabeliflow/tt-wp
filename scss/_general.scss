@@ -166,9 +166,9 @@ h3 {
     text-decoration: none;
     transition: all 0.2s ease-out;
 
-    &:before {
-      animation: shine 0.5s 0s linear;
-    }
+    // &:before {
+    //   animation: shine 0.5s 0s linear;
+    // }
   }
 
   &:active {
@@ -713,4 +713,8 @@ $scan-opacity: 0.75;
   // height: 100vmin !important;
   // width: 100vmax !important;
   // z-index: 0;
+}
+
+.tt-cat__icon {
+  width: 3rem;
 }

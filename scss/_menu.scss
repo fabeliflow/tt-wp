@@ -258,7 +258,8 @@
   }
 
   a {
-    display: block;
+    display: flex;
+    justify-content: space-between;
     padding: 30px;
     color: $tt-dark-theme-text;
     border-left: solid 3px transparent;
@@ -271,6 +272,9 @@
 }
 
 .tt-menu__item-cat {
+  .tt-cat__icon {
+    padding-left: 10px;
+  }
   a {
     &:hover,
     &:focus {
