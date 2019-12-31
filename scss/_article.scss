@@ -253,8 +253,9 @@ $tt-media-margin: 20px;
   }
 }
 
-.tt-article__header {
-  .tt-article__category {
+.tt-article__header,
+.tt-category__header {
+  span {
     color: var(--category-color);
   }
 
