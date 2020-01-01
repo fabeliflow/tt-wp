@@ -144,11 +144,10 @@ body:not(.tt-404) {
 .tt-cat__card__cat-info {
   margin-top: 20px;
   text-align: right;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
 
-  .tt-cat__card__cat-name {
     span {
       letter-spacing: 5px;
       display: block;
@@ -163,7 +162,6 @@ body:not(.tt-404) {
       color: var(--category-color);
       font-size: 0.7em;
     }
-  }
 }
 
 .tt-header--cat__icon {

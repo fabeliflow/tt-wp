@@ -88,7 +88,6 @@ get_header(); ?>
 
             <?php
                             $category = get_the_category()[0];
-                            $icon = get_field('category_icon_svg', $category);
                             $category_name = $category->cat_name;
                         ?>
 
@@ -129,12 +128,8 @@ get_header(); ?>
                         <!-- Category Card Category Name -->
                         <div style="--category-color:<?php the_field('category_color', $category); ?>;"
                             class="tt-cat__card__cat-info">
-                            <img class="tt-cat__icon"
-                                src="<?php echo get_template_directory_uri(); ?>/img/<?php echo $icon ?>.svg" />
-                            <div class="tt-cat__card__cat-name">
-                                <span><?php echo $category_name  ?></span>
-                                <span><?php echo $category_name  ?></span>
-                            </div>
+                            <span><?php echo $category_name  ?></span>
+                            <span><?php echo $category_name  ?></span>
                         </div>
 
                     </div>

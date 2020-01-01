@@ -42,20 +42,15 @@ Template Name: Post
 
                         <?php
                             $category = get_the_category()[0];
-                            $icon = get_field('category_icon_svg', $category);
                             $category_name = $category->cat_name;
                         ?>
 
                         <!-- Article Header -->
                         <header class="tt-header tt-header--center tt-article__header"
                             style="--category-color:<?php the_field('category_color', $category); ?>;">
-                            <div class="tt-header--cat__icon">
-                                <img class="tt-cat__icon"
-                                    src="<?php echo get_template_directory_uri(); ?>/img/<?php echo $icon ?>.svg" />
-                                <span class="tt-article__category">
-                                    <?php echo $category_name  ?>
-                                </span>
-                            </div>
+                            <span class="tt-article__category">
+                                <?php echo $category_name  ?>
+                            </span>
                             <h1>
                                 <?php the_title(); ?>
                             </h1>
@@ -380,12 +375,8 @@ Template Name: Post
                         <!-- Category Card Category Name -->
                         <div style="--category-color:<?php the_field('category_color', $category); ?>;"
                             class="tt-cat__card__cat-info">
-                            <img class="tt-cat__icon"
-                                src="<?php echo get_template_directory_uri(); ?>/img/<?php echo $icon ?>.svg" />
-                            <div class="tt-cat__card__cat-name">
-                                <span><?php echo $category_name  ?></span>
-                                <span><?php echo $category_name  ?></span>
-                            </div>
+                            <span><?php echo $category_name  ?></span>
+                            <span><?php echo $category_name  ?></span>
                         </div>
 
                     </div>

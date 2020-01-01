@@ -36,13 +36,9 @@ $description = $term->category_description;
     <div class="container">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2 tt-cat__descr">
-                <div class="tt-header tt-header--center tt-category__header"  
-                            style="--category-color:<?php echo $color ?>;">
-                    <div class="tt-header--cat__icon">
-                        <img class="tt-cat__icon"
-                            src="<?php echo get_template_directory_uri(); ?>/img/<?php echo $icon ?>.svg" />
-                        <span>The Story</span>
-                    </div>
+                <div class="tt-header tt-header--center tt-category__header"
+                    style="--category-color:<?php echo $color ?>;">
+                    <span>The Story</span>
                     <h1>The Story</h1>
                 </div>
                 <p><?php echo $description ?></p>
