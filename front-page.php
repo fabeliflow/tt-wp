@@ -7,10 +7,6 @@ get_header(); ?>
 
 <body class="tt-home">
 
-    <!-- <section class="tt-home__section tt-home__section-logo">
-        
-    </section> -->
-
     <section class="tt-home__section">
 
         <!-- TT Animated Logo -->
@@ -76,10 +72,11 @@ get_header(); ?>
         </div>
 
         <?php
-    $recent_posts = get_posts( array(
-        'posts_per_page' => 6,
-        'post_status' => 'publish'
-    ) ); ?>
+            $recent_posts = get_posts( array(
+                'posts_per_page' => 6,
+                'post_status' => 'publish'
+            ) );
+        ?>
 
         <!-- Category Cards -->
         <ul class="tt-cat__cards">
@@ -87,9 +84,9 @@ get_header(); ?>
             <?php  foreach ( $recent_posts as $post ) : setup_postdata( $post ); ?>
 
             <?php
-                            $category = get_the_category()[0];
-                            $category_name = $category->cat_name;
-                        ?>
+                $category = get_the_category()[0];
+                $category_name = $category->cat_name;
+            ?>
 
             <!-- Category Card -->
             <li class="tt-cat__cards__item">
@@ -128,8 +125,8 @@ get_header(); ?>
                         <!-- Category Card Category Name -->
                         <div style="--category-color:<?php the_field('category_color', $category); ?>;"
                             class="tt-cat__card__cat-info">
-                            <span><?php echo $category_name  ?></span>
-                            <span><?php echo $category_name  ?></span>
+                            <span><?php echo $category_name ?></span>
+                            <span><?php echo $category_name ?></span>
                         </div>
 
                     </div>
@@ -151,20 +148,20 @@ get_header(); ?>
 
                 <?php
 
-            $categories = get_categories( array(
-                'orderby'    => 'name',
-                'hide_empty' => 0,
-                'exclude'    => array( 1 )
-            ) );
+                    $categories = get_categories( array(
+                        'orderby'    => 'name',
+                        'hide_empty' => 0,
+                        'exclude'    => array( 1 )
+                    ) );
 
-            foreach ( $categories as $category ) : 
+                    foreach ( $categories as $category ) : 
 
-                $background = get_field('category_background', $category);
-                $background_position = get_field('category_background_position', $category);
-                $logo_svg = get_field('category_logo_svg', $category);
-                $link = get_category_link( $category );
-                $link_label = get_field('category_link_label', $category);
-            ?>
+                        $background = get_field('category_background', $category);
+                        $background_position = get_field('category_background_position', $category);
+                        $logo_svg = get_field('category_logo_svg', $category);
+                        $link = get_category_link( $category );
+                        $link_label = get_field('category_link_label', $category);
+                ?>
 
                 <div class="swiper-slide tt-masthead--overlay"
                     style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
@@ -183,7 +180,7 @@ get_header(); ?>
 
             </div>
             <!-- Add Pagination -->
-            <div class="swiper-pagination swiper-pagination-white"></div>
+            <div class="swiper-pagination"></div>
             <!-- Arrows -->
             <div class="tt-arrow tt-arrow--left">
                 <div></div>
@@ -194,10 +191,5 @@ get_header(); ?>
             </div>
         </div>
     </section>
-
-
-    <!-- <section class="tt-home__section">
-
-    </section> -->
 
     <?php get_footer(); ?>

@@ -8,7 +8,7 @@
 
             <!-- Footer Image -->
             <img class="tt-footer__img"
-                src="<?php echo get_template_directory_uri(); ?>/img/tatooine-cityscape-footer.png"
+                src="<?php echo get_template_directory_uri(); ?>/img/tt-cityscape.png"
                 alt="Tatooine Cityscape" />
 
             <div class="tt-footer__cont">
@@ -77,38 +77,6 @@
 
                         <?php endif; ?>
 
-                        <!-- DELETE ONCE LIVE -->
-                        <!-- <ul class="tt-social">
-
-                            <li>
-                                <a class="tt-social__icon" href=""
-                                    target="_blank">
-                                    <i class="fab fa-twitter fa-fw"></i>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="tt-social__icon" href=""
-                                    target="_blank">
-                                    <i class="fab fa-instagram fa-fw"></i>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="tt-social__icon" href=""
-                                    target="_blank">
-                                    <i class="fab fa-facebook-f fa-fw"></i>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="tt-social__icon" href=""
-                                    target="_blank">
-                                    <i class="fab fa-youtube fa-fw"></i>
-                                </a>
-                            </li>
-
-                        </ul> -->
                     </div>
                 </div>
             </div>
@@ -116,7 +84,7 @@
             <img class="tt-footer__img" src="<?php echo get_template_directory_uri(); ?>/img/tt-orbit.png"
                 alt="Tatooine Orbit" />
 
-            <!-- Starfield Home -->
+            <!-- Starfield -->
             <div id="starfieldhome" class="starfield"></div>
 
         </footer>
@@ -126,6 +94,7 @@
         <?php wp_footer(); ?>
 
         </body>
+
         </div>
 
         </html>

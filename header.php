@@ -16,32 +16,6 @@
     <!--
     /**
     * @license
-    * MyFonts Webfont Build ID 3820036, 2019-10-05T12:27:28-0400
-    * 
-    * The fonts listed in this notice are subject to the End User License
-    * Agreement(s) entered into by the website owner. All other parties are 
-    * explicitly restricted from using the Licensed Webfonts(s).
-    * 
-    * You may obtain a valid license at the URLs below.
-    * 
-    * Webfont: Purista-Bold by Suitcase Type Foundry
-    * URL: https://www.myfonts.com/fonts/suitcase/purista/bold/
-    * Copyright: Copyright (c) Tomas Brousil, 2007. All rights reserved.
-    * Licensed pageviews: 10,000
-    * 
-    * 
-    * License: https://www.myfonts.com/viewlicense?type=web&buildid=3820036
-    * 
-    * © 2019 MyFonts Inc
-    */
-
-    -->
-    <link rel="stylesheet" type="text/css"
-        href="<?php echo get_template_directory_uri(); ?>/vendor/myfonts/Purista-Bold/MyFontsWebfontsKit.css">
-
-    <!--
-    /**
-    * @license
     * MyFonts Webfont Build ID 3771796, 2019-06-11T06:14:37-0400
     * 
     * The fonts listed in this notice are subject to the End User License
@@ -63,7 +37,7 @@
 
     -->
     <link rel="stylesheet" type="text/css"
-        href="<?php echo get_template_directory_uri(); ?>/vendor/myfonts/SerifGothicStd-Heavy/MyFontsWebfontsKit.css">
+        href="<?php echo get_template_directory_uri(); ?>/fonts/SerifGothicStd-Heavy/MyFontsWebfontsKit.css">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180"
@@ -99,7 +73,7 @@
     </span>
 </button>
 
-<div id='navigation' class="tt-menu">
+<div id="navigation" class="tt-menu">
 
     <a href="<?php echo get_home_url(); ?>">
         <div class="tt-menu__logo-cont">
@@ -109,7 +83,7 @@
         </div>
     </a>
 
-    <!-- Menu Items Here -->
+    <!-- Menu Items -->
     <ul data-simplebar class="tt-menu__items">
 
         <?php echo wp_generate_menu('primary'); ?>
@@ -154,11 +128,3 @@
 
 </div>
 <div id='content'>
-
-
-
-    <!-- Main content here -->
-
-
-
-    <!-- Menu Popup -->

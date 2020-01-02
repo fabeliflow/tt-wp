@@ -12,7 +12,6 @@ $jq(document).ready(function () {
       animation: 'slideLeft',
       allowDrag: true,
       closeOnBlur: true,
-      // width: '40vmax',
       allowContentInteraction: false,
       beforeOpen: function () {
         bodyScrollLock.disableBodyScroll(targetElement);
@@ -30,5 +29,24 @@ $jq(document).ready(function () {
 
   $jq("#tt-menu__btn").click(function () {
     myMenu.toggle();
+  });
+
+  // Scroll to Top
+  $jq(window).scroll(function () {
+    if ($jq(this).scrollTop() >= 50) {
+      // If page is scrolled more than 50px
+      $jq("#return-to-top").fadeIn(200); // Fade in the arrow
+    } else {
+      $jq("#return-to-top").fadeOut(200); // Else fade out the arrow
+    }
+  });
+  $jq("#return-to-top").click(function () {
+    // When arrow is clicked
+    $jq("body,html").animate(
+      {
+        scrollTop: 0 // Scroll to top of body
+      },
+      500
+    );
   });
 });

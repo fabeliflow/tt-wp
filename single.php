@@ -54,13 +54,13 @@ Template Name: Post
                             <h1>
                                 <?php the_title(); ?>
                             </h1>
+
                             <!-- Article Info -->
                             <ul class="tt-article__info">
                                 <li><i>Written by</i>
                                     <strong><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ); ?></strong>
                                 </li>
                                 <li><i>Published on</i><?php echo get_the_date('F j, Y @ g:ia'); ?></li>
-
                             </ul>
                         </header>
 
@@ -101,9 +101,10 @@ Template Name: Post
 
                     <?php 
 
-                                $image = get_sub_field('image');
+                        $image = get_sub_field('image');
 
-                                if( !empty($image) ): ?>
+                        if( !empty($image) ):
+                    ?>
 
                     <!-- Regular Image -->
                     <?php if( get_sub_field('image_type') == 'regular' ): ?>
@@ -164,10 +165,12 @@ Template Name: Post
 
                     <?php 
 
-                                $images = get_sub_field('gallery');
-                                $size = 'full';
+                        $images = get_sub_field('gallery');
+                        $size = 'full';
 
-                                if( $images ): ?>
+                        if( $images ):
+                    ?>
+
                     <div class="col-md-8 col-md-offset-2">
 
                         <div class="tt-article__img--gallery__cont">
@@ -193,7 +196,7 @@ Template Name: Post
                                 </div>
 
                                 <!-- Navigation -->
-                                <div class="tt-article__img--gallery__nav">
+                                <div>
 
                                     <!-- Arrows -->
                                     <div class="tt-arrow tt-arrow--left">
@@ -224,8 +227,6 @@ Template Name: Post
                     <?php endwhile; ?>
 
                     <?php else : ?>
-
-                    <!-- No layouts found -->
 
                     <?php endif; ?>
 
@@ -334,9 +335,9 @@ Template Name: Post
             <?php  foreach ( $rand_posts as $post ) : setup_postdata( $post ); ?>
 
             <?php
-                            $category = get_the_category()[0];
-                            $category_name = $category->cat_name;
-                        ?>
+                $category = get_the_category()[0];
+                $category_name = $category->cat_name;
+            ?>
 
             <!-- Category Card -->
             <li class="tt-cat__cards__item">

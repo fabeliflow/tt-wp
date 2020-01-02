@@ -14,7 +14,7 @@ Template Name: Legal
     </div>
 
     <?php while ( have_posts() ) : the_post(); ?>
-        <section class="tt-legal__cont">
+    <section class="tt-legal__cont">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3">
@@ -22,7 +22,7 @@ Template Name: Legal
                 </div>
             </div>
         </div>
-        </section>
+    </section>
     <?php endwhile; wp_reset_query(); ?>
 
-<?php get_footer(); ?>
+    <?php get_footer(); ?>

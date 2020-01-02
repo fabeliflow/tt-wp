@@ -5,23 +5,19 @@ Template Name: Category
 
 get_header();
 
-
 // get the current taxonomy term
 $term = get_queried_object();
 
-$custom_search = (isset($_GET['custom_search'])) ? $_GET['custom_search'] : ''; // Get 'custom_search' querystring param
+$custom_search = (isset($_GET['custom_search'])) ? $_GET['custom_search'] : '';
 
-
-// vars
 $background = get_field('category_background', $term);
 $background_position = get_field('category_background_position', $term);
-$icon = get_field('category_icon_svg', $term);
 $color = get_field('category_color', $term);
 $logo_svg = get_field('category_logo_svg', $term);
 $description = $term->category_description;
 ?>
 
-<body class="tt-cat">
+<body>
 
     <!-- Category Masthead -->
     <div class="tt-masthead tt-masthead--overlay"

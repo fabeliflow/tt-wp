@@ -7,7 +7,7 @@ var autoprefixer = require("gulp-autoprefixer");
 var plumber = require("gulp-plumber");
 var svgmin = require("gulp-svgmin");
 
-gulp.task("sass", function() {
+gulp.task("sass", function () {
   return gulp
     .src("scss/**/*.scss") // Gets all files ending with .scss in scss
     .pipe(
@@ -21,7 +21,7 @@ gulp.task("sass", function() {
     .pipe(gulp.dest("css"));
 });
 
-gulp.task("scripts", function() {
+gulp.task("scripts", function () {
   return (
     gulp
       .src("js/*.js")
@@ -38,18 +38,18 @@ gulp.task("scripts", function() {
   );
 });
 
-gulp.task("watch", function() {
+gulp.task("watch", function () {
   gulp.watch("scss/**/*.scss", ["sass"]);
   gulp.watch("js/*.js", ["scripts"]);
 });
 
-gulp.task("svgmin", function() {
+gulp.task("svgmin", function () {
   return gulp
     .src("img/**/*.svg")
     .pipe(svgmin())
     .pipe(gulp.dest("img"));
 });
 
-var onError = function(err) {
+var onError = function (err) {
   console.log(err);
 };

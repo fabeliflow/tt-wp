@@ -2,7 +2,7 @@
 $tt-matte-black: #333;
 $tt-matte-black-transp: transparentize($tt-matte-black, 0.02);
 $tt-text-dark: #333;
-$tt-text-light: lighten($tt-text-dark, 40%);
+$tt-text-light: lighten($tt-text-dark, 30%);
 $tt-text-light-transp: transparentize($tt-text-light, 0.3);
 $tt-black-transp: transparentize(black, 0.3);
 $tt-white-transp: transparentize(white, 0.9);
@@ -56,7 +56,6 @@ $h3: 1em;
 $baseline: 1.5rem;
 
 $crawl-font-family: "News Cycle", sans-serif;
-$header-font-family: "Purista-Bold", serif;
 $article-header-font-family: "SerifGothicStd-Heavy", serif;
 $body-font-family: "Lato", sans-serif;
 $link-font-family: "Purista-Bold", sans-serif;
@@ -408,6 +407,7 @@ h3 {
   right: 15px;
   will-change: transform;
   display: none;
+  z-index: 99999999;
 
   @media (min-width: 768px) {
     right: 25px;
@@ -463,6 +463,7 @@ h3 {
   padding: 5px;
   word-wrap: break-word;
   font-size: 0.7em;
+  color: $tt-text-light;
 }
 
 // Magnific Popup Styles
