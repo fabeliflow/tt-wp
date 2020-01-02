@@ -1,31 +1,15 @@
 // Colors
-$tt-matte-black: #333;
-$tt-matte-black-transp: transparentize($tt-matte-black, 0.02);
 $tt-text-dark: #333;
 $tt-text-light: lighten($tt-text-dark, 30%);
-$tt-text-light-transp: transparentize($tt-text-light, 0.3);
 $tt-black-transp: transparentize(black, 0.3);
-$tt-white-transp: transparentize(white, 0.9);
-$tt-blue: #3185fc;
-$tt-blue-light: lighten($tt-blue, 27%);
-$tt-blue-dark: #021855;
-$tt-blue-dark-transp: transparentize($tt-blue-dark, 0.1);
-$tt-blue-transp: transparentize($tt-blue, 0.7);
-$tt-blue-super-transp: transparentize($tt-blue, 0.9);
-$tt-green: #39e09b;
-$tt-green-transp: transparentize($tt-green, 0.7);
-$tt-card-bg: #333;
 $tt-yellow: #f2ae0a;
-$tt-yellow-transp: transparentize($tt-yellow, 0.3);
 $tt-red: #f63222;
 $tt-red-transp: transparentize($tt-red, 0.7);
 $tt-orange: #f77529;
-$tt-orange-transp: transparentize($tt-orange, 0.1);
 $tt-pink: #edccca;
 $tt-rose: #f37257;
 $tt-rose-transp: transparentize($tt-rose, 0.5);
 $tt-sand: #d2b597;
-$tt-sand-dark: darken($tt-sand, 5%);
 $tt-dark-theme-bg: #100e17;
 $tt-dark-theme-bg-transp: transparentize(#100e17, 0.2);
 $tt-dark-theme-border: #201c29;
@@ -55,10 +39,8 @@ $h3: 1em;
 
 $baseline: 1.5rem;
 
-$crawl-font-family: "News Cycle", sans-serif;
 $article-header-font-family: "SerifGothicStd-Heavy", serif;
 $body-font-family: "Lato", sans-serif;
-$link-font-family: "Purista-Bold", sans-serif;
 $watermark-font-family: "Aurebesh";
 
 // General styles
@@ -69,11 +51,6 @@ body {
   position: relative;
   font-family: $body-font-family;
   @include fluid-type($min-width, $max-width, $min-font, $max-font);
-}
-
-// applied to body
-.cont--hidden {
-  overflow: hidden;
 }
 
 .vertical-align {
@@ -112,11 +89,6 @@ h3 {
   text-transform: uppercase;
 }
 
-// Slick Slide Base Styles
-.slick-slide {
-  outline: none !important;
-}
-
 // Button styles
 .tt-btn {
   min-width: 200px;
@@ -129,7 +101,6 @@ h3 {
   position: relative;
   display: inline-block;
   font-size: 0.7em;
-  // font-family: $link-font-family;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -164,10 +135,6 @@ h3 {
     background-color: $tt-rose;
     text-decoration: none;
     transition: all 0.2s ease-out;
-
-    // &:before {
-    //   animation: shine 0.5s 0s linear;
-    // }
   }
 
   &:active {
@@ -186,21 +153,6 @@ h3 {
   }
 }
 
-// Button Shine Animation
-@include keyframes-compatible(shine) {
-  from {
-    opacity: 0;
-    left: 0%;
-  }
-  50% {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-    left: 100%;
-  }
-}
-
 .tt-btn--alt {
   &:hover,
   &:focus {
@@ -213,28 +165,12 @@ h3 {
 .tt-header {
   margin-bottom: 40px;
 
-  // @media (min-width: 992px) {
-  //   margin-bottom: 40px;
-  // }
-
   h1,
   h2,
   h3 {
     display: block;
     position: relative;
-    // margin: 0 0 60px 0;
-    // border-left: none !important;
     font-family: $article-header-font-family;
-
-    // &:after {
-    //   content: "";
-    //   width: 10%;
-    //   margin-bottom: -25px;
-    //   border-bottom: solid 3px $tt-sand;
-    //   position: absolute;
-    //   left: 45%;
-    //   bottom: 0;
-    // }
   }
 
   span {
@@ -265,20 +201,6 @@ h3 {
       left: 45%;
       bottom: 0;
     }
-  }
-}
-
-.tt-header--left {
-  h1,
-  h2,
-  h3 {
-    margin: 0;
-    border-left: solid 3px $tt-sand;
-    padding-left: 10px;
-  }
-
-  span {
-    padding-left: 13px;
   }
 }
 
@@ -395,12 +317,6 @@ h3 {
   }
 }
 
-// .tt-arrow--scroll-bottom {
-//   div {
-//     cursor: initial;
-//   }
-// }
-
 .tt-arrow--scroll-top {
   position: fixed;
   bottom: -10px;
@@ -466,41 +382,6 @@ h3 {
   color: $tt-text-light;
 }
 
-// Magnific Popup Styles
-.mfp-iframe-holder .mfp-content {
-  @media (min-width: 900px) {
-    max-width: 75vw;
-  }
-}
-
-/* overlay at start */
-.mfp-fade.mfp-bg {
-  opacity: 0;
-  transition: all 0.15s ease-out;
-}
-/* overlay animate in */
-.mfp-fade.mfp-bg.mfp-ready {
-  opacity: 0.8;
-}
-/* overlay animate out */
-.mfp-fade.mfp-bg.mfp-removing {
-  opacity: 0;
-}
-
-/* content at start */
-.mfp-fade.mfp-wrap .mfp-content {
-  opacity: 0;
-  transition: all 0.15s ease-out;
-}
-/* content animate it */
-.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
-  opacity: 1;
-}
-/* content animate out */
-.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
-  opacity: 0;
-}
-
 // Starfield Styles
 .starfield {
   width: 100%;
@@ -509,91 +390,6 @@ h3 {
   z-index: -10;
   top: 0;
   left: 0;
-
-  // canvas {
-  //   display: block;
-  //   vertical-align: bottom;
-  //   -webkit-transform: scale(1);
-  //   -ms-transform: scale(1);
-  //   transform: scale(1);
-  //   opacity: 1;
-  //   -webkit-transition: opacity .8s ease, -webkit-transform 1.4s ease;
-  //   transition: opacity .8s ease, transform 1.4s ease
-  // }
-}
-
-// Scanlines Styles
-$scan-width: 3px;
-$scan-crt: true;
-$scan-fps: 30;
-$scan-color: $tt-blue-super-transp;
-$scan-z-index: 2147483648;
-$scan-moving-line: true;
-$scan-opacity: 0.75;
-
-@mixin scan-crt($scan-crt) {
-  @if $scan-crt==true {
-    animation: scanlines 5s steps($scan-fps) infinite;
-  } @else {
-    animation: none;
-  }
-}
-
-@mixin scan-moving($scan-moving-line) {
-  @if $scan-moving-line==true {
-    animation: scanline 1s linear infinite;
-  } @else {
-    animation: none;
-  }
-}
-
-.scanline {
-  position: relative;
-  overflow: hidden;
-
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    display: block;
-    pointer-events: none;
-  }
-
-  &:before {
-    width: 100%;
-    height: $scan-width * 1;
-    background: $scan-color;
-    z-index: $scan-z-index + 1;
-    opacity: $scan-opacity;
-    @include scan-moving($scan-moving-line);
-  }
-
-  &:after {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(
-      to bottom,
-      transparent 50%,
-      $scan-color $scan-color 51%
-    );
-    background-size: 100% $scan-width * 2;
-    z-index: $scan-z-index;
-    @include scan-crt($scan-crt);
-  }
-}
-
-@keyframes scanline {
-  0% {
-    transform: translate3d(0, 200000%, 0);
-  }
-}
-
-@keyframes scanlines {
-  0% {
-    background-position: 0 50%;
-  }
 }
 
 // Masthead Styles
@@ -692,30 +488,7 @@ $scan-opacity: 0.75;
   overflow-x: hidden !important;
 }
 
-.tt-scrollable {
-  position: relative;
-  overflow-x: hidden;
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: auto;
-  word-break: break-word;
-
-  p {
-    margin-top: 0;
-  }
-}
-
 // Social Warfare Styles
 .nc_wrapper.bottom {
   background-color: transparent !important;
-}
-
-.particles-js-canvas-el {
-  // height: 100vmin !important;
-  // width: 100vmax !important;
-  // z-index: 0;
-}
-
-.tt-cat__icon {
-  width: 3rem;
 }

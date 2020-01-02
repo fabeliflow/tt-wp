@@ -1,15 +1,15 @@
-$hamburger-padding-x           : 15px !default;
-$hamburger-padding-y           : 15px !default;
-$hamburger-layer-width         : 40px !default;
-$hamburger-layer-height        : 4px !default;
-$hamburger-layer-spacing       : 6px !default;
-$hamburger-layer-color         : $tt-rose !default;
-$hamburger-layer-border-radius : 4px !default;
-$hamburger-hover-opacity       : 0.7 !default;
-$hamburger-active-layer-color  : $hamburger-layer-color !default;
+$hamburger-padding-x: 15px !default;
+$hamburger-padding-y: 15px !default;
+$hamburger-layer-width: 40px !default;
+$hamburger-layer-height: 4px !default;
+$hamburger-layer-spacing: 6px !default;
+$hamburger-layer-color: $tt-rose !default;
+$hamburger-layer-border-radius: 4px !default;
+$hamburger-hover-opacity: 0.7 !default;
+$hamburger-active-layer-color: $hamburger-layer-color !default;
 $hamburger-active-hover-opacity: $hamburger-hover-opacity !default;
-$hamburger-hover-use-filter   : false !default;
-$hamburger-hover-filter       : opacity(50%) !default;
+$hamburger-hover-use-filter: false !default;
+$hamburger-hover-filter: opacity(50%) !default;
 $hamburger-active-hover-filter: $hamburger-hover-filter !default;
 
 .hamburger {
@@ -32,8 +32,7 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
   &:hover {
     @if $hamburger-hover-use-filter == true {
       filter: $hamburger-hover-filter;
-    }
-    @else {
+    } @else {
       opacity: $hamburger-hover-opacity;
     }
   }
@@ -42,8 +41,7 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
     &:hover {
       @if $hamburger-hover-use-filter == true {
         filter: $hamburger-active-hover-filter;
-      }
-      @else {
+      } @else {
         opacity: $hamburger-active-hover-opacity;
       }
     }

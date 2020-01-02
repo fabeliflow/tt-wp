@@ -12,8 +12,6 @@
     margin: 0;
     padding: 0 15px;
     color: white;
-    // font-family: $crawl-font-family;
-    // font-weight: bold;
     text-transform: uppercase;
   }
 }
@@ -29,27 +27,6 @@
     &:hover,
     &:focus {
       color: white;
-    }
-  }
-}
-
-.menu-legal-links-container {
-  margin-top: 8vh;
-  text-align: center;
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-
-    a {
-      color: white;
-      font-size: .8em;
-
-      &:hover,
-      &:focus {
-        color: white;
-      }
     }
   }
 }
