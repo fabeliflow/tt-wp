@@ -1,27 +1,23 @@
 #navigation {
-  opacity: 0;
-  width: 70vw !important;
-  left: -70vw !important;
+  height: 100%;
+  width: 70vw;
+  left: -70vw;
 
   @media (min-width: 768px) {
-    width: 30vw !important;
-    left: -30vw !important;
+    width: 30vw;
+    left: -30vw;
   }
+
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  transition: all 0.5s ease 0s;
+  z-index: 9999;
 }
 
 .nav-open {
-  transform: translate3d(70vw, 0px, 0px) !important;
-  @media (min-width: 768px) {
-    transform: translate3d(30vw, 0px, 0px) !important;
-  }
-}
-
-.tt-content--overlay {
-  transform: translate3d(70vw, 0px, 0px) !important;
-
-  @media (min-width: 768px) {
-    transform: translate3d(30vw, 0px, 0px) !important;
-  }
+  left: 0 !important;
 }
 
 .tt-menu__logo-cont {

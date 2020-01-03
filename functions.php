@@ -42,7 +42,6 @@ function wpb_adding_styles_scripts() {
 	wp_enqueue_style( 'main' );
 
 	// general scripts
-	wp_register_script('superslide', get_template_directory_uri() . '/vendor/superslide/superslide-std.min.js', null, null, true);
 	
 	wp_register_script('body-scroll-lock',  get_template_directory_uri() . '/vendor/body-scroll-lock/lib/bodyScrollLock.min.js', null, null, true);
 
@@ -52,7 +51,7 @@ function wpb_adding_styles_scripts() {
 
 	wp_register_script('particles', get_template_directory_uri() . '/vendor/particles/particles.min.js', null, null, true);
 
-	wp_register_script('header', get_template_directory_uri() . '/js/minified/header.min.js', array('jquery', 'superslide', 'body-scroll-lock', 'simplebar'), null, true);
+	wp_register_script('header', get_template_directory_uri() . '/js/minified/header.min.js', array('jquery', 'body-scroll-lock', 'simplebar'), null, true);
 	wp_enqueue_script('header');
 
 	if (is_page('the-team')) {

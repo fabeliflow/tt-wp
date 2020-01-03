@@ -5,31 +5,26 @@ $jq(document).ready(function () {
 
   var targetElement = document.getElementById('navigation');
 
-  var myMenu = new OSREC.superslide
-    ({
-      slider: document.getElementById('navigation'),
-      content: document.getElementById('content'),
-      animation: 'slideLeft',
-      allowDrag: false,
-      // closeOnBlur: true,
-      allowContentInteraction: false,
-      beforeOpen: function () {
-        bodyScrollLock.disableBodyScroll(targetElement);
-        $jq('.hamburger').addClass("is-active");
-        $jq('#navigation').addClass("nav-open");
-        $jq('#content').addClass("tt-content--overlay");
-        $jq('.nc_wrapper').hide();
-      },
-      beforeClose: function () {
-        $jq('.hamburger').removeClass("is-active");
-        $jq('#navigation').removeClass("nav-open");
-        $jq('#content').removeClass("tt-content--overlay");
-        bodyScrollLock.enableBodyScroll(targetElement);
-      }
-    });
+  $jq("#tt-menu__btn").toggle(
+    function () {
+      $jq('.hamburger').addClass("is-active");
+      $jq('#navigation').addClass("nav-open");
+      $jq('#content').addClass("tt-content--overlay");
+      bodyScrollLock.disableBodyScroll(targetElement);
+    },
+    function () {
+      $jq('.hamburger').removeClass("is-active");
+      $jq('#navigation').removeClass("nav-open");
+      $jq('#content').removeClass("tt-content--overlay");
+      bodyScrollLock.enableBodyScroll(targetElement);
+    }
+  );
 
-  $jq("#tt-menu__btn").click(function () {
-    myMenu.toggle();
+  $jq("#content").click(function () {
+    $jq('.hamburger').toggleClass("is-active");
+    $jq('#navigation').toggleClass("nav-open");
+    $jq(this).toggleClass("tt-content--overlay");
+    bodyScrollLock.enableBodyScroll(targetElement);
   });
 
   // Scroll to Top
