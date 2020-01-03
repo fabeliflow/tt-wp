@@ -323,7 +323,7 @@ h3 {
   right: 15px;
   will-change: transform;
   display: none;
-  z-index: 99999999;
+  z-index: 99;
 
   @media (min-width: 768px) {
     right: 25px;
@@ -491,4 +491,8 @@ h3 {
 // Social Warfare Styles
 .nc_wrapper.bottom {
   background-color: transparent !important;
+}
+
+.simplebar-track.horizontal {
+  visibility: hidden !important;
 }
