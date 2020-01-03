@@ -49,9 +49,9 @@ Template Name: Team
                             <?php while ( have_rows('member_social') ) : the_row(); ?>
 
                             <li>
-                                <a class="tt-social__icon" href="<?php the_sub_field('member_social_url'); ?> fa-fw"
+                                <a class="tt-social__icon" href="<?php the_sub_field('member_social_url'); ?>"
                                     target="_blank">
-                                    <i class="<?php the_sub_field('member_social_class'); ?>"></i>
+                                    <i class="<?php the_sub_field('member_social_class'); ?> fa-fw"></i>
                                 </a>
                             </li>
 

@@ -279,16 +279,16 @@ Template Name: Post
                                     </p>
                                 </div>
 
-                                <?php if( have_rows('social_media',  get_post_field( 'post_author', get_the_ID() )) ): ?>
+                                <?php if( have_rows('social_media', ('user_' . get_post_field( 'post_author', get_the_ID() )) ) ): ?>
 
                                 <ul class="tt-social">
 
-                                    <?php while ( have_rows('social_media',  get_post_field( 'post_author', get_the_ID() )) ) : the_row(); ?>
+                                    <?php while ( have_rows('social_media', ('user_' . get_post_field( 'post_author', get_the_ID() )) ) ) : the_row(); ?>
 
                                     <li>
-                                        <a class="tt-social__icon"
-                                            href="<?php the_sub_field('social_media_url'); ?> fa-fw" target="_blank">
-                                            <i class="<?php the_sub_field('social_media_class'); ?>"></i>
+                                        <a class="tt-social__icon" href="<?php the_sub_field('social_media_url'); ?>"
+                                            target="_blank">
+                                            <i class="<?php the_sub_field('social_media_class'); ?> fa-fw"></i>
                                         </a>
                                     </li>
 

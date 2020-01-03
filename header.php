@@ -108,15 +108,15 @@
 
     </ul>
 
-    <?php if( have_rows('social_media', 'header') ): ?>
+    <?php if( have_rows('social_media', 'options') ): ?>
 
     <ul class="tt-social">
 
-        <?php while ( have_rows('social_media', 'header') ) : the_row(); ?>
+        <?php while ( have_rows('social_media', 'options') ) : the_row(); ?>
 
         <li>
-            <a class="tt-social__icon" href="<?php the_sub_field('social_media_url'); ?> fa-fw" target="_blank">
-                <i class="<?php the_sub_field('social_media_class'); ?>"></i>
+            <a class="tt-social__icon" href="<?php the_sub_field('social_media_url'); ?>" target="_blank">
+                <i class="<?php the_sub_field('social_media_class'); ?> fa-fw"></i>
             </a>
         </li>
 
