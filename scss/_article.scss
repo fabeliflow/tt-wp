@@ -178,7 +178,10 @@ $tt-media-margin: 20px;
     border-bottom: solid 3px $tt-sand !important;
     background-color: transparent !important;
 
-    .sw-ctt-text,
+    .sw-ctt-text {
+      color: inherit !important;
+    }
+
     .sw-ctt-btn {
       color: $tt-rose !important;
     }
