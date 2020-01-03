@@ -11,13 +11,14 @@ $jq(document).ready(function () {
       content: document.getElementById('content'),
       animation: 'slideLeft',
       allowDrag: false,
-      closeOnBlur: true,
+      // closeOnBlur: true,
       allowContentInteraction: false,
       beforeOpen: function () {
         bodyScrollLock.disableBodyScroll(targetElement);
         $jq('.hamburger').addClass("is-active");
         $jq('#navigation').addClass("nav-open");
         $jq('#content').addClass("tt-content--overlay");
+        $jq('.nc_wrapper').hide();
       },
       beforeClose: function () {
         $jq('.hamburger').removeClass("is-active");
