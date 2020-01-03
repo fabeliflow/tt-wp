@@ -7,7 +7,6 @@ $jq(document).ready(function () {
 
   $jq("#tt-menu__btn").toggle(
     function () {
-      $jq('.nc_wrapper').hide();
       $jq('.hamburger').addClass("is-active");
       $jq('#navigation').addClass("nav-open");
       $jq('#content').addClass("tt-content--overlay");
@@ -15,7 +14,6 @@ $jq(document).ready(function () {
 
     },
     function () {
-      $jq('.nc_wrapper').show();
       $jq('.hamburger').removeClass("is-active");
       $jq('#navigation').removeClass("nav-open");
       $jq('#content').removeClass("tt-content--overlay");
