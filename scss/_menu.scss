@@ -45,6 +45,14 @@
   border-right: 1px solid $tt-dark-theme-border;
   overflow-x: hidden;
 
+  .simplebar-scroll-content {
+    margin-bottom: 0 !important;
+  }
+
+  .simplebar-content {
+    padding-bottom: 0 !important;
+  }
+
   .tt-social {
     margin: 0;
     padding: 30px 10px;

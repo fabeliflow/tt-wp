@@ -10,7 +10,7 @@ $jq(document).ready(function () {
       slider: document.getElementById('navigation'),
       content: document.getElementById('content'),
       animation: 'slideLeft',
-      allowDrag: true,
+      allowDrag: false,
       closeOnBlur: true,
       allowContentInteraction: false,
       beforeOpen: function () {

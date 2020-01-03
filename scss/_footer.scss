@@ -19,6 +19,8 @@
 }
 
 .wpautoterms-footer {
+  position: absolute;
+  bottom: 0;
   border-top: 1px solid $tt-dark-theme-border;
   background-color: $tt-dark-theme-bg;
   color: $tt-dark-theme-text;

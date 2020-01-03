@@ -1,6 +1,7 @@
 $tt-media-margin: 20px;
 
 .tt-article {
+  padding: 0 !important;
   .tt-member-card {
     margin: 0 auto !important;
     @media (min-width: 1200px) {
