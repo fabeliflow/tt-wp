@@ -23,14 +23,6 @@ $jq(document).ready(function () {
     }
   );
 
-  $jq("#content").click(function () {
-    $jq('.nc_wrapper').show();
-    $jq('.hamburger').toggleClass("is-active");
-    $jq('#navigation').toggleClass("nav-open");
-    $jq(this).toggleClass("tt-content--overlay");
-    bodyScrollLock.enableBodyScroll(targetElement);
-  });
-
   // Scroll to Top
   $jq(window).scroll(function () {
     if ($jq(this).scrollTop() >= 50) {
