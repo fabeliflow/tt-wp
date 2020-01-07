@@ -469,5 +469,16 @@ $tt-media-margin: 20px;
 }
 
 .swp_social_panel {
+  border: solid 3px $tt-sand;
   border-radius: 10em !important;
+  background-color: $tt-dark-theme-bg;
+
+  .total_shares:before,
+  .total_shares span {
+    color: white !important;
+  }
+
+  .nc_tweetContainer:not(.total_shares):not(.total_sharesalt) {
+    border: none !important;
+  }
 }
