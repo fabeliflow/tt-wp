@@ -109,7 +109,7 @@ Template Name: Post
                     <!-- Regular Image -->
                     <?php if( get_sub_field('image_type') == 'regular' ): ?>
 
-                    <div class="col-sm-6 col-sm-offset-3">
+                    <div class="col-sm-6 col-sm-offset-3 tt-img">
                         <figure class="tt-article__img">
                             <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
 
@@ -125,7 +125,7 @@ Template Name: Post
                     <!-- Full Image -->
                     <?php elseif( get_sub_field('image_type') == 'full' ): ?>
 
-                    <div class="col-sm-12 tt-article__img--<?php the_sub_field('image_type'); ?>__cont">
+                    <div class="col-sm-12 tt-img tt-article__img--<?php the_sub_field('image_type'); ?>__cont">
                         <figure class="tt-article__img">
                             <div class="tt-article__img--<?php the_sub_field('image_type'); ?>"
                                 style="background-image: url('<?php echo $image['url']; ?>')"></div>
@@ -142,7 +142,7 @@ Template Name: Post
                     <!-- Full Left or Right Image -->
                     <?php elseif( get_sub_field('image_type') == 'left' || get_sub_field('image_type') == 'right' ) : ?>
 
-                    <div class="col-sm-9 tt-article__img--<?php the_sub_field('image_type'); ?>__cont">
+                    <div class="col-sm-9 tt-img tt-article__img--<?php the_sub_field('image_type'); ?>__cont">
                         <figure class="tt-article__img">
                             <div class="tt-article__img--<?php the_sub_field('image_type'); ?>"
                                 style="background-image: url('<?php echo $image['url']; ?>')"></div>
@@ -171,7 +171,7 @@ Template Name: Post
                         if( $images ):
                     ?>
 
-                    <div class="col-md-8 col-md-offset-2">
+                    <div class="col-md-8 col-md-offset-2 tt-img">
 
                         <div class="tt-article__img--gallery__cont">
 
