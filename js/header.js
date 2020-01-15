@@ -7,7 +7,7 @@ $jq(document).click(function (e) {
 
   var targetElement = document.getElementById('navigation');
 
-  if ($jq('#tt-menu__btn .hamburger-box').is(e.target) || $jq('#tt-menu__btn').is(e.target)) {
+  if ($jq('#tt-menu__btn').is(e.target) && !$jq('#tt-menu__btn').hasClass('is-active')) {
     $jq('.hamburger').addClass("is-active");
     container.addClass("nav-open");
     $jq('#content').addClass("tt-content--overlay");
