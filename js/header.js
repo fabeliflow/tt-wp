@@ -1,25 +1,26 @@
 // This file contains all the required javascript for the TT menu.
 var $jq = jQuery.noConflict();
 
-$jq(document).ready(function () {
+$jq(document).click(function (e) {
+
+  var container = $jq('#navigation');
 
   var targetElement = document.getElementById('navigation');
 
-  $jq("#tt-menu__btn").toggle(
-    function () {
-      $jq('.hamburger').addClass("is-active");
-      $jq('#navigation').addClass("nav-open");
-      $jq('#content').addClass("tt-content--overlay");
-      bodyScrollLock.disableBodyScroll(targetElement);
+  if ($jq('#tt-menu__btn .hamburger-box').is(e.target) || $jq('#tt-menu__btn').is(e.target)) {
+    $jq('.hamburger').addClass("is-active");
+    container.addClass("nav-open");
+    $jq('#content').addClass("tt-content--overlay");
+    bodyScrollLock.disableBodyScroll(targetElement);
+  } else if (!container.is(e.target) && container.has(e.target).length === 0) {
+    container.removeClass("nav-open");
+    $jq('.hamburger').removeClass("is-active");
+    $jq('#content').removeClass("tt-content--overlay");
+    bodyScrollLock.enableBodyScroll(targetElement);
+  }
+});
 
-    },
-    function () {
-      $jq('.hamburger').removeClass("is-active");
-      $jq('#navigation').removeClass("nav-open");
-      $jq('#content').removeClass("tt-content--overlay");
-      bodyScrollLock.enableBodyScroll(targetElement);
-    }
-  );
+$jq(document).ready(function () {
 
   // Scroll to Top
   $jq(window).scroll(function () {
