@@ -22,7 +22,7 @@
 
 .tt-menu__logo-cont {
   padding: 30px;
-  border-bottom: 3px solid $tt-sand;
+  border-bottom: 3px solid $tt-dark-theme-border;
 
   .tt-menu__logo {
     width: 100%;
@@ -52,7 +52,7 @@
   .tt-social {
     margin: 0;
     padding: 30px 10px;
-    border-top: 3px solid $tt-sand;
+    border-top: 3px solid $tt-dark-theme-border;
 
     li {
       cursor: pointer;
@@ -143,7 +143,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: transparentize($tt-dark-theme-bg, 0.2);
+  background-color: $tt-dark-theme-bg-transp;
   z-index: 99;
 }
 
