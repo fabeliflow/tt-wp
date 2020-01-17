@@ -482,6 +482,7 @@ h3 {
 // Scrollable Area Styles
 .simplebar-scrollbar:before {
   background: $tt-rose-transp;
+  border-radius: 0;
 }
 
 .simplebar-content {
@@ -498,5 +499,5 @@ h3 {
 }
 
 .simplebar-track.horizontal {
-  visibility: hidden !important;
+  display: none;
 }
