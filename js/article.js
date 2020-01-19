@@ -12,7 +12,7 @@ $jq(document).ready(function () {
       loadPrevNext: false,
     },
     autoplay: {
-      delay: 5000,
+      delay: 10000,
       disableOnInteraction: false,
     },
     watchSlidesVisibility: true,
