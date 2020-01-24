@@ -28,7 +28,7 @@ $tt-media-margin: 20px;
 .tt-article__category {
   font-family: Aurebesh;
   font-weight: bold;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   color: $tt-rose;
 }
 
@@ -137,10 +137,6 @@ $tt-media-margin: 20px;
       font-size: 2em !important;
     }
 
-    @media (min-width: 1440px) {
-      font-size: 2.5em !important;
-    }
-
     &:before {
       content: "“";
       margin-right: 0.1em !important;
@@ -197,10 +193,6 @@ $tt-media-margin: 20px;
 
       @media (min-width: 992px) {
         font-size: 2em !important;
-      }
-
-      @media (min-width: 1440px) {
-        font-size: 2.5em !important;
       }
 
       &:before {
@@ -275,6 +267,7 @@ $tt-media-margin: 20px;
   color: $tt-text-dark;
   text-align: center;
   position: relative;
+  letter-spacing: 3px;
 
   &:before,
   &:after {
