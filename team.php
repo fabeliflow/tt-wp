@@ -12,9 +12,11 @@ Template Name: Team
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3">
-                    <div class="tt-header tt-header--center">
-                        <span><?php the_title(); ?></span>
-                        <h1><?php the_title(); ?></h1>
+                    <div class="tt-header--center__wrapper">
+                        <div class="tt-header tt-header--center">
+                            <span><?php the_title(); ?></span>
+                            <h1><?php the_title(); ?></h1>
+                        </div>
                     </div>
                     <p><?php the_field('team_description'); ?></p>
                 </div>
@@ -35,9 +37,11 @@ Template Name: Team
                         <img src="<?php the_sub_field('member_picture'); ?>" />
                     </div>
                     <div class="tt-member-card__info">
-                        <div class="tt-header tt-header--center">
-                            <span><?php the_sub_field('member_name'); ?></span>
-                            <h2><?php the_sub_field('member_name'); ?></h2>
+                        <div class="tt-header--center__wrapper">
+                            <div class="tt-header tt-header--center">
+                                <span><?php the_sub_field('member_name'); ?></span>
+                                <h2><?php the_sub_field('member_name'); ?></h2>
+                            </div>
                         </div>
                         <div data-simplebar class="tt-member--bio">
                             <p><?php the_sub_field('member_biography'); ?></p>

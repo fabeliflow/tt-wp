@@ -46,15 +46,19 @@ Template Name: Post
                         ?>
 
                         <!-- Article Header -->
-                        <header class="tt-header tt-header--center tt-article__header"
-                            style="--category-color:<?php the_field('category_color', $category); ?>;">
-                            <span class="tt-article__category">
-                                <?php echo $category_name  ?>
-                            </span>
-                            <h1>
-                                <?php the_title(); ?>
-                            </h1>
 
+                        <header>
+                            <div class="tt-header--center__wrapper">
+                                <div class="tt-header tt-header--center tt-article__header"
+                                    style="--category-color:<?php the_field('category_color', $category); ?>;">
+                                    <span class="tt-article__category">
+                                        <?php echo $category_name  ?>
+                                    </span>
+                                    <h1>
+                                        <?php the_title(); ?>
+                                    </h1>
+                                </div>
+                            </div>
                             <!-- Article Info -->
                             <ul class="tt-article__info">
                                 <li><i>Written by</i>
@@ -269,10 +273,12 @@ Template Name: Post
                                 <?php echo get_wp_user_avatar(get_post_field('post_author', get_the_ID())); ?>
                             </div>
                             <div class="tt-member-card__info">
-                                <div class="tt-header tt-header--center">
-                                    <span><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ); ?></span>
-                                    <h2><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ); ?>
-                                    </h2>
+                                <div class="tt-header--center__wrapper">
+                                    <div class="tt-header tt-header--center">
+                                        <span><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ); ?></span>
+                                        <h2><?php the_author_meta( 'display_name', get_post_field( 'post_author', get_the_ID() ) ); ?>
+                                        </h2>
+                                    </div>
                                 </div>
                                 <div data-simplebar class="tt-member--bio">
                                     <p><?php the_author_meta( 'description', get_post_field( 'post_author', get_the_ID() ) ); ?>
@@ -322,9 +328,13 @@ Template Name: Post
     <section class="tt-cat__cont">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-6 col-sm-offset-3 tt-header tt-header--center">
-                    <span>More by the author</span>
-                    <h2>More by the author</h2>
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="tt-header--center__wrapper">
+                        <div class="tt-header tt-header--center">
+                            <span>More by the author</span>
+                            <h2>More by the author</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@ $custom_search = (isset($_GET['custom_search'])) ? $_GET['custom_search'] : '';
 $background = get_field('category_background', $term);
 $background_position = get_field('category_background_position', $term);
 $color = get_field('category_color', $term);
-$logo_svg = get_field('category_logo_svg', $term);
+$name = $term->name;
 $description = $term->category_description;
 ?>
 
@@ -22,9 +22,11 @@ $description = $term->category_description;
     <!-- Category Masthead -->
     <div class="tt-masthead tt-masthead--overlay"
         style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
-        <div class="tt-masthead__logo-wrapper">
-            <div class="tt-masthead__logo"
-                style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/<?php echo $logo_svg ?>.svg');">
+        <div class="tt-masthead__wrapper">
+            <div style="--category-color:<?php the_field('category_color', $term); ?>;"
+                class="tt-header tt-header--center">
+                <span><?php echo $name ?></span>
+                <h1 class="tt-header--center__no-border"><?php echo $name ?></h1>
             </div>
         </div>
     </div>
@@ -32,17 +34,19 @@ $description = $term->category_description;
     <div class="container">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2 tt-cat__descr">
-                <div class="tt-header tt-header--center tt-category__header"
-                    style="--category-color:<?php echo $color ?>;">
-                    <span>The Story</span>
-                    <h1>The Story</h1>
+                <div class="tt-header--center__wrapper">
+                    <div class="tt-header tt-header--center tt-category__header"
+                        style="--category-color:<?php echo $color ?>;">
+                        <span>The Story</span>
+                        <h2>The Story</h2>
+                    </div>
                 </div>
                 <p><?php echo $description ?></p>
             </div>
         </div>
     </div>
 
-    <form class="tt-search-bar" method="get">
+    <form style="--category-color:<?php echo $color ?>;" class="tt-search-bar" method="get">
         <input type="text" name="custom_search" id="custom_search" value="<?php echo esc_attr( $custom_search ); ?>"
             placeholder="&#xf002; Search" />
     </form>

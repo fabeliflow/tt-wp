@@ -15,8 +15,15 @@
   position: relative;
   padding: 0;
 
-  .tt-masthead__logo {
-    margin-bottom: 20px;
+  .tt-header {
+
+    h2:after {
+      border-color: var(--category-color);
+    }
+
+    span {
+      color: var(--category-color);
+    }
   }
 
   .swiper-pagination {
@@ -27,11 +34,11 @@
     width: 100% !important;
     background-size: cover;
     background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    // text-align: center;
   }
 
   .swiper-pagination-bullet {

@@ -64,9 +64,13 @@ get_header(); ?>
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-6 col-sm-offset-3 tt-header tt-header--center">
-                    <span>Latest Articles</span>
-                    <h2>Latest Articles</h2>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
+                    <div class="tt-header--center__wrapper">
+                        <div class="tt-header tt-header--center">
+                            <span>Latest Articles</span>
+                            <h1>Latest Articles</h1>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -158,7 +162,7 @@ get_header(); ?>
 
                         $background = get_field('category_background', $category);
                         $background_position = get_field('category_background_position', $category);
-                        $logo_svg = get_field('category_logo_svg', $category);
+                        $name = $category->name;
                         $link = get_category_link( $category );
                         $link_label = get_field('category_link_label', $category);
                 ?>
@@ -166,9 +170,11 @@ get_header(); ?>
                 <div class="swiper-slide tt-masthead--overlay"
                     style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
 
-                    <div class="tt-masthead__logo-wrapper">
-                        <div class="tt-masthead__logo"
-                            style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/<?php echo $logo_svg ?>.svg');">
+                    <div class="tt-masthead__wrapper">
+                        <div style="--category-color:<?php the_field('category_color', $category); ?>;"
+                            class="tt-header tt-header--center">
+                            <span><?php echo $name ?></span>
+                            <h2 class="tt-header--no-border"><?php echo $name ?></h2>
                         </div>
                         <a style="--category-color:<?php the_field('category_color', $category); ?>;"
                             class="tt-btn tt-btn--cat" href="<?php echo $link ?>"><?php echo $link_label ?></a>

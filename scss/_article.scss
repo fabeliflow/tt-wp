@@ -262,7 +262,8 @@ $tt-media-margin: 20px;
     color: var(--category-color);
   }
 
-  h1:after {
+  h1:after,
+  h2:after {
     border-bottom-color: var(--category-color);
   }
 }
