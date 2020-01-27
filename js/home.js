@@ -29,8 +29,6 @@ $jq(document).ready(function () {
   }, function () {
     (this).swiper.autoplay.start();
   });
-
-  $jq(".tt-logo__wrap").addClass("tt-logo--animate");
 });
 
 particlesJS("starfieldhome", {

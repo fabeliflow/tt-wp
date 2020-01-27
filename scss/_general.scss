@@ -148,6 +148,11 @@ h3 {
   }
 }
 
+.tt-btn--fill {
+  border-color: $tt-rose;
+  background-color: $tt-rose;
+}
+
 .tt-btn--cat {
   &:hover,
   &:focus {
@@ -158,7 +163,7 @@ h3 {
   }
 }
 
-.tt-btn--alt {
+.tt-btn--error {
   &:hover,
   &:focus {
     border-color: $tt-red;

@@ -9,9 +9,9 @@ Template Name: Team
 <body class="tt-team">
 
     <section class="tt-team__descr">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
+                <div class="col-sm-8 col-sm-offset-2">
                     <div class="tt-header--center__wrapper">
                         <div class="tt-header tt-header--center">
                             <span><?php the_title(); ?></span>

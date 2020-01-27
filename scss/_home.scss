@@ -1,9 +1,26 @@
-.tt-home__section:not(.tt-home__section-logo) {
-  min-height: 80vh;
+.tt-home__descr {
+  position: relative;
+  padding: 100px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparentize($tt-dark-theme-bg, 0.2);
+  }
 }
 
 .tt-home__section {
-  padding: 50px 15px;
+  min-height: 80vh;
+  padding: 100px 15px;
   overflow: hidden;
 
   h2 {
@@ -16,7 +33,6 @@
   padding: 0;
 
   .tt-header {
-
     h2:after {
       border-color: var(--category-color);
     }
@@ -34,11 +50,6 @@
     width: 100% !important;
     background-size: cover;
     background-repeat: no-repeat;
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-    // justify-content: center;
-    // text-align: center;
   }
 
   .swiper-pagination-bullet {
@@ -71,93 +82,6 @@
   color: white;
 }
 
-.tt-logo__cont {
-  width: 100%;
-  margin: 50px 0;
-
-  @media (min-width: 992px) {
-    margin: 100px 0;
-  }
-
-  transition: all 0.3s ease-in;
-}
-
-.tt-logo__wrap {
-  padding-bottom: 32%;
-  position: relative;
-  height: 0;
-  width: 100%;
-  padding: 0;
-}
-
-.tt-logo {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  bottom: 0;
-}
-
-.tt-logo__sun {
-  transform-origin: 283.25px 40px;
-}
-
-.tt-logo__sun--first {
-  fill: $tt-orange;
-}
-
-.tt-logo__sun--second {
-  fill: $tt-pink;
-}
-
-.tt-logo__border {
-  fill: none;
-  stroke: white;
-  stroke-miterlimit: 10;
-  stroke-width: 4.3px;
-}
-
-.tt-logo__border,
-.tt-logo__border--left,
-.tt-logo__border--right {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-}
-
-.tt-logo__title--main,
-.tt-logo__title--sub {
-  fill: white;
-}
-
-.tt-logo__sun,
-.tt-logo__title--sub,
-.tt-logo__title--main {
-  opacity: 0;
-}
-
-.tt-logo--animate {
-  .tt-logo__sun {
-    opacity: 1;
-    animation: rotate 2s 2;
-  }
-
-  .tt-logo__title--sub {
-    animation: show-title-sub 1s 5.9s forwards;
-  }
-
-  .tt-logo__border--left {
-    animation: draw 4s ease-in-out 4s forwards;
-  }
-
-  .tt-logo__border--right {
-    animation: draw 3.9s ease-in-out 3.9s forwards;
-  }
-
-  .tt-logo__title--main {
-    animation: show-title-main 4s forwards;
-  }
-}
-
 .tt-footer__home {
   padding-top: 100px;
   padding-bottom: 100px;
@@ -170,62 +94,5 @@
       color: $tt-rose;
       text-shadow: 0 0 5px $tt-rose;
     }
-  }
-}
-
-@include keyframes-compatible(fadeIn) {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@include keyframes-compatible(rotate) {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@include keyframes-compatible(show-title-sub) {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@include keyframes-compatible(draw) {
-  0% {
-    stroke-dashoffset: 1000;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-@include keyframes-compatible(show-title-main) {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@include keyframes-compatible(slideUp) {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0%);
   }
 }
