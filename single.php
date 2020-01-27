@@ -100,6 +100,21 @@ Template Name: Post
 
                     </div>
 
+                    <!-- Text Module -->
+                    <?php elseif( get_row_layout() == 'video' ): ?>
+
+                    <div class="col-sm-6 col-sm-offset-3 tt-video__cont">
+
+                        <div class="tt-video">
+                            <iframe src="https://www.youtube.com/embed/<?php the_sub_field('video_id'); ?>"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <span class="tt-caption"><?php the_sub_field('video_caption'); ?></span>
+
+                    </div>
+
                     <!-- Image Module -->
                     <?php elseif( get_row_layout() == 'image' ): ?>
 

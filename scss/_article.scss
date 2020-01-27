@@ -436,8 +436,33 @@ iframe {
   }
 }
 
-.dad-youtube-responsive {
-  margin: $tt-media-margin 0 !important;
+.tt-video__cont {
+  padding: 0;
+
+  .tt-caption {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.tt-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+  }
 }
 
 // Facebook Terms Styles
@@ -460,11 +485,6 @@ iframe {
       box-shadow: inset 0 -3px 0 $tt-rose;
     }
   }
-}
-
-// YouTube Responsive Styles
-.erd-youtube-responsive {
-  margin: $tt-media-margin 0 !important;
 }
 
 .swp_social_panel {
