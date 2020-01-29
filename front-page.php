@@ -18,7 +18,7 @@ get_header(); ?>
                 <div class="col-sm-6 col-sm-offset-3">
                     <div class="tt-header--center__wrapper">
                         <div class="tt-header tt-header--center">
-                            <span><?php the_field('description_title'); ?></span>
+                            <span>Tatooine Times</span>
                             <h1><?php the_field('description_title'); ?></h1>
                         </div>
                     </div>
@@ -45,16 +45,10 @@ get_header(); ?>
 
     <section class="tt-home__section">
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
-                    <div class="tt-header--center__wrapper">
-                        <div class="tt-header tt-header--center">
-                            <span>Latest Articles</span>
-                            <h1>Latest Articles</h1>
-                        </div>
-                    </div>
-                </div>
+        <div class="tt-header--center__wrapper">
+            <div class="tt-header tt-header--center">
+                <span>Latest Articles</span>
+                <h1>Latest Articles</h1>
             </div>
         </div>
 
