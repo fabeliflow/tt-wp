@@ -37,7 +37,7 @@ body:not(.tt-404) {
 }
 
 .tt-cat__card {
-  border: 3px solid var(--category-color);
+  border: 3px solid var(--category-color, $tt-sand);
   width: 100%;
   border-radius: 2rem;
   display: flex;
@@ -56,7 +56,7 @@ body:not(.tt-404) {
   &:focus {
     text-decoration: none;
     color: white;
-    box-shadow: 0 0 5px 0 var(--category-color);
+    box-shadow: 0 0 5px 0 var(--category-color, $tt-sand);
   }
 }
 
@@ -113,7 +113,7 @@ body:not(.tt-404) {
 .tt-cat__card__title {
   margin: 0 0 20px 0;
   padding-left: 10px;
-  border-left: solid 3px var(--category-color);
+  border-left: solid 3px var(--category-color, $tt-sand);
 }
 
 .tt-cat__card__descr {
@@ -138,7 +138,7 @@ body:not(.tt-404) {
     span:first-child {
       font-family: Aurebesh;
       font-weight: bold;
-      color: var(--category-color);
+      color: var(--category-color, $tt-sand);
       font-size: 0.7em;
     }
 }

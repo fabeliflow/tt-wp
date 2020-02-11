@@ -11,8 +11,7 @@ get_header(); ?>
 
     <?php while ( have_rows('description_background') ) : the_row(); ?>
 
-    <section class="tt-home__descr"
-        style="background-image: url('<?php the_sub_field('description_background_image'); ?>'); background-position: <?php the_sub_field('description_background_position'); ?>">
+    <section class="tt-home__descr">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3">
@@ -42,6 +41,54 @@ get_header(); ?>
     <?php endwhile; ?>
 
     <?php endif; ?>
+
+    <section class="tt-home__section tt-home__series">
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+                <?php
+
+                    $taxonomies = get_terms( array(
+                        'taxonomy' => 'series',
+                        'hide_empty' => false,
+                        'number' => 6
+                    ) );
+
+                    foreach ( $taxonomies as $taxonomy ) : 
+
+                        $background = get_field('series_background', $taxonomy);
+                        $background_position = get_field('series_background_position', $taxonomy);
+                        $logo = get_field('series_logo', $taxonomy);
+                        $link = get_term_link( $taxonomy );
+                        $link_label = get_field('series_link_label', $taxonomy);
+                ?>
+
+                <div class="swiper-slide tt-masthead--overlay"
+                    style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
+
+                    <div class="tt-masthead__wrapper">
+                        <img class="tt-masthead__logo" src="<?php echo $logo ?>" \>
+                        <a class="tt-btn tt-btn--cat" href="<?php echo $link ?>"><?php echo $link_label ?></a>
+                    </div>
+
+                </div>
+
+                <?php endforeach; ?>
+
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Arrows -->
+            <div class="tt-arrow tt-arrow--left">
+                <div></div>
+            </div>
+
+            <div class="tt-arrow tt-arrow--right">
+                <div></div>
+            </div>
+        </div>
+    </section>
 
     <section class="tt-home__section">
 

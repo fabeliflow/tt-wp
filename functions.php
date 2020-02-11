@@ -73,6 +73,32 @@ function wpb_adding_styles_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'wpb_adding_styles_scripts' );
 
+add_filter( '404_template', 'custom_redirect_to_category' );
+
+function custom_redirect_to_category($template) {
+
+    if ( ! is_404() ){
+        return $template;
+    }
+
+    global $wp_rewrite;
+    global $wp_query;
+
+    if ( '/%category%/%postname%/' !== $wp_rewrite->permalink_structure ){
+        return $template;
+    }   
+
+    if ( ! $post = get_page_by_path( $wp_query->query['category_name'], OBJECT, 'post' ) ){
+        return $template;   
+    }
+
+    $permalink = get_permalink( $post->ID );
+
+    wp_redirect( $permalink, 301 );
+    exit;
+
+}
+
 // extend Public Post Preview link time
 add_filter( 'ppp_nonce_life', 'my_nonce_life' );
 function my_nonce_life() {

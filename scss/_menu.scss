@@ -112,7 +112,7 @@
   a {
     &:hover,
     &:focus {
-      border-left: solid 3px var(--category-color);
+      border-left: solid 3px var(--category-color, $tt-rose);
     }
   }
 }

@@ -156,7 +156,7 @@ h3 {
 .tt-btn--cat {
   &:hover,
   &:focus {
-    $cat-color: var(--category-color);
+    $cat-color: var(--category-color, $tt-rose);
     border-color: $cat-color;
     box-shadow: 0 0 5px 0 $cat-color;
     background-color: $cat-color;
@@ -241,12 +241,12 @@ h3 {
   input {
     padding: 7px 17px;
     border-radius: 10em;
-    border: 3px solid var(--category-color);
+    border: 3px solid var(--category-color, $tt-rose);
     outline: none;
     transition: all 0.2s ease-in-out;
 
     &::placeholder {
-      color: var(--category-color);
+      color: var(--category-color, $tt-rose);
       font-family: "Font Awesome 5 Free", Aurebesh, sans-serif;
       font-weight: 900;
       letter-spacing: 3px;
@@ -254,7 +254,7 @@ h3 {
 
     &:hover,
     &:focus {
-      box-shadow: 0 0 5px 0 var(--category-color);
+      box-shadow: 0 0 5px 0 var(--category-color, $tt-rose);
     }
   }
 }
@@ -444,11 +444,11 @@ h3 {
     color: white;
 
     h1:after {
-      border-color: var(--category-color);
+      border-color: var(--category-color, $tt-sand);
     }
 
     span {
-      color: var(--category-color);
+      color: var(--category-color, $tt-rose);
     }
   }
 }
@@ -463,6 +463,15 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 80%;
+
+  @media (min-width: 992px) {
+    width: 50%;
+  }
+
+  .tt-masthead__logo {
+    width: 100%;
+  }
 }
 
 .tt-masthead--overlay:before {

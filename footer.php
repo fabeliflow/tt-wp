@@ -1,6 +1,6 @@
         <!-- Footer -->
 
-        <?php if (is_single() || is_category()) : ?>
+        <?php if (is_single() || is_tax() || is_category()) : ?>
 
         <footer>
 

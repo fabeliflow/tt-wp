@@ -251,6 +251,23 @@ Template Name: Post
 
                 </section>
 
+                <?php
+
+                    $taxonomy = get_the_terms( $post->ID, 'series' )[0];
+                    $link = get_term_link( $taxonomy->slug, 'series' );
+
+                ?>
+
+                <?php if ( $taxonomy ) : ?>
+
+                <div class="col-sm-6 col-sm-offset-3 tt-article__back-to-series">
+
+                    <a href="<?php echo $link ?>" class="tt-btn tt-btn--fill">Back to the Series</a>
+
+                </div>
+
+                <?php endif; ?>
+
                 <!-- Social Media Share -->
                 <div class="col-sm-6 col-sm-offset-3">
 

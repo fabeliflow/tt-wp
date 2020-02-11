@@ -252,12 +252,12 @@ $tt-media-margin: 20px;
 .tt-article__header,
 .tt-category__header {
   span {
-    color: var(--category-color);
+    color: var(--category-color, $tt-rose);
   }
 
   h1:after,
   h2:after {
-    border-bottom-color: var(--category-color);
+    border-bottom-color: var(--category-color, $tt-sand);
   }
 }
 
@@ -506,4 +506,12 @@ iframe {
 
 .tt-img {
   padding: 0;
+}
+
+.tt-article__back-to-series {
+  text-align: center;
+
+  .tt-btn {
+    margin: 50px 0;
+  }
 }
