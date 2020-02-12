@@ -58,8 +58,9 @@ function wpb_adding_styles_scripts() {
 
 		wp_register_script('starfield', get_template_directory_uri() . '/js/minified/starfield.min.js', array('jquery', 'particles'), null, true);
 		wp_enqueue_script('starfield');
-
-	} elseif (is_front_page()) {
+	} 
+	
+	if (is_front_page()) {
 
 		wp_register_script('home', get_template_directory_uri() . '/js/minified/home.min.js', array('jquery', 'particles', 'swiper'), null, true);
 		wp_enqueue_script('home');
