@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Series
+Template Name: Taxonomy Series
 */
 
 get_header();
@@ -10,9 +10,9 @@ $term = get_queried_object();
 
 $custom_search = (isset($_GET['custom_search'])) ? $_GET['custom_search'] : '';
 
-$background = get_field('series_background', $term);
-$background_position = get_field('series_background_position', $term);
-$logo = get_field('series_logo', $term);
+$background = get_field('taxonomy_series_background', $term);
+$background_position = get_field('taxonomy_series_background_position', $term);
+$logo = get_field('taxonomy_series_logo', $term);
 $name = $term->name;
 $description = $term->description;
 ?>

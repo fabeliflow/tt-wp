@@ -7,10 +7,6 @@ get_header(); ?>
 
 <body class="tt-home">
 
-    <?php if( have_rows('description_background') ): ?>
-
-    <?php while ( have_rows('description_background') ) : the_row(); ?>
-
     <section class="tt-home__descr">
         <div class="container">
             <div class="row">
@@ -38,10 +34,6 @@ get_header(); ?>
             </div>
     </section>
 
-    <?php endwhile; ?>
-
-    <?php endif; ?>
-
     <section class="tt-home__section tt-home__series">
 
         <div class="swiper-container">
@@ -57,11 +49,11 @@ get_header(); ?>
 
                     foreach ( $taxonomies as $taxonomy ) : 
 
-                        $background = get_field('series_background', $taxonomy);
-                        $background_position = get_field('series_background_position', $taxonomy);
-                        $logo = get_field('series_logo', $taxonomy);
+                        $background = get_field('taxonomy_series_background', $taxonomy);
+                        $background_position = get_field('taxonomy_series_background_position', $taxonomy);
+                        $logo = get_field('taxonomy_series_logo', $taxonomy);
                         $link = get_term_link( $taxonomy );
-                        $link_label = get_field('series_link_label', $taxonomy);
+                        $link_label = get_field('taxonomy_series_link_label', $taxonomy);
                 ?>
 
                 <div class="swiper-slide tt-masthead--overlay"
