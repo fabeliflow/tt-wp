@@ -291,7 +291,7 @@ Template Name: Post
                             and <a href="https://www.facebook.com/about/privacy" target="_blank">Privacy Policy</a>.
                             Your Facebook name, profile photo and other personal information you make public on Facebook
                             (e.g., school, work, current city, age) will appear with your comment.
-                            <a href="https://tatooinetimes.com/wpautoterms/terms-and-conditions/#facebook-comments-faq">Learn
+                            <a href="https://tatooinetimes.com/legal-terms/terms-and-conditions/#facebook-comments-faq">Learn
                                 More</a>.
                         </div>
 

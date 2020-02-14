@@ -31,6 +31,8 @@ get_header(); ?>
 
             $taxonomies = get_terms( array(
                 'taxonomy' => 'series',
+                'orderby' => 'ID', 
+                'order' => 'DESC',
                 'hide_empty' => false,
             ) );
 
@@ -40,9 +42,9 @@ get_header(); ?>
                 $link = get_term_link( $taxonomy );
         ?>
 
-
             <li class="tt-series__logo">
-                <a href="<?php echo $link ?>"><img class="tt-masthead__logo" src="<?php echo $logo ?>" \></a>
+                <a href="<?php echo $link ?>"><img class="tt-masthead__logo" src="<?php echo $logo ?>"
+                        \><?php echo $date ?></a>
             </li>
 
             <?php endforeach; ?>

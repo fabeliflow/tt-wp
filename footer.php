@@ -53,8 +53,8 @@
                     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
                         <div class="tt-header--center__wrapper">
                             <div class="tt-header tt-header--center">
-                                <span>Follow Us</span>
-                                <h2>Follow Us</h2>
+                                <span>Stay Connected</span>
+                                <h2>Stay Connected</h2>
                             </div>
                         </div>
                         <?php if( have_rows('social_media', 'options') ): ?>
