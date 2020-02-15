@@ -25,7 +25,7 @@ get_header(); ?>
 
     <section class="tt-series__section tt-series__logos--cont">
 
-        <ul class="tt-series__logos">
+        <div class="tt-series__logos">
 
             <?php
 
@@ -42,14 +42,13 @@ get_header(); ?>
                 $link = get_term_link( $taxonomy );
         ?>
 
-            <li class="tt-series__logo">
-                <a href="<?php echo $link ?>"><img class="tt-masthead__logo" src="<?php echo $logo ?>"
-                        \><?php echo $date ?></a>
-            </li>
+            <a class="tt-series__logo" href="<?php echo $link ?>">
+                <img src="<?php echo $logo ?>" \>
+            </a>
 
             <?php endforeach; ?>
 
-        </ul>
+        </div>
 
         </div>
     </section>
