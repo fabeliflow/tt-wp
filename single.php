@@ -6,7 +6,7 @@ Template Name: Post
 
 <?php get_header(); ?>
 
-<body class="tt-article">
+<body id="tt-lightgallery" class="tt-article">
 
     <!-- Facebook Comments -->
     <div id="fb-root"></div>
@@ -130,7 +130,9 @@ Template Name: Post
 
                     <div class="col-sm-6 col-sm-offset-3 tt-img">
                         <figure class="tt-article__img">
-                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                            <div class="tt-lightgallery--item" data-src="<?php echo $image['url']; ?>">
+                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                            </div>
 
                             <?php if( $image['caption'] ):?>
 
@@ -146,8 +148,11 @@ Template Name: Post
 
                     <div class="col-sm-12 tt-img tt-article__img--<?php the_sub_field('image_type'); ?>__cont">
                         <figure class="tt-article__img">
-                            <div class="tt-article__img--<?php the_sub_field('image_type'); ?>"
-                                style="background-image: url('<?php echo $image['url']; ?>')"></div>
+                            <div class="tt-article__img--<?php the_sub_field('image_type'); ?> tt-lightgallery--item"
+                                data-src="<?php echo $image['url']; ?>"
+                                style="background-image: url('<?php echo $image['url']; ?>')">
+                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                            </div>
 
                             <?php if( $image['caption'] ):?>
 
@@ -163,8 +168,11 @@ Template Name: Post
 
                     <div class="col-sm-9 tt-img tt-article__img--<?php the_sub_field('image_type'); ?>__cont">
                         <figure class="tt-article__img">
-                            <div class="tt-article__img--<?php the_sub_field('image_type'); ?>"
-                                style="background-image: url('<?php echo $image['url']; ?>')"></div>
+                            <div class="tt-article__img--<?php the_sub_field('image_type'); ?> tt-lightgallery--item"
+                                data-src="<?php echo $image['url']; ?>"
+                                style="background-image: url('<?php echo $image['url']; ?>')">
+                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                            </div>
 
                             <?php if( $image['caption'] ):?>
 
@@ -198,15 +206,14 @@ Template Name: Post
 
                                 <div class="tt-article__img--gallery swiper-container">
 
-                                    <div class="swiper-wrapper">
+                                    <div class="swiper-wrapper tt-lg-gallery">
 
                                         <?php foreach( $images as $image ): ?>
-                                        <div class="swiper-slide">
+                                        <div class="swiper-slide tt-lightgallery--item"
+                                            data-src="<?php echo $image['url']; ?>">
 
-                                            <figure>
-                                                <img class="swiper-lazy" src="<?php echo $image['url']; ?>"
-                                                    alt="<?php echo $image['alt']; ?>">
-                                            </figure>
+                                            <img class="swiper-lazy" src="<?php echo $image['url']; ?>"
+                                                alt="<?php echo $image['alt']; ?>">
 
                                         </div>
                                         <?php endforeach; ?>

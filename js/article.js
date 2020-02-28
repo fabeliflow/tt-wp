@@ -1,6 +1,11 @@
 var $jq = jQuery.noConflict();
 
 $jq(document).ready(function () {
+
+  $jq('#tt-lightgallery').lightGallery({
+    selector: '.tt-lightgallery--item'
+  });
+
   // Swiper card carousel
   var swiper = new Swiper(".tt-article__img--gallery", {
     effect: "coverflow",
@@ -10,10 +15,6 @@ $jq(document).ready(function () {
     preloadImages: false,
     lazy: {
       loadPrevNext: false,
-    },
-    autoplay: {
-      delay: 10000,
-      disableOnInteraction: false,
     },
     watchSlidesVisibility: true,
     watchSlidesProgress: true,
@@ -31,11 +32,5 @@ $jq(document).ready(function () {
       modifier: 1,
       slideShadows: false
     }
-  });
-
-  $jq(".swiper-container").hover(function () {
-    (this).swiper.autoplay.stop();
-  }, function () {
-    (this).swiper.autoplay.start();
   });
 });
