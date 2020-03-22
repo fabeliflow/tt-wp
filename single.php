@@ -100,7 +100,25 @@ Template Name: Post
 
                     </div>
 
-                    <!-- Text Module -->
+                    <!-- Quote Module -->
+                    <?php elseif( get_row_layout() == 'quote' ): ?>
+
+                    <div class="col-sm-6 col-sm-offset-3 tt-quote__cont">
+
+                        <blockquote class="tt-quote tt-quote--<?php the_sub_field('quote_direction'); ?>"
+                            style="background-image: url('<?php the_sub_field('quote_image'); ?>')">
+                            <div class="tt-quote__info">
+                                <p>
+                                    <q><?php the_sub_field('quote_text'); ?></q>
+                                </p>
+                                <footer>
+                                    <cite><?php the_sub_field('quote_cite'); ?></cite>
+                                </footer>
+                            </div>
+                        </blockquote>
+                    </div>
+
+                    <!-- Video Module -->
                     <?php elseif( get_row_layout() == 'video' ): ?>
 
                     <div class="col-sm-6 col-sm-offset-3 tt-video__cont">
