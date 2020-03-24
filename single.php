@@ -103,7 +103,7 @@ Template Name: Post
 
                                 <div class="col-sm-6 col-sm-offset-3 tt-quote__cont">
 
-                                    <blockquote class="tt-quote">
+                                    <blockquote class="tt-quote tt-quote--<?php the_sub_field('quote_theme'); ?>">
                                         <div class="tt-quote__info">
                                             <p>
                                                 <q><?php the_sub_field('quote_text'); ?></q>

@@ -130,9 +130,9 @@ $tt-media-margin: 20px;
   .tt-quote {
     margin: 0;
     padding: 60px 30px 0;
+    border-radius: 2rem;
     border-left: 0;
-    border-top: 3px solid $tt-sand;
-    border-bottom: 3px solid $tt-sand;
+    border: 3px solid $tt-sand;
     font-size: inherit;
     font-weight: bold;
     font-style: italic;
@@ -140,6 +140,11 @@ $tt-media-margin: 20px;
     cite {
       color: $tt-rose;
     }
+  }
+
+  .tt-quote--dark {
+    background-color: $tt-dark-theme-bg;
+    color: white;
   }
 
   .tt-quote__info {
