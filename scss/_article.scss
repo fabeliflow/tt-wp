@@ -121,43 +121,37 @@ $tt-media-margin: 20px;
   }
 
   .tt-quote__cont {
+    margin-top: $tt-media-margin;
+    margin-bottom: 50px + $tt-media-margin;
     padding: 0;
+    text-align: center;
   }
 
   .tt-quote {
-    margin: $tt-media-margin 0 !important;
-    position: relative;
-    background-color: $tt-dark-theme-bg;
-    color: white;
-    padding: 60px 0 0 0;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position-y: bottom;
-    background-origin: content-box;
+    margin: 0;
+    padding: 60px 30px 0;
+    border-left: 0;
+    border-top: 3px solid $tt-sand;
+    border-bottom: 3px solid $tt-sand;
     font-size: inherit;
+    font-weight: bold;
+    font-style: italic;
 
-    .tt-quote__info {
-      padding: 0 40px 60px 40px;
-
-      cite {
-        color: $tt-sand;
-        font-size: inherit;
-        font-family: $article-header-font-family;
-      }
+    cite {
+      color: $tt-rose;
     }
   }
 
-  .tt-quote--left {
-    background-position-x: right;
-    border-left: 20px solid $tt-rose;
-    border-right: 0;
+  .tt-quote__info {
+    padding-bottom: 20px;
   }
 
-  .tt-quote--right {
-    background-position-x: left;
-    border-left: 0;
-    border-right: 20px solid $tt-rose;
-    text-align: right;
+  .tt-quote__img {
+    width: 100px;
+    margin-bottom: -50px;
+    border-radius: 50%;
+    border: 3px solid $tt-sand;
+    box-sizing: border-box;
   }
 
   a {
