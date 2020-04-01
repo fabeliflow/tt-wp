@@ -25,8 +25,20 @@ Template Name: Post
 
         <?php while (have_rows('article_masthead')) : the_row(); ?>
 
-            <div class="tt-masthead" style="background-image: url('<?php the_sub_field('article_masthead_background'); ?>'); background-position: <?php the_sub_field('article_masthead_background_position'); ?>">
-            </div>
+            <?php
+
+            $image = get_sub_field('article_masthead_background');
+
+            if (!empty($image)) :
+            ?>
+
+                <div class="tt-masthead__cont">
+                    <div class="tt-masthead tt-lightgallery--item" data-src="<?php echo $image['url']; ?>" style="background-image: url('<?php echo $image['url']; ?>'); background-position: <?php the_sub_field('article_masthead_background_position'); ?>">
+                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                    </div>
+                </div>
+
+            <?php endif; ?>
 
         <?php endwhile; ?>
 
@@ -412,9 +424,18 @@ Template Name: Post
                             <?php if (have_rows('article_masthead')) : ?>
 
                                 <?php while (have_rows('article_masthead')) : the_row(); ?>
+                                
+                                    <?php
 
-                                    <!-- Category Card Image -->
-                                    <div class="tt-cat__card__img" style="background-image: url('<?php the_sub_field('article_masthead_background'); ?>');"></div>
+                                    $image = get_sub_field('article_masthead_background');
+
+                                    if (!empty($image)) :
+                                    ?>
+
+                                        <!-- Category Card Image -->
+                                        <div class="tt-cat__card__img" style="background-image: url('<?php echo $image['url']; ?>');"></div>
+                                    
+                                    <?php endif; ?>
 
                                 <?php endwhile; ?>
 
