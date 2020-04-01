@@ -424,9 +424,9 @@ iframe {
 }
 
 .swp_social_panel {
-  border: solid 3px $tt-sand;
+  border: solid 3px $tt-sand !important;
   border-radius: 10em !important;
-  background-color: $tt-dark-theme-bg;
+  background-color: $tt-dark-theme-bg !important;
   z-index: 9;
 
   .total_shares:before,
