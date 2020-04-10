@@ -57,7 +57,7 @@ function wpb_adding_styles_scripts() {
 
 	wp_register_script('lg-zoom', get_template_directory_uri() . '/vendor/lightgallery/modules/lg-zoom.min.js', array('jquery'), null, true);
 
-	wp_register_script('particles', get_template_directory_uri() . '/vendor/particles/particles.min.js', null, null, true);
+	wp_register_script('particles', 'https://cdn.jsdelivr.net/npm/particles.js/particles.min.js', null, null, true);
 
 	wp_register_script('header', get_template_directory_uri() . '/js/minified/header.min.js', array('jquery', 'body-scroll-lock', 'simplebar'), null, true);
 	wp_enqueue_script('header');
