@@ -336,7 +336,7 @@ Template Name: Post
                         <div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
                     </div>
 
-                    <div class="tt-member-card tt-member-card--portrait">
+                    <div class="tt-member-card">
                         <div class="tt-member-card__inner">
                             <div class="tt-member-card__img">
                                 <?php echo get_wp_user_avatar(get_post_field('post_author', get_the_ID())); ?>

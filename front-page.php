@@ -18,17 +18,6 @@ get_header(); ?>
                         </div>
                     </div>
                     <p><?php the_field('description'); ?></p>
-
-                    <?php if (have_rows('description_button')) : ?>
-
-                        <?php while (have_rows('description_button')) : the_row(); ?>
-
-                            <a href="<?php the_sub_field('description_button_link'); ?>" class="tt-btn tt-btn--fill"><?php the_sub_field('description_button_text'); ?></a>
-
-                        <?php endwhile; ?>
-
-                    <?php endif; ?>
-
                 </div>
             </div>
     </section>

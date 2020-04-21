@@ -44,7 +44,7 @@
 
         </footer>
 
-        <?php elseif (is_front_page() || is_page( 'The Team' ) || is_page( 'Series' )) : ?>
+        <?php elseif (is_front_page() || is_page( 'Series' )) : ?>
 
         <footer>
 
