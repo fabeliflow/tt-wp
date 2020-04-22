@@ -9,7 +9,9 @@
 
     <title>
         <?php wp_title(''); ?>
-        <?php if(wp_title('', false)) { echo ' :'; } ?>
+        <?php if (wp_title('', false)) {
+            echo ' :';
+        } ?>
         <?php bloginfo('name'); ?>
     </title>
 
@@ -36,30 +38,26 @@
     */
 
     -->
-    <link rel="stylesheet" type="text/css"
-        href="<?php echo get_template_directory_uri(); ?>/fonts/SerifGothicStd-Heavy/MyFontsWebfontsKit.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/fonts/SerifGothicStd-Heavy/MyFontsWebfontsKit.css">
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180"
-        href="<?php echo get_template_directory_uri(); ?>/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32"
-        href="<?php echo get_template_directory_uri(); ?>/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16"
-        href="<?php echo get_template_directory_uri(); ?>/img/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/img/favicons/favicon-16x16.png">
     <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/img/favicons/manifest.json">
     <meta name="theme-color" content="#ffffff">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124638163-1"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
+        window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-    gtag('config', 'UA-124638163-1');
+        gtag('config', 'UA-124638163-1');
     </script>
 
 
@@ -77,8 +75,7 @@
 
     <a href="<?php echo get_home_url(); ?>">
         <div class="tt-menu__logo-cont">
-            <div class="tt-menu__logo"
-                style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/tt-logo.svg');">
+            <div class="tt-menu__logo" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/tt-logo.svg');">
             </div>
         </div>
     </a>
@@ -89,20 +86,19 @@
         <?php echo wp_generate_menu('primary'); ?>
         <?php
 
-            $categories = get_categories( array(
-                'orderby'    => 'name',
-                'hide_empty' => 0,
-                'exclude'    => array( 1 )
-            ) );
+        $categories = get_categories(array(
+            'orderby'    => 'name',
+            'hide_empty' => 0,
+            'exclude'    => array(1)
+        ));
 
-            foreach ( $categories as $category ) : 
-                $url = get_category_link( $category );
-                $name = $category->cat_name;
+        foreach ($categories as $category) :
+            $url = get_category_link($category);
+            $name = $category->cat_name;
         ?>
 
-        <li style="--category-color:<?php the_field('category_color', $category); ?>;"
-            class="tt-menu__item tt-menu__item-cat"><a href="<?php echo $url ?>"><span><?php echo $name ?></span></a>
-        </li>
+            <li style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-menu__item tt-menu__item-cat"><a href="<?php echo $url ?>"><span><?php echo $name ?></span></a>
+            </li>
 
         <?php endforeach; ?>
 
@@ -110,21 +106,31 @@
 
     </ul>
 
-    <?php if( have_rows('social_media', 'options') ): ?>
+    <?php if (have_rows('social_media', 'options')) : ?>
 
-    <ul class="tt-social">
+        <div class="tt-menu__social">
 
-        <?php while ( have_rows('social_media', 'options') ) : the_row(); ?>
+            <ul class="tt-social">
 
-        <li>
-            <a class="tt-social__icon" href="<?php the_sub_field('social_media_url'); ?>" target="_blank">
-                <i class="<?php the_sub_field('social_media_class'); ?> fa-fw"></i>
-            </a>
-        </li>
+                <?php while (have_rows('social_media', 'options')) : the_row(); ?>
 
-        <?php endwhile; ?>
+                    <li>
+                        <a class="tt-social__icon" href="<?php the_sub_field('social_media_url'); ?>" target="_blank">
+                            <i class="<?php the_sub_field('social_media_class'); ?> fa-fw"></i>
+                        </a>
+                    </li>
 
-    </ul>
+                <?php endwhile; ?>
+
+            </ul>
+
+            <script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script>
+            <script type='text/javascript'>
+                kofiwidget2.init('Support Us on Ko-fi', '#f37257', 'F2F61MA2P');
+                kofiwidget2.draw();
+            </script>
+
+        </div>
 
     <?php endif; ?>
 

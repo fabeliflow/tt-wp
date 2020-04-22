@@ -49,21 +49,27 @@
     padding-bottom: 0 !important;
   }
 
-  .tt-social {
-    margin: 0;
+  .tt-menu__social {
     padding: 30px 10px;
     border-top: 3px solid $tt-dark-theme-border;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 
-    li {
-      cursor: pointer;
-
-      .tt-social__icon {
-        color: $tt-rose;
-
-        &:hover,
-        &:focus {
+    .tt-social {
+      margin: 0;
+  
+      li {
+        cursor: pointer;
+  
+        .tt-social__icon {
           color: $tt-rose;
-          text-shadow: 0 0 5px $tt-rose;
+  
+          &:hover,
+          &:focus {
+            color: $tt-rose;
+            text-shadow: 0 0 5px $tt-rose;
+          }
         }
       }
     }
@@ -97,7 +103,7 @@
   a {
     display: flex;
     justify-content: space-between;
-    padding: 30px;
+    padding: 25px;
     color: $tt-dark-theme-text;
     border-left: solid 3px transparent;
     &:hover,

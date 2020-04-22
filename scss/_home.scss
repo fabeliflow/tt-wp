@@ -79,14 +79,19 @@
 .tt-footer__home {
   padding-top: 100px;
   padding-bottom: 100px;
+  text-align: center;
 
-  .tt-social__icon {
-    color: $tt-rose;
+  .tt-social {
+    margin-top: 0;
 
-    &:hover,
-    &:focus {
+    .tt-social__icon {
       color: $tt-rose;
-      text-shadow: 0 0 5px $tt-rose;
+  
+      &:hover,
+      &:focus {
+        color: $tt-rose;
+        text-shadow: 0 0 5px $tt-rose;
+      }
     }
   }
 }

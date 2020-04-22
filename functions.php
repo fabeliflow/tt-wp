@@ -129,4 +129,8 @@ function wp_generate_menu($menu_name) {
 	return $menu_list;
 }
 
+function generate_kofi_button() {
+	return '<script type="text/javascript" src="https://ko-fi.com/widgets/widget_2.js"></script><script type="text/javascript">kofiwidget2.init("Support Us on Ko-fi", "#f37257", "F2F61MA2P");kofiwidget2.draw();</script>';
+}
+
 ?>

@@ -35,6 +35,8 @@
 
                             </ul>
 
+                            <?php echo generate_kofi_button(); ?> 
+
                             <?php endif; ?>
 
                         </div>
@@ -73,6 +75,8 @@
                             <?php endwhile; ?>
 
                         </ul>
+
+                        <?php echo generate_kofi_button(); ?> 
 
                         <?php endif; ?>
 
