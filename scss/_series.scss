@@ -34,6 +34,7 @@
 
   img {
     width: 100%;
+    z-index: 1;
   }
 
   .tt-series__logo {
@@ -45,7 +46,7 @@
     border-radius: 2rem;
     border: solid 3px $tt-sand;
     width: 100%;
-    background-color: $tt-dark-theme-bg-transp;
+    position: relative;
     margin-top: 2%;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     margin: 0.6rem 0 !important;
@@ -72,6 +73,17 @@
       content: "";
       float: left;
       padding-top: 100%;
+    }
+
+    .tt-series__logo-bg {
+      position: absolute;
+      background-size: cover;
+      right: 0;
+      opacity: 0.5;
+      top: 0;
+      left: 0;
+      border-radius: 2rem;
+      bottom: 0;
     }
   }
 }
