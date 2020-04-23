@@ -102,8 +102,6 @@
 
         <?php endforeach; ?>
 
-        <?php echo wp_generate_menu('legal-links'); ?>
-
     </ul>
 
     <?php if (have_rows('social_media', 'options')) : ?>
