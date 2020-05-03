@@ -32,8 +32,11 @@ get_header(); ?>
 
                 $taxonomies = get_terms(array(
                     'taxonomy' => 'series',
-                    'orderby' => 'ID',
                     'order' => 'DESC',
+                    'orderby' => 'meta_value',
+                    'meta_query' => array(
+                        array('key' => 'taxonomy_series_order')
+                    ),
                     'hide_empty' => false,
                     'number' => 6
                 ));

@@ -7,8 +7,7 @@ get_header(); ?>
 
 <body class="tt-series">
 
-    <section class="tt-series__section tt-series__descr"
-        style="background-image: url('<?php the_field('series_background'); ?>'); background-position: <?php the_field('series_background_position'); ?>">
+    <section class="tt-series__section tt-series__descr" style="background-image: url('<?php the_field('series_background'); ?>'); background-position: <?php the_field('series_background_position'); ?>">
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2">
@@ -29,27 +28,30 @@ get_header(); ?>
 
             <?php
 
-            $taxonomies = get_terms( array(
+            $taxonomies = get_terms(array(
                 'taxonomy' => 'series',
-                'orderby' => 'ID', 
                 'order' => 'DESC',
+                'orderby' => 'meta_value',
+                'meta_query' => array(
+                    array('key' => 'taxonomy_series_order')
+                ),
                 'hide_empty' => false,
-            ) );
+            ));
 
-            foreach ( $taxonomies as $taxonomy ) : 
+            foreach ($taxonomies as $taxonomy) :
 
                 $background = get_field('taxonomy_series_background', $taxonomy);
                 $background_position = get_field('taxonomy_series_background_position', $taxonomy);
                 $logo = get_field('taxonomy_series_logo', $taxonomy);
-                $link = get_term_link( $taxonomy );
-        ?>
+                $link = get_term_link($taxonomy);
+            ?>
 
-            <a class="tt-series__logo" href="<?php echo $link ?>">
-                <div class="tt-series__logo-bg" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
+                <a class="tt-series__logo" href="<?php echo $link ?>">
+                    <div class="tt-series__logo-bg" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
 
-                </div>
-                <img src="<?php echo $logo ?>" \>
-            </a>
+                    </div>
+                    <img src="<?php echo $logo ?>" \>
+                </a>
 
             <?php endforeach; ?>
 
