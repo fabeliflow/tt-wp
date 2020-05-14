@@ -80,8 +80,8 @@ h3 {
   @include fluid-type(
     $min-width,
     $max-width,
-    $min-font * 1.15,
-    $max-font * 1.5
+    $min-font * 1.2,
+    $max-font * 1.35
   );
 }
 
@@ -114,10 +114,6 @@ h3 {
   outline: none !important;
   text-decoration: none;
   transition: all 0.2s ease-in;
-
-  @media (min-width: 768px) {
-    padding: 15px 40px;
-  }
 
   &:before {
     content: "";
