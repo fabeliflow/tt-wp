@@ -76,6 +76,10 @@
     font-weight: bold;
   }
 
+  .tt-link--focused {
+    color: $tt-rose;
+  }
+
   a {
     color: white;
     transition: all 0.2s ease-in;
