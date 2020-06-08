@@ -8,7 +8,6 @@ Template Name: Post
 
 <body id="tt-lightgallery" class="tt-article">
 
-    <!-- Facebook Comments -->
     <div id="fb-root"></div>
     <script>
         (function(d, s, id) {
@@ -56,8 +55,6 @@ Template Name: Post
                         $category_name = $category->cat_name;
                         ?>
 
-                        <!-- Article Header -->
-
                         <header>
                             <div class="tt-header--center__wrapper">
                                 <div class="tt-header tt-header--center tt-article__header" style="--category-color:<?php the_field('category_color', $category); ?>;">
@@ -69,7 +66,7 @@ Template Name: Post
                                     </h1>
                                 </div>
                             </div>
-                            <!-- Article Info -->
+
                             <ul class="tt-article__info">
                                 <li><i>Written by</i>
                                     <strong><?php the_author_meta('display_name', get_post_field('post_author', get_the_ID())); ?></strong>
@@ -80,15 +77,15 @@ Template Name: Post
 
                     </div>
 
-                    <!-- Article Content -->
-                    <?php if (have_rows('article_content')) : ?>
+                    <div class="col-sm-6 col-sm-offset-3">
 
-                        <?php while (have_rows('article_content')) : the_row(); ?>
+                        <?php if (have_rows('article_content')) : ?>
 
-                            <!-- Spoiler Warning Module -->
-                            <?php if (get_row_layout() == 'spoiler') : ?>
+                            <?php $rowCount = count(get_field('article_content')); ?>
 
-                                <div class="col-sm-6 col-sm-offset-3">
+                            <?php while (have_rows('article_content')) : the_row(); ?>
+
+                                <?php if (get_row_layout() == 'spoiler') : ?>
 
                                     <div class="tt-article__spoiler">
 
@@ -97,23 +94,11 @@ Template Name: Post
 
                                     </div>
 
-                                    <?php the_sub_field('text'); ?>
-
-                                </div>
-
-                                <!-- Text Module -->
-                            <?php elseif (get_row_layout() == 'text') : ?>
-
-                                <div class="col-sm-6 col-sm-offset-3">
+                                <?php elseif (get_row_layout() == 'text') : ?>
 
                                     <?php the_sub_field('text'); ?>
 
-                                </div>
-
-                                <!-- Quote Module -->
-                            <?php elseif (get_row_layout() == 'quote') : ?>
-
-                                <div class="col-sm-6 col-sm-offset-3 tt-quote__cont">
+                                <?php elseif (get_row_layout() == 'quote') : ?>
 
                                     <blockquote class="tt-quote tt-quote--<?php the_sub_field('quote_theme'); ?>">
                                         <div class="tt-quote__info">
@@ -138,34 +123,28 @@ Template Name: Post
 
                                     </blockquote>
 
-                                </div>
+                                <?php elseif (get_row_layout() == 'video') : ?>
 
-                                <!-- Video Module -->
-                            <?php elseif (get_row_layout() == 'video') : ?>
+                                    <div class="tt-video__cont">
 
-                                <div class="col-sm-6 col-sm-offset-3 tt-video__cont">
+                                        <div class="tt-video">
+                                            <iframe src="https://www.youtube.com/embed/<?php the_sub_field('video_id'); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                        <span class="tt-caption"><?php the_sub_field('video_caption'); ?></span>
 
-                                    <div class="tt-video">
-                                        <iframe src="https://www.youtube.com/embed/<?php the_sub_field('video_id'); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
-                                    <span class="tt-caption"><?php the_sub_field('video_caption'); ?></span>
 
-                                </div>
+                                <?php elseif (get_row_layout() == 'image') : ?>
 
-                                <!-- Image Module -->
-                            <?php elseif (get_row_layout() == 'image') : ?>
+                                    <?php
 
-                                <?php
+                                    $image = get_sub_field('image');
 
-                                $image = get_sub_field('image');
+                                    if (!empty($image)) :
+                                    ?>
 
-                                if (!empty($image)) :
-                                ?>
+                                        <?php if (get_sub_field('image_type') == 'regular') : ?>
 
-                                    <!-- Regular Image -->
-                                    <?php if (get_sub_field('image_type') == 'regular') : ?>
-
-                                        <div class="col-sm-6 col-sm-offset-3 tt-img">
                                             <figure class="tt-article__img">
                                                 <div class="tt-lightgallery--item" data-src="<?php echo $image['url']; ?>">
                                                     <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
@@ -178,114 +157,128 @@ Template Name: Post
                                                 <?php endif; ?>
 
                                             </figure>
-                                        </div>
 
-                                        <!-- Full Image -->
-                                    <?php elseif (get_sub_field('image_type') == 'full') : ?>
+                                        <?php elseif (get_sub_field('image_type') == 'full') : ?>
 
-                                        <div class="col-sm-12 tt-img tt-article__img--<?php the_sub_field('image_type'); ?>__cont">
-                                            <figure class="tt-article__img">
-                                                <div class="tt-article__img--<?php the_sub_field('image_type'); ?> tt-lightgallery--item" data-src="<?php echo $image['url']; ?>" style="background-image: url('<?php echo $image['url']; ?>')">
-                                                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-                                                </div>
+                    </div>
 
-                                                <?php if ($image['caption']) : ?>
+                    <div class="col-sm-12 tt-img tt-article__img--<?php the_sub_field('image_type'); ?>__cont">
+                        <figure class="tt-article__img">
+                            <div class="tt-article__img--<?php the_sub_field('image_type'); ?> tt-lightgallery--item" data-src="<?php echo $image['url']; ?>" style="background-image: url('<?php echo $image['url']; ?>')">
+                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                            </div>
 
-                                                    <figcaption class="tt-caption"><?php echo $image['caption']; ?></figcaption>
+                            <?php if ($image['caption']) : ?>
 
-                                                <?php endif; ?>
-                                            </figure>
+                                <figcaption class="tt-caption"><?php echo $image['caption']; ?></figcaption>
 
-                                        </div>
+                            <?php endif; ?>
+                        </figure>
 
-                                        <!-- Full Left or Right Image -->
-                                    <?php elseif (get_sub_field('image_type') == 'left' || get_sub_field('image_type') == 'right') : ?>
+                    </div>
 
-                                        <div class="col-sm-9 tt-img tt-article__img--<?php the_sub_field('image_type'); ?>__cont">
-                                            <figure class="tt-article__img">
-                                                <div class="tt-article__img--<?php the_sub_field('image_type'); ?> tt-lightgallery--item" data-src="<?php echo $image['url']; ?>" style="background-image: url('<?php echo $image['url']; ?>')">
-                                                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-                                                </div>
+                    <?php if (get_row_index() < $rowCount) : ?>
+                        <div class="col-sm-6 col-sm-offset-3">
+                        <?php endif; ?>
 
-                                                <?php if ($image['caption']) : ?>
+                    <?php elseif (get_sub_field('image_type') == 'left' || get_sub_field('image_type') == 'right') : ?>
 
-                                                    <figcaption class="tt-caption"><?php echo $image['caption']; ?></figcaption>
+                        </div>
 
-                                                <?php endif; ?>
-                                            </figure>
+                        <div class="col-sm-9 tt-img tt-article__img--<?php the_sub_field('image_type'); ?>__cont">
+                            <figure class="tt-article__img">
+                                <div class="tt-article__img--<?php the_sub_field('image_type'); ?> tt-lightgallery--item" data-src="<?php echo $image['url']; ?>" style="background-image: url('<?php echo $image['url']; ?>')">
+                                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                                </div>
 
-                                        </div>
+                                <?php if ($image['caption']) : ?>
 
-                                    <?php endif; ?>
+                                    <figcaption class="tt-caption"><?php echo $image['caption']; ?></figcaption>
 
                                 <?php endif; ?>
+                            </figure>
 
-                                <!-- Gallery Module -->
-                            <?php elseif (get_row_layout() == 'gallery') : ?>
+                        </div>
 
-                                <?php
+                        <?php if (get_row_index() < $rowCount) : ?>
+                            <div class="col-sm-6 col-sm-offset-3">
+                            <?php endif; ?>
 
-                                $images = get_sub_field('gallery');
-                                $size = 'full';
+                        <?php endif; ?>
 
-                                if ($images) :
-                                ?>
+                    <?php endif; ?>
 
-                                    <div class="col-md-8 col-md-offset-2 tt-img">
+                <?php elseif (get_row_layout() == 'gallery') : ?>
 
-                                        <div class="tt-article__img--gallery__cont">
+                    <?php
 
-                                            <div class="gallery__cont">
+                                    $images = get_sub_field('gallery');
+                                    $size = 'full';
 
-                                                <div class="tt-article__img--gallery swiper-container">
+                                    if ($images) :
+                    ?>
 
-                                                    <div class="swiper-wrapper tt-lg-gallery">
+                            </div>
 
-                                                        <?php foreach ($images as $image) : ?>
-                                                            <div class="swiper-slide tt-lightgallery--item" data-src="<?php echo $image['url']; ?>">
+                            <div class="col-md-8 col-md-offset-2 tt-img">
 
-                                                                <img class="swiper-lazy" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                                <div class="tt-article__img--gallery__cont">
 
-                                                            </div>
-                                                        <?php endforeach; ?>
+                                    <div class="gallery__cont">
+
+                                        <div class="tt-article__img--gallery swiper-container">
+
+                                            <div class="swiper-wrapper tt-lg-gallery">
+
+                                                <?php foreach ($images as $image) : ?>
+                                                    <div class="swiper-slide tt-lightgallery--item" data-src="<?php echo $image['url']; ?>">
+
+                                                        <img class="swiper-lazy" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+
                                                     </div>
-
-                                                </div>
-
-                                                <!-- Navigation -->
-                                                <div>
-
-                                                    <!-- Arrows -->
-                                                    <div class="tt-arrow tt-arrow--left">
-                                                        <div></div>
-                                                    </div>
-
-                                                    <div class="tt-arrow tt-arrow--right">
-                                                        <div></div>
-                                                    </div>
-
-                                                </div>
-
+                                                <?php endforeach; ?>
                                             </div>
 
-                                            <?php if ($image['caption']) : ?>
+                                        </div>
 
-                                                <figcaption class="tt-caption"><?php the_sub_field('gallery_caption'); ?></figcaption>
+                                        <div>
 
-                                            <?php endif; ?>
+                                            <div class="tt-arrow tt-arrow--left">
+                                                <div></div>
+                                            </div>
+
+                                            <div class="tt-arrow tt-arrow--right">
+                                                <div></div>
+                                            </div>
 
                                         </div>
 
                                     </div>
-                                <?php endif; ?>
 
+                                    <?php if ($image['caption']) : ?>
+
+                                        <figcaption class="tt-caption"><?php the_sub_field('gallery_caption'); ?></figcaption>
+
+                                    <?php endif; ?>
+
+                                </div>
+
+                            </div>
+
+                            <?php if (get_row_index() < $rowCount) : ?>
+                                <div class="col-sm-6 col-sm-offset-3">
+                                <?php endif; ?>
                             <?php endif; ?>
 
-                        <?php endwhile; ?>
+                        <?php endif; ?>
 
-                    <?php else : ?>
+                    <?php endwhile; ?>
 
-                    <?php endif; ?>
+                <?php else : ?>
+
+                <?php endif; ?>
+
+                                </div>
 
                 </section>
 
@@ -306,7 +299,6 @@ Template Name: Post
 
                 <?php endif; ?>
 
-                <!-- Social Media Share -->
                 <div class="col-sm-6 col-sm-offset-3">
 
                     <div class="tt-article__info__social">
@@ -381,7 +373,6 @@ Template Name: Post
         </div>
     </article>
 
-    <!-- More Articles By The Author -->
     <?php
     $rand_posts = get_posts(array(
         'author'         =>  get_post_field('post_author', get_the_ID()),
@@ -407,7 +398,6 @@ Template Name: Post
                 </div>
             </div>
 
-            <!-- Category Cards -->
             <ul class="tt-cat__cards">
 
                 <?php foreach ($rand_posts as $post) : setup_postdata($post); ?>
@@ -417,14 +407,13 @@ Template Name: Post
                     $category_name = $category->cat_name;
                     ?>
 
-                    <!-- Category Card -->
                     <li class="tt-cat__cards__item">
                         <a href="<?php the_permalink() ?>" style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card">
 
                             <?php if (have_rows('article_masthead')) : ?>
 
                                 <?php while (have_rows('article_masthead')) : the_row(); ?>
-                                
+
                                     <?php
 
                                     $image = get_sub_field('article_masthead_background');
@@ -432,9 +421,8 @@ Template Name: Post
                                     if (!empty($image)) :
                                     ?>
 
-                                        <!-- Category Card Image -->
                                         <div class="tt-cat__card__img" style="background-image: url('<?php echo $image['url']; ?>');"></div>
-                                    
+
                                     <?php endif; ?>
 
                                 <?php endwhile; ?>
@@ -445,19 +433,16 @@ Template Name: Post
 
                                 <div class="tt-cat__card__cont">
 
-                                    <!-- Category Card Title -->
                                     <h3 style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card__title">
                                         <?php the_title(); ?>
                                     </h3>
 
-                                    <!-- Category Card Description -->
                                     <p class="tt-cat__card__descr">
                                         <?php echo custom_field_excerpt('article_excerpt'); ?>
                                     </p>
 
                                 </div>
 
-                                <!-- Category Card Category Name -->
                                 <div style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card__cat-info">
                                     <span><?php echo $category_name  ?></span>
                                     <span><?php echo $category_name  ?></span>

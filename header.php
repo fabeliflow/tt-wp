@@ -40,7 +40,6 @@
     -->
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/fonts/SerifGothicStd-Heavy/MyFontsWebfontsKit.css">
 
-    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/img/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/img/favicons/favicon-16x16.png">
@@ -80,7 +79,6 @@
         </div>
     </a>
 
-    <!-- Menu Items -->
     <ul data-simplebar class="tt-menu__items">
 
         <?php echo wp_generate_menu('primary'); ?>

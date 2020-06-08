@@ -62,9 +62,9 @@ get_header(); ?>
                 <?php endforeach; ?>
 
             </div>
-            <!-- Add Pagination -->
+
             <div class="swiper-pagination"></div>
-            <!-- Arrows -->
+
             <div class="tt-arrow tt-arrow--left">
                 <div></div>
             </div>
@@ -91,7 +91,6 @@ get_header(); ?>
         ));
         ?>
 
-        <!-- Category Cards -->
         <ul class="tt-cat__cards">
 
             <?php foreach ($recent_posts as $post) : setup_postdata($post); ?>
@@ -101,7 +100,6 @@ get_header(); ?>
                 $category_name = $category->cat_name;
                 ?>
 
-                <!-- Category Card -->
                 <li class="tt-cat__cards__item">
                     <a href="<?php the_permalink() ?>" class="tt-cat__card" style="--category-color:<?php the_field('category_color', $category); ?>;">
 
@@ -116,7 +114,6 @@ get_header(); ?>
                                 if (!empty($image)) :
                                 ?>
 
-                                    <!-- Category Card Image -->
                                     <div class="tt-cat__card__img" style="background-image: url('<?php echo $image['url']; ?>');"></div>
 
                                 <?php endif; ?>
@@ -129,19 +126,16 @@ get_header(); ?>
 
                             <div class="tt-cat__card__cont">
 
-                                <!-- Category Card Title -->
                                 <h3 class="tt-cat__card__title" style="--category-color:<?php the_field('category_color', $category); ?>;">
                                     <?php the_title(); ?>
                                 </h3>
 
-                                <!-- Category Card Description -->
                                 <p class="tt-cat__card__descr">
                                     <?php echo custom_field_excerpt('article_excerpt'); ?>
                                 </p>
 
                             </div>
 
-                            <!-- Category Card Category Name -->
                             <div style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card__cat-info">
                                 <span><?php echo $category_name ?></span>
                                 <span><?php echo $category_name ?></span>
@@ -196,9 +190,9 @@ get_header(); ?>
                 <?php endforeach; ?>
 
             </div>
-            <!-- Add Pagination -->
+
             <div class="swiper-pagination"></div>
-            <!-- Arrows -->
+
             <div class="tt-arrow tt-arrow--left">
                 <div></div>
             </div>

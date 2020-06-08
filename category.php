@@ -5,7 +5,6 @@ Template Name: Category
 
 get_header();
 
-// get the current taxonomy term
 $term = get_queried_object();
 
 $custom_search = (isset($_GET['custom_search'])) ? $_GET['custom_search'] : '';
@@ -19,7 +18,6 @@ $description = $term->description;
 
 <body>
 
-    <!-- Category Masthead -->
     <div class="tt-masthead tt-masthead--overlay"
         style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
         <div class="tt-masthead__wrapper">
@@ -60,7 +58,6 @@ $description = $term->description;
 
     </section>
 
-    <!-- Return to Top -->
     <a href="javascript:" id="return-to-top" class="tt-arrow tt-arrow--scroll-top">
         <div></div>
     </a>

@@ -60,7 +60,6 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- Return to Top -->
     <a href="javascript:" id="return-to-top" class="tt-arrow tt-arrow--scroll-top">
         <div></div>
     </a>
