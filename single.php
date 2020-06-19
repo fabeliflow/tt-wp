@@ -145,7 +145,7 @@ Template Name: Post
 
                                         <?php if (get_sub_field('image_type') == 'regular') : ?>
 
-                                            <figure class="tt-article__img">
+                                            <figure class="tt-article__img tt-article__img--regular">
                                                 <div class="tt-lightgallery--item" data-src="<?php echo $image['url']; ?>">
                                                     <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
                                                 </div>
