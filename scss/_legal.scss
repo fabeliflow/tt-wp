@@ -17,16 +17,20 @@
 }
 
 .wpautoterms-update-notice {
+  font-size: 0.7em;
   border-bottom: 1px solid $tt-dark-theme-border;
   padding: 20px 10px;
   text-align: center;
   background-color: $tt-dark-theme-bg;
-  color: $tt-dark-theme-text;
+  color: white !important;
 
   a {
+    color: $tt-rose;
+
     &:hover,
     &:focus {
-      color: white;
+      color: $tt-rose;
+      text-decoration: none;
     }
   }
 }
