@@ -94,6 +94,14 @@ Template Name: Post
 
                                     </div>
 
+                                <?php elseif (get_row_layout() == 'text_adventure') : ?>
+
+                                    <div class="tt-article__txt-adv">
+
+                                        <button class="tt-btn tt-btn--fill" id="open-adventure" data-iframe="true" data-src="<?php the_sub_field('text_adventure_link'); ?>">Play Adventure</button>
+
+                                    </div>
+
                                 <?php elseif (get_row_layout() == 'text') : ?>
 
                                     <?php the_sub_field('text'); ?>

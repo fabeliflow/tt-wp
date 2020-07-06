@@ -554,3 +554,21 @@ iframe {
 .lg-actions .lg-prev {
   background-color: $tt-dark-theme-bg-transp;
 }
+
+.tt-article__txt-adv {
+  text-align: center;
+
+  .tt-btn {
+    margin: 20px 0;
+  }
+}
+
+.txt-adv .lg-video {
+  height: inherit;
+  padding: 0;
+  position: inherit;
+
+  .lg-object {
+    margin: 0 !important;
+  }
+}
