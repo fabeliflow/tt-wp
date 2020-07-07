@@ -540,6 +540,10 @@ iframe {
   }
 }
 
+.lg-on {
+  overflow: hidden;
+}
+
 .lg-backdrop {
   background-color: $tt-dark-theme-bg;
 }
@@ -570,5 +574,6 @@ iframe {
 
   .lg-object {
     margin: 0 !important;
+    padding-top: 45px !important;
   }
 }
