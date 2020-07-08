@@ -80,7 +80,7 @@
         border-left: solid 3px transparent;
         &:hover,
         &:focus {
-          border-left: solid 3px $tt-rose;
+          border-left: solid 3px var(--category-color, $tt-rose);
           text-decoration: none;
         }
       }
