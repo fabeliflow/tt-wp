@@ -6,15 +6,6 @@ $jq(document).ready(function () {
     selector: '.tt-lightgallery--item'
   });
 
-  $jq('#open-adventure').lightGallery({
-    selector: 'this',
-    download: false,
-    zoom: false,
-    counter: false,
-    height: '100%',
-    addClass: 'txt-adv'
-  });
-
   // Swiper card carousel
   var swiper = new Swiper(".tt-article__img--gallery", {
     effect: "coverflow",

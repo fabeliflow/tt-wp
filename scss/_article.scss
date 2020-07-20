@@ -131,7 +131,7 @@ $tt-media-margin: 20px;
     margin-bottom: 50px + $tt-media-margin;
     text-align: center;
     padding: 60px 30px 0;
-    border-radius: 2rem;
+    border-radius: 0 2rem;
     border-left: 0;
     border: 3px solid $tt-sand;
     font-size: inherit;
@@ -160,7 +160,7 @@ $tt-media-margin: 20px;
     box-sizing: border-box;
   }
 
-  a {
+  a:not(.tt-btn) {
     padding: 1px 0;
     font-weight: bold;
     color: $tt-text-dark;
@@ -453,7 +453,7 @@ iframe {
   padding: 30px 20px;
   background-color: $tt-dark-theme-bg;
   color: white;
-  border-radius: 2rem;
+  border-radius: 0 2rem;
   border: solid 3px $tt-sand;
   width: 100%;
   height: 100%;
@@ -501,7 +501,7 @@ iframe {
 
 .swp_social_panel {
   border: solid 3px $tt-sand !important;
-  border-radius: 10em !important;
+  border-radius: 0 2rem !important;
   background-color: $tt-dark-theme-bg !important;
   z-index: 9;
 
@@ -517,6 +517,14 @@ iframe {
 
 .tt-img {
   padding: 0;
+}
+
+.tt-article__cta {
+  text-align: center;
+
+  .tt-btn {
+    margin-top: 20px;
+  }
 }
 
 .tt-article__back-to-series {
@@ -557,23 +565,4 @@ iframe {
 .lg-actions .lg-next,
 .lg-actions .lg-prev {
   background-color: $tt-dark-theme-bg-transp;
-}
-
-.tt-article__txt-adv {
-  text-align: center;
-
-  .tt-btn {
-    margin: 20px 0;
-  }
-}
-
-.txt-adv .lg-video {
-  height: inherit;
-  padding: 0;
-  position: inherit;
-
-  .lg-object {
-    margin: 0 !important;
-    padding-top: 45px !important;
-  }
 }

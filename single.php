@@ -94,11 +94,11 @@ Template Name: Post
 
                                     </div>
 
-                                <?php elseif (get_row_layout() == 'text_adventure') : ?>
+                                <?php elseif (get_row_layout() == 'cta') : ?>
 
-                                    <div class="tt-article__txt-adv">
+                                    <div class="col-sm-6 col-sm-offset-3 tt-article__cta">
 
-                                        <button class="tt-btn tt-btn--fill" id="open-adventure" data-iframe="true" data-src="<?php the_sub_field('text_adventure_link'); ?>">Play Adventure</button>
+                                        <a href="<?php the_sub_field('cta_link'); ?>" class="tt-btn tt-btn--fill" target="_blank"><?php the_sub_field('cta_text'); ?></a>
 
                                     </div>
 
