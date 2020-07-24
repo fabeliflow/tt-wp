@@ -86,7 +86,7 @@ get_header(); ?>
 
         <?php
         $recent_posts = get_posts(array(
-            'posts_per_page' => 6,
+            'showposts' => 9,
             'post_status' => 'publish'
         ));
         ?>

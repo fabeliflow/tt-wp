@@ -382,15 +382,20 @@ Template Name: Post
     </article>
 
     <?php
-    $rand_posts = get_posts(array(
-        'author'         =>  get_post_field('post_author', get_the_ID()),
-        'posts_per_page' => 6,
+    $post_tags = get_the_tags(get_the_ID());
+    if ($post_tags) {
+        $post_tag_ids = array();
+        foreach ($post_tags as $individual_tag) $post_tag_ids[] = $individual_tag->term_id;
+    }
+    $related_posts = get_posts(array(
+        'tag__in' => $post_tag_ids,
+        'showposts' => 6,
         'post_status' => 'publish',
         'post__not_in' => array(get_the_ID()),
         'orderby'        => 'rand'
     )); ?>
 
-    <?php if ($rand_posts) : ?>
+    <?php if ($related_posts) : ?>
 
         <section class="tt-cat__cont">
             <div class="container-fluid">
@@ -398,8 +403,8 @@ Template Name: Post
                     <div class="col-sm-6 col-sm-offset-3">
                         <div class="tt-header--center__wrapper">
                             <div class="tt-header tt-header--center">
-                                <span>More by the author</span>
-                                <h2>More by the author</h2>
+                                <span>More Articles</span>
+                                <h2>More Articles</h2>
                             </div>
                         </div>
                     </div>
@@ -408,7 +413,7 @@ Template Name: Post
 
             <ul class="tt-cat__cards">
 
-                <?php foreach ($rand_posts as $post) : setup_postdata($post); ?>
+                <?php foreach ($related_posts as $post) : setup_postdata($post); ?>
 
                     <?php
                     $category = get_the_category()[0];
