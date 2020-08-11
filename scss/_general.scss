@@ -16,18 +16,6 @@ $tt-dark-theme-border: #201c29;
 $tt-dark-theme-bg-light: lighten($tt-dark-theme-bg, 5%);
 $tt-dark-theme-text: #a1a1af;
 
-// Aurebesh Font
-// @font-face {
-//   font-family: "Aurebesh";
-//   src: url("../fonts/Aurebesh/Aurebesh.eot");
-//   src: url("../fonts/Aurebesh/Aurebesh.eot") format("embedded-opentype"),
-//     url("../fonts/Aurebesh/Aurebesh.woff2") format("woff2"),
-//     url("../fonts/Aurebesh/Aurebesh.woff") format("woff"),
-//     url("../fonts/Aurebesh/Aurebesh.ttf") format("truetype"),
-//     url("../fonts/Aurebesh/Aurebesh.svg#Aurebesh") format("svg");
-//   font-display: swap;
-// }
-
 @font-face {
   font-family: "newAurabesh";
   src: url("../fonts/NewAurebesh/newaure.eot");
