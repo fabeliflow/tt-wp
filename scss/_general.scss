@@ -17,14 +17,25 @@ $tt-dark-theme-bg-light: lighten($tt-dark-theme-bg, 5%);
 $tt-dark-theme-text: #a1a1af;
 
 // Aurebesh Font
+// @font-face {
+//   font-family: "Aurebesh";
+//   src: url("../fonts/Aurebesh/Aurebesh.eot");
+//   src: url("../fonts/Aurebesh/Aurebesh.eot") format("embedded-opentype"),
+//     url("../fonts/Aurebesh/Aurebesh.woff2") format("woff2"),
+//     url("../fonts/Aurebesh/Aurebesh.woff") format("woff"),
+//     url("../fonts/Aurebesh/Aurebesh.ttf") format("truetype"),
+//     url("../fonts/Aurebesh/Aurebesh.svg#Aurebesh") format("svg");
+//   font-display: swap;
+// }
+
 @font-face {
-  font-family: "Aurebesh";
-  src: url("../fonts/Aurebesh/Aurebesh.eot");
-  src: url("../fonts/Aurebesh/Aurebesh.eot") format("embedded-opentype"),
-    url("../fonts/Aurebesh/Aurebesh.woff2") format("woff2"),
-    url("../fonts/Aurebesh/Aurebesh.woff") format("woff"),
-    url("../fonts/Aurebesh/Aurebesh.ttf") format("truetype"),
-    url("../fonts/Aurebesh/Aurebesh.svg#Aurebesh") format("svg");
+  font-family: "newAurabesh";
+  src: url("../fonts/NewAurebesh/newaure.eot");
+  src: url("../fonts/NewAurebesh/newaure.eot") format("embedded-opentype"),
+    url("../fonts/NewAurebesh/newaure.woff2") format("woff2"),
+    url("../fonts/NewAurebesh/newaure.woff") format("woff"),
+    url("../fonts/NewAurebesh/newaure.ttf") format("truetype"),
+    url("../fonts/NewAurebesh/newaure.svg#NewAurebesh") format("svg");
   font-display: swap;
 }
 
@@ -42,7 +53,7 @@ $baseline: 1.5rem;
 
 $article-header-font-family: "SerifGothicStd-Heavy", serif;
 $body-font-family: "Lato", sans-serif;
-$watermark-font-family: "Aurebesh";
+$watermark-font-family: "newAurabesh";
 
 // General styles
 html,
@@ -173,7 +184,7 @@ h3 {
   span {
     padding: 0 5%;
     display: block;
-    font-family: Aurebesh;
+    font-family: newAurabesh;
     font-weight: bold;
     font-size: 0.7em;
     letter-spacing: 3px;
@@ -230,7 +241,7 @@ h3 {
 
     &::placeholder {
       color: var(--category-color, $tt-rose);
-      font-family: "Font Awesome 5 Free", Aurebesh, sans-serif;
+      font-family: "Font Awesome 5 Free", newAurabesh, sans-serif;
       font-weight: 900;
       letter-spacing: 3px;
     }
