@@ -2,11 +2,12 @@
   position: relative;
   padding: 100px 0;
   text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .tt-home__section {
-  min-height: 90vh;
-  padding: 100px 15px;
+  margin: 100px 0;
   overflow: hidden;
 
   h2 {
@@ -14,10 +15,19 @@
   }
 }
 
+.tt-home__categories .swiper-container {
+    height: 90vh;
+}
+
+.tt-home__categories .swiper-slide {
+  width: 100% !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .tt-home__categories,
 .tt-home__series {
   position: relative;
-  padding: 0;
 
   .tt-header {
     h2:after {
@@ -33,12 +43,6 @@
     bottom: 25px;
   }
 
-  .swiper-slide {
-    width: 100% !important;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
   .swiper-pagination-bullet {
     width: 10px;
     height: 10px;
@@ -47,10 +51,6 @@
 
   .swiper-pagination-bullet-active {
     background-color: $tt-rose;
-  }
-
-  .swiper-container {
-    height: 90vh;
   }
 
   .tt-arrow {
@@ -77,8 +77,8 @@
 }
 
 .tt-footer__home {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  margin-top: 100px;
+  margin-bottom: 100px;
   text-align: center;
 
   .tt-social {
@@ -94,4 +94,9 @@
       }
     }
   }
+}
+
+.tt-home__articles,
+.tt-home__series {
+  margin: 100px 15px;
 }

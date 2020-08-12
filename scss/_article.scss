@@ -269,7 +269,10 @@ $tt-media-margin: 20px;
   }
 }
 
-.tt-masthead,
+.tt-masthead img:not(.tt-masthead__logo) {
+  display: none;
+}
+
 .tt-article__img--full__cont,
 .tt-article__img--left__cont,
 .tt-article__img--right__cont {
@@ -338,7 +341,6 @@ $tt-media-margin: 20px;
       img {
         width: auto;
         height: 200px;
-        opacity: 0.3;
 
         @media (min-width: 768px) {
           height: 300px;
@@ -347,12 +349,6 @@ $tt-media-margin: 20px;
         @media (min-width: 992px) {
           height: 500px;
         }
-      }
-    }
-
-    .swiper-slide-active {
-      img {
-        opacity: 1;
       }
     }
   }

@@ -29,8 +29,7 @@ $jq(document).ready(function () {
     coverflowEffect: {
       rotate: 40,
       depth: 200,
-      modifier: 1,
-      slideShadows: false
+      modifier: 1
     }
   });
 });

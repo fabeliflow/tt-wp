@@ -2,7 +2,7 @@ var $jq = jQuery.noConflict();
 
 $jq(document).ready(function () {
 
-  var swiper = new Swiper(".swiper-container", {
+  var swiperCategories = new Swiper(".tt-home__categories .swiper-container", {
     effect: "fade",
     loop: true,
     centeredSlides: true,

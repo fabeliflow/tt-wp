@@ -7,7 +7,7 @@ get_header(); ?>
 
 <body class="tt-home">
 
-    <section class="tt-home__descr">
+    <section class="tt-home__descr tt-masthead--overlay" style="background-image: url('<?php echo the_field('description_background'); ?>'); background-position: <?php echo the_field('description_background_position'); ?>">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3">
@@ -23,38 +23,82 @@ get_header(); ?>
             </div>
     </section>
 
-    <section class="tt-home__section tt-home__series">
+    <section class="tt-home__section tt-home__series tt-series__logos--cont">
+
+        <div class="tt-header--center__wrapper">
+            <div class="tt-header tt-header--center">
+                <span>Latest Series</span>
+                <h2>Latest Series</h2>
+            </div>
+        </div>
+
+        <div class="tt-series__logos">
+
+            <?php
+
+            $taxonomies = get_terms(array(
+                'taxonomy' => 'series',
+                'order' => 'DESC',
+                'number' => 3,
+                'orderby' => 'meta_value',
+                'meta_query' => array(
+                    array('key' => 'taxonomy_series_order')
+                ),
+                'hide_empty' => false,
+            ));
+
+            foreach ($taxonomies as $taxonomy) :
+
+                $background = get_field('taxonomy_series_background', $taxonomy);
+                $background_position = get_field('taxonomy_series_background_position', $taxonomy);
+                $logo = get_field('taxonomy_series_logo', $taxonomy);
+                $link = get_term_link($taxonomy);
+            ?>
+
+                <a class="tt-series__logo" href="<?php echo $link ?>">
+                    <div class="tt-series__logo-bg" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
+
+                    </div>
+                    <img src="<?php echo $logo ?>" \>
+                </a>
+
+            <?php endforeach; ?>
+
+        </div>
+
+        </div>
+    </section>
+
+    <section class="tt-home__section tt-home__categories">
 
         <div class="swiper-container">
             <div class="swiper-wrapper">
 
                 <?php
 
-                $taxonomies = get_terms(array(
-                    'taxonomy' => 'series',
-                    'order' => 'DESC',
-                    'orderby' => 'meta_value',
-                    'meta_query' => array(
-                        array('key' => 'taxonomy_series_order')
-                    ),
-                    'hide_empty' => false,
-                    'number' => 6
+                $categories = get_categories(array(
+                    'orderby'    => 'name',
+                    'hide_empty' => 0,
+                    'exclude'    => array(1)
                 ));
 
-                foreach ($taxonomies as $taxonomy) :
+                foreach ($categories as $category) :
 
-                    $background = get_field('taxonomy_series_background', $taxonomy);
-                    $background_position = get_field('taxonomy_series_background_position', $taxonomy);
-                    $logo = get_field('taxonomy_series_logo', $taxonomy);
-                    $link = get_term_link($taxonomy);
-                    $link_label = get_field('taxonomy_series_link_label', $taxonomy);
+                    $background = get_field('category_background', $category);
+                    $background_position = get_field('category_background_position', $category);
+                    $name = $category->name;
+                    $link = get_category_link($category);
+                    $link_label = get_field('category_link_label', $category);
                 ?>
 
                     <div class="swiper-slide tt-masthead--overlay" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
 
                         <div class="tt-masthead__wrapper">
-                            <img class="tt-masthead__logo" src="<?php echo $logo ?>" \>
-                            <a class="tt-btn tt-btn--cat" href="<?php echo $link ?>"><?php echo $link_label ?></a>
+                            <div style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-header tt-header--center">
+                                <span><?php echo $name ?></span>
+                                <h2 class="tt-header--no-border"><?php echo $name ?></h2>
+                            </div>
+                            <a style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-btn tt-btn--cat" href="<?php echo $link ?>"><?php echo $link_label ?></a>
                         </div>
 
                     </div>
@@ -75,12 +119,12 @@ get_header(); ?>
         </div>
     </section>
 
-    <section class="tt-home__section">
+    <section class="tt-home__section tt-home__articles">
 
         <div class="tt-header--center__wrapper">
             <div class="tt-header tt-header--center">
                 <span>Latest Articles</span>
-                <h1>Latest Articles</h1>
+                <h2>Latest Articles</h2>
             </div>
         </div>
 
@@ -151,56 +195,6 @@ get_header(); ?>
             <?php wp_reset_postdata(); ?>
 
         </ul>
-    </section>
-
-    <section class="tt-home__section tt-home__categories">
-
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-
-                <?php
-
-                $categories = get_categories(array(
-                    'orderby'    => 'name',
-                    'hide_empty' => 0,
-                    'exclude'    => array(1)
-                ));
-
-                foreach ($categories as $category) :
-
-                    $background = get_field('category_background', $category);
-                    $background_position = get_field('category_background_position', $category);
-                    $name = $category->name;
-                    $link = get_category_link($category);
-                    $link_label = get_field('category_link_label', $category);
-                ?>
-
-                    <div class="swiper-slide tt-masthead--overlay" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
-
-                        <div class="tt-masthead__wrapper">
-                            <div style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-header tt-header--center">
-                                <span><?php echo $name ?></span>
-                                <h2 class="tt-header--no-border"><?php echo $name ?></h2>
-                            </div>
-                            <a style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-btn tt-btn--cat" href="<?php echo $link ?>"><?php echo $link_label ?></a>
-                        </div>
-
-                    </div>
-
-                <?php endforeach; ?>
-
-            </div>
-
-            <div class="swiper-pagination"></div>
-
-            <div class="tt-arrow tt-arrow--left">
-                <div></div>
-            </div>
-
-            <div class="tt-arrow tt-arrow--right">
-                <div></div>
-            </div>
-        </div>
     </section>
 
     <?php get_footer(); ?>
