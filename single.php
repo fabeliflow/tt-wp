@@ -408,69 +408,70 @@ Template Name: Post
                             </div>
                         </div>
                     </div>
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <ul class="tt-cat__cards">
+
+                            <?php foreach ($related_posts as $post) : setup_postdata($post); ?>
+
+                                <?php
+                                $category = get_the_category()[0];
+                                $category_name = $category->cat_name;
+                                ?>
+
+                                <li class="tt-cat__cards__item">
+                                    <a href="<?php the_permalink() ?>" style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card">
+
+                                        <?php if (have_rows('article_masthead')) : ?>
+
+                                            <?php while (have_rows('article_masthead')) : the_row(); ?>
+
+                                                <?php
+
+                                                $image = get_sub_field('article_masthead_background');
+
+                                                if (!empty($image)) :
+                                                ?>
+
+                                                    <div class="tt-cat__card__img" style="background-image: url('<?php echo $image['url']; ?>');"></div>
+
+                                                <?php endif; ?>
+
+                                            <?php endwhile; ?>
+
+                                        <?php endif; ?>
+
+                                        <div class="tt-cat__card__info">
+
+                                            <div class="tt-cat__card__cont">
+
+                                                <h3 style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card__title">
+                                                    <?php the_title(); ?>
+                                                </h3>
+
+                                                <p class="tt-cat__card__descr">
+                                                    <?php echo custom_field_excerpt('article_excerpt'); ?>
+                                                </p>
+
+                                            </div>
+
+                                            <div style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card__cat-info">
+                                                <span><?php echo $category_name  ?></span>
+                                                <span><?php echo $category_name  ?></span>
+                                            </div>
+
+                                        </div>
+
+                                    </a>
+                                </li>
+
+                            <?php endforeach; ?>
+
+                            <?php wp_reset_postdata(); ?>
+
+                        </ul>
+                    </div>
                 </div>
             </div>
-
-            <ul class="tt-cat__cards">
-
-                <?php foreach ($related_posts as $post) : setup_postdata($post); ?>
-
-                    <?php
-                    $category = get_the_category()[0];
-                    $category_name = $category->cat_name;
-                    ?>
-
-                    <li class="tt-cat__cards__item">
-                        <a href="<?php the_permalink() ?>" style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card">
-
-                            <?php if (have_rows('article_masthead')) : ?>
-
-                                <?php while (have_rows('article_masthead')) : the_row(); ?>
-
-                                    <?php
-
-                                    $image = get_sub_field('article_masthead_background');
-
-                                    if (!empty($image)) :
-                                    ?>
-
-                                        <div class="tt-cat__card__img" style="background-image: url('<?php echo $image['url']; ?>');"></div>
-
-                                    <?php endif; ?>
-
-                                <?php endwhile; ?>
-
-                            <?php endif; ?>
-
-                            <div class="tt-cat__card__info">
-
-                                <div class="tt-cat__card__cont">
-
-                                    <h3 style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card__title">
-                                        <?php the_title(); ?>
-                                    </h3>
-
-                                    <p class="tt-cat__card__descr">
-                                        <?php echo custom_field_excerpt('article_excerpt'); ?>
-                                    </p>
-
-                                </div>
-
-                                <div style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card__cat-info">
-                                    <span><?php echo $category_name  ?></span>
-                                    <span><?php echo $category_name  ?></span>
-                                </div>
-
-                            </div>
-
-                        </a>
-                    </li>
-
-                <?php endforeach; ?>
-
-                <?php wp_reset_postdata(); ?>
-
-            </ul>
 
         </section>
 

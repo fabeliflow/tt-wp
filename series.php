@@ -22,39 +22,43 @@ get_header(); ?>
             </div>
     </section>
 
-    <section class="tt-series__section tt-series__logos--cont">
+    <section class="tt-series__section">
 
-        <div class="tt-series__logos">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1 tt-series__logos">
 
-            <?php
+                    <?php
 
-            $taxonomies = get_terms(array(
-                'taxonomy' => 'series',
-                'order' => 'DESC',
-                'orderby' => 'meta_value',
-                'meta_query' => array(
-                    array('key' => 'taxonomy_series_order')
-                ),
-                'hide_empty' => false,
-            ));
+                    $taxonomies = get_terms(array(
+                        'taxonomy' => 'series',
+                        'order' => 'DESC',
+                        'orderby' => 'meta_value',
+                        'meta_query' => array(
+                            array('key' => 'taxonomy_series_order')
+                        ),
+                        'hide_empty' => false,
+                    ));
 
-            foreach ($taxonomies as $taxonomy) :
+                    foreach ($taxonomies as $taxonomy) :
 
-                $background = get_field('taxonomy_series_background', $taxonomy);
-                $background_position = get_field('taxonomy_series_background_position', $taxonomy);
-                $logo = get_field('taxonomy_series_logo', $taxonomy);
-                $link = get_term_link($taxonomy);
-            ?>
+                        $background = get_field('taxonomy_series_background', $taxonomy);
+                        $background_position = get_field('taxonomy_series_background_position', $taxonomy);
+                        $logo = get_field('taxonomy_series_logo', $taxonomy);
+                        $link = get_term_link($taxonomy);
+                    ?>
 
-                <a class="tt-series__logo" href="<?php echo $link ?>">
-                    <div class="tt-series__logo-bg" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
+                        <a class="tt-series__logo" href="<?php echo $link ?>">
+                            <div class="tt-series__logo-bg" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
 
-                    </div>
-                    <img src="<?php echo $logo ?>" \>
-                </a>
+                            </div>
+                            <img src="<?php echo $logo ?>" \>
+                        </a>
 
-            <?php endforeach; ?>
+                    <?php endforeach; ?>
 
+                </div>
+            </div>
         </div>
 
         </div>

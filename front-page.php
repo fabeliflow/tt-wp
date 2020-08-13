@@ -23,7 +23,7 @@ get_header(); ?>
             </div>
     </section>
 
-    <section class="tt-home__section tt-home__series tt-series__logos--cont">
+    <section class="tt-home__section tt-home__series">
 
         <div class="tt-header--center__wrapper">
             <div class="tt-header tt-header--center">
@@ -32,38 +32,42 @@ get_header(); ?>
             </div>
         </div>
 
-        <div class="tt-series__logos">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 tt-series__logos">
 
-            <?php
+                    <?php
 
-            $taxonomies = get_terms(array(
-                'taxonomy' => 'series',
-                'order' => 'DESC',
-                'number' => 3,
-                'orderby' => 'meta_value',
-                'meta_query' => array(
-                    array('key' => 'taxonomy_series_order')
-                ),
-                'hide_empty' => false,
-            ));
+                    $taxonomies = get_terms(array(
+                        'taxonomy' => 'series',
+                        'order' => 'DESC',
+                        'number' => 3,
+                        'orderby' => 'meta_value',
+                        'meta_query' => array(
+                            array('key' => 'taxonomy_series_order')
+                        ),
+                        'hide_empty' => false,
+                    ));
 
-            foreach ($taxonomies as $taxonomy) :
+                    foreach ($taxonomies as $taxonomy) :
 
-                $background = get_field('taxonomy_series_background', $taxonomy);
-                $background_position = get_field('taxonomy_series_background_position', $taxonomy);
-                $logo = get_field('taxonomy_series_logo', $taxonomy);
-                $link = get_term_link($taxonomy);
-            ?>
+                        $background = get_field('taxonomy_series_background', $taxonomy);
+                        $background_position = get_field('taxonomy_series_background_position', $taxonomy);
+                        $logo = get_field('taxonomy_series_logo', $taxonomy);
+                        $link = get_term_link($taxonomy);
+                    ?>
 
-                <a class="tt-series__logo" href="<?php echo $link ?>">
-                    <div class="tt-series__logo-bg" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
+                        <a class="tt-series__logo" href="<?php echo $link ?>">
+                            <div class="tt-series__logo-bg" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
 
-                    </div>
-                    <img src="<?php echo $logo ?>" \>
-                </a>
+                            </div>
+                            <img src="<?php echo $logo ?>" \>
+                        </a>
 
-            <?php endforeach; ?>
+                    <?php endforeach; ?>
 
+                </div>
+            </div>
         </div>
 
         </div>
@@ -135,66 +139,74 @@ get_header(); ?>
         ));
         ?>
 
-        <ul class="tt-cat__cards">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
 
-            <?php foreach ($recent_posts as $post) : setup_postdata($post); ?>
+                    <ul class="tt-cat__cards">
 
-                <?php
-                $category = get_the_category()[0];
-                $category_name = $category->cat_name;
-                ?>
+                        <?php foreach ($recent_posts as $post) : setup_postdata($post); ?>
 
-                <li class="tt-cat__cards__item">
-                    <a href="<?php the_permalink() ?>" class="tt-cat__card" style="--category-color:<?php the_field('category_color', $category); ?>;">
+                            <?php
+                            $category = get_the_category()[0];
+                            $category_name = $category->cat_name;
+                            ?>
 
-                        <?php if (have_rows('article_masthead')) : ?>
+                            <li class="tt-cat__cards__item">
+                                <a href="<?php the_permalink() ?>" class="tt-cat__card" style="--category-color:<?php the_field('category_color', $category); ?>;">
 
-                            <?php while (have_rows('article_masthead')) : the_row(); ?>
+                                    <?php if (have_rows('article_masthead')) : ?>
 
-                                <?php
+                                        <?php while (have_rows('article_masthead')) : the_row(); ?>
 
-                                $image = get_sub_field('article_masthead_background');
+                                            <?php
 
-                                if (!empty($image)) :
-                                ?>
+                                            $image = get_sub_field('article_masthead_background');
 
-                                    <div class="tt-cat__card__img" style="background-image: url('<?php echo $image['url']; ?>');"></div>
+                                            if (!empty($image)) :
+                                            ?>
 
-                                <?php endif; ?>
+                                                <div class="tt-cat__card__img" style="background-image: url('<?php echo $image['url']; ?>');"></div>
 
-                            <?php endwhile; ?>
+                                            <?php endif; ?>
 
-                        <?php endif; ?>
+                                        <?php endwhile; ?>
 
-                        <div class="tt-cat__card__info">
+                                    <?php endif; ?>
 
-                            <div class="tt-cat__card__cont">
+                                    <div class="tt-cat__card__info">
 
-                                <h3 class="tt-cat__card__title" style="--category-color:<?php the_field('category_color', $category); ?>;">
-                                    <?php the_title(); ?>
-                                </h3>
+                                        <div class="tt-cat__card__cont">
 
-                                <p class="tt-cat__card__descr">
-                                    <?php echo custom_field_excerpt('article_excerpt'); ?>
-                                </p>
+                                            <h3 class="tt-cat__card__title" style="--category-color:<?php the_field('category_color', $category); ?>;">
+                                                <?php the_title(); ?>
+                                            </h3>
 
-                            </div>
+                                            <p class="tt-cat__card__descr">
+                                                <?php echo custom_field_excerpt('article_excerpt'); ?>
+                                            </p>
 
-                            <div style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card__cat-info">
-                                <span><?php echo $category_name ?></span>
-                                <span><?php echo $category_name ?></span>
-                            </div>
+                                        </div>
 
-                        </div>
+                                        <div style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card__cat-info">
+                                            <span><?php echo $category_name ?></span>
+                                            <span><?php echo $category_name ?></span>
+                                        </div>
 
-                    </a>
-                </li>
+                                    </div>
 
-            <?php endforeach; ?>
+                                </a>
+                            </li>
 
-            <?php wp_reset_postdata(); ?>
+                        <?php endforeach; ?>
 
-        </ul>
+                        <?php wp_reset_postdata(); ?>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
     </section>
 
     <?php get_footer(); ?>

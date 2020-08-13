@@ -8,7 +8,7 @@ body:not(.tt-404) {
 }
 
 .tt-cat__cont {
-  padding: 50px 15px 0 15px;
+  margin-top: 50px;
 }
 
 .tt-cat__cards {
@@ -136,7 +136,7 @@ body:not(.tt-404) {
     }
   
     span:first-child {
-      font-family: newAurabesh;
+      font-family: $aurebesh;
       color: var(--category-color, $tt-sand);
       font-size: 0.7em;
     }

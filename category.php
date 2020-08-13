@@ -18,11 +18,9 @@ $description = $term->description;
 
 <body>
 
-    <div class="tt-masthead tt-masthead--overlay"
-        style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
+    <div class="tt-masthead tt-masthead--overlay" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
         <div class="tt-masthead__wrapper">
-            <div style="--category-color:<?php the_field('category_color', $term); ?>;"
-                class="tt-header tt-header--center">
+            <div style="--category-color:<?php the_field('category_color', $term); ?>;" class="tt-header tt-header--center">
                 <span><?php echo $name ?></span>
                 <h1 class="tt-header--center__no-border"><?php echo $name ?></h1>
             </div>
@@ -33,8 +31,7 @@ $description = $term->description;
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2 tt-cat__descr">
                 <div class="tt-header--center__wrapper">
-                    <div class="tt-header tt-header--center tt-category__header"
-                        style="--category-color:<?php echo $color ?>;">
+                    <div class="tt-header tt-header--center tt-category__header" style="--category-color:<?php echo $color ?>;">
                         <span>The Story</span>
                         <h2>The Story</h2>
                     </div>
@@ -45,16 +42,23 @@ $description = $term->description;
     </div>
 
     <form style="--category-color:<?php echo $color ?>;" class="tt-search-bar" method="get">
-        <input type="text" name="custom_search" id="custom_search" value="<?php echo esc_attr( $custom_search ); ?>"
-            placeholder="&#xf002; Search" />
+        <input type="text" name="custom_search" id="custom_search" value="<?php echo esc_attr($custom_search); ?>" placeholder="&#xf002; Search" />
     </form>
 
     <section class="tt-cat__cont">
 
-        <?php
-        $current_page = get_queried_object();
-        $category     = $current_page->slug;
-        echo do_shortcode('[ajax_load_more id="searchwp" container_type="ul" css_classes="tt-cat__cards" post_type="post" posts_per_page="6" category="' . $category . '" search="' . $custom_search . '" transition_container="false" images_loaded="true" button_label="More Articles" button_loading_label="Loading Articles"]'); ?>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
+
+                    <?php
+                    $current_page = get_queried_object();
+                    $category     = $current_page->slug;
+                    echo do_shortcode('[ajax_load_more id="searchwp" container_type="ul" css_classes="tt-cat__cards" post_type="post" posts_per_page="6" category="' . $category . '" search="' . $custom_search . '" transition_container="false" images_loaded="true" button_label="More Articles" button_loading_label="Loading Articles"]'); ?>
+
+                </div>
+            </div>
+        </div>
 
     </section>
 

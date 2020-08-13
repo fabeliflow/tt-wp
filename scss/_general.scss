@@ -41,7 +41,7 @@ $baseline: 1.5rem;
 
 $article-header-font-family: "SerifGothicStd-Heavy", serif;
 $body-font-family: "Lato", sans-serif;
-$watermark-font-family: "newAurabesh";
+$aurebesh: "newAurabesh";
 
 // General styles
 html,
@@ -172,7 +172,7 @@ h3 {
   span {
     padding: 0 5%;
     display: block;
-    font-family: newAurabesh;
+    font-family: $aurebesh;
     font-size: 0.7em;
     letter-spacing: 3px;
     color: $tt-rose;
@@ -228,7 +228,7 @@ h3 {
 
     &::placeholder {
       color: var(--category-color, $tt-rose);
-      font-family: "Font Awesome 5 Free", newAurabesh, sans-serif;
+      font-family: "Font Awesome 5 Free", $aurebesh, sans-serif;
       font-weight: 700;
       letter-spacing: 3px;
     }
