@@ -44,11 +44,19 @@ $description = $term->description;
 
     <section class="tt-cat__cont">
 
-        <?php
-        $current_page = get_queried_object();
-        $tax = $current_page->taxonomy;
-        $tax_term = $current_page->slug;
-        echo do_shortcode('[ajax_load_more id="searchwp" container_type="ul" css_classes="tt-cat__cards" post_type="post" posts_per_page="6" search="' . $custom_search . '" transition_container="false" images_loaded="true" taxonomy="' . $tax . '" taxonomy_terms="' . $tax_term . '" taxonomy_operator="IN"]'); ?>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
+
+                    <?php
+                    $current_page = get_queried_object();
+                    $tax = $current_page->taxonomy;
+                    $tax_term = $current_page->slug;
+                    echo do_shortcode('[ajax_load_more id="searchwp" container_type="ul" css_classes="tt-cat__cards" post_type="post" posts_per_page="6" search="' . $custom_search . '" transition_container="false" images_loaded="true" taxonomy="' . $tax . '" taxonomy_terms="' . $tax_term . '" taxonomy_operator="IN"]'); ?>
+
+                </div>
+            </div>
+        </div>
 
     </section>
 
