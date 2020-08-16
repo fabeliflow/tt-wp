@@ -389,11 +389,107 @@ Template Name: Post
     }
     $related_posts = get_posts(array(
         'tag__in' => $post_tag_ids,
-        'showposts' => 6,
+        'showposts' => 3,
         'post_status' => 'publish',
         'post__not_in' => array(get_the_ID()),
-        'orderby'        => 'rand'
-    )); ?>
+        'fields' => 'ids'
+    ));
+
+    $exclude_posts = $related_posts;
+
+    array_push($exclude_posts, get_the_ID());
+
+    $author_posts = get_posts(array(
+        'author' => get_post_field('post_author', get_the_ID()),
+        'showposts' => 3,
+        'post_status' => 'publish',
+        'post__not_in' => $exclude_posts,
+        'fields' => 'ids'
+    ));
+
+    ?>
+
+    <?php if ($author_posts) : ?>
+
+        <section class="tt-cat__cont">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <div class="tt-header--center__wrapper">
+                            <div class="tt-header tt-header--center">
+                                <span>More by the Author</span>
+                                <h2>More by the Author</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <ul class="tt-cat__cards">
+
+                            <?php foreach ($author_posts as $post) : setup_postdata($post); ?>
+
+                                <?php
+                                $category = get_the_category()[0];
+                                $category_name = $category->cat_name;
+                                ?>
+
+                                <li class="tt-cat__cards__item">
+                                    <a href="<?php the_permalink() ?>" style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card">
+
+                                        <?php if (have_rows('article_masthead')) : ?>
+
+                                            <?php while (have_rows('article_masthead')) : the_row(); ?>
+
+                                                <?php
+
+                                                $image = get_sub_field('article_masthead_background');
+
+                                                if (!empty($image)) :
+                                                ?>
+
+                                                    <div class="tt-cat__card__img" style="background-image: url('<?php echo $image['url']; ?>');"></div>
+
+                                                <?php endif; ?>
+
+                                            <?php endwhile; ?>
+
+                                        <?php endif; ?>
+
+                                        <div class="tt-cat__card__info">
+
+                                            <div class="tt-cat__card__cont">
+
+                                                <h3 style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card__title">
+                                                    <?php the_title(); ?>
+                                                </h3>
+
+                                                <p class="tt-cat__card__descr">
+                                                    <?php echo custom_field_excerpt('article_excerpt'); ?>
+                                                </p>
+
+                                            </div>
+
+                                            <div style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card__cat-info">
+                                                <span><?php echo $category_name  ?></span>
+                                                <span><?php echo $category_name  ?></span>
+                                            </div>
+
+                                        </div>
+
+                                    </a>
+                                </li>
+
+                            <?php endforeach; ?>
+
+                            <?php wp_reset_postdata(); ?>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    <?php endif; ?>
 
     <?php if ($related_posts) : ?>
 
@@ -403,8 +499,8 @@ Template Name: Post
                     <div class="col-sm-6 col-sm-offset-3">
                         <div class="tt-header--center__wrapper">
                             <div class="tt-header tt-header--center">
-                                <span>More Articles</span>
-                                <h2>More Articles</h2>
+                                <span>Related Articles</span>
+                                <h2>Related Articles</h2>
                             </div>
                         </div>
                     </div>
