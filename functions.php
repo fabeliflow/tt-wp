@@ -9,9 +9,6 @@ if( function_exists('acf_add_options_page') ) { acf_add_options_page(); }
 // Custom Excerpt function for Advanced Custom Fields
 function custom_field_excerpt($field) {
     $text = get_field($field);
-    $text = strip_shortcodes( $text );
-    $text = apply_filters('the_content', $text);
-    $text = str_replace(']]>', ']]>', $text);
     $excerpt_length = apply_filters('excerpt_length', 100);
     return wp_trim_words( $text, $excerpt_length );
 }
