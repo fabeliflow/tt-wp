@@ -107,20 +107,17 @@ body:not(.tt-404) {
 
   h3 {
     font-family: $article-header-font-family;
+    margin: 0 0 20px 0;
+    padding-left: 10px;
+    border-left: solid 3px var(--category-color, $tt-sand);
   }
-}
 
-.tt-cat__card__title {
-  margin: 0 0 20px 0;
-  padding-left: 10px;
-  border-left: solid 3px var(--category-color, $tt-sand);
-}
-
-.tt-cat__card__descr {
-  margin: 0;
-  flex: 1 1 auto;
-  font-size: 0.8em;
-  line-height: 1.25rem;
+  p {
+    margin: 0;
+    flex: 1 1 auto;
+    font-size: 0.8em;
+    line-height: 1.25rem;
+  }
 }
 
 .tt-cat__card__cat-info {

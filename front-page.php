@@ -178,13 +178,11 @@ get_header(); ?>
 
                                         <div class="tt-cat__card__cont">
 
-                                            <h3 class="tt-cat__card__title" style="--category-color:<?php the_field('category_color', $category); ?>;">
+                                            <h3 style="--category-color:<?php the_field('category_color', $category); ?>;">
                                                 <?php the_title(); ?>
                                             </h3>
 
-                                            <p class="tt-cat__card__descr">
-                                                <?php echo custom_field_excerpt('article_excerpt'); ?>
-                                            </p>
+                                            <?php the_field('article_excerpt'); ?>
 
                                         </div>
 

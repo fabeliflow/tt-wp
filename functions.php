@@ -6,13 +6,6 @@ register_nav_menus( array(
 
 if( function_exists('acf_add_options_page') ) { acf_add_options_page(); }
 
-// Custom Excerpt function for Advanced Custom Fields
-function custom_field_excerpt($field) {
-    $text = get_field($field);
-    $excerpt_length = apply_filters('excerpt_length', 100);
-    return wp_trim_words( $text, $excerpt_length );
-}
-
 function my_alm_query_args_searchwp($args){   
 	$engine = 'default';
 	$args = apply_filters('alm_searchwp', $args, $engine); // Make call to alm_searchwp filter

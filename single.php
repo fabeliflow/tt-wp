@@ -462,9 +462,7 @@ Template Name: Post
                                                     <?php the_title(); ?>
                                                 </h3>
 
-                                                <p class="tt-cat__card__descr">
-                                                    <?php echo custom_field_excerpt('article_excerpt'); ?>
-                                                </p>
+                                                <?php the_field('article_excerpt'); ?>
 
                                             </div>
 
@@ -544,9 +542,7 @@ Template Name: Post
                                                     <?php the_title(); ?>
                                                 </h3>
 
-                                                <p class="tt-cat__card__descr">
-                                                    <?php echo custom_field_excerpt('article_excerpt'); ?>
-                                                </p>
+                                                <?php the_field('article_excerpt'); ?>
 
                                             </div>
 
