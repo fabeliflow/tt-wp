@@ -15,36 +15,31 @@
         <?php bloginfo('name'); ?>
     </title>
 
-    <!--
-    /**
-    * @license
-    * MyFonts Webfont Build ID 3771796, 2019-06-11T06:14:37-0400
-    * 
-    * The fonts listed in this notice are subject to the End User License
-    * Agreement(s) entered into by the website owner. All other parties are 
-    * explicitly restricted from using the Licensed Webfonts(s).
-    * 
-    * You may obtain a valid license at the URLs below.
-    * 
-    * Webfont: SerifGothicStd-Heavy by ITC
-    * URL: https://www.myfonts.com/fonts/itc/serif-gothic/std-heavy/
-    * Copyright: Copyright &#x00A9; 2014 Monotype ITC Inc. All rights reserved.
-    * Licensed pageviews: 250,000
-    * 
-    * 
-    * License: https://www.myfonts.com/viewlicense?type=web&buildid=3771796
-    * 
-    * © 2019 MyFonts Inc
-    */
+    <link rel="stylesheet" href="https://use.typekit.net/qwx8ago.css">
 
-    -->
-    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/fonts/SerifGothicStd-Heavy/MyFontsWebfontsKit.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri(); ?>/img/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo get_template_directory_uri(); ?>/img/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/img/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo get_template_directory_uri(); ?>/img/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/img/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_template_directory_uri(); ?>/img/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/img/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_template_directory_uri(); ?>/img/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/img/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?php echo get_template_directory_uri(); ?>/img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo get_template_directory_uri(); ?>/img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/img/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#100e17">
+    <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/img/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#100e17">
 
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/img/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/img/favicons/favicon-16x16.png">
     <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/img/favicons/manifest.json">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#100e17">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124638163-1"></script>
@@ -74,7 +69,7 @@
 
     <a href="<?php echo get_home_url(); ?>">
         <div class="tt-menu__logo-cont">
-            <div class="tt-menu__logo" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/tt-logo.svg');">
+            <div class="tt-menu__logo" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/tt-new-logo.svg');">
             </div>
         </div>
     </a>

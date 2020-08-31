@@ -18,13 +18,6 @@ $tt-media-margin: 20px;
 
 .tt-article,
 .tt-legal__cont {
-  h1,
-  h2,
-  h3 {
-    font-family: $article-header-font-family;
-    text-transform: uppercase;
-  }
-
   h2 {
     border-left: solid 3px $tt-sand;
     padding-left: 10px;
@@ -60,6 +53,7 @@ $tt-media-margin: 20px;
 
   strong {
     font-family: $article-header-font-family;
+    font-weight: 600;
     font-size: 1.3em;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -114,6 +108,7 @@ $tt-media-margin: 20px;
         content: counter(step, decimal-leading-zero);
         position: absolute;
         font-family: $article-header-font-family;
+        font-weight: 600;
         top: 0;
         left: 0;
         font-size: 1.5625rem;
