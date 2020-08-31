@@ -26,7 +26,7 @@ get_header(); ?>
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-10 col-sm-offset-1 tt-series__logos">
+                <div class="col-lg-10 col-lg-offset-1 tt-series__logos">
 
                     <?php
 

@@ -422,7 +422,7 @@ Template Name: Post
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-10 col-sm-offset-1">
+                    <div class="col-lg-10 col-lg-offset-1">
                         <ul class="tt-cat__cards">
 
                             <?php foreach ($author_posts as $post) : setup_postdata($post); ?>
@@ -502,7 +502,7 @@ Template Name: Post
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-10 col-sm-offset-1">
+                    <div class="col-lg-10 col-lg-offset-1">
                         <ul class="tt-cat__cards">
 
                             <?php foreach ($related_posts as $post) : setup_postdata($post); ?>
