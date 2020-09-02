@@ -412,16 +412,16 @@ Template Name: Post
     <?php if ($author_posts) : ?>
 
         <section class="tt-cat__cont">
+            
+            <div class="tt-header--center__wrapper">
+                <div class="tt-header tt-header--center">
+                    <span>More by the Author</span>
+                    <h2>More by the Author</h2>
+                </div>
+            </div>
+
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-sm-6 col-sm-offset-3">
-                        <div class="tt-header--center__wrapper">
-                            <div class="tt-header tt-header--center">
-                                <span>More by the Author</span>
-                                <h2>More by the Author</h2>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-lg-10 col-lg-offset-1">
                         <ul class="tt-cat__cards">
 
@@ -492,16 +492,16 @@ Template Name: Post
     <?php if ($related_posts) : ?>
 
         <section class="tt-cat__cont">
+
+            <div class="tt-header--center__wrapper">
+                <div class="tt-header tt-header--center">
+                    <span>Related Articles</span>
+                    <h2>Related Articles</h2>
+                </div>
+            </div>
+
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-sm-6 col-sm-offset-3">
-                        <div class="tt-header--center__wrapper">
-                            <div class="tt-header tt-header--center">
-                                <span>Related Articles</span>
-                                <h2>Related Articles</h2>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-lg-10 col-lg-offset-1">
                         <ul class="tt-cat__cards">
 
