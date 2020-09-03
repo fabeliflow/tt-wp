@@ -412,17 +412,18 @@ Template Name: Post
     <?php if ($author_posts) : ?>
 
         <section class="tt-cat__cont">
-            
-            <div class="tt-header--center__wrapper">
-                <div class="tt-header tt-header--center tt-header--center--padding">
-                    <span>More by the Author</span>
-                    <h2>More by the Author</h2>
-                </div>
-            </div>
 
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-10 col-lg-offset-1">
+
+                        <div class="tt-header--center__wrapper">
+                            <div class="tt-header tt-header--center">
+                                <span>More by the Author</span>
+                                <h2>More by the Author</h2>
+                            </div>
+                        </div>
+
                         <ul class="tt-cat__cards">
 
                             <?php foreach ($author_posts as $post) : setup_postdata($post); ?>
@@ -493,16 +494,17 @@ Template Name: Post
 
         <section class="tt-cat__cont">
 
-            <div class="tt-header--center__wrapper">
-                <div class="tt-header tt-header--center tt-header--center--padding">
-                    <span>Related Articles</span>
-                    <h2>Related Articles</h2>
-                </div>
-            </div>
-
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-10 col-lg-offset-1">
+
+                        <div class="tt-header--center__wrapper">
+                            <div class="tt-header tt-header--center">
+                                <span>Related Articles</span>
+                                <h2>Related Articles</h2>
+                            </div>
+                        </div>
+
                         <ul class="tt-cat__cards">
 
                             <?php foreach ($related_posts as $post) : setup_postdata($post); ?>

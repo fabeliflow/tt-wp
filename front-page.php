@@ -25,46 +25,50 @@ get_header(); ?>
 
     <section class="tt-home__section tt-home__series">
 
-        <div class="tt-header--center__wrapper">
-            <div class="tt-header tt-header--center tt-header--center--padding">
-                <span>Latest Series</span>
-                <h2>Latest Series</h2>
-            </div>
-        </div>
-
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-12 tt-series__logos">
+                <div class="col-sm-12">
 
-                    <?php
+                    <div class="tt-header--center__wrapper">
+                        <div class="tt-header tt-header--center">
+                            <span>Latest Series</span>
+                            <h2>Latest Series</h2>
+                        </div>
+                    </div>
 
-                    $taxonomies = get_terms(array(
-                        'taxonomy' => 'series',
-                        'order' => 'DESC',
-                        'number' => 3,
-                        'orderby' => 'meta_value',
-                        'meta_query' => array(
-                            array('key' => 'taxonomy_series_order')
-                        ),
-                        'hide_empty' => false,
-                    ));
+                    <div class="tt-series__logos">
 
-                    foreach ($taxonomies as $taxonomy) :
+                        <?php
 
-                        $background = get_field('taxonomy_series_background', $taxonomy);
-                        $background_position = get_field('taxonomy_series_background_position', $taxonomy);
-                        $logo = get_field('taxonomy_series_logo', $taxonomy);
-                        $link = get_term_link($taxonomy);
-                    ?>
+                        $taxonomies = get_terms(array(
+                            'taxonomy' => 'series',
+                            'order' => 'DESC',
+                            'number' => 3,
+                            'orderby' => 'meta_value',
+                            'meta_query' => array(
+                                array('key' => 'taxonomy_series_order')
+                            ),
+                            'hide_empty' => false,
+                        ));
 
-                        <a class="tt-series__logo" href="<?php echo $link ?>">
-                            <div class="tt-series__logo-bg" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
+                        foreach ($taxonomies as $taxonomy) :
 
-                            </div>
-                            <img src="<?php echo $logo ?>" \>
-                        </a>
+                            $background = get_field('taxonomy_series_background', $taxonomy);
+                            $background_position = get_field('taxonomy_series_background_position', $taxonomy);
+                            $logo = get_field('taxonomy_series_logo', $taxonomy);
+                            $link = get_term_link($taxonomy);
+                        ?>
 
-                    <?php endforeach; ?>
+                            <a class="tt-series__logo" href="<?php echo $link ?>">
+                                <div class="tt-series__logo-bg" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
+
+                                </div>
+                                <img src="<?php echo $logo ?>" \>
+                            </a>
+
+                        <?php endforeach; ?>
+
+                    </div>
 
                 </div>
             </div>
@@ -125,13 +129,6 @@ get_header(); ?>
 
     <section class="tt-home__section tt-home__articles">
 
-        <div class="tt-header--center__wrapper">
-            <div class="tt-header tt-header--center tt-header--center--padding">
-                <span>Latest Articles</span>
-                <h2>Latest Articles</h2>
-            </div>
-        </div>
-
         <?php
         $recent_posts = get_posts(array(
             'showposts' => 9,
@@ -142,6 +139,13 @@ get_header(); ?>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
+
+                    <div class="tt-header--center__wrapper">
+                        <div class="tt-header tt-header--center">
+                            <span>Latest Articles</span>
+                            <h2>Latest Articles</h2>
+                        </div>
+                    </div>
 
                     <ul class="tt-cat__cards">
 
