@@ -414,7 +414,7 @@ Template Name: Post
         <section class="tt-cat__cont">
             
             <div class="tt-header--center__wrapper">
-                <div class="tt-header tt-header--center">
+                <div class="tt-header tt-header--center tt-header--center--padding">
                     <span>More by the Author</span>
                     <h2>More by the Author</h2>
                 </div>
@@ -494,7 +494,7 @@ Template Name: Post
         <section class="tt-cat__cont">
 
             <div class="tt-header--center__wrapper">
-                <div class="tt-header tt-header--center">
+                <div class="tt-header tt-header--center tt-header--center--padding">
                     <span>Related Articles</span>
                     <h2>Related Articles</h2>
                 </div>

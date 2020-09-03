@@ -26,7 +26,7 @@ get_header(); ?>
     <section class="tt-home__section tt-home__series">
 
         <div class="tt-header--center__wrapper">
-            <div class="tt-header tt-header--center">
+            <div class="tt-header tt-header--center tt-header--center--padding">
                 <span>Latest Series</span>
                 <h2>Latest Series</h2>
             </div>
@@ -126,7 +126,7 @@ get_header(); ?>
     <section class="tt-home__section tt-home__articles">
 
         <div class="tt-header--center__wrapper">
-            <div class="tt-header tt-header--center">
+            <div class="tt-header tt-header--center tt-header--center--padding">
                 <span>Latest Articles</span>
                 <h2>Latest Articles</h2>
             </div>
