@@ -24,7 +24,7 @@ function wpb_adding_styles_scripts() {
 
 	wp_register_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
 
-	wp_register_style( 'simplebar', get_template_directory_uri() . '/vendor/simplebar/simplebar.css' );
+	wp_register_style( 'simplebar', 'https://cdn.jsdelivr.net/npm/simplebar@3.1.5/dist/simplebar.min.css' );
 
 	wp_register_style( 'lightgallery', get_template_directory_uri() . '/vendor/lightgallery/dist/css/lightgallery.min.css' );
 
@@ -37,7 +37,7 @@ function wpb_adding_styles_scripts() {
 	
 	wp_register_script('body-scroll-lock',  get_template_directory_uri() . '/vendor/body-scroll-lock/lib/bodyScrollLock.min.js', null, null, true);
 
-	wp_register_script('simplebar', get_template_directory_uri() . '/vendor/simplebar/simplebar.min.js', null, null, true);
+	wp_register_script('simplebar', 'https://cdn.jsdelivr.net/npm/simplebar@3.1.5/dist/simplebar.min.js', null, null, true);
 
 	wp_register_script('swiper', 'https://unpkg.com/swiper/swiper-bundle.min.js', null, null, true);
 
