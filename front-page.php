@@ -18,7 +18,6 @@ get_header(); ?>
                         </div>
                     </div>
                     <p><?php the_field('description'); ?></p>
-                    <?php echo generate_kofi_button(); ?>
                 </div>
             </div>
     </section>
