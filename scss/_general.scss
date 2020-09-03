@@ -158,6 +158,10 @@ h3 {
 
 .tt-header--center__wrapper {
   text-align: center;
+
+  h1, h2 {
+    padding: 0 15px !important;
+  }
 }
 
 .tt-header {
