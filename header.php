@@ -41,20 +41,6 @@
     <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/img/favicons/manifest.json">
     <meta name="theme-color" content="#100e17">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124638163-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-124638163-1');
-    </script>
-
-
     <?php wp_head(); ?>
 
 </head>
