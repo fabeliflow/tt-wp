@@ -129,7 +129,7 @@ $tt-media-margin: 20px;
     border-left: 0;
     border: 3px solid $tt-sand;
     font-size: inherit;
-    font-weight: bold;
+    font-weight: 700;
     font-style: italic;
 
     cite {
@@ -156,7 +156,7 @@ $tt-media-margin: 20px;
 
   a:not(.tt-btn) {
     padding: 1px 0;
-    font-weight: bold;
+    font-weight: 700;
     color: $tt-text-dark;
     box-shadow: inset 0 -3px 0 $tt-rose-transp;
     transition: all 0.3s ease-in-out;
@@ -221,7 +221,6 @@ $tt-media-margin: 20px;
   }
 
   h2 {
-    font-weight: bold;
     border-left: 0;
     margin: 0;
     padding-left: 0;
@@ -473,7 +472,7 @@ iframe {
 
   a {
     padding: 1px 0;
-    font-weight: bold;
+    font-weight: 700;
     color: $tt-text-dark;
     box-shadow: inset 0 -3px 0 $tt-rose-transp;
     transition: all 0.3s ease-in-out;

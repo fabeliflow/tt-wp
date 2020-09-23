@@ -18,8 +18,6 @@ add_filter( 'alm_query_args_searchwp', 'my_alm_query_args_searchwp');
 function wpb_adding_styles_scripts() {
 	
 	// general styles
-	wp_register_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap' );
-
 	wp_register_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.0.13/css/all.css' );
 
 	wp_register_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
@@ -30,7 +28,7 @@ function wpb_adding_styles_scripts() {
 
 	wp_register_style( 'swiper', 'https://unpkg.com/swiper/swiper-bundle.min.css' );
 
-	wp_register_style( 'main', get_template_directory_uri() . '/css/main.css',  array('google-fonts', 'font-awesome', 'bootstrap', 'simplebar', 'swiper', 'lightgallery') );
+	wp_register_style( 'main', get_template_directory_uri() . '/css/main.css',  array('font-awesome', 'bootstrap', 'simplebar', 'swiper', 'lightgallery') );
 	wp_enqueue_style( 'main' );
 
 	// general scripts
