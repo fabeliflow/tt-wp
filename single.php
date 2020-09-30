@@ -6,7 +6,7 @@ Template Name: Post
 
 <?php get_header(); ?>
 
-<body id="tt-lightgallery" class="tt-article">
+<div id="tt-lightgallery" class="tt-article">
 
     <div id="fb-root"></div>
     <script>
@@ -136,7 +136,7 @@ Template Name: Post
                                     <div class="tt-video__cont">
 
                                         <div class="tt-video">
-                                            <iframe src="https://www.youtube.com/embed/<?php the_sub_field('video_id'); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            <iframe src="https://www.youtube.com/embed/<?php the_sub_field('video_id'); ?>" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         </div>
                                         <span class="tt-caption"><?php the_sub_field('video_caption'); ?></span>
 
@@ -265,7 +265,7 @@ Template Name: Post
 
                                     <?php if ($image['caption']) : ?>
 
-                                        <figcaption class="tt-caption"><?php the_sub_field('gallery_caption'); ?></figcaption>
+                                        <span class="tt-caption"><?php the_sub_field('gallery_caption'); ?></span>
 
                                     <?php endif; ?>
 

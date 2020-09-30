@@ -6,7 +6,7 @@ Template Name: Legal
 
 <?php get_header(); ?>
 
-<body>
+<div>
 
     <div class="tt-legal__masthead">
         <h1><?php the_title(); ?></h1>

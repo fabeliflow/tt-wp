@@ -2,7 +2,7 @@
 
                 <footer>
 
-                    <img class="tt-footer__img" src="<?php echo get_template_directory_uri(); ?>/img/tt-cityscape.png" alt="Tatooine Cityscape" />
+                    <img class="tt-footer__img" src="<?php echo get_template_directory_uri(); ?>/img/tt-cityscape.png" alt="Tatooine Cityscape">
 
                     <div class="tt-footer__cont">
                         <div class="container">
@@ -75,34 +75,40 @@
                             </div>
                         </div>
 
-                        <img class="tt-footer__img" src="<?php echo get_template_directory_uri(); ?>/img/tt-orbit.png" alt="Tatooine Orbit" />
+                        <img class="tt-footer__img" src="<?php echo get_template_directory_uri(); ?>/img/tt-orbit.png" alt="Tatooine Orbit">
 
                         <div id="starfieldhome" class="starfield"></div>
 
-                    <?php endif; ?>
+                    <?php else : ?>
 
-                    <div class="tt-footer__legal-links">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
-                                    <div class="tt-copyright">
-                                        <span>© <?php echo date('Y'); ?> Tatooine Times. All rights reserved</span>
-                                        <span>Website artwork by <a class="tt-link--focused" href="https://www.artstation.com/ro9" target="_blank">Ronnie Jensen</a></span>
+                        <footer>
+
+                        <?php endif; ?>
+
+                        <div class="tt-footer__legal-links">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
+                                        <div class="tt-copyright">
+                                            <span>© <?php echo date('Y'); ?> Tatooine Times. All rights reserved</span>
+                                            <span>Website artwork by <a class="tt-link--focused" href="https://tegnemaskin.artstation.com/" target="_blank">Ronnie Jensen</a></span>
+                                        </div>
+                                        <ul class="tt-menu__items">
+                                            <?php echo wp_generate_menu('legal-links'); ?>
+                                        </ul>
                                     </div>
-                                    <ul class="tt-menu__items">
-                                        <?php echo wp_generate_menu('legal-links'); ?>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    </footer>
+                        </footer>
 
-                    <?php wp_footer(); ?>
+                        <?php wp_footer(); ?>
 
-                    </body>
+                        </div>
 
-                    </div>
+                        </div>
 
-                    </html>
+                        </body>
+
+                        </html>

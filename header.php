@@ -42,71 +42,79 @@
 
 </head>
 
-<button id="tt-menu__btn" class="hamburger hamburger--emphatic" type="button">
-    <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-    </span>
-</button>
+<?php if (is_front_page() || is_page('Series')) : ?>
 
-<div id="navigation" class="tt-menu">
+    <body class="tt-starfield-bg">
+    <?php else : ?>
 
-    <a href="<?php echo get_home_url(); ?>">
-        <div class="tt-menu__logo-cont">
-            <div class="tt-menu__logo" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/tt-new-logo.svg');">
-            </div>
-        </div>
-    </a>
+        <body>
+        <?php endif; ?>
 
-    <ul data-simplebar class="tt-menu__items">
+        <button id="tt-menu__btn" class="hamburger hamburger--emphatic" type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
 
-        <?php echo wp_generate_menu('primary'); ?>
-        <?php
+        <div id="navigation" class="tt-menu">
 
-        $categories = get_categories(array(
-            'orderby'    => 'name',
-            'hide_empty' => 0,
-            'exclude'    => array(1)
-        ));
+            <a href="<?php echo get_home_url(); ?>">
+                <div class="tt-menu__logo-cont">
+                    <div class="tt-menu__logo" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/tt-new-logo.svg');">
+                    </div>
+                </div>
+            </a>
 
-        foreach ($categories as $category) :
-            $url = get_category_link($category);
-            $name = $category->cat_name;
-        ?>
+            <ul data-simplebar class="tt-menu__items">
 
-            <li style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-menu__item tt-menu__item-cat"><a href="<?php echo $url ?>"><span><?php echo $name ?></span></a>
-            </li>
+                <?php echo wp_generate_menu('primary'); ?>
+                <?php
 
-        <?php endforeach; ?>
+                $categories = get_categories(array(
+                    'orderby'    => 'name',
+                    'hide_empty' => 0,
+                    'exclude'    => array(1)
+                ));
 
-    </ul>
+                foreach ($categories as $category) :
+                    $url = get_category_link($category);
+                    $name = $category->cat_name;
+                ?>
 
-    <?php if (have_rows('social_media', 'options')) : ?>
-
-        <div class="tt-menu__social">
-
-            <ul class="tt-social">
-
-                <?php while (have_rows('social_media', 'options')) : the_row(); ?>
-
-                    <li>
-                        <a class="tt-social__icon" href="<?php the_sub_field('social_media_url'); ?>" target="_blank">
-                            <i class="<?php the_sub_field('social_media_class'); ?> fa-fw"></i>
-                        </a>
+                    <li style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-menu__item tt-menu__item-cat"><a href="<?php echo $url ?>"><span><?php echo $name ?></span></a>
                     </li>
 
-                <?php endwhile; ?>
+                <?php endforeach; ?>
 
             </ul>
 
-            <script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script>
-            <script type='text/javascript'>
-                kofiwidget2.init('Support Us on Ko-fi', '#f37257', 'F2F61MA2P');
-                kofiwidget2.draw();
-            </script>
+            <?php if (have_rows('social_media', 'options')) : ?>
+
+                <div class="tt-menu__social">
+
+                    <ul class="tt-social">
+
+                        <?php while (have_rows('social_media', 'options')) : the_row(); ?>
+
+                            <li>
+                                <a class="tt-social__icon" href="<?php the_sub_field('social_media_url'); ?>" target="_blank">
+                                    <i class="<?php the_sub_field('social_media_class'); ?> fa-fw"></i>
+                                </a>
+                            </li>
+
+                        <?php endwhile; ?>
+
+                    </ul>
+
+                    <script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script>
+                    <script type='text/javascript'>
+                        kofiwidget2.init('Support Us on Ko-fi', '#f37257', 'F2F61MA2P');
+                        kofiwidget2.draw();
+                    </script>
+
+                </div>
+
+            <?php endif; ?>
 
         </div>
-
-    <?php endif; ?>
-
-</div>
-<div id="content">
+        <div id="content">

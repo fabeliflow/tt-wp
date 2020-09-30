@@ -5,7 +5,7 @@ Template Name: Front Page
 
 get_header(); ?>
 
-<body class="tt-home">
+<div class="tt-home">
 
     <section class="tt-home__descr tt-masthead--overlay" style="background-image: url('<?php echo the_field('description_background'); ?>'); background-position: <?php echo the_field('description_background_position'); ?>">
         <div class="container">
@@ -20,6 +20,7 @@ get_header(); ?>
                     <p><?php the_field('description'); ?></p>
                 </div>
             </div>
+        </div>
     </section>
 
     <section class="tt-home__section tt-home__series">
@@ -62,7 +63,7 @@ get_header(); ?>
                                 <div class="tt-series__logo-bg" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
 
                                 </div>
-                                <img src="<?php echo $logo ?>" \>
+                                <img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt']; ?>">
                             </a>
 
                         <?php endforeach; ?>
@@ -71,8 +72,6 @@ get_header(); ?>
 
                 </div>
             </div>
-        </div>
-
         </div>
     </section>
 

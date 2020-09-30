@@ -5,7 +5,7 @@ Template Name: Series
 
 get_header(); ?>
 
-<body class="tt-series">
+<div class="tt-series">
 
     <section class="tt-series__section tt-series__descr" style="background-image: url('<?php the_field('series_background'); ?>'); background-position: <?php the_field('series_background_position'); ?>">
         <div class="container">
@@ -20,6 +20,7 @@ get_header(); ?>
                     <p><?php the_field('series_description'); ?></p>
                 </div>
             </div>
+        </div>
     </section>
 
     <section class="tt-series__section">
@@ -52,15 +53,13 @@ get_header(); ?>
                             <div class="tt-series__logo-bg" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
 
                             </div>
-                            <img src="<?php echo $logo ?>" \>
+                            <img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt']; ?>">
                         </a>
 
                     <?php endforeach; ?>
 
                 </div>
             </div>
-        </div>
-
         </div>
     </section>
 

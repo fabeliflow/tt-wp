@@ -16,11 +16,11 @@ $name = $term->name;
 $description = $term->description;
 ?>
 
-<body>
+<div class="tt-taxonomy-series">
 
     <div class="tt-masthead tt-masthead--overlay" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
         <div class="tt-masthead__wrapper">
-            <img class="tt-masthead__logo" src="<?php echo $logo ?>" \>
+            <img class="tt-masthead__logo" src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt']; ?>">
         </div>
     </div>
 
