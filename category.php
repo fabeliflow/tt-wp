@@ -41,8 +41,12 @@ $description = $term->description;
         </div>
     </div>
 
-    <form style="--category-color:<?php echo $color ?>;" class="tt-search-bar" method="get">
-        <input type="text" name="custom_search" id="custom_search" value="<?php echo esc_attr($custom_search); ?>" placeholder="&#xf002; Search" />
+    <form class="tt-search-form" method="get">
+        <?php echo wp_generate_tag_select($_GET['article_tag']); ?>
+        <div class="tt-search-bar__cont">
+            <input class="tt-search-bar" type="text" name="custom_search" id="custom_search" value="<?php echo esc_attr($custom_search); ?>" placeholder="&#xf002;" />
+            <input class="tt-btn tt-btn--fill" type="submit" name="submit" value="search" />
+        </div>
     </form>
 
     <section class="tt-cat__cont">
@@ -54,7 +58,8 @@ $description = $term->description;
                     <?php
                     $current_page = get_queried_object();
                     $category     = $current_page->slug;
-                    echo do_shortcode('[ajax_load_more id="searchwp" container_type="ul" css_classes="tt-cat__cards" post_type="post" posts_per_page="6" category="' . $category . '" search="' . $custom_search . '" transition_container="false" images_loaded="true" button_label="More Articles" button_loading_label="Loading Articles"]'); ?>
+                    $tag = $_GET['article_tag'];
+                    echo do_shortcode('[ajax_load_more id="searchwp" container_type="ul" css_classes="tt-cat__cards" post_type="post" posts_per_page="6" category="' . $category . '" search="' . $custom_search . '" transition_container="false" tag="' . $tag . '" images_loaded="true"]'); ?>
 
                 </div>
             </div>

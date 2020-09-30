@@ -1,33 +1,37 @@
 <?php
-register_nav_menus( array(
+register_nav_menus(array(
 	'primary'   => 'Primary',
-	'legal-links' => __( 'Legal Links' ),
-) );
+	'legal-links' => __('Legal Links'),
+));
 
-if( function_exists('acf_add_options_page') ) { acf_add_options_page(); }
+if (function_exists('acf_add_options_page')) {
+	acf_add_options_page();
+}
 
-function my_alm_query_args_searchwp($args){   
+function my_alm_query_args_searchwp($args)
+{
 	$engine = 'default';
 	$args = apply_filters('alm_searchwp', $args, $engine); // Make call to alm_searchwp filter
 	return $args;
 }
 
-add_filter( 'alm_query_args_searchwp', 'my_alm_query_args_searchwp');
+add_filter('alm_query_args_searchwp', 'my_alm_query_args_searchwp');
 
 // add styles and scripts
-function wpb_adding_styles_scripts() {
-	
+function wpb_adding_styles_scripts()
+{
+
 	// general styles
-	wp_register_style( 'adobe-typekit', 'https://use.typekit.net/qwx8ago.css' );
+	wp_register_style('adobe-typekit', 'https://use.typekit.net/qwx8ago.css');
 
-	wp_register_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.0.13/css/all.css' );
+	wp_register_style('font-awesome', 'https://use.fontawesome.com/releases/v5.0.13/css/all.css');
 
-	wp_register_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
+	wp_register_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
 
-	wp_register_style( 'simplebar', 'https://cdn.jsdelivr.net/npm/simplebar@3.1.5/dist/simplebar.min.css' );
+	wp_register_style('simplebar', 'https://cdn.jsdelivr.net/npm/simplebar@3.1.5/dist/simplebar.min.css');
 
-	wp_register_style( 'main', get_template_directory_uri() . '/css/main.css',  array('adobe-typekit', 'font-awesome', 'bootstrap', 'simplebar') );
-	wp_enqueue_style( 'main' );
+	wp_register_style('main', get_template_directory_uri() . '/css/main.css',  array('adobe-typekit', 'font-awesome', 'bootstrap', 'simplebar'));
+	wp_enqueue_style('main');
 
 	// general scripts
 	wp_register_script('body-scroll-lock',  get_template_directory_uri() . '/vendor/body-scroll-lock/lib/bodyScrollLock.min.js', null, null, true);
@@ -38,29 +42,28 @@ function wpb_adding_styles_scripts() {
 	wp_enqueue_script('header');
 
 	if (is_front_page() || is_page('series')) {
-		
+
 		wp_register_script('particles', 'https://cdn.jsdelivr.net/npm/particles.js/particles.min.js', null, null, true);
 
 		wp_register_script('starfield', get_template_directory_uri() . '/js/minified/starfield.min.js', array('jquery', 'particles'), null, true);
 		wp_enqueue_script('starfield');
-	} 
+	}
 
 	if (is_front_page() || is_single()) {
-		wp_register_style( 'swiper', 'https://unpkg.com/swiper/swiper-bundle.min.css' );
+		wp_register_style('swiper', 'https://unpkg.com/swiper/swiper-bundle.min.css');
 		wp_enqueue_style('swiper');
 
 		wp_register_script('swiper', 'https://unpkg.com/swiper/swiper-bundle.min.js', null, null, true);
 	}
-	
+
 	if (is_front_page()) {
 
 		wp_register_script('home', get_template_directory_uri() . '/js/minified/home.min.js', array('jquery', 'particles', 'swiper'), null, true);
 		wp_enqueue_script('home');
-
 	} elseif (is_single()) {
 
-		wp_register_style( 'lightgallery', get_template_directory_uri() . '/vendor/lightgallery/dist/css/lightgallery.min.css' );
-		wp_enqueue_style( 'lightgallery' );
+		wp_register_style('lightgallery', get_template_directory_uri() . '/vendor/lightgallery/dist/css/lightgallery.min.css');
+		wp_enqueue_style('lightgallery');
 
 		wp_register_script('lg-fullscreen', get_template_directory_uri() . '/vendor/lightgallery/modules/lg-fullscreen.min.js', array('jquery'), null, true);
 
@@ -73,47 +76,49 @@ function wpb_adding_styles_scripts() {
 	}
 }
 
-add_action( 'wp_enqueue_scripts', 'wpb_adding_styles_scripts' );
+add_action('wp_enqueue_scripts', 'wpb_adding_styles_scripts');
 
-add_filter( '404_template', 'custom_redirect_to_category' );
+add_filter('404_template', 'custom_redirect_to_category');
 
-function custom_redirect_to_category($template) {
+function custom_redirect_to_category($template)
+{
 
-    if ( ! is_404() ){
-        return $template;
-    }
+	if (!is_404()) {
+		return $template;
+	}
 
-    global $wp_rewrite;
-    global $wp_query;
+	global $wp_rewrite;
+	global $wp_query;
 
-    if ( '/%category%/%postname%/' !== $wp_rewrite->permalink_structure ){
-        return $template;
-    }   
+	if ('/%category%/%postname%/' !== $wp_rewrite->permalink_structure) {
+		return $template;
+	}
 
-    if ( ! $post = get_page_by_path( $wp_query->query['category_name'], OBJECT, 'post' ) ){
-        return $template;   
-    }
+	if (!$post = get_page_by_path($wp_query->query['category_name'], OBJECT, 'post')) {
+		return $template;
+	}
 
-    $permalink = get_permalink( $post->ID );
+	$permalink = get_permalink($post->ID);
 
-    wp_redirect( $permalink, 301 );
-    exit;
-
+	wp_redirect($permalink, 301);
+	exit;
 }
 
 // extend Public Post Preview link time
-add_filter( 'ppp_nonce_life', 'my_nonce_life' );
-function my_nonce_life() {
- return 60 * 60 * 24 * 14; // 14 days
+add_filter('ppp_nonce_life', 'my_nonce_life');
+function my_nonce_life()
+{
+	return 60 * 60 * 24 * 14; // 14 days
 }
 
-function wp_generate_menu($menu_name) {
-	if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
-		$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
-	 
+function wp_generate_menu($menu_name)
+{
+	if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
+		$menu = wp_get_nav_menu_object($locations[$menu_name]);
+
 		$menu_items = wp_get_nav_menu_items($menu->term_id);
-	 
-		foreach ( (array) $menu_items as $key => $menu_item ) {
+
+		foreach ((array) $menu_items as $key => $menu_item) {
 			$title = $menu_item->title;
 			$url = $menu_item->url;
 			$menu_list .= '<li class="tt-menu__item"><a href="' . $url . '">' . $title . '</a></li>';
@@ -122,6 +127,24 @@ function wp_generate_menu($menu_name) {
 	return $menu_list;
 }
 
-function generate_kofi_button() {
+function wp_generate_tag_select($selected)
+{
+	$tags = get_tags();
+	$tag_select = '<select class="tt-search-dropdown" name="article_tag">';
+	$tag_select .= '<option value="">Select Tag</option>';
+	foreach ($tags as $tag) {
+		if ($selected == $tag->slug) {
+			$tag_select .= "<option selected value='{$tag->slug}'>$tag->name</option>";
+		} else {
+			$tag_select .= "<option value='{$tag->slug}'>$tag->name</option>";
+		}
+	}
+	$tag_select .= '</select>';
+
+	return $tag_select;
+}
+
+function generate_kofi_button()
+{
 	return '<script type="text/javascript" src="https://ko-fi.com/widgets/widget_2.js"></script><script type="text/javascript">kofiwidget2.init("Support Us on Ko-fi", "#f37257", "F2F61MA2P");kofiwidget2.draw();</script>';
 }
