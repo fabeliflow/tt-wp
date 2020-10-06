@@ -148,6 +148,19 @@ h3 {
   }
 }
 
+.tt-btn--cat__fill {
+  $cat-color: var(--category-color, $tt-rose);
+  border-color: $cat-color;
+  background-color: $cat-color;
+
+  &:hover,
+  &:focus {
+    border-color: $cat-color;
+    box-shadow: 0 0 5px 0 $cat-color;
+    background-color: $cat-color;
+  }
+}
+
 .tt-btn--error {
   &:hover,
   &:focus {

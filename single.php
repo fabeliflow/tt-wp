@@ -51,15 +51,16 @@ Template Name: Post
                     <div class="col-sm-8 col-sm-offset-2">
 
                         <?php
-                        $category = get_the_category()[0];
-                        $category_name = $category->cat_name;
+                        $article_category = get_the_category()[0];
+                        $article_category_name = $article_category->cat_name;
+                        $article_category_link = get_category_link($article_category);
                         ?>
 
                         <header>
                             <div class="tt-header--center__wrapper">
-                                <div class="tt-header tt-header--center tt-article__header" style="--category-color:<?php the_field('category_color', $category); ?>;">
+                                <div class="tt-header tt-header--center tt-article__header" style="--category-color:<?php the_field('category_color', $article_category); ?>;">
                                     <span class="tt-article__category">
-                                        <?php echo $category_name  ?>
+                                        <?php echo $article_category_name  ?>
                                     </span>
                                     <h1>
                                         <?php the_title(); ?>
@@ -289,23 +290,6 @@ Template Name: Post
                                 </div>
 
                 </section>
-
-                <?php
-
-                $taxonomy = get_the_terms($post->ID, 'series')[0];
-                $link = get_term_link($taxonomy->slug, 'series');
-
-                ?>
-
-                <?php if ($taxonomy) : ?>
-
-                    <div class="col-sm-6 col-sm-offset-3 tt-article__back-to-series">
-
-                        <a href="<?php echo $link ?>" class="tt-btn tt-btn--fill">Back to the Series</a>
-
-                    </div>
-
-                <?php endif; ?>
 
                 <div class="col-sm-6 col-sm-offset-3">
 
@@ -570,5 +554,30 @@ Template Name: Post
         </section>
 
     <?php endif; ?>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-sm-6 col-sm-offset-3 tt-article__more-articles-cta">
+
+                <?php
+
+                $taxonomy = get_the_terms($post->ID, 'series')[0];
+                $link = get_term_link($taxonomy->slug, 'series');
+
+                ?>
+
+                <?php if ($taxonomy) : ?>
+
+                    <a href="<?php echo $link ?>" class="tt-btn tt-btn--fill">More from the Series</a>
+
+                <?php endif; ?>
+
+                <a style="--category-color:<?php the_field('category_color', $article_category); ?>;" class="tt-btn tt-btn--cat__fill" href="<?php echo $article_category_link ?>">More <?php echo $article_category_name ?></a>
+
+            </div>
+
+        </div>
+    </div>
 
     <?php get_footer(); ?>
