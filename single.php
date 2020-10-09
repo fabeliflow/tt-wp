@@ -68,6 +68,10 @@ Template Name: Post
                                 </div>
                             </div>
 
+                            <div class="tt-article__header--excerpt">
+                                <?php the_field('article_excerpt'); ?>
+                            </div>
+
                             <ul class="tt-article__info">
                                 <li><i>Written by</i>
                                     <strong><?php the_author_meta('display_name', get_post_field('post_author', get_the_ID())); ?></strong>
