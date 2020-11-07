@@ -2,6 +2,7 @@
   height: 100%;
   width: 70vw;
   left: -70vw;
+  padding-top: 50px;
 
   @media (min-width: 768px) {
     width: 30vw;
@@ -20,25 +21,34 @@
   left: 0 !important;
 }
 
-.tt-menu__logo-cont {
-  padding: 30px;
-  border-bottom: 3px solid $tt-dark-theme-border;
+.tt-menu {
+  position: fixed;
+  top: 0;
+  will-change: transform;
+  background-color: $tt-dark-theme-bg;
+  border-bottom: 1px solid $tt-sand-transp;
+  height: 50px;
+  width: 100%;
+  z-index: 99999;
+  margin-bottom: 50px;
+}
 
-  .tt-menu__logo {
-    width: 100%;
-    height: 0;
-    padding-bottom: 25%;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+.tt-menu__logo {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  height: 100%;
+  img {
+    height: 100%;
+    padding: 5px;
   }
 }
 
-.tt-menu {
+.tt-menu__slider {
   background-color: $tt-dark-theme-bg;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid $tt-dark-theme-border;
+  border-right: 1px solid $tt-sand-transp;
   overflow-x: hidden;
 
   .simplebar-scroll-content {
@@ -61,7 +71,7 @@
       outline: none;
       cursor: pointer;
     
-      border-bottom: 1px solid $tt-dark-theme-border;
+      border-bottom: 1px solid $tt-sand-transp;
     
       &:hover,
       &:focus {
@@ -89,7 +99,7 @@
 
   .tt-menu__social {
     padding: 30px 10px;
-    border-top: 3px solid $tt-dark-theme-border;
+    border-top: 1px solid $tt-sand-transp;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -124,16 +134,11 @@
 }
 
 #tt-menu__btn {
-  border-right: 1px solid $tt-dark-theme-border;
-  border-bottom: 1px solid $tt-dark-theme-border;
-  position: fixed;
-  display: flex;
-  will-change: transform;
-  left: 0;
-  top: 0;
-  z-index: 999;
-  border-bottom-right-radius: 10px;
+  border-right: 1px solid $tt-sand-transp;
   transition: all 0.5s ease 0s;
+  height: 100%;
+  background-color: transparent;
+  float: left;
 
   & > * {
     pointer-events: none;
@@ -188,24 +193,6 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
 
   &:hover {
     outline: none;
-  }
-
-  &.is-active {
-    transform: translate3d(70vw, 0px, 0px);
-
-    @media (min-width: 768px) {
-      transform: translate3d(30vw, 0px, 0px);
-    }
-
-    &:hover {
-      outline: none;
-    }
-
-    .hamburger-inner,
-    .hamburger-inner::before,
-    .hamburger-inner::after {
-      background-color: $hamburger-active-layer-color;
-    }
   }
 }
 

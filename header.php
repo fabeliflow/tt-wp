@@ -50,20 +50,18 @@
         <body>
         <?php endif; ?>
 
-        <button id="tt-menu__btn" class="hamburger hamburger--emphatic" type="button">
-            <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-            </span>
-        </button>
-
-        <div id="navigation" class="tt-menu">
-
-            <a href="<?php echo get_home_url(); ?>">
-                <div class="tt-menu__logo-cont">
-                    <div class="tt-menu__logo" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/tt-new-logo.svg');">
-                    </div>
-                </div>
+        <nav class="tt-menu">
+            <button id="tt-menu__btn" class="hamburger hamburger--emphatic" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+            <a class="tt-menu__logo" href="<?php echo get_home_url(); ?>">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/tt-new-logo.svg" alt="Tatooine Times Logo">
             </a>
+        </nav>
+
+        <div id="navigation" class="tt-menu__slider">
 
             <ul data-simplebar class="tt-menu__items">
 

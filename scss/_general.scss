@@ -10,9 +10,9 @@ $tt-pink: #edccca;
 $tt-rose: #f37257;
 $tt-rose-transp: transparentize($tt-rose, 0.5);
 $tt-sand: #d2b597;
+$tt-sand-transp: transparentize($tt-sand, 0.9);
 $tt-dark-theme-bg: #100e17;
-$tt-dark-theme-bg-transp: transparentize(#100e17, 0.2);
-$tt-dark-theme-border: #201c29;
+$tt-dark-theme-bg-transp: transparentize($tt-dark-theme-bg, 0.2);
 $tt-dark-theme-bg-light: lighten($tt-dark-theme-bg, 5%);
 $tt-dark-theme-text: #a1a1af;
 
@@ -227,6 +227,7 @@ h3 {
 #content {
   width: inherit;
   height: inherit;
+  margin-top: 50px;
 }
 
 // Search bar styles
