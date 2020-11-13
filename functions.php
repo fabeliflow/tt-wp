@@ -131,7 +131,7 @@ function wp_generate_tag_select($selected)
 {
 	$tags = get_tags();
 	$tag_select = '<select class="tt-search-dropdown" name="article_tag">';
-	$tag_select .= '<option value="">Select Tag</option>';
+	$tag_select .= '<option value="">Any Tag</option>';
 	foreach ($tags as $tag) {
 		if ($selected == $tag->slug) {
 			$tag_select .= "<option selected value='{$tag->slug}'>$tag->name</option>";
@@ -142,6 +142,23 @@ function wp_generate_tag_select($selected)
 	$tag_select .= '</select>';
 
 	return $tag_select;
+}
+
+function wp_generate_author_select($selected)
+{
+	$authors = get_users();
+	$author_select = '<select class="tt-search-dropdown" name="article_author">';
+	$author_select .= '<option value="">Any Author</option>';
+	foreach ($authors as $author) {
+		if ($selected == $author->ID) {
+			$author_select .= "<option selected value='{$author->ID}'>$author->display_name</option>";
+		} else {
+			$author_select .= "<option value='{$author->ID}'>$author->display_name</option>";
+		}
+	}
+	$author_select .= '</select>';
+
+	return $author_select;
 }
 
 function generate_kofi_button()

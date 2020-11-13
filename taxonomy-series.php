@@ -14,6 +14,8 @@ $background_position = get_field('taxonomy_series_background_position', $term);
 $logo = get_field('taxonomy_series_logo', $term);
 $name = $term->name;
 $description = $term->description;
+$author = $_GET['article_author'];
+$tag = $_GET['article_tag'];
 ?>
 
 <div class="tt-taxonomy-series">
@@ -35,16 +37,19 @@ $description = $term->description;
                 </div>
                 <p><?php echo $description ?></p>
             </div>
+
+            <div class="col-sm-10 col-sm-offset-1">
+                <form class="tt-search-form" method="get">
+                    <?php echo wp_generate_author_select($author); ?>
+                    <?php echo wp_generate_tag_select($tag); ?>
+                    <div class="tt-search-bar__cont">
+                        <input class="tt-search-bar" type="text" name="custom_search" id="custom_search" value="<?php echo esc_attr($custom_search); ?>" placeholder="&#xf002;" />
+                        <input class="tt-btn tt-btn--fill" type="submit" name="submit" value="search" />
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-
-    <form class="tt-search-form" method="get">
-        <?php echo wp_generate_tag_select($_GET['article_tag']); ?>
-        <div class="tt-search-bar__cont">
-            <input class="tt-search-bar" type="text" name="custom_search" id="custom_search" value="<?php echo esc_attr($custom_search); ?>" placeholder="&#xf002;" />
-            <input class="tt-btn tt-btn--fill" type="submit" name="submit" value="search" />
-        </div>
-    </form>
 
     <section class="tt-cat__cont">
 
@@ -56,8 +61,7 @@ $description = $term->description;
                     $current_page = get_queried_object();
                     $tax = $current_page->taxonomy;
                     $tax_term = $current_page->slug;
-                    $tag = $_GET['article_tag'];
-                    echo do_shortcode('[ajax_load_more id="searchwp" container_type="ul" css_classes="tt-cat__cards" post_type="post" posts_per_page="6" search="' . $custom_search . '" transition_container="false" tag="' . $tag . '" images_loaded="true" taxonomy="' . $tax . '" taxonomy_terms="' . $tax_term . '" taxonomy_operator="IN"]'); ?>
+                    echo do_shortcode('[ajax_load_more id="searchwp" container_type="ul" css_classes="tt-cat__cards" post_type="post" posts_per_page="6" search="' . $custom_search . '" transition_container="false" author="' . $author . '" tag="' . $tag . '" images_loaded="true" taxonomy="' . $tax . '" taxonomy_terms="' . $tax_term . '" taxonomy_operator="IN"]'); ?>
 
                 </div>
             </div>
