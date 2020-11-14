@@ -91,7 +91,8 @@
                                     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
                                         <div class="tt-copyright">
                                             <span>© <?php echo date('Y'); ?> Tatooine Times. All rights reserved</span>
-                                            <span>Website artwork by <a class="tt-link--focused" href="https://tegnemaskin.artstation.com/" target="_blank">Ronnie Jensen</a></span>
+                                            <span>Designed and developed by Fabio Fiori</span>
+                                            <span>Artwork by <a class="tt-link--focused" href="https://tegnemaskin.artstation.com/" target="_blank">Ronnie Jensen</a></span>
                                         </div>
                                         <ul class="tt-menu__items">
                                             <?php echo wp_generate_menu('legal-links'); ?>
