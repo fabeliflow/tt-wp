@@ -14,7 +14,7 @@
   top: 0;
   overflow-x: hidden;
   transition: all 0.5s ease 0s;
-  z-index: 9999;
+  z-index: 100;
 }
 
 .nav-open {
@@ -29,7 +29,7 @@
   border-bottom: 1px solid $tt-sand-transp;
   height: 50px;
   width: 100%;
-  z-index: 99999;
+  z-index: 999;
   margin-bottom: 50px;
 }
 
