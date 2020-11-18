@@ -356,15 +356,10 @@ $tt-media-margin: 20px;
   }
 }
 
-iframe,
 .fb-post,
 .twitter-tweet,
 .instagram-media {
   margin: $tt-media-margin auto !important;
-}
-
-iframe {
-  width: 100%;
 }
 
 .fb-post {
@@ -387,6 +382,10 @@ iframe {
     width: 100%;
     text-align: center;
   }
+}
+
+.google-auto-placed {
+  margin: 20px 0;
 }
 
 .tt-video {
