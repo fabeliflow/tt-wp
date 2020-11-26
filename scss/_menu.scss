@@ -25,7 +25,7 @@
   position: fixed;
   top: 0;
   will-change: transform;
-  background-color: $tt-dark-theme-bg;
+  background-color: transparentize($tt-dark-theme-bg, 0.05);
   border-bottom: 1px solid $tt-sand-transp;
   height: 50px;
   width: 100%;
@@ -42,6 +42,10 @@
     height: 100%;
     padding: 5px;
   }
+}
+
+.no-transparency {
+  background-color: $tt-dark-theme-bg;
 }
 
 .tt-menu__slider {
@@ -136,7 +140,6 @@
 }
 
 #tt-menu__btn {
-  border-right: 1px solid $tt-sand-transp;
   transition: all 0.5s ease 0s;
   height: 100%;
   background-color: transparent;

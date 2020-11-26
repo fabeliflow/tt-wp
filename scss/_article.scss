@@ -512,6 +512,11 @@ $tt-media-margin: 20px;
   }
 }
 
+.nc_floater,
+.swp_social_panelSide {
+  background-color: transparentize($tt-dark-theme-bg, 0.05) !important;
+}
+
 .tt-img {
   padding: 0;
 }

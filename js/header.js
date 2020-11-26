@@ -9,12 +9,14 @@ $jq(document).click(function (e) {
 
   if ($jq('#tt-menu__btn').is(e.target) && !$jq('#tt-menu__btn').hasClass('is-active')) {
     $jq('.hamburger').addClass("is-active");
+    $jq('.tt-menu').addClass("no-transparency");
     container.addClass("nav-open");
     $jq('#content').addClass("tt-content--overlay");
     bodyScrollLock.disableBodyScroll(targetElement);
   } else if (!container.is(e.target) && container.has(e.target).length === 0) {
     container.removeClass("nav-open");
     $jq('.hamburger').removeClass("is-active");
+    $jq('.tt-menu').removeClass("no-transparency");
     $jq('#content').removeClass("tt-content--overlay");
     bodyScrollLock.enableBodyScroll(targetElement);
   }
