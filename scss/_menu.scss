@@ -70,7 +70,8 @@
       transition: all 0.2s ease-in;
       outline: none;
       cursor: pointer;
-    
+      letter-spacing: 3px;
+      text-transform: uppercase;
       border-bottom: 1px solid $tt-sand-transp;
     
       &:hover,
