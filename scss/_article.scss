@@ -41,7 +41,13 @@ $tt-media-margin: 20px;
   list-style-type: none;
   text-align: center;
 
-  li:first-child {
+  li img {
+    border-radius: 50%;
+    border: 3px solid $tt-sand;
+    width: 100px;
+  }
+
+  li:not(last-child) {
     margin-bottom: 10px;
     position: relative;
   }

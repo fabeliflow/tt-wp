@@ -73,6 +73,9 @@ Template Name: Post
                             </div>
 
                             <ul class="tt-article__info">
+                                <li>
+                                    <?php echo get_wp_user_avatar(get_post_field('post_author', get_the_ID())); ?>
+                                </li>
                                 <li><i>Written by</i>
                                     <strong><?php the_author_meta('display_name', get_post_field('post_author', get_the_ID())); ?></strong>
                                 </li>
