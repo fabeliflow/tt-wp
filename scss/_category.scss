@@ -71,7 +71,7 @@
 }
 
 .tt-cat__card__info {
-  padding: 30px;
+  padding: 25px;
 }
 
 .tt-cat__card__cont {
@@ -124,12 +124,11 @@
       font-family: $article-header-font-family;
       font-weight: 600;
       text-transform: uppercase;
-      font-size: 1.3em;
     }
   
     span:first-child {
       font-family: $aurebesh;
       color: var(--category-color, $tt-sand);
-      font-size: 0.7em;
+      font-size: 0.4em;
     }
 }
