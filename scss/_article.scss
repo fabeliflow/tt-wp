@@ -320,16 +320,15 @@ $tt-media-margin: 20px;
 }
 
 .tt-article__img--gallery__cont {
-  margin: $tt-media-margin 0;
-  align-items: center;
-  justify-content: center;
+  margin-top: $tt-media-margin;
+  margin-bottom: $tt-media-margin;
+  text-align: center;
 
   .gallery__cont {
     position: relative;
   }
 
   .tt-caption {
-    text-align: center;
     display: block;
   }
 }

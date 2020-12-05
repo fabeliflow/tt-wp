@@ -236,48 +236,44 @@ Template Name: Post
 
                             </div>
 
-                            <div class="col-md-10 col-md-offset-1 tt-img">
+                            <div class="col-md-10 col-md-offset-1 tt-img tt-article__img--gallery__cont">
 
-                                <div class="tt-article__img--gallery__cont">
+                                <div class="gallery__cont">
 
-                                    <div class="gallery__cont">
+                                    <div class="tt-article__img--gallery swiper-container">
 
-                                        <div class="tt-article__img--gallery swiper-container">
+                                        <div class="swiper-wrapper tt-lg-gallery">
 
-                                            <div class="swiper-wrapper tt-lg-gallery">
+                                            <?php foreach ($images as $image) : ?>
+                                                <div class="swiper-slide tt-lightgallery--item" data-src="<?php echo $image['url']; ?>">
 
-                                                <?php foreach ($images as $image) : ?>
-                                                    <div class="swiper-slide tt-lightgallery--item" data-src="<?php echo $image['url']; ?>">
+                                                    <img class="swiper-lazy" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
 
-                                                        <img class="swiper-lazy" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-
-                                                    </div>
-                                                <?php endforeach; ?>
-                                            </div>
-
-                                        </div>
-
-                                        <div>
-
-                                            <div class="tt-arrow tt-arrow--left">
-                                                <div></div>
-                                            </div>
-
-                                            <div class="tt-arrow tt-arrow--right">
-                                                <div></div>
-                                            </div>
-
+                                                </div>
+                                            <?php endforeach; ?>
                                         </div>
 
                                     </div>
 
-                                    <?php if ($image['caption']) : ?>
+                                    <div>
 
-                                        <span class="tt-caption"><?php the_sub_field('gallery_caption'); ?></span>
+                                        <div class="tt-arrow tt-arrow--left">
+                                            <div></div>
+                                        </div>
 
-                                    <?php endif; ?>
+                                        <div class="tt-arrow tt-arrow--right">
+                                            <div></div>
+                                        </div>
+
+                                    </div>
 
                                 </div>
+
+                                <?php if ($image['caption']) : ?>
+
+                                    <span class="tt-caption"><?php the_sub_field('gallery_caption'); ?></span>
+
+                                <?php endif; ?>
 
                             </div>
 
