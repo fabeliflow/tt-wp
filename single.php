@@ -93,7 +93,17 @@ Template Name: Post
 
                             <?php while (have_rows('article_content')) : the_row(); ?>
 
-                                <?php if (get_row_layout() == 'spoiler') : ?>
+                                <?php if (get_row_layout() == 'ads') : ?>
+
+                                    <div class="tt-ads">
+                                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                        <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1381417169"></ins>
+                                        <script>
+                                            (adsbygoogle = window.adsbygoogle || []).push({});
+                                        </script>
+                                    </div>
+
+                                <?php elseif (get_row_layout() == 'spoiler') : ?>
 
                                     <div class="tt-article__spoiler">
 
@@ -308,6 +318,14 @@ Template Name: Post
 
                     </div>
 
+                    <div class="tt-ads">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1381417169"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+
                     <div class="fb-content">
 
                         <div class="fb-legal">
@@ -367,6 +385,14 @@ Template Name: Post
             </div>
         </div>
     </article>
+
+    <div class="tt-ads">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1381417169"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
 
     <?php
     $post_tags = get_the_tags(get_the_ID());
@@ -479,6 +505,14 @@ Template Name: Post
 
     <?php if ($related_posts) : ?>
 
+        <div class="tt-ads">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1381417169"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
         <section class="tt-cat__cont">
 
             <div class="container-fluid">
@@ -581,6 +615,14 @@ Template Name: Post
             </div>
 
         </div>
+    </div>
+
+    <div class="tt-ads">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1381417169"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
 
     <?php get_footer(); ?>
