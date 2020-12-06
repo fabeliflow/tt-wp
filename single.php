@@ -97,7 +97,8 @@ Template Name: Post
 
                                     <div class="tt-ads">
                                         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                                        <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1381417169"></ins>
+                                        <!-- Responsive Display Ads -->
+                                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
                                         <script>
                                             (adsbygoogle = window.adsbygoogle || []).push({});
                                         </script>
@@ -320,7 +321,8 @@ Template Name: Post
 
                     <div class="tt-ads">
                         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                        <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1381417169"></ins>
+                        <!-- Responsive Display Ads -->
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
                         <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
@@ -388,7 +390,8 @@ Template Name: Post
 
     <div class="tt-ads">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1381417169"></ins>
+        <!-- Responsive Display Ads -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
@@ -507,7 +510,8 @@ Template Name: Post
 
         <div class="tt-ads">
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1381417169"></ins>
+            <!-- Responsive Display Ads -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
@@ -619,7 +623,8 @@ Template Name: Post
 
     <div class="tt-ads">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1381417169"></ins>
+        <!-- Responsive Display Ads -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
