@@ -3,7 +3,6 @@ $tt-media-margin: 20px;
 .tt-article {
   padding: 0 !important;
   .tt-member-card {
-    margin: 0 auto !important;
     @media (min-width: 1200px) {
       width: 70%;
     }
@@ -31,7 +30,7 @@ $tt-media-margin: 20px;
 }
 
 .tt-article__info__social {
-  margin: 50px 0;
+  margin: 30px 0;
 }
 
 .tt-article__info {
@@ -419,8 +418,7 @@ $tt-media-margin: 20px;
   width: 300px;
   overflow: hidden;
   width: 100%;
-  margin: 0 !important;
-  padding: 0.6rem 0 !important;
+  margin: 30px auto !important;
   display: flex;
 
   .tt-social__icon {
@@ -459,7 +457,7 @@ $tt-media-margin: 20px;
   border: solid 3px $tt-sand;
   width: 100%;
   height: 100%;
-  margin-top: 120px;
+  margin-top: 93px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
   .tt-member-card__img {
@@ -535,13 +533,14 @@ $tt-media-margin: 20px;
 }
 
 .tt-article__more-articles-cta {
-  margin-top: 30px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  .tt-btn {
-    margin-top: 20px;
+  .tt-btn:not(last-child) {
+    margin-top: 0;
+    margin-bottom: 20px;
   }
 }
 

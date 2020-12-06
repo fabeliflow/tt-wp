@@ -264,16 +264,16 @@ Template Name: Post
                                             <?php endforeach; ?>
                                         </div>
 
-                                    </div>
+                                        <div>
 
-                                    <div>
+                                            <div class="tt-arrow tt-arrow--left">
+                                                <div></div>
+                                            </div>
 
-                                        <div class="tt-arrow tt-arrow--left">
-                                            <div></div>
-                                        </div>
+                                            <div class="tt-arrow tt-arrow--right">
+                                                <div></div>
+                                            </div>
 
-                                        <div class="tt-arrow tt-arrow--right">
-                                            <div></div>
                                         </div>
 
                                     </div>
@@ -388,13 +388,19 @@ Template Name: Post
         </div>
     </article>
 
-    <div class="tt-ads">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Responsive Display Ads -->
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="tt-ads">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Responsive Display Ads -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </div>
     </div>
 
     <?php
@@ -508,13 +514,19 @@ Template Name: Post
 
     <?php if ($related_posts) : ?>
 
-        <div class="tt-ads">
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- Responsive Display Ads -->
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="tt-ads">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- Responsive Display Ads -->
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <section class="tt-cat__cont">
@@ -621,13 +633,19 @@ Template Name: Post
         </div>
     </div>
 
-    <div class="tt-ads">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Responsive Display Ads -->
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="tt-ads">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Responsive Display Ads -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </div>
     </div>
 
     <?php get_footer(); ?>
