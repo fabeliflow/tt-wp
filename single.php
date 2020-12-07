@@ -115,7 +115,7 @@ Template Name: Post
 
                                 <?php elseif (get_row_layout() == 'cta') : ?>
 
-                                    <div class="col-sm-6 col-sm-offset-3 tt-article__cta">
+                                    <div class="tt-article__cta">
 
                                         <a href="<?php the_sub_field('cta_link'); ?>" class="tt-btn tt-btn--fill" target="_blank"><?php the_sub_field('cta_text'); ?></a>
 
