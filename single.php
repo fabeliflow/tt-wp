@@ -9,16 +9,7 @@ Template Name: Post
 <div id="tt-lightgallery" class="tt-article">
 
     <div id="fb-root"></div>
-    <script>
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=222979458397550';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0&appId=222979458397550&autoLogAppEvents=1" nonce="ifUAz0CO"></script>
 
     <?php if (have_rows('article_masthead')) : ?>
 
