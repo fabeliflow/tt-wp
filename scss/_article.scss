@@ -211,11 +211,11 @@ $tt-media-margin: 20px;
     display: block;
     height: 12px;
     width: 100%;
-    background: $tt-text-dark;
+    background: $tt-red-warning;
     background: repeating-linear-gradient(
       -45deg,
-      $tt-text-dark,
-      $tt-text-dark 12px,
+      $tt-red-warning,
+      $tt-red-warning 12px,
       transparent 10px,
       transparent 23px
     );

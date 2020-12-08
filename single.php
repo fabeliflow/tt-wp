@@ -238,7 +238,7 @@ Template Name: Post
 
                             </div>
 
-                            <div class="col-md-10 col-md-offset-1 tt-img tt-article__img--gallery__cont">
+                            <div class="col-lg-10 col-lg-offset-1 tt-img tt-article__img--gallery__cont">
 
                                 <div class="gallery__cont">
 
