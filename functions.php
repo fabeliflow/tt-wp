@@ -26,7 +26,7 @@ function wpb_adding_styles_scripts()
 
 	wp_register_style('font-awesome', 'https://use.fontawesome.com/releases/v5.0.13/css/all.css');
 
-	wp_register_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+	wp_register_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css');
 
 	wp_register_style('simplebar', 'https://cdn.jsdelivr.net/npm/simplebar@3.1.5/dist/simplebar.min.css');
 
@@ -34,11 +34,13 @@ function wpb_adding_styles_scripts()
 	wp_enqueue_style('main');
 
 	// general scripts
+	wp_register_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js', null, null, true);
+
 	wp_register_script('body-scroll-lock',  get_template_directory_uri() . '/vendor/body-scroll-lock/lib/bodyScrollLock.min.js', null, null, true);
 
 	wp_register_script('simplebar', 'https://cdn.jsdelivr.net/npm/simplebar@3.1.5/dist/simplebar.min.js', null, null, true);
 
-	wp_register_script('header', get_template_directory_uri() . '/js/minified/header.min.js', array('jquery', 'body-scroll-lock', 'simplebar'), null, true);
+	wp_register_script('header', get_template_directory_uri() . '/js/minified/header.min.js', array('jquery', 'bootstrap', 'body-scroll-lock', 'simplebar'), null, true);
 	wp_enqueue_script('header');
 
 	if (is_front_page() || is_page('series')) {
@@ -79,6 +81,14 @@ function wpb_adding_styles_scripts()
 add_action('wp_enqueue_scripts', 'wpb_adding_styles_scripts');
 
 add_filter('404_template', 'custom_redirect_to_category');
+
+add_filter('alm_display_results', function () {
+	return '{total_posts} Article(s) found';
+});
+
+add_filter('alm_no_results_text', function () {
+	return 'These are not the articles you are looking for';
+});
 
 function custom_redirect_to_category($template)
 {
@@ -130,7 +140,7 @@ function wp_generate_menu($menu_name)
 function wp_generate_tag_select($selected)
 {
 	$tags = get_tags();
-	$tag_select = '<select class="tt-search-dropdown" name="article_tag">';
+	$tag_select = '<select class="form-select" name="article_tag">';
 	$tag_select .= '<option value="">Any Tag</option>';
 	foreach ($tags as $tag) {
 		if ($selected == $tag->slug) {
@@ -147,7 +157,7 @@ function wp_generate_tag_select($selected)
 function wp_generate_author_select($selected)
 {
 	$authors = get_users();
-	$author_select = '<select class="tt-search-dropdown" name="article_author">';
+	$author_select = '<select class="form-select" name="article_author">';
 	$author_select .= '<option value="">Any Author</option>';
 	foreach ($authors as $author) {
 		if ($selected == $author->ID) {

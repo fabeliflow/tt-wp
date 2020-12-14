@@ -6,8 +6,8 @@
 
                     <div class="tt-footer__cont">
                         <div class="container">
-                            <div class="row">
-                                <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
+                            <div class="row justify-content-center">
+                                <div class="col-auto">
 
                                     <a href="<?php echo get_home_url(); ?>">
                                         <div class="tt-footer__logo"></div>
@@ -43,8 +43,8 @@
                     <footer>
 
                         <div class="container tt-footer__home">
-                            <div class="row">
-                                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
+                            <div class="row justify-content-center">
+                                <div class="col-auto">
                                     <div class="tt-header--center__wrapper">
                                         <div class="tt-header tt-header--center">
                                             <span>Stay Connected</span>
@@ -87,8 +87,8 @@
 
                         <div class="tt-footer__legal-links">
                             <div class="container">
-                                <div class="row">
-                                    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
+                                <div class="row justify-content-center">
+                                    <div class="col-auto">
                                         <div class="tt-copyright">
                                             <span>© <?php echo date('Y'); ?> Tatooine Times. All rights reserved</span>
                                             <span>Designed and developed by Fabio Fiori</span>

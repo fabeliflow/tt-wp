@@ -15,8 +15,8 @@ Template Name: Legal
     <?php while (have_posts()) : the_post(); ?>
         <section class="tt-legal__cont">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-6 col-sm-offset-3">
+                <div class="row justify-content-center">
+                    <div class="col-6">
                         <?php the_content(); ?>
                     </div>
                 </div>

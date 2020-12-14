@@ -35,11 +35,12 @@ Template Name: Post
     <?php endif; ?>
 
     <article>
-        <div class="container-fluid">
-            <div class="row">
-                <section class="tt-article__cont">
+        <section class="tt-article__cont">
+            <div class="container-fluid">
+                <div class="row row-col justify-content-center">
 
-                    <div class="col-sm-8 col-sm-offset-2">
+
+                    <div class="col-lg-8">
 
                         <?php
                         $article_category = get_the_category()[0];
@@ -76,7 +77,7 @@ Template Name: Post
 
                     </div>
 
-                    <div class="col-sm-6 col-sm-offset-3">
+                    <div class="col col-lg-6">
 
                         <?php if (have_rows('article_content')) : ?>
 
@@ -180,7 +181,7 @@ Template Name: Post
 
                     </div>
 
-                    <div class="col-sm-12 tt-img tt-article__img--<?php the_sub_field('image_type'); ?>__cont">
+                    <div class="col-12 tt-img tt-article__img--<?php the_sub_field('image_type'); ?>__cont">
                         <figure class="tt-article__img">
                             <div class="tt-article__img--<?php the_sub_field('image_type'); ?> tt-lightgallery--item" data-src="<?php echo $image['url']; ?>" style="background-image: url('<?php echo $image['url']; ?>')">
                                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
@@ -196,203 +197,206 @@ Template Name: Post
                     </div>
 
                     <?php if (get_row_index() < $rowCount) : ?>
-                        <div class="col-sm-6 col-sm-offset-3">
+                        <div class="col col-lg-6">
                         <?php endif; ?>
 
                     <?php elseif (get_sub_field('image_type') == 'left' || get_sub_field('image_type') == 'right') : ?>
 
                         </div>
 
-                        <div class="col-sm-9 tt-img tt-article__img--<?php the_sub_field('image_type'); ?>__cont">
-                            <figure class="tt-article__img">
-                                <div class="tt-article__img--<?php the_sub_field('image_type'); ?> tt-lightgallery--item" data-src="<?php echo $image['url']; ?>" style="background-image: url('<?php echo $image['url']; ?>')">
-                                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-                                </div>
+                        <?php if (get_sub_field('image_type') == 'left') : ?>
 
-                                <?php if ($image['caption']) : ?>
+                            <div class="row g-0 justify-content-start">
 
-                                    <figcaption class="tt-caption"><?php echo $image['caption']; ?></figcaption>
+                            <?php elseif (get_sub_field('image_type') == 'right') : ?>
+
+                                <div class="row g-0 justify-content-end">
 
                                 <?php endif; ?>
-                            </figure>
 
-                        </div>
+                                <div class="col col-lg-9 tt-img tt-article__img--<?php the_sub_field('image_type'); ?>__cont">
+                                    <figure class="tt-article__img">
+                                        <div class="tt-article__img--<?php the_sub_field('image_type'); ?> tt-lightgallery--item" data-src="<?php echo $image['url']; ?>" style="background-image: url('<?php echo $image['url']; ?>')">
+                                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                                        </div>
 
-                        <?php if (get_row_index() < $rowCount) : ?>
-                            <div class="col-sm-6 col-sm-offset-3">
+                                        <?php if ($image['caption']) : ?>
+
+                                            <figcaption class="tt-caption"><?php echo $image['caption']; ?></figcaption>
+
+                                        <?php endif; ?>
+                                    </figure>
+
+                                </div>
+                                </div>
+
+                                <?php if (get_row_index() < $rowCount) : ?>
+                                    <div class="col col-lg-6">
+                                    <?php endif; ?>
+
+                                <?php endif; ?>
+
                             <?php endif; ?>
 
-                        <?php endif; ?>
+                        <?php elseif (get_row_layout() == 'gallery') : ?>
 
-                    <?php endif; ?>
-
-                <?php elseif (get_row_layout() == 'gallery') : ?>
-
-                    <?php
+                            <?php
 
                                     $images = get_sub_field('gallery');
                                     $size = 'full';
 
                                     if ($images) :
-                    ?>
-
-                            </div>
-
-                            <div class="col-lg-10 col-lg-offset-1 tt-img tt-article__img--gallery__cont">
-
-                                <div class="gallery__cont">
-
-                                    <div class="tt-article__img--gallery swiper-container">
-
-                                        <div class="swiper-wrapper tt-lg-gallery">
-
-                                            <?php foreach ($images as $image) : ?>
-                                                <div class="swiper-slide tt-lightgallery--item" data-src="<?php echo $image['url']; ?>">
-
-                                                    <img class="swiper-lazy" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-
-                                                </div>
-                                            <?php endforeach; ?>
-                                        </div>
-
-                                        <div>
-
-                                            <div class="tt-arrow tt-arrow--left">
-                                                <div></div>
-                                            </div>
-
-                                            <div class="tt-arrow tt-arrow--right">
-                                                <div></div>
-                                            </div>
-
-                                        </div>
+                            ?>
 
                                     </div>
 
-                                </div>
+                                    <div class="col col-xl-10 tt-img tt-article__img--gallery__cont">
 
-                                <?php if ($image['caption']) : ?>
+                                        <div class="gallery__cont">
 
-                                    <span class="tt-caption"><?php the_sub_field('gallery_caption'); ?></span>
+                                            <div class="tt-article__img--gallery swiper-container">
+
+                                                <div class="swiper-wrapper tt-lg-gallery">
+
+                                                    <?php foreach ($images as $image) : ?>
+                                                        <div class="swiper-slide tt-lightgallery--item" data-src="<?php echo $image['url']; ?>">
+
+                                                            <img class="swiper-lazy" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+
+                                                        </div>
+                                                    <?php endforeach; ?>
+                                                </div>
+
+                                                <div>
+
+                                                    <div class="tt-arrow tt-arrow--left">
+                                                        <div></div>
+                                                    </div>
+
+                                                    <div class="tt-arrow tt-arrow--right">
+                                                        <div></div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <?php if ($image['caption']) : ?>
+
+                                            <span class="tt-caption"><?php the_sub_field('gallery_caption'); ?></span>
+
+                                        <?php endif; ?>
+
+                                    </div>
+
+                                    <?php if (get_row_index() < $rowCount) : ?>
+                                        <div class="col col-lg-6">
+                                        <?php endif; ?>
+                                    <?php endif; ?>
 
                                 <?php endif; ?>
 
-                            </div>
+                            <?php endwhile; ?>
 
-                            <?php if (get_row_index() < $rowCount) : ?>
-                                <div class="col-sm-6 col-sm-offset-3">
-                                <?php endif; ?>
-                            <?php endif; ?>
+                        <?php else : ?>
 
                         <?php endif; ?>
 
-                    <?php endwhile; ?>
+                                        </div>
 
-                <?php else : ?>
+                            </div>
 
-                <?php endif; ?>
+                </div>
 
-                                </div>
+        </section>
 
-                </section>
+        <section>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col col-lg-6">
 
-                <div class="col-sm-6 col-sm-offset-3">
+                        <div class="tt-article__info__social">
 
-                    <div class="tt-article__info__social">
+                            <?php
 
-                        <?php
+                            if (function_exists('social_warfare')) :
+                                social_warfare();
+                            endif;
 
-                        if (function_exists('social_warfare')) :
-                            social_warfare();
-                        endif;
+                            ?>
 
-                        ?>
-
-                    </div>
-
-                    <div class="tt-ads">
-                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                        <!-- Responsive Display Ads -->
-                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                        <script>
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
-                    </div>
-
-                    <div class="fb-content">
-
-                        <div class="fb-legal">
-                            Use a Facebook account to add a comment, subject to Facebook's
-                            <a href="https://www.facebook.com/legal/terms" target="_blank">Terms of Service</a>
-                            and <a href="https://www.facebook.com/about/privacy" target="_blank">Privacy Policy</a>.
-                            Your Facebook name, profile photo and other personal information you make public on Facebook
-                            (e.g., school, work, current city, age) will appear with your comment.
-                            <a href="https://tatooinetimes.com/legal-terms/terms-and-conditions/#facebook-comments-faq">Learn
-                                More</a>.
                         </div>
 
-                        <div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
-                    </div>
+                        <div class="tt-ads">
+                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                            <!-- Responsive Display Ads -->
+                            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                            <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </div>
 
-                    <div class="tt-member-card">
-                        <div class="tt-member-card__inner">
-                            <div class="tt-member-card__img">
-                                <?php echo get_wp_user_avatar(get_post_field('post_author', get_the_ID())); ?>
+                        <div class="fb-content">
+
+                            <div class="fb-legal">
+                                Use a Facebook account to add a comment, subject to Facebook's
+                                <a href="https://www.facebook.com/legal/terms" target="_blank">Terms of Service</a>
+                                and <a href="https://www.facebook.com/about/privacy" target="_blank">Privacy Policy</a>.
+                                Your Facebook name, profile photo and other personal information you make public on Facebook
+                                (e.g., school, work, current city, age) will appear with your comment.
+                                <a href="https://tatooinetimes.com/legal-terms/terms-and-conditions/#facebook-comments-faq">Learn
+                                    More</a>.
                             </div>
-                            <div class="tt-member-card__info">
-                                <div class="tt-header--center__wrapper">
-                                    <div class="tt-header tt-header--center">
-                                        <span><?php the_author_meta('display_name', get_post_field('post_author', get_the_ID())); ?></span>
-                                        <h2><?php the_author_meta('display_name', get_post_field('post_author', get_the_ID())); ?>
-                                        </h2>
+
+                            <div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
+                        </div>
+
+                        <div class="tt-member-card">
+                            <div class="tt-member-card__inner">
+                                <div class="tt-member-card__img">
+                                    <?php echo get_wp_user_avatar(get_post_field('post_author', get_the_ID())); ?>
+                                </div>
+                                <div class="tt-member-card__info">
+                                    <div class="tt-header--center__wrapper">
+                                        <div class="tt-header tt-header--center">
+                                            <span><?php the_author_meta('display_name', get_post_field('post_author', get_the_ID())); ?></span>
+                                            <h2><?php the_author_meta('display_name', get_post_field('post_author', get_the_ID())); ?>
+                                            </h2>
+                                        </div>
                                     </div>
+                                    <div data-simplebar class="tt-member--bio">
+                                        <p><?php the_author_meta('description', get_post_field('post_author', get_the_ID())); ?>
+                                        </p>
+                                    </div>
+
+                                    <?php if (have_rows('social_media', ('user_' . get_post_field('post_author', get_the_ID())))) : ?>
+
+                                        <ul class="tt-social">
+
+                                            <?php while (have_rows('social_media', ('user_' . get_post_field('post_author', get_the_ID())))) : the_row(); ?>
+
+                                                <li>
+                                                    <a class="tt-social__icon" href="<?php the_sub_field('social_media_url'); ?>" target="_blank">
+                                                        <i class="<?php the_sub_field('social_media_class'); ?> fa-fw"></i>
+                                                    </a>
+                                                </li>
+
+                                            <?php endwhile; ?>
+
+                                        </ul>
+
+                                    <?php endif; ?>
                                 </div>
-                                <div data-simplebar class="tt-member--bio">
-                                    <p><?php the_author_meta('description', get_post_field('post_author', get_the_ID())); ?>
-                                    </p>
-                                </div>
-
-                                <?php if (have_rows('social_media', ('user_' . get_post_field('post_author', get_the_ID())))) : ?>
-
-                                    <ul class="tt-social">
-
-                                        <?php while (have_rows('social_media', ('user_' . get_post_field('post_author', get_the_ID())))) : the_row(); ?>
-
-                                            <li>
-                                                <a class="tt-social__icon" href="<?php the_sub_field('social_media_url'); ?>" target="_blank">
-                                                    <i class="<?php the_sub_field('social_media_class'); ?> fa-fw"></i>
-                                                </a>
-                                            </li>
-
-                                        <?php endwhile; ?>
-
-                                    </ul>
-
-                                <?php endif; ?>
                             </div>
                         </div>
+
                     </div>
-
                 </div>
-
             </div>
-        </div>
+        </section>
     </article>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="tt-ads">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Responsive Display Ads -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <?php
     $post_tags = get_the_tags(get_the_ID());
@@ -427,8 +431,20 @@ Template Name: Post
         <section class="tt-cat__cont">
 
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-10 col-lg-offset-1">
+                <div class="row row-col justify-content-center">
+
+                    <div class="col-12">
+                        <div class="tt-ads">
+                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                            <!-- Responsive Display Ads -->
+                            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                            <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
 
                         <div class="tt-header--center__wrapper">
                             <div class="tt-header tt-header--center">
@@ -505,26 +521,23 @@ Template Name: Post
 
     <?php if ($related_posts) : ?>
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="tt-ads">
-                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                        <!-- Responsive Display Ads -->
-                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                        <script>
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <section class="tt-cat__cont">
 
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-10 col-lg-offset-1">
+                <div class="row row-col justify-content-center">
+
+                    <div class="col-12">
+                        <div class="tt-ads">
+                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                            <!-- Responsive Display Ads -->
+                            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                            <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
 
                         <div class="tt-header--center__wrapper">
                             <div class="tt-header tt-header--center">
@@ -600,9 +613,9 @@ Template Name: Post
     <?php endif; ?>
 
     <div class="container-fluid">
-        <div class="row">
+        <div class="row justify-content-center">
 
-            <div class="col-sm-6 col-sm-offset-3 tt-article__more-articles-cta">
+            <div class="col-auto tt-article__more-articles-cta">
 
                 <?php
 
@@ -625,8 +638,8 @@ Template Name: Post
     </div>
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
+        <div class="row justify-content-center">
+            <div class="col-12">
                 <div class="tt-ads">
                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- Responsive Display Ads -->

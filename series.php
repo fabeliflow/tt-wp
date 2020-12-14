@@ -7,10 +7,10 @@ get_header(); ?>
 
 <div class="tt-series">
 
-    <section class="tt-series__section tt-series__descr" style="background-image: url('<?php the_field('series_background'); ?>'); background-position: <?php the_field('series_background_position'); ?>">
+    <section class="tt-series__section tt-series__descr tt-masthead--overlay" style="background-image: url('<?php the_field('series_background'); ?>'); background-position: <?php the_field('series_background_position'); ?>">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-sm-offset-2">
+            <div class="row justify-content-center">
+                <div class="col col-lg-6">
                     <div class="tt-header--center__wrapper">
                         <div class="tt-header tt-header--center">
                             <span><?php the_title(); ?></span>
@@ -26,8 +26,8 @@ get_header(); ?>
     <section class="tt-series__section">
 
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 tt-series__logos">
+            <div class="row justify-content-center">
+                <div class="col-12 tt-series__logos">
 
                     <?php
 

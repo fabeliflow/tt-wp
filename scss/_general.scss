@@ -44,6 +44,8 @@ $article-header-font-family: "all-round-gothic", sans-serif;
 $body-font-family: "lato", sans-serif;
 $aurebesh: "newAurabesh";
 
+$border-baseline: 2px;
+
 // General styles
 html,
 body {
@@ -104,7 +106,7 @@ h3 {
   margin-top: 20px;
   padding: 10px 25px;
   color: white;
-  border: 3px solid white;
+  border: $border-baseline solid white;
   border-radius: 0 2rem;
   box-shadow: 0 0 0 0 transparent;
   position: relative;
@@ -209,7 +211,7 @@ h3 {
       content: "";
       width: 20%;
       margin-bottom: -25px;
-      border-bottom: solid 3px $tt-sand;
+      border-bottom: solid $border-baseline $tt-sand;
       position: absolute;
       left: 40%;
       bottom: 0;
@@ -223,6 +225,10 @@ h3 {
       content: none;
     }
   }
+}
+
+a {
+  text-decoration: none !important;
 }
 
 #content {
@@ -239,61 +245,50 @@ h3 {
   margin-top: 30px;
   text-align: center;
 
-  .tt-search-dropdown {
-    margin: 5px;
-    padding: 10px 25px;
-    background-color: $tt-dark-theme-bg;
-    border: 3px solid $tt-sand;
+  .input-group-text {
+    background-color: $tt-rose-transp;
     color: white;
-    outline: none;
-    cursor: pointer;
-    font-size: .7em;
-    text-transform: uppercase;
-    letter-spacing: 3px;
+    border-color: $tt-rose-transp;
+    font-family: $aurebesh;
+  }
 
-    &:hover,
+  .form-select,
+  .form-control {
+    border-color: $tt-sand;
+  }
+
+  .input-group-text,
+  .form-select,
+  .form-control,
+  .btn {
+    border-radius: 0;
+  }
+
+  .form-select,
+  .form-control {
     &:focus {
-      box-shadow: 0 0 5px 0 $tt-sand;
+      border-color: $tt-rose-transp;
+      box-shadow: 0 0 0 0.25rem $tt-rose-transp;
     }
   }
 
-  .tt-search-bar__cont {
-    margin: 5px;
-    display: flex;
-    justify-content: center;
-    flex: 2;
-
-    .tt-search-bar {
-      padding: 7px 17px;
-      border-radius: 0;
-      background-color: $tt-dark-theme-bg !important;
-      border: solid 3px $tt-sand;
-      outline: none;
-      transition: all 0.2s ease-in-out;
-      color: white !important;
-      text-transform: uppercase;
-      font-size: .7em;
-      letter-spacing: 3px;
-      padding: 10px 25px;
-      flex: 2;
-  
-      &::placeholder {
-        font-family: "Font Awesome 5 Free", sans-serif;
-        font-weight: 700;
-        letter-spacing: 3px;
-        color: white;
-      }
-  
-      &:hover,
-      &:focus {
-        box-shadow: 0 0 5px 0 $tt-sand;
-      }
+  .form-control {
+    &::placeholder {
+      color: $tt-dark-theme-text;
+      font-family: $aurebesh;
     }
+  }
 
-    .tt-btn {
-      min-width: 0;
-      margin-top: 0;
-      border-radius: 0;
+  .btn {
+    background-color: $tt-rose;
+    border-color: $tt-rose;
+    color: white;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 5px 0 $tt-rose-transp;
+      text-decoration: none;
+      transition: all 0.2s ease-out;
     }
   }
 }
@@ -320,8 +315,8 @@ h3 {
       content: "";
       width: inherit;
       height: inherit;
-      border-bottom: 3px solid $tt-rose-transp;
-      border-right: 3px solid $tt-rose-transp;
+      border-bottom: $border-baseline solid $tt-rose-transp;
+      border-right: $border-baseline solid $tt-rose-transp;
       position: absolute;
       top: 0;
       left: 0;
@@ -514,16 +509,24 @@ h3 {
   }
 }
 
-.tt-masthead--overlay:before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: transparentize($tt-black-transp, 0.3);
+.tt-masthead--overlay {
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparentize($tt-black-transp, 0.3);
+    z-index: 1;
+  }
+
+  & * {
+    z-index: 99;
+  }
 }
 
 // Social Module Styles
@@ -592,4 +595,13 @@ h3 {
       transition: all 0.2s ease-out !important;
     }
   }
+}
+
+.alm-results-text {
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+  color: $tt-text-dark;
 }

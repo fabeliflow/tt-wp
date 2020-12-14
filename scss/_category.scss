@@ -32,7 +32,7 @@
 }
 
 .tt-cat__card {
-  border: 3px solid var(--category-color, $tt-sand);
+  border: $border-baseline solid var(--category-color, $tt-sand);
   width: 100%;
   border-radius: 0 2rem;
   display: flex;
@@ -103,7 +103,7 @@
   h3 {
     margin: 0 0 15px 0;
     padding-left: 10px;
-    border-left: solid 3px var(--category-color, $tt-sand);
+    border-left: solid $border-baseline var(--category-color, $tt-sand);
   }
 
   p {

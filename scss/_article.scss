@@ -18,7 +18,7 @@ $tt-media-margin: 20px;
 .tt-article__cont,
 .tt-legal__cont {
   h2 {
-    border-left: solid 3px $tt-sand;
+    border-left: solid $border-baseline $tt-sand;
     padding-left: 10px;
   }
 }
@@ -42,7 +42,7 @@ $tt-media-margin: 20px;
 
   li img {
     border-radius: 50%;
-    border: 3px solid $tt-sand;
+    border: $border-baseline solid $tt-sand;
     width: 100px;
   }
 
@@ -120,7 +120,7 @@ $tt-media-margin: 20px;
         line-height: 1.75rem;
         color: $tt-rose;
         width: 3rem;
-        border-right: 3px solid $tt-sand;
+        border-right: $border-baseline solid $tt-sand;
       }
     }
   }
@@ -132,7 +132,7 @@ $tt-media-margin: 20px;
     padding: 60px 30px 0;
     border-radius: 0 2rem;
     border-left: 0;
-    border: 3px solid $tt-sand;
+    border: $border-baseline solid $tt-sand;
     font-size: inherit;
     font-weight: 700;
     font-style: italic;
@@ -155,7 +155,7 @@ $tt-media-margin: 20px;
     width: 100px;
     margin-bottom: -50px;
     border-radius: 50%;
-    border: 3px solid $tt-sand;
+    border: $border-baseline solid $tt-sand;
     box-sizing: border-box;
   }
 
@@ -289,17 +289,10 @@ $tt-media-margin: 20px;
 
 .tt-article__img--full__cont {
   text-align: center;
-
-  @media (min-width: 768px) {
-    padding: 0;
-  }
 }
 
 .tt-article__img--left__cont {
-  @media (min-width: 768px) {
-    padding-left: 0;
-    padding-right: 0;
-
+  @media (min-width: 992px) {
     .tt-caption {
       text-align: right;
     }
@@ -307,11 +300,7 @@ $tt-media-margin: 20px;
 }
 
 .tt-article__img--right__cont {
-  @media (min-width: 768px) {
-    float: right;
-    padding-left: 0;
-    padding-right: 0;
-
+  @media (min-width: 992px) {
     .tt-caption {
       text-align: left;
     }
@@ -454,7 +443,7 @@ $tt-media-margin: 20px;
   background-color: $tt-dark-theme-bg;
   color: white;
   border-radius: 0 2rem;
-  border: solid 3px $tt-sand;
+  border: solid $border-baseline $tt-sand;
   width: 100%;
   height: 100%;
   margin-top: 93px;
@@ -468,7 +457,7 @@ $tt-media-margin: 20px;
       width: 70%;
       border-radius: 50%;
       margin-top: -120px;
-      border: solid 3px $tt-sand;
+      border: solid $border-baseline $tt-sand;
     }
   }
 
@@ -500,7 +489,7 @@ $tt-media-margin: 20px;
 }
 
 .swp_social_panel {
-  border: solid 3px $tt-sand !important;
+  border: solid $border-baseline $tt-sand !important;
   border-radius: 0 2rem !important;
   background-color: $tt-dark-theme-bg !important;
   z-index: 9;

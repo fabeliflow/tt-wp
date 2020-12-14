@@ -92,10 +92,10 @@
         justify-content: space-between;
         padding: 25px;
         color: $tt-dark-theme-text;
-        border-left: solid 3px transparent;
+        border-left: solid $border-baseline transparent;
         &:hover,
         &:focus {
-          border-left: solid 3px var(--category-color, $tt-rose);
+          border-left: solid $border-baseline var(--category-color, $tt-rose);
           text-decoration: none;
         }
       }
@@ -133,7 +133,7 @@
   a {
     &:hover,
     &:focus {
-      border-left: solid 3px var(--category-color, $tt-rose);
+      border-left: solid $border-baseline var(--category-color, $tt-rose);
     }
   }
 }
@@ -146,6 +146,10 @@
 
   & > * {
     pointer-events: none;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 

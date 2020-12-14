@@ -9,8 +9,8 @@ get_header(); ?>
 
     <section class="tt-home__descr tt-masthead--overlay" style="background-image: url('<?php echo the_field('description_background'); ?>'); background-position: <?php echo the_field('description_background_position'); ?>">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
+            <div class="row justify-content-center">
+                <div class="col col-lg-6">
                     <div class="tt-header--center__wrapper">
                         <div class="tt-header tt-header--center">
                             <span>Tatooine Times</span>
@@ -26,8 +26,8 @@ get_header(); ?>
     <section class="tt-home__section tt-home__series">
 
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12">
+            <div class="row justify-content-center">
+                <div class="col-12">
 
                     <div class="tt-header--center__wrapper">
                         <div class="tt-header tt-header--center">
@@ -135,8 +135,8 @@ get_header(); ?>
         ?>
 
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1">
+            <div class="row justify-content-center">
+                <div class="col-12">
 
                     <div class="tt-header--center__wrapper">
                         <div class="tt-header tt-header--center">

@@ -30,8 +30,8 @@ $tag = $_GET['article_tag'];
     </div>
 
     <div class="container">
-        <div class="row">
-            <div class="col-sm-8 col-sm-offset-2 tt-cat__descr">
+        <div class="row justify-content-center">
+            <div class="col col-lg-6 tt-cat__descr">
                 <div class="tt-header--center__wrapper">
                     <div class="tt-header tt-header--center tt-category__header" style="--category-color:<?php echo $color ?>;">
                         <span>The Story</span>
@@ -39,17 +39,25 @@ $tag = $_GET['article_tag'];
                     </div>
                 </div>
                 <p><?php echo $description ?></p>
-            </div>
 
-            <div class="col-sm-10 col-sm-offset-1">
                 <form class="tt-search-form" method="get">
-                    <?php echo wp_generate_author_select($author); ?>
-                    <?php echo wp_generate_tag_select($tag); ?>
-                    <div class="tt-search-bar__cont">
-                        <input class="tt-search-bar" type="text" name="custom_search" id="custom_search" value="<?php echo esc_attr($custom_search); ?>" placeholder="&#xf002;" />
-                        <input class="tt-btn tt-btn--fill" type="submit" name="submit" value="search" />
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupSelect01">Author</label>
+                        <?php echo wp_generate_author_select($author); ?>
                     </div>
+
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupSelect02">Tag</label>
+                        <?php echo wp_generate_tag_select($tag); ?>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="custom_search" id="custom_search" value="<?php echo esc_attr($custom_search); ?>" placeholder="Find Article" aria-label="Find Article">
+                        <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+
                 </form>
+
             </div>
         </div>
     </div>
@@ -57,8 +65,10 @@ $tag = $_GET['article_tag'];
     <section class="tt-cat__cont">
 
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1">
+            <div class="row justify-content-center">
+                <div class="col-12">
+
+                    <div class="alm-results-text"></div>
 
                     <?php
                     $current_page = get_queried_object();
