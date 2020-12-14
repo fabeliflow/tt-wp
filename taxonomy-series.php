@@ -61,7 +61,7 @@ $tag = $_GET['article_tag'];
 
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-12">
+                <div class="col col-xl-10">
 
                     <div class="alm-results-text"></div>
 

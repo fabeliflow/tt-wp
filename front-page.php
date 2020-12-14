@@ -27,7 +27,7 @@ get_header(); ?>
 
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-12">
+                <div class="col col-xl-10">
 
                     <div class="tt-header--center__wrapper">
                         <div class="tt-header tt-header--center">
@@ -136,7 +136,7 @@ get_header(); ?>
 
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-12">
+                <div class="col col-xl-10">
 
                     <div class="tt-header--center__wrapper">
                         <div class="tt-header tt-header--center">

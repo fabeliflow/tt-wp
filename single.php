@@ -444,7 +444,7 @@ Template Name: Post
                         </div>
                     </div>
 
-                    <div class="col-12">
+                    <div class="col col-xl-10">
 
                         <div class="tt-header--center__wrapper">
                             <div class="tt-header tt-header--center">
@@ -537,7 +537,7 @@ Template Name: Post
                         </div>
                     </div>
 
-                    <div class="col-12">
+                    <div class="col col-xl-10">
 
                         <div class="tt-header--center__wrapper">
                             <div class="tt-header tt-header--center">
