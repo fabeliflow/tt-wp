@@ -433,7 +433,8 @@ Template Name: Post
             <div class="container-fluid">
                 <div class="row row-col justify-content-center">
 
-                    <div class="col-12">
+                    <div class="col col-xl-10">
+
                         <div class="tt-ads">
                             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                             <!-- Responsive Display Ads -->
@@ -442,9 +443,6 @@ Template Name: Post
                                 (adsbygoogle = window.adsbygoogle || []).push({});
                             </script>
                         </div>
-                    </div>
-
-                    <div class="col col-xl-10">
 
                         <div class="tt-header--center__wrapper">
                             <div class="tt-header tt-header--center">
@@ -526,7 +524,8 @@ Template Name: Post
             <div class="container-fluid">
                 <div class="row row-col justify-content-center">
 
-                    <div class="col-12">
+                    <div class="col col-xl-10">
+
                         <div class="tt-ads">
                             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                             <!-- Responsive Display Ads -->
@@ -535,9 +534,6 @@ Template Name: Post
                                 (adsbygoogle = window.adsbygoogle || []).push({});
                             </script>
                         </div>
-                    </div>
-
-                    <div class="col col-xl-10">
 
                         <div class="tt-header--center__wrapper">
                             <div class="tt-header tt-header--center">
@@ -639,7 +635,7 @@ Template Name: Post
 
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-12">
+            <div class="col col-xl-10">
                 <div class="tt-ads">
                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- Responsive Display Ads -->
