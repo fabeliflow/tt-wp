@@ -83,11 +83,11 @@ add_action('wp_enqueue_scripts', 'wpb_adding_styles_scripts');
 add_filter('404_template', 'custom_redirect_to_category');
 
 add_filter('alm_display_results', function () {
-	return '{total_posts} Article(s) found';
+	return '{total_posts} article(s) found';
 });
 
 add_filter('alm_no_results_text', function () {
-	return 'These are not the articles you are looking for';
+	return 'These aren\'t the articles you\'re looking for';
 });
 
 function custom_redirect_to_category($template)
