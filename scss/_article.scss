@@ -251,11 +251,6 @@ $tt-media-margin: 20px;
   }
 }
 
-.tt-article__img--regular {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-
 .tt-article__img--full,
 .tt-article__img--left,
 .tt-article__img--right {
@@ -363,6 +358,10 @@ $tt-media-margin: 20px;
   iframe {
     max-width: 100% !important;
   }
+}
+
+.tt-article__spoiler__cont {
+  padding: 0;
 }
 
 .tt-video__cont {

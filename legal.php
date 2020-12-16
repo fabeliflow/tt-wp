@@ -16,7 +16,7 @@ Template Name: Legal
         <section class="tt-legal__cont">
             <div class="container-fluid">
                 <div class="row justify-content-center">
-                    <div class="col-6">
+                    <div class="col col-lg-6">
                         <?php the_content(); ?>
                     </div>
                 </div>
