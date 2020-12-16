@@ -421,20 +421,21 @@ Template Name: Post
         $post_tag_ids = array();
         foreach ($post_tags as $individual_tag) $post_tag_ids[] = $individual_tag->term_id;
     }
-    $related_posts = get_posts(array(
-        'tag__in' => $post_tag_ids,
+
+    $author_posts = get_posts(array(
+        'author' => get_post_field('post_author', get_the_ID()),
         'showposts' => 3,
         'post_status' => 'publish',
         'post__not_in' => array(get_the_ID()),
         'fields' => 'ids'
     ));
 
-    $exclude_posts = $related_posts;
+    $exclude_posts = $author_posts;
 
     array_push($exclude_posts, get_the_ID());
 
-    $author_posts = get_posts(array(
-        'author' => get_post_field('post_author', get_the_ID()),
+    $related_posts = get_posts(array(
+        'tag__in' => $post_tag_ids,
         'showposts' => 3,
         'post_status' => 'publish',
         'post__not_in' => $exclude_posts,
