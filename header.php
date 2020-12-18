@@ -79,7 +79,11 @@
                     $name = $category->cat_name;
                 ?>
 
-                    <li style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-menu__item tt-menu__item-cat"><a href="<?php echo $url ?>"><span><?php echo $name ?></span></a>
+                    <li style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-menu__item tt-menu__item-cat">
+                        <a href="<?php echo $url ?>">
+                            <span><?php echo $name ?></span>
+                            <span><?php echo $name ?></span>
+                        </a>
                     </li>
 
                 <?php endforeach; ?>

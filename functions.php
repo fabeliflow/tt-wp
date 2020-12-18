@@ -128,10 +128,18 @@ function wp_generate_menu($menu_name)
 
 		$menu_items = wp_get_nav_menu_items($menu->term_id);
 
-		foreach ((array) $menu_items as $key => $menu_item) {
-			$title = $menu_item->title;
-			$url = $menu_item->url;
-			$menu_list .= '<li class="tt-menu__item"><a href="' . $url . '">' . $title . '</a></li>';
+		if ($menu_name === 'primary') {
+			foreach ((array) $menu_items as $key => $menu_item) {
+				$title = $menu_item->title;
+				$url = $menu_item->url;
+				$menu_list .= '<li class="tt-menu__item"><a href="' . $url . '"><span>' . $title . '</span><span>' . $title . '</span></a></li>';
+			}
+		} else {
+			foreach ((array) $menu_items as $key => $menu_item) {
+				$title = $menu_item->title;
+				$url = $menu_item->url;
+				$menu_list .= '<li class="tt-menu__item"><a href="' . $url . '"><span>' . $title . '</span></a></li>';
+			}
 		}
 	}
 	return $menu_list;
