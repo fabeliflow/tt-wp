@@ -70,6 +70,8 @@ get_header(); ?>
 
                     </div>
 
+                    <a class="tt-btn tt-btn--fill" href="<?php the_field('series_button_url'); ?>"><?php the_field('series_button_text'); ?></a>
+
                 </div>
             </div>
         </div>
