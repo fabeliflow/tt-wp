@@ -21,7 +21,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f37257">
     <meta name="msapplication-TileColor" content="#f37257">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-    <meta name="theme-color" content="#000000">
+    <meta name="theme-color" content="#ffffff">
 
     <?php wp_head(); ?>
 
