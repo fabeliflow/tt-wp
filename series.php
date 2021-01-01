@@ -27,7 +27,7 @@ get_header(); ?>
 
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-12 tt-series__logos">
+                <div class="col col-xl-10 tt-series__logos">
 
                     <?php
 
