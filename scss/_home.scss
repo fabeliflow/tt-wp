@@ -1,28 +1,24 @@
-.tt-home__descr {
-  position: relative;
-  padding: 100px 0;
-  text-align: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .tt-home__section {
   margin: 100px 0;
   overflow: hidden;
 }
 
-.tt-home__categories .swiper-container {
-    height: 90vh;
-}
-
-.tt-home__categories .swiper-slide {
-  width: 100% !important;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 .tt-home__categories {
   position: relative;
+
+  .swiper-wrapper {
+    min-height: 80vh;
+  }
+
+  .swiper-slide {
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 0;
+  }
 
   .tt-header {
     h2:after {

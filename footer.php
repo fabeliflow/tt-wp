@@ -10,7 +10,7 @@
                                 <div class="col-auto">
 
                                     <a href="<?php echo get_home_url(); ?>">
-                                        <div class="tt-footer__logo"></div>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/tt-new-logo-alt.svg" alt="Tatooine Times Logo">
                                     </a>
 
                                     <?php if (have_rows('social_media', 'options')) : ?>

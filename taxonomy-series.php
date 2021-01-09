@@ -20,42 +20,50 @@ $tag = $_GET['article_tag'];
 
 <div class="tt-taxonomy-series">
 
-    <div class="tt-masthead tt-masthead--overlay" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
-        <div class="tt-masthead__wrapper">
-            <img class="tt-masthead__logo" src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt']; ?>">
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col col-lg-6 tt-cat__descr">
-                <div class="tt-header--center__wrapper">
-                    <div class="tt-header tt-header--center tt-series__header">
-                        <span>Series</span>
-                        <h1><?php echo $name ?></h1>
-                    </div>
+    <section class="tt-masthead-with-content tt-masthead--overlay" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col col-lg-6">
+                    <img class="tt-masthead__logo" src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt']; ?>">
                 </div>
-                <p><?php echo $description ?></p>
-                <form class="tt-search-form" method="get">
-                    <div class="input-group mb-3">
-                        <label class="input-group-text" for="inputGroupSelect01">Author</label>
-                        <?php echo wp_generate_author_select($author); ?>
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <label class="input-group-text" for="inputGroupSelect02">Tag</label>
-                        <?php echo wp_generate_tag_select($tag); ?>
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="custom_search" id="custom_search" value="<?php echo esc_attr($custom_search); ?>" placeholder="Find Article" aria-label="Find Article">
-                        <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
-                    </div>
-
-                </form>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="tt-section__descr">
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col col-lg-6 tt-cat__descr">
+                    <div class="tt-header--center__wrapper">
+                        <div class="tt-header tt-header--center tt-series__header">
+                            <span>Series</span>
+                            <h1><?php echo $name ?></h1>
+                        </div>
+                    </div>
+                    <p><?php echo $description ?></p>
+                    <form class="tt-search-form" method="get">
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="inputGroupSelect01">Author</label>
+                            <?php echo wp_generate_author_select($author); ?>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="inputGroupSelect02">Tag</label>
+                            <?php echo wp_generate_tag_select($tag); ?>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" name="custom_search" id="custom_search" value="<?php echo esc_attr($custom_search); ?>" placeholder="Find Article" aria-label="Find Article">
+                            <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
 
     <section class="tt-cat__cont">
 

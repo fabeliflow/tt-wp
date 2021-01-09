@@ -24,6 +24,8 @@ $jq(document).ready(function () {
     },
   });
 
+  $jq(".swiper-slide").outerHeight($jq(".swiper-wrapper").outerHeight());
+
   $jq(".swiper-container").hover(function () {
     (this).swiper.autoplay.stop();
   }, function () {

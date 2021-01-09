@@ -7,7 +7,7 @@ get_header(); ?>
 
 <div class="tt-home">
 
-    <section class="tt-home__descr tt-masthead--overlay" style="background-image: url('<?php echo the_field('description_background'); ?>'); background-position: <?php echo the_field('description_background_position'); ?>">
+    <section class="tt-masthead-with-content tt-masthead--overlay" style="background-image: url('<?php echo the_field('description_background'); ?>'); background-position: <?php echo the_field('description_background_position'); ?>">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col col-lg-6">
@@ -132,13 +132,17 @@ get_header(); ?>
 
                     <div class="swiper-slide tt-masthead--overlay" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
 
-                        <div class="tt-masthead__wrapper">
-                            <div style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-header tt-header--center">
-                                <span><?php echo $name ?></span>
-                                <h2 class="tt-header--no-border"><?php echo $name ?></h2>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col col-lg-6">
+                                    <div style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-header tt-header--center">
+                                        <span><?php echo $name ?></span>
+                                        <h2 class="tt-header--no-border"><?php echo $name ?></h2>
+                                    </div>
+                                    <p><?php echo $description ?></p>
+                                    <a style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-btn tt-btn--cat" href="<?php echo $link ?>"><?php echo $link_label ?></a>
+                                </div>
                             </div>
-                            <p><?php echo $description ?></p>
-                            <a style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-btn tt-btn--cat" href="<?php echo $link ?>"><?php echo $link_label ?></a>
                         </div>
 
                     </div>

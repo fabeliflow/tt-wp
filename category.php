@@ -20,47 +20,54 @@ $tag = $_GET['article_tag'];
 
 <div class="tt-category">
 
-    <div class="tt-masthead tt-masthead--overlay" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
-        <div class="tt-masthead__wrapper">
-            <div style="--category-color:<?php the_field('category_color', $term); ?>;" class="tt-header tt-header--center">
-                <span><?php echo $name ?></span>
-                <h1 class="tt-header--center__no-border"><?php echo $name ?></h1>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col col-lg-6 tt-cat__descr">
-                <div class="tt-header--center__wrapper">
-                    <div class="tt-header tt-header--center tt-category__header" style="--category-color:<?php echo $color ?>;">
-                        <span>The Story</span>
-                        <h2>The Story</h2>
+    <div class="tt-masthead-with-content tt-masthead--overlay" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col col-lg-6">
+                    <div style="--category-color:<?php the_field('category_color', $term); ?>;" class="tt-header tt-header--center">
+                        <span><?php echo $name ?></span>
+                        <h1 class="tt-header--center__no-border"><?php echo $name ?></h1>
                     </div>
                 </div>
-                <p><?php echo $description ?></p>
-
-                <form class="tt-search-form" method="get">
-                    <div class="input-group mb-3">
-                        <label class="input-group-text" for="inputGroupSelect01">Author</label>
-                        <?php echo wp_generate_author_select($author); ?>
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <label class="input-group-text" for="inputGroupSelect02">Tag</label>
-                        <?php echo wp_generate_tag_select($tag); ?>
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="custom_search" id="custom_search" value="<?php echo esc_attr($custom_search); ?>" placeholder="Find Article" aria-label="Find Article">
-                        <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
-                    </div>
-
-                </form>
-
             </div>
         </div>
     </div>
+
+    <section class="tt-section__descr">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col col-lg-6 tt-cat__descr">
+                    <div class="tt-header--center__wrapper">
+                        <div class="tt-header tt-header--center tt-category__header" style="--category-color:<?php echo $color ?>;">
+                            <span>The Story</span>
+                            <h2>The Story</h2>
+                        </div>
+                    </div>
+                    <p><?php echo $description ?></p>
+
+                    <form class="tt-search-form" method="get">
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="inputGroupSelect01">Author</label>
+                            <?php echo wp_generate_author_select($author); ?>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="inputGroupSelect02">Tag</label>
+                            <?php echo wp_generate_tag_select($tag); ?>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" name="custom_search" id="custom_search" value="<?php echo esc_attr($custom_search); ?>" placeholder="Find Article" aria-label="Find Article">
+                            <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
 
     <section class="tt-cat__cont">
 

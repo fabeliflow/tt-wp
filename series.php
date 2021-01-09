@@ -7,7 +7,7 @@ get_header(); ?>
 
 <div class="tt-series">
 
-    <section class="tt-series__section tt-series__descr tt-masthead--overlay" style="background-image: url('<?php the_field('series_background'); ?>'); background-position: <?php the_field('series_background_position'); ?>">
+    <section class="tt-masthead-with-content tt-masthead--overlay" style="background-image: url('<?php the_field('series_background'); ?>'); background-position: <?php the_field('series_background_position'); ?>">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col col-lg-6">
