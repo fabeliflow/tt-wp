@@ -125,6 +125,7 @@ get_header(); ?>
                     $background = get_field('category_background', $category);
                     $background_position = get_field('category_background_position', $category);
                     $name = $category->name;
+                    $description = $category->description;
                     $link = get_category_link($category);
                     $link_label = get_field('category_link_label', $category);
                 ?>
@@ -136,6 +137,7 @@ get_header(); ?>
                                 <span><?php echo $name ?></span>
                                 <h2 class="tt-header--no-border"><?php echo $name ?></h2>
                             </div>
+                            <p><?php echo $description ?></p>
                             <a style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-btn tt-btn--cat" href="<?php echo $link ?>"><?php echo $link_label ?></a>
                         </div>
 
