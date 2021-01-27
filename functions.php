@@ -28,7 +28,7 @@ function wpb_adding_styles_scripts()
 
 	wp_register_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css');
 
-	wp_register_style('simplebar', 'https://cdn.jsdelivr.net/npm/simplebar@3.1.5/dist/simplebar.min.css');
+	wp_register_style('simplebar', 'https://cdn.jsdelivr.net/npm/simplebar@5.3.0/dist/simplebar.min.css');
 
 	wp_register_style('main', get_template_directory_uri() . '/css/main.css',  array('adobe-typekit', 'font-awesome', 'bootstrap', 'simplebar'));
 	wp_enqueue_style('main');
@@ -38,7 +38,7 @@ function wpb_adding_styles_scripts()
 
 	wp_register_script('body-scroll-lock',  get_template_directory_uri() . '/vendor/body-scroll-lock/lib/bodyScrollLock.min.js', null, null, true);
 
-	wp_register_script('simplebar', 'https://cdn.jsdelivr.net/npm/simplebar@3.1.5/dist/simplebar.min.js', null, null, true);
+	wp_register_script('simplebar', 'https://cdn.jsdelivr.net/npm/simplebar@5.3.0/dist/simplebar.min.js', null, null, true);
 
 	wp_register_script('header', get_template_directory_uri() . '/js/minified/header.min.js', array('jquery', 'bootstrap', 'body-scroll-lock', 'simplebar'), null, true);
 	wp_enqueue_script('header');
