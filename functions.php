@@ -90,6 +90,8 @@ add_filter('alm_no_results_text', function () {
 	return 'These aren\'t the articles you\'re looking for';
 });
 
+add_filter('searchwp_return_orderby_date', '__return_true');
+
 function custom_redirect_to_category($template)
 {
 
