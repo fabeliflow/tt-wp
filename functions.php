@@ -20,7 +20,6 @@ add_filter('alm_query_args_searchwp', 'my_alm_query_args_searchwp');
 // add styles and scripts
 function wpb_adding_styles_scripts()
 {
-
 	// general styles
 	wp_register_style('adobe-typekit', 'https://use.typekit.net/qwx8ago.css');
 
@@ -43,8 +42,7 @@ function wpb_adding_styles_scripts()
 	wp_register_script('header', get_template_directory_uri() . '/js/minified/header.min.js', array('jquery', 'bootstrap', 'body-scroll-lock', 'simplebar'), null, true);
 	wp_enqueue_script('header');
 
-	if (is_front_page() || is_page('series')) {
-
+	if (is_front_page() || is_page('star-wars-series')) {
 		wp_register_script('particles', 'https://cdn.jsdelivr.net/npm/particles.js/particles.min.js', null, null, true);
 
 		wp_register_script('starfield', get_template_directory_uri() . '/js/minified/starfield.min.js', array('jquery', 'particles'), null, true);
@@ -59,7 +57,6 @@ function wpb_adding_styles_scripts()
 	}
 
 	if (is_front_page()) {
-
 		wp_register_script('home', get_template_directory_uri() . '/js/minified/home.min.js', array('jquery', 'particles', 'swiper'), null, true);
 		wp_enqueue_script('home');
 	} elseif (is_single()) {
