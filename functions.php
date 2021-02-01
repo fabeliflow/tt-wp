@@ -42,7 +42,7 @@ function wpb_adding_styles_scripts()
 	wp_register_script('header', get_template_directory_uri() . '/js/minified/header.min.js', array('jquery', 'bootstrap', 'body-scroll-lock', 'simplebar'), null, true);
 	wp_enqueue_script('header');
 
-	if (is_front_page() || is_page('star-wars-series')) {
+	if (is_front_page() || is_page('Series')) {
 		wp_register_script('particles', 'https://cdn.jsdelivr.net/npm/particles.js/particles.min.js', null, null, true);
 
 		wp_register_script('starfield', get_template_directory_uri() . '/js/minified/starfield.min.js', array('jquery', 'particles'), null, true);

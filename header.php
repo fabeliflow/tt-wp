@@ -27,12 +27,12 @@
 
 </head>
 
-<?php if (is_front_page() || is_page('Series')) : ?>
+<?php if (is_front_page()) : ?>
 
     <body class="tt-starfield-bg">
     <?php else : ?>
 
-        <body>
+        <body class="tt-sky-gradient">
         <?php endif; ?>
 
         <nav class="tt-menu">

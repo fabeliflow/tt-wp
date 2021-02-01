@@ -1,4 +1,4 @@
-            <?php if (is_single() || is_tax() || is_category()) : ?>
+            <?php if (is_page('Series') || is_single() || is_tax() || is_category()) : ?>
 
                 <footer>
 
@@ -38,7 +38,7 @@
                         </div>
                     </div>
 
-                <?php elseif (is_front_page() || is_page('Series')) : ?>
+                <?php elseif (is_front_page()) : ?>
 
                     <footer>
 

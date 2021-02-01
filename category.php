@@ -26,8 +26,9 @@ $tag = $_GET['article_tag'];
                 <div class="col col-lg-6">
                     <div style="--category-color:<?php the_field('category_color', $term); ?>;" class="tt-header tt-header--center">
                         <span><?php echo $name ?></span>
-                        <h1 class="tt-header--center__no-border"><?php echo $name ?></h1>
+                        <h1 class="tt-header--center"><?php echo $name ?></h1>
                     </div>
+                    <p><?php echo $description ?></p>
                 </div>
             </div>
         </div>
@@ -37,13 +38,6 @@ $tag = $_GET['article_tag'];
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col col-lg-6 tt-cat__descr">
-                    <div class="tt-header--center__wrapper">
-                        <div class="tt-header tt-header--center tt-category__header" style="--category-color:<?php echo $color ?>;">
-                            <span>The Story</span>
-                            <h2>The Story</h2>
-                        </div>
-                    </div>
-                    <p><?php echo $description ?></p>
 
                     <form class="tt-search-form" method="get">
                         <div class="input-group mb-3">
