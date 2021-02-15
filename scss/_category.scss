@@ -119,20 +119,29 @@
 }
 
 .tt-cat__card__cat-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   margin-top: 15px;
-  text-align: right;
 
     span {
-      letter-spacing: 3px;
-      display: block;
-      font-family: $article-header-font-family;
-      font-weight: 600;
       text-transform: uppercase;
+      font-family: $article-header-font-family;
     }
-  
-    span:first-child {
-      font-family: $aurebesh;
-      color: var(--category-color, $tt-sand);
-      font-size: 0.4em;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      font-weight: 600;
+      text-align: right;
+      span {
+        letter-spacing: 3px;
+      }
+
+      span:first-child {
+        font-family: $aurebesh;
+        color: var(--category-color, $tt-sand);
+        font-size: 0.4em;
+      }
     }
 }

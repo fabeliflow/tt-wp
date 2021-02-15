@@ -289,6 +289,7 @@ a {
 
 // Arrow styles
 .tt-arrow {
+  display: inline-block;
   &:focus {
     outline: none;
   }
@@ -355,6 +356,12 @@ a {
   right: 45px;
   div {
     transform: rotate(-45deg);
+  }
+}
+
+.tt-arrow--down {
+  div {
+    transform: rotate(45deg);
   }
 }
 

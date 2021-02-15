@@ -31,4 +31,13 @@ $jq(document).ready(function () {
   }, function () {
     (this).swiper.autoplay.start();
   });
+
+  $jq("#scroll-to-articles").click(function () {
+    $jq("body,html").animate(
+      {
+        scrollTop: $jq(".tt-home__articles").offset().top
+      },
+      100
+    );
+  });
 });

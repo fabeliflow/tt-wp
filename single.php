@@ -67,10 +67,12 @@ Template Name: Post
                                 <li>
                                     <?php echo get_wp_user_avatar(get_post_field('post_author', get_the_ID())); ?>
                                 </li>
-                                <li><i>Written by</i>
-                                    <strong><?php the_author_meta('display_name', get_post_field('post_author', get_the_ID())); ?></strong>
+                                <li class="tt-article__info--author">
+                                    <?php the_author_meta('display_name', get_post_field('post_author', get_the_ID())); ?>
                                 </li>
-                                <li><i>Published on</i><?php echo get_the_date('F j, Y @ g:ia'); ?></li>
+                                <li>
+                                    <?php echo get_the_date('F j, Y @ g:ia'); ?>
+                                </li>
                             </ul>
                         </header>
 
@@ -513,8 +515,11 @@ Template Name: Post
                                             </div>
 
                                             <div style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card__cat-info">
-                                                <span><?php echo $category_name  ?></span>
-                                                <span><?php echo $category_name  ?></span>
+                                                <span><?php the_time('m/d/Y'); ?></span>
+                                                <div>
+                                                    <span><?php echo $category_name ?></span>
+                                                    <span><?php echo $category_name ?></span>
+                                                </div>
                                             </div>
 
                                         </div>
@@ -604,8 +609,11 @@ Template Name: Post
                                             </div>
 
                                             <div style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card__cat-info">
-                                                <span><?php echo $category_name  ?></span>
-                                                <span><?php echo $category_name  ?></span>
+                                                <span><?php the_time('m/d/Y'); ?></span>
+                                                <div>
+                                                    <span><?php echo $category_name ?></span>
+                                                    <span><?php echo $category_name ?></span>
+                                                </div>
                                             </div>
 
                                         </div>

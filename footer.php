@@ -75,7 +75,7 @@
                             </div>
                         </div>
 
-                        <img class="tt-footer__img" src="<?php echo get_template_directory_uri(); ?>/img/tt-orbit.png" alt="Tatooine Orbit">
+                        <img class="tt-footer__img tt-footer-orbit" src="<?php echo get_template_directory_uri(); ?>/img/tt-orbit.png" alt="Tatooine Orbit">
 
                         <div id="starfieldhome" class="starfield"></div>
 

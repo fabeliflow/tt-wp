@@ -18,6 +18,9 @@ get_header(); ?>
                         </div>
                     </div>
                     <p><?php the_field('description'); ?></p>
+                    <a href="javascript:" id="scroll-to-articles" class="tt-arrow tt-arrow--down">
+                        <div></div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -87,8 +90,11 @@ get_header(); ?>
                                         </div>
 
                                         <div style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card__cat-info">
-                                            <span><?php echo $category_name ?></span>
-                                            <span><?php echo $category_name ?></span>
+                                            <span><?php the_time('m/d/Y'); ?></span>
+                                            <div>
+                                                <span><?php echo $category_name ?></span>
+                                                <span><?php echo $category_name ?></span>
+                                            </div>
                                         </div>
 
                                     </div>

@@ -51,15 +51,9 @@ $tt-media-margin: 20px;
     position: relative;
   }
 
-  i {
-    display: inherit;
-    color: $tt-text-light;
-  }
-
-  strong {
-    font-family: $article-header-font-family;
+  .tt-article__info--author {
     font-weight: 600;
-    font-size: 1.3em;
+    font-size: 1.2em;
     letter-spacing: 3px;
     text-transform: uppercase;
   }
