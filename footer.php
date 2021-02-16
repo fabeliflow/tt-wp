@@ -2,7 +2,7 @@
 
                 <footer>
 
-                    <img class="tt-footer__img" src="<?php echo get_template_directory_uri(); ?>/img/tt-cityscape.png" alt="Tatooine Cityscape">
+                    <img class="tt-footer__img" src="/wp-content/uploads/2021/02/tt-cityscape.png" alt="Tatooine Cityscape - Artwork by Ronnie Jensen">
 
                     <div class="tt-footer__cont">
                         <div class="container">
@@ -75,7 +75,7 @@
                             </div>
                         </div>
 
-                        <img class="tt-footer__img tt-footer-orbit" src="<?php echo get_template_directory_uri(); ?>/img/tt-orbit.png" alt="Tatooine Orbit">
+                        <img class="tt-footer__img tt-footer-orbit" src="/wp-content/uploads/2021/02/tt-orbit.png" alt="Tatooine Orbit - Artwork by Ronnie Jensen">
 
                         <div id="starfieldhome" class="starfield"></div>
 
