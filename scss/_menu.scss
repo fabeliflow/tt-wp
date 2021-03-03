@@ -1,12 +1,12 @@
 #navigation {
   height: 100%;
   width: 70vw;
-  left: -70vw;
+  right: -70vw;
   padding-top: 50px;
 
   @media (min-width: 768px) {
     width: 30vw;
-    left: -30vw;
+    right: -30vw;
   }
 
   position: fixed;
@@ -18,7 +18,7 @@
 }
 
 .nav-open {
-  left: 0 !important;
+  right: 0 !important;
 }
 
 .tt-menu {
@@ -147,7 +147,7 @@
   transition: all 0.5s ease 0s;
   height: 100%;
   background-color: transparent;
-  float: left;
+  float: right;
 
   & > * {
     pointer-events: none;
