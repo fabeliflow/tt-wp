@@ -87,7 +87,24 @@ add_filter('alm_no_results_text', function () {
 	return 'These aren\'t the articles you\'re looking for';
 });
 
-add_filter('searchwp_return_orderby_date', '__return_true');
+add_filter('searchwp\swp_query\mods', function ($mods, $args) {
+	foreach ($args['swp_query']->engine->get_sources() as $source) {
+		$flag = 'post' . SEARCHWP_SEPARATOR;
+		if ('post.' !== substr($source->get_name(), 0, strlen($flag))) {
+			continue;
+		}
+
+		$mod = new \SearchWP\Mod($source);
+
+		$mod->order_by(function ($mod) {
+			return $mod->get_local_table_alias() . '.post_date';
+		}, 'DESC', 1);
+
+		$mods[] = $mod;
+	}
+
+	return $mods;
+}, 999, 2);
 
 function custom_redirect_to_category($template)
 {
