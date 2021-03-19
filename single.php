@@ -146,28 +146,38 @@ Template Name: Post
                             <div class="row justify-content-center">
                                 <div class="col col-lg-6">
 
-                                    <blockquote class="tt-quote tt-quote--<?php the_sub_field('quote_theme'); ?>">
-                                        <div class="tt-quote__info">
-                                            <p>
-                                                <q><?php the_sub_field('quote_text'); ?></q>
-                                            </p>
-                                            <footer>
-                                                <cite><?php the_sub_field('quote_cite'); ?></cite>
-                                            </footer>
-                                        </div>
+                                    <?php
+                                    $image_switch = get_sub_field('quote_image_switch');
 
-                                        <?php
+                                    $image = get_sub_field('quote_image');
+                                    ?>
 
-                                        $image = get_sub_field('quote_image');
+                                    <?php if ($image_switch) : ?>
 
-                                        if (!empty($image)) :
-                                        ?>
+                                        <blockquote class="tt-quote tt-quote--with-img tt-quote--<?php the_sub_field('quote_theme'); ?>">
 
-                                            <img class="tt-quote__img" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                                        <?php else : ?>
 
-                                        <?php endif; ?>
+                                            <blockquote class="tt-quote tt-quote--<?php the_sub_field('quote_theme'); ?>">
 
-                                    </blockquote>
+                                            <?php endif; ?>
+
+                                            <div class="tt-quote__info">
+                                                <p>
+                                                    <q><?php the_sub_field('quote_text'); ?></q>
+                                                </p>
+                                                <footer>
+                                                    <cite><?php the_sub_field('quote_cite'); ?></cite>
+                                                </footer>
+                                            </div>
+
+                                            <?php if ($image_switch) : ?>
+
+                                                <img class="tt-quote__img" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+
+                                            <?php endif; ?>
+
+                                            </blockquote>
 
                                 </div>
                             </div>

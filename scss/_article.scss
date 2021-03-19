@@ -120,10 +120,9 @@ $tt-media-margin: 20px;
   }
 
   .tt-quote {
-    margin-top: $tt-media-margin;
-    margin-bottom: 50px + $tt-media-margin;
+    margin: $tt-media-margin 0;
     text-align: center;
-    padding: 60px 30px 0;
+    padding: 60px 30px;
     border-radius: 0 2rem;
     border-left: 0;
     border: $border-baseline solid $tt-sand;
@@ -136,13 +135,18 @@ $tt-media-margin: 20px;
     }
   }
 
+  .tt-quote--with-img {
+    margin-bottom: 50px + $tt-media-margin;
+    padding-bottom: 0;
+
+    .tt-quote__info {
+      padding-bottom: 20px;
+    }
+  }
+
   .tt-quote--dark {
     background-color: $tt-dark-theme-bg;
     color: white;
-  }
-
-  .tt-quote__info {
-    padding-bottom: 20px;
   }
 
   .tt-quote__img {
