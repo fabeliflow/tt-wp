@@ -20,7 +20,7 @@ $tag = $_GET['article_tag'];
 
 <div class="tt-taxonomy-series">
 
-    <section class="tt-masthead-with-content tt-masthead--overlay" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
+    <section class="tt-masthead-with-content" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col col-lg-6">
