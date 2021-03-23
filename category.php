@@ -24,7 +24,7 @@ $tag = $_GET['article_tag'];
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col col-lg-6">
-                    <div style="--category-color:<?php the_field('category_color', $term); ?>;" class="tt-header tt-header--center">
+                    <div style="--category-color:<?php echo $color ?>;" class="tt-header tt-header--center">
                         <span><?php echo $name ?></span>
                         <h1 class="tt-header--center"><?php echo $name ?></h1>
                     </div>

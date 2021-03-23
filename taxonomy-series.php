@@ -12,6 +12,7 @@ $custom_search = (isset($_GET['custom_search'])) ? $_GET['custom_search'] : '';
 $background = get_field('taxonomy_series_background', $term);
 $background_position = get_field('taxonomy_series_background_position', $term);
 $logo = get_field('taxonomy_series_logo', $term);
+$color = get_field('taxonomy_series_color', $term);
 $name = $term->name;
 $description = $term->description;
 $author = $_GET['article_author'];
@@ -20,7 +21,7 @@ $tag = $_GET['article_tag'];
 
 <div class="tt-taxonomy-series">
 
-    <section class="tt-masthead-with-content" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
+    <section class="tt-masthead-with-content tt-series--overlay" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>; --series-color:<?php echo $color ?>;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col col-lg-6">
