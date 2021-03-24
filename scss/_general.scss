@@ -1,7 +1,6 @@
 // Colors
 $tt-text-dark: #333;
 $tt-text-light: lighten($tt-text-dark, 30%);
-$tt-black-transp: transparentize(black, 0.3);
 $tt-yellow: #f3c81a;
 $tt-red: #f63222;
 $tt-red-warning: #851104;
@@ -536,7 +535,7 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: transparentize($tt-black-transp, 0.3);
+    background-color: transparentize($tt-dark-theme-bg-transp, 0.3);
     z-index: 1;
   }
 

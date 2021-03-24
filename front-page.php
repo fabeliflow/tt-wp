@@ -202,12 +202,11 @@ get_header(); ?>
                             $background = get_field('taxonomy_series_background', $taxonomy);
                             $background_position = get_field('taxonomy_series_background_position', $taxonomy);
                             $logo = get_field('taxonomy_series_logo', $taxonomy);
-                            $color = get_field('taxonomy_series_color', $taxonomy);
                             $link = get_term_link($taxonomy);
                         ?>
 
                             <a class="tt-series__logo" href="<?php echo $link ?>">
-                                <div class="tt-series__logo-bg" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>; --series-color:<?php echo $color ?>;">
+                                <div class="tt-series__logo-bg" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>;">
 
                                 </div>
                                 <img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt']; ?>">
