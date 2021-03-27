@@ -62,7 +62,8 @@ body {
   align-items: center;
 }
 
-p:not(.tt-cat__card__descr) {
+p:not(.tt-cat__card__descr),
+q {
   line-height: 1.75rem;
 }
 

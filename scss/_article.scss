@@ -119,28 +119,60 @@ $tt-media-margin: 20px;
     }
   }
 
-  .tt-quote {
+  .tt-quote__cont {
     margin: $tt-media-margin 0;
+    border-top: $border-baseline solid $tt-sand;
+    border-bottom: $border-baseline solid $tt-sand;
     text-align: center;
-    padding: 60px 30px;
-    border-radius: 0 2rem;
+
+    q {
+      &:before, &:after {
+        content: none;
+      }
+    }
+  }
+
+  .tt-quote {
+    margin: 0;
+    padding: 40px 0;
     border-left: 0;
-    border: $border-baseline solid $tt-sand;
-    font-size: inherit;
-    font-weight: 700;
-    font-style: italic;
+
+    q {
+      display: block;
+      color: $tt-dark-theme-bg;
+    }
+
+    .fa-quote-right,
+    .fa-quote-left {
+      font-size: 3em;
+      color: $tt-rose-transp;
+    }
+
+    .fa-quote-left {
+      margin-bottom: 10px;
+    }
+
+    .fa-quote-right {
+      margin-top: 10px;
+    }
 
     cite {
+      display: block;
+      margin-top: 20px;
       color: $tt-rose;
+      font-family: $article-header-font-family;
+      font-style: inherit;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
     }
   }
 
   .tt-quote--with-img {
-    margin-bottom: 50px + $tt-media-margin;
-    padding-bottom: 0;
+    margin-top: 50px + $tt-media-margin;
 
-    .tt-quote__info {
-      padding-bottom: 20px;
+    .tt-quote {
+      padding-top: 20px;
     }
   }
 
@@ -151,7 +183,7 @@ $tt-media-margin: 20px;
 
   .tt-quote__img {
     width: 100px;
-    margin-bottom: -50px;
+    margin-top: -50px;
     border-radius: 50%;
     border: $border-baseline solid $tt-sand;
     box-sizing: border-box;
@@ -420,9 +452,6 @@ $tt-media-margin: 20px;
 }
 
 .tt-member--bio {
-  min-height: 200px;
-  max-height: 200px;
-
   position: relative;
   overflow-x: hidden;
   flex-grow: 0;
