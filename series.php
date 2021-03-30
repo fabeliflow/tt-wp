@@ -17,7 +17,7 @@ get_header(); ?>
                             <h1><?php the_title(); ?></h1>
                         </div>
                     </div>
-                    <p><?php the_field('series_description'); ?></p>
+                    <?php the_field('series_description'); ?>
                 </div>
             </div>
         </div>

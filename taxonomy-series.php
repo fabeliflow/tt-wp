@@ -34,7 +34,7 @@ $tag = $_GET['article_tag'];
 
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col col-lg-6 tt-cat__descr">
+                <div class="col col-lg-6">
                     <div class="tt-header--center__wrapper">
                         <div class="tt-header tt-header--center tt-series__header">
                             <span>Series</span>

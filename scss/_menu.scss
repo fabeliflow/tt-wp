@@ -75,7 +75,6 @@
       outline: none;
       cursor: pointer;
       letter-spacing: 3px;
-      font-weight: 600;
       text-transform: uppercase;
       border-bottom: 1px solid $tt-sand-transp;
 
@@ -100,7 +99,7 @@
 
         span:first-child {
           font-family: $aurebesh;
-          font-size: .4em;
+          font-size: 0.7em;
           color: var(--category-color, $tt-rose);
         }
       }

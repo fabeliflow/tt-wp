@@ -17,7 +17,7 @@ get_header(); ?>
                             <h1><?php the_field('description_title'); ?></h1>
                         </div>
                     </div>
-                    <p><?php the_field('description'); ?></p>
+                    <?php the_field('description'); ?>
                     <a href="javascript:" id="scroll-to-articles" class="tt-arrow tt-arrow--down">
                         <div></div>
                     </a>
