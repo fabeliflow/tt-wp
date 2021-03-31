@@ -225,7 +225,6 @@ a {
 #content {
   width: inherit;
   height: inherit;
-  margin-top: 50px;
 }
 
 // Search bar styles
@@ -492,12 +491,11 @@ a {
 }
 
 .tt-masthead-with-content {
-  min-height: calc(100vh - 50px);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-  padding: 100px 0;
   text-align: center;
   background-repeat: no-repeat;
   background-size: cover;
