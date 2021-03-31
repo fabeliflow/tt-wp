@@ -27,7 +27,7 @@
   will-change: transform;
   background-color: transparentize($tt-dark-theme-bg, 0.10);
   border-bottom: 1px solid $tt-sand-transp;
-  height: 50px;
+  height: $menu-height;
   width: 100%;
   z-index: 999;
 }

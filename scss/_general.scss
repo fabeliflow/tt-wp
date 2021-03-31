@@ -45,6 +45,8 @@ $aurebesh: "Aurek-Besh Hand";
 
 $border-baseline: 2px;
 
+$menu-height: 50px;
+
 // General styles
 html,
 body {
@@ -225,6 +227,7 @@ a {
 #content {
   width: inherit;
   height: inherit;
+  margin-top: $menu-height;
 }
 
 // Search bar styles
@@ -491,7 +494,6 @@ a {
 }
 
 .tt-masthead-with-content {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
