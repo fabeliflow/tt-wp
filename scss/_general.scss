@@ -492,7 +492,7 @@ a {
 }
 
 .tt-masthead-with-content {
-  min-height: 80vh;
+  min-height: calc(100vh - 50px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -526,7 +526,7 @@ a {
 }
 
 .tt-masthead__logo {
-  width: 100%;
+  width: 80%;
 }
 
 .tt-masthead--overlay {
