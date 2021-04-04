@@ -15,6 +15,7 @@ $tt-dark-theme-bg: #100e17;
 $tt-dark-theme-bg-transp: transparentize($tt-dark-theme-bg, 0.2);
 $tt-dark-theme-bg-light: lighten($tt-dark-theme-bg, 5%);
 $tt-dark-theme-text: #a1a1af;
+$tt-dark-linear-gradient: linear-gradient(165deg, #100e17, #110f18, #13111a, #16141e, #181722, #1c1a28, #201d2d, #232032, #272337, #29253b, #2b263e, #2c273f);
 
 @font-face {
   font-family: 'Aurek-Besh Hand';
@@ -239,9 +240,9 @@ a {
   text-align: center;
 
   .input-group-text {
-    background-color: $tt-rose-transp;
+    background-color: $tt-rose;
     color: white;
-    border-color: $tt-rose-transp;
+    border-color: $tt-rose;
     font-family: $aurebesh;
   }
 
@@ -465,7 +466,6 @@ a {
 .tt-masthead {
   height: 0;
   padding-bottom: 56.25%;
-  margin-bottom: 50px;
   position: relative;
   background-size: cover;
   background-position: center;
@@ -494,6 +494,7 @@ a {
 }
 
 .tt-masthead-with-content {
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -502,6 +503,7 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
+  padding: 100px 0;
 
   .tt-header {
     color: white;
@@ -523,10 +525,6 @@ a {
     text-align: center;
     font-style: italic;
   }
-}
-
-.tt-masthead__logo {
-  width: 80%;
 }
 
 .tt-masthead--overlay {

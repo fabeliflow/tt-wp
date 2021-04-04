@@ -29,16 +29,6 @@ $tag = $_GET['article_tag'];
                         <h1 class="tt-header--center"><?php echo $name ?></h1>
                     </div>
                     <p><?php echo $description ?></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section class="tt-section__descr">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col col-lg-6 tt-cat__descr">
-
                     <form class="tt-search-form" method="get">
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="inputGroupSelect01">Author</label>
@@ -56,12 +46,10 @@ $tag = $_GET['article_tag'];
                         </div>
 
                     </form>
-
                 </div>
             </div>
         </div>
-
-    </section>
+    </div>
 
     <section class="tt-cat__cont">
 

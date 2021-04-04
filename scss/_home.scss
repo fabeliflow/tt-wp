@@ -1,10 +1,11 @@
 .tt-home__section {
-  margin: 100px 0;
+  padding: 100px 0;
   overflow: hidden;
 }
 
 .tt-home__categories {
   position: relative;
+  padding: 0;
 
   .swiper-wrapper {
     min-height: 80vh;
@@ -77,10 +78,6 @@
 
 .tt-home__series {
   text-align: center;
-}
-
-.tt-home__articles,
-.tt-home__series {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  background: $tt-dark-linear-gradient;
+  color: white;
 }

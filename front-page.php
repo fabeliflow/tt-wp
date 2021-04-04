@@ -205,12 +205,11 @@ get_header(); ?>
                             $link = get_term_link($taxonomy);
                         ?>
 
-                            <a class="tt-series__logo" href="<?php echo $link ?>">
-                                <div class="tt-series__logo-bg" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>;">
-
-                                </div>
-                                <img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt']; ?>">
-                            </a>
+                            <h3 class="tt-series__logo">
+                                <a href="<?php echo $link ?>">
+                                    <img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt']; ?>">
+                                </a>
+                            </h3>
 
                         <?php endforeach; ?>
 

@@ -51,9 +51,6 @@ get_header(); ?>
                     ?>
 
                         <a class="tt-series__logo" href="<?php echo $link ?>">
-                            <div class="tt-series__logo-bg" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>; --series-color:<?php echo $color ?>;">
-
-                            </div>
                             <img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt']; ?>">
                         </a>
 

@@ -24,8 +24,6 @@ $jq(document).click(function (e) {
 
 $jq(document).ready(function () {
   
-  $jq('.tt-masthead-with-content').css('min-height', $jq(window).height() - $jq('.tt-menu').outerHeight());
-
   // Scroll to Top
   $jq(window).scroll(function () {
     if ($jq(this).scrollTop() >= 50) {

@@ -15,6 +15,10 @@ $tt-media-margin: 20px;
   }
 }
 
+.tt-article__cont {
+  margin-top: 50px;
+}
+
 .tt-article__cont,
 .tt-legal__cont {
   h2 {
@@ -300,7 +304,7 @@ $tt-media-margin: 20px;
   }
 }
 
-.tt-masthead img:not(.tt-masthead__logo) {
+.tt-masthead img {
   display: none;
 }
 

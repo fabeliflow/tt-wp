@@ -9,7 +9,7 @@ $term = get_queried_object();
 
 $custom_search = (isset($_GET['custom_search'])) ? $_GET['custom_search'] : '';
 
-$background = get_field('taxonomy_series_background', $term);
+$image = get_field('taxonomy_series_background', $term);
 $background_position = get_field('taxonomy_series_background_position', $term);
 $logo = get_field('taxonomy_series_logo', $term);
 $name = $term->name;
@@ -20,27 +20,20 @@ $tag = $_GET['article_tag'];
 
 <div class="tt-taxonomy-series">
 
-    <section class="tt-masthead-with-content tt-series--overlay" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>;">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col col-lg-6">
-                    <img class="tt-masthead__logo" src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt']; ?>">
-                </div>
-            </div>
+    <div class="tt-masthead__cont">
+        <div class="tt-masthead" style="background-image: url('<?php echo $image['url']; ?>'); background-position: <?php echo $background_position ?>;">
+            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
         </div>
-    </section>
+    </div>
 
-    <section class="tt-section__descr">
+    <section class="tt-section__descr tt-series__descr">
 
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col col-lg-6">
-                    <div class="tt-header--center__wrapper">
-                        <div class="tt-header tt-header--center tt-series__header">
-                            <span>Series</span>
-                            <h1><?php echo $name ?></h1>
-                        </div>
-                    </div>
+                    <h1 class="tt-series__header">
+                        <img class="tt-masthead__logo" src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt']; ?>">
+                    </h1>
                     <p><?php echo $description ?></p>
                     <form class="tt-search-form" method="get">
                         <div class="input-group mb-3">
