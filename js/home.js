@@ -35,7 +35,7 @@ $jq(document).ready(function () {
   $jq("#scroll-to-articles").click(function () {
     $jq("body,html").animate(
       {
-        scrollTop: $jq(".tt-home__articles").offset().top - 100
+        scrollTop: $jq(".tt-home__articles").offset().top
       },
       100
     );
