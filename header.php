@@ -93,8 +93,6 @@
 
                     </ul>
 
-                    <?php echo generate_kofi_button(); ?>
-
                 </div>
 
             <?php endif; ?>

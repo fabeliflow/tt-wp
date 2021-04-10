@@ -598,27 +598,6 @@ a {
   display: none;
 }
 
-.btn-container {
-  a.kofi-button {
-    margin-top: 20px;
-    padding: 5px 25px !important;
-    border-radius: 0 2rem !important;
-    box-shadow: none !important;
-    transition: all 0.2s ease-in !important;
-  
-    span {
-      display: block !important;
-    }
-  
-    &:hover,
-    &:focus {
-      opacity: 1 !important;
-      box-shadow: 0 0 5px 0 $tt-rose-transp !important;
-      transition: all 0.2s ease-out !important;
-    }
-  }
-}
-
 .alm-results-text {
   text-align: center;
   font-weight: 700;

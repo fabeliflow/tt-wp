@@ -23,7 +23,7 @@ function wpb_adding_styles_scripts()
 	// general styles
 	wp_register_style('adobe-typekit', 'https://use.typekit.net/qwx8ago.css');
 
-	wp_register_style('font-awesome', 'https://use.fontawesome.com/releases/v5.0.13/css/all.css');
+	wp_register_style('font-awesome', 'https://use.fontawesome.com/releases/v5.15.3/css/all.css');
 
 	wp_register_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css');
 
@@ -193,9 +193,4 @@ function wp_generate_author_select($selected)
 	$author_select .= '</select>';
 
 	return $author_select;
-}
-
-function generate_kofi_button()
-{
-	return '<script src="https://ko-fi.com/widgets/widget_2.js"></script><script>kofiwidget2.init("Support Us on Ko-fi", "#f37257", "F2F61MA2P");kofiwidget2.draw();</script>';
 }
