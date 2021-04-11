@@ -12,9 +12,27 @@ footer {
 }
 
 .tt-footer__cont {
-  padding: 50px 0;
-  background-color: $tt-sand;
+  padding-top: 100px;
+  padding-bottom: 100px;
   text-align: center;
+
+  .tt-social {
+    margin-top: 0;
+
+    .tt-social__icon {
+      color: $tt-rose;
+  
+      &:hover,
+      &:focus {
+        color: $tt-rose;
+        text-shadow: 0 0 5px $tt-rose;
+      }
+    }
+  }
+}
+
+.tt-footer--sand .tt-footer__cont {
+  background-image: $tt-sand-linear-gradient;
 }
 
 .wpautoterms-footer {

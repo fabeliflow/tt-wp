@@ -27,7 +27,7 @@
 
 </head>
 
-<?php if (is_front_page()) : ?>
+<?php if (is_front_page() || is_page('Series')) : ?>
 
     <body class="tt-starfield-bg">
     <?php else : ?>

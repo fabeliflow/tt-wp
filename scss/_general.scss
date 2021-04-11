@@ -15,7 +15,8 @@ $tt-dark-theme-bg: #100e17;
 $tt-dark-theme-bg-transp: transparentize($tt-dark-theme-bg, 0.2);
 $tt-dark-theme-bg-light: lighten($tt-dark-theme-bg, 5%);
 $tt-dark-theme-text: #a1a1af;
-$tt-dark-linear-gradient: linear-gradient(165deg, #100e17, #110f18, #13111a, #16141e, #181722, #1c1a28, #201d2d, #232032, #272337, #29253b, #2b263e, #2c273f);
+$tt-dark-linear-gradient: linear-gradient(to bottom right, #100e17, lighten(#100e17, 15%));
+$tt-sand-linear-gradient: linear-gradient(to bottom, #d2b597, #e7d7c6);
 
 @font-face {
   font-family: 'Aurek-Besh Hand';
@@ -605,4 +606,11 @@ a {
   letter-spacing: 3px;
   margin-bottom: 30px;
   color: $tt-text-dark;
+}
+
+.tt-home__series, .tt-series__section {
+  padding: 100px 0;
+  text-align: center;
+  color: white;
+  background-image: $tt-dark-linear-gradient;
 }

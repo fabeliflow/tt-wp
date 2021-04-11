@@ -55,29 +55,3 @@
     }
   }
 }
-
-.tt-footer__home {
-  margin-top: 100px;
-  margin-bottom: 100px;
-  text-align: center;
-
-  .tt-social {
-    margin-top: 0;
-
-    .tt-social__icon {
-      color: $tt-rose;
-  
-      &:hover,
-      &:focus {
-        color: $tt-rose;
-        text-shadow: 0 0 5px $tt-rose;
-      }
-    }
-  }
-}
-
-.tt-home__series {
-  text-align: center;
-  background: $tt-dark-linear-gradient;
-  color: white;
-}
