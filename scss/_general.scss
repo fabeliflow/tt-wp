@@ -609,8 +609,34 @@ a {
 }
 
 .tt-home__series, .tt-series__section {
-  padding: 100px 0;
   text-align: center;
   color: white;
-  background-image: $tt-dark-linear-gradient;
+}
+
+.tt-home__series {
+  padding: 100px 0;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $tt-dark-theme-bg-transp;
+    z-index: 1;
+  }
+
+  & * {
+    z-index: 99;
+  }
+}
+
+.tt-series__section {
+  padding-top: 100px;
 }

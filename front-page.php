@@ -169,7 +169,7 @@ get_header(); ?>
         </div>
     </section>
 
-    <section class="tt-home__section tt-home__series">
+    <section class="tt-home__section tt-home__series" style="background-image: url('<?php echo the_field('series_background'); ?>');">
 
         <div class="container-fluid">
             <div class="row justify-content-center">
