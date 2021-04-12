@@ -85,24 +85,7 @@ Template Name: Post
 
                     <?php while (have_rows('article_content')) : the_row(); ?>
 
-                        <?php if (get_row_layout() == 'ads') : ?>
-
-                            <div class="row justify-content-center">
-                                <div class="col col-lg-6">
-
-                                    <div class="tt-ads">
-                                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                                        <!-- Responsive Display Ads -->
-                                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                                        <script>
-                                            (adsbygoogle = window.adsbygoogle || []).push({});
-                                        </script>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        <?php elseif (get_row_layout() == 'spoiler') : ?>
+                        <?php if (get_row_layout() == 'spoiler') : ?>
 
                             <div class="row justify-content-center">
                                 <div class="col-12 col-lg-6 tt-article__spoiler__cont">
@@ -354,15 +337,6 @@ Template Name: Post
 
                         </div>
 
-                        <div class="tt-ads">
-                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                            <!-- Responsive Display Ads -->
-                            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                            <script>
-                                (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
-                        </div>
-
                         <div class="fb-content">
 
                             <div class="fb-legal">
@@ -461,15 +435,6 @@ Template Name: Post
 
                     <div class="col col-xl-10">
 
-                        <div class="tt-ads">
-                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                            <!-- Responsive Display Ads -->
-                            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                            <script>
-                                (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
-                        </div>
-
                         <div class="tt-header--center__wrapper">
                             <div class="tt-header tt-header--center">
                                 <span>More by the Author</span>
@@ -554,15 +519,6 @@ Template Name: Post
                 <div class="row row-col justify-content-center">
 
                     <div class="col col-xl-10">
-
-                        <div class="tt-ads">
-                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                            <!-- Responsive Display Ads -->
-                            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                            <script>
-                                (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
-                        </div>
 
                         <div class="tt-header--center__wrapper">
                             <div class="tt-header tt-header--center">
@@ -662,21 +618,6 @@ Template Name: Post
 
             </div>
 
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col col-xl-10">
-                <div class="tt-ads">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Responsive Display Ads -->
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1857288814890028" data-ad-slot="1896422485" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
-            </div>
         </div>
     </div>
 
