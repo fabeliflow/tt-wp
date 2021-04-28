@@ -133,6 +133,10 @@ $tt-media-margin: 20px;
       &:before, &:after {
         content: none;
       }
+
+      p {
+        margin: 0;
+      }
     }
   }
 

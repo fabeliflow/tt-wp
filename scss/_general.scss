@@ -614,27 +614,18 @@ a {
 }
 
 .tt-home__series {
-  padding: 100px 0;
-  background-size: cover;
-  background-position: center center;
+  padding: 0 !important;
   position: relative;
+  background: $tt-dark-linear-gradient;
+}
 
-  &::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: $tt-dark-theme-bg-transp;
-    z-index: 1;
-  }
+.tt-home__series--banner {
+  width: 100%;
+}
 
-  & * {
-    z-index: 99;
-  }
+.tt-home__series--cont {
+  padding-top: 50px;
+  padding-bottom: 100px;
 }
 
 .tt-series__section {
