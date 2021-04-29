@@ -26,148 +26,121 @@ get_header(); ?>
         </div>
     </section>
 
-    <section class="tt-home__section tt-home__articles">
+    <?php
+
+    $categories = get_categories(array(
+        'orderby'    => 'name',
+        'order' => 'ASC',
+        'orderby' => 'meta_value',
+        'meta_query' => array(
+            array('key' => 'category_order')
+        ),
+        'hide_empty' => false,
+    ));
+
+    foreach ($categories as $category) :
+        $id = $category->term_id;
+        $name = $category->name;
+        $link = get_category_link($category);
+        $link_label = get_field('category_link_label', $category);
+    ?>
 
         <?php
         $recent_posts = get_posts(array(
-            'showposts' => 9,
+            'category' => $id,
+            'showposts' => 3,
             'post_status' => 'publish'
         ));
         ?>
 
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col col-xl-10">
+        <?php if ($recent_posts) : ?>
 
-                    <div class="tt-header--center__wrapper">
-                        <div class="tt-header tt-header--center">
-                            <span>Latest Articles</span>
-                            <h2>Latest Articles</h2>
-                        </div>
-                    </div>
+            <section class="tt-home__section tt-home__articles">
 
-                    <ul class="tt-cat__cards">
 
-                        <?php foreach ($recent_posts as $post) : setup_postdata($post); ?>
 
-                            <?php
-                            $category = get_the_category()[0];
-                            $category_name = $category->cat_name;
-                            ?>
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <div class="col col-xl-10">
 
-                            <li class="tt-cat__cards__item">
-                                <a href="<?php the_permalink() ?>" class="tt-cat__card" style="--category-color:<?php the_field('category_color', $category); ?>;">
+                            <div class="tt-header--center__wrapper">
+                                <div class="tt-header tt-header--center">
+                                    <span>Latest <?php echo $name ?></span>
+                                    <h2>Latest <?php echo $name ?></h2>
+                                </div>
+                            </div>
 
-                                    <?php if (have_rows('article_masthead')) : ?>
+                            <ul class="tt-cat__cards">
 
-                                        <?php while (have_rows('article_masthead')) : the_row(); ?>
+                                <?php foreach ($recent_posts as $post) : setup_postdata($post); ?>
 
-                                            <?php
+                                    <?php
+                                    $category = get_the_category()[0];
+                                    $category_name = $category->cat_name;
+                                    ?>
 
-                                            $image = get_sub_field('article_masthead_background');
+                                    <li class="tt-cat__cards__item">
+                                        <a href="<?php the_permalink() ?>" class="tt-cat__card" style="--category-color:<?php the_field('category_color', $category); ?>;">
 
-                                            if (!empty($image)) :
-                                            ?>
+                                            <?php if (have_rows('article_masthead')) : ?>
 
-                                                <div class="tt-cat__card__img" style="background-image: url('<?php echo $image['url']; ?>');"></div>
+                                                <?php while (have_rows('article_masthead')) : the_row(); ?>
+
+                                                    <?php
+
+                                                    $image = get_sub_field('article_masthead_background');
+
+                                                    if (!empty($image)) :
+                                                    ?>
+
+                                                        <div class="tt-cat__card__img" style="background-image: url('<?php echo $image['url']; ?>');"></div>
+
+                                                    <?php endif; ?>
+
+                                                <?php endwhile; ?>
 
                                             <?php endif; ?>
 
-                                        <?php endwhile; ?>
+                                            <div class="tt-cat__card__info">
 
-                                    <?php endif; ?>
+                                                <div class="tt-cat__card__cont">
 
-                                    <div class="tt-cat__card__info">
+                                                    <h3 style="--category-color:<?php the_field('category_color', $category); ?>;">
+                                                        <?php the_title(); ?>
+                                                    </h3>
 
-                                        <div class="tt-cat__card__cont">
+                                                    <?php the_field('article_excerpt'); ?>
 
-                                            <h3 style="--category-color:<?php the_field('category_color', $category); ?>;">
-                                                <?php the_title(); ?>
-                                            </h3>
+                                                </div>
 
-                                            <?php the_field('article_excerpt'); ?>
+                                                <div style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card__cat-info">
+                                                    <span><?php the_time('m/d/Y'); ?></span>
+                                                    <div>
+                                                        <span><?php echo $category_name ?></span>
+                                                        <span><?php echo $category_name ?></span>
+                                                    </div>
+                                                </div>
 
-                                        </div>
-
-                                        <div style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card__cat-info">
-                                            <span><?php the_time('m/d/Y'); ?></span>
-                                            <div>
-                                                <span><?php echo $category_name ?></span>
-                                                <span><?php echo $category_name ?></span>
                                             </div>
-                                        </div>
 
-                                    </div>
+                                        </a>
+                                    </li>
 
-                                </a>
-                            </li>
+                                <?php endforeach; ?>
 
-                        <?php endforeach; ?>
+                                <?php wp_reset_postdata(); ?>
 
-                        <?php wp_reset_postdata(); ?>
+                            </ul>
 
-                    </ul>
+                            <a style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-btn tt-btn--cat" href="<?php echo $link ?>"><?php echo $link_label ?></a>
 
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="tt-home__section tt-home__categories">
-
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-
-                <?php
-
-                $categories = get_categories(array(
-                    'orderby'    => 'name',
-                    'hide_empty' => 0,
-                    'exclude'    => array(1)
-                ));
-
-                foreach ($categories as $category) :
-
-                    $background = get_field('category_background', $category);
-                    $background_position = get_field('category_background_position', $category);
-                    $name = $category->name;
-                    $description = $category->description;
-                    $link = get_category_link($category);
-                    $link_label = get_field('category_link_label', $category);
-                ?>
-
-                    <div class="swiper-slide tt-masthead--overlay" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
-
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col col-lg-6">
-                                    <div style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-header tt-header--center">
-                                        <span><?php echo $name ?></span>
-                                        <h2 class="tt-header--no-border"><?php echo $name ?></h2>
-                                    </div>
-                                    <p><?php echo $description ?></p>
-                                    <a style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-btn tt-btn--cat" href="<?php echo $link ?>"><?php echo $link_label ?></a>
-                                </div>
-                            </div>
                         </div>
-
                     </div>
+                </div>
+            </section>
+        <?php endif; ?>
 
-                <?php endforeach; ?>
-
-            </div>
-
-            <div class="swiper-pagination"></div>
-
-            <div class="tt-arrow tt-arrow--left">
-                <div></div>
-            </div>
-
-            <div class="tt-arrow tt-arrow--right">
-                <div></div>
-            </div>
-        </div>
-    </section>
+    <?php endforeach; ?>
 
     <section class="tt-home__section tt-home__series">
 

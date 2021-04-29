@@ -49,6 +49,8 @@ $border-baseline: 2px;
 
 $menu-height: 50px;
 
+$content-spacing: 50px;
+
 // General styles
 html,
 body {
@@ -146,16 +148,6 @@ h3 {
 }
 
 .tt-btn--cat {
-  &:hover,
-  &:focus {
-    $cat-color: var(--category-color, $tt-rose);
-    border-color: $cat-color;
-    box-shadow: 0 0 5px 0 $cat-color;
-    background-color: $cat-color;
-  }
-}
-
-.tt-btn--cat__fill {
   $cat-color: var(--category-color, $tt-rose);
   border-color: $cat-color;
   background-color: $cat-color;
@@ -444,8 +436,9 @@ a {
   color: $tt-text-light;
 }
 
-.tt-starfield-bg {
-  background-color: black;
+.tt-starfield-bg,
+.tt-legal__masthead {
+  background-image: linear-gradient(45deg, #09011A, #14061d);
   color: white;
 }
 
@@ -504,7 +497,7 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  padding: 100px 0;
+  padding: 50px 0;
 
   .tt-header {
     color: white;
@@ -520,7 +513,7 @@ a {
 }
 
 .tt-section__descr {
-  margin-top: 50px;
+  margin-top: $content-spacing;
 
   p {
     text-align: center;
@@ -624,10 +617,9 @@ a {
 }
 
 .tt-home__series--cont {
-  padding-top: 50px;
-  padding-bottom: 100px;
+  padding: $content-spacing 0;
 }
 
 .tt-series__section {
-  padding-top: 100px;
+  margin-top: $content-spacing;
 }

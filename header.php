@@ -55,8 +55,12 @@
 
                 $categories = get_categories(array(
                     'orderby'    => 'name',
-                    'hide_empty' => 0,
-                    'exclude'    => array(1)
+                    'order' => 'ASC',
+                    'orderby' => 'meta_value',
+                    'meta_query' => array(
+                        array('key' => 'category_order')
+                    ),
+                    'hide_empty' => false,
                 ));
 
                 foreach ($categories as $category) :

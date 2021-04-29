@@ -1,12 +1,8 @@
 .tt-legal__masthead {
   margin-bottom: 50px;
-  padding: 100px 30px;
+  padding: 50px 30px;
   text-align: center;
   background-color: black;
-
-  @media (min-width: 768px) {
-    padding: 170px 30px;
-  }
 
   h1 {
     margin: 0;

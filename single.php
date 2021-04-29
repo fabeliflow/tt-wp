@@ -614,7 +614,7 @@ Template Name: Post
 
                 <?php endif; ?>
 
-                <a style="--category-color:<?php the_field('category_color', $article_category); ?>;" class="tt-btn tt-btn--cat__fill" href="<?php echo $article_category_link ?>">More <?php echo $article_category_name ?></a>
+                <a style="--category-color:<?php the_field('category_color', $article_category); ?>;" class="tt-btn tt-btn--cat" href="<?php echo $article_category_link ?>">More <?php echo $article_category_name ?></a>
 
             </div>
 

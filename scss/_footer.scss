@@ -8,12 +8,12 @@ footer {
 }
 
 .tt-footer-orbit {
-  margin-top: -100px;
+  margin-top: -$content-spacing;
 }
 
 .tt-footer__cont {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: $content-spacing;
+  padding-bottom: $content-spacing;
   text-align: center;
 
   .tt-social {

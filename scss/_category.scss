@@ -1,5 +1,5 @@
 .tt-cat__cont {
-  margin-top: 50px;
+  margin-top: $content-spacing;
 
   .tt-header {
     margin-top: 30px;
@@ -13,6 +13,7 @@
   flex-wrap: wrap;
   justify-content: center;
   list-style: none;
+  text-align: left;
 }
 
 .tt-cat__cards__item {
