@@ -188,7 +188,7 @@ h3 {
     display: block;
     font-family: $aurebesh;
     letter-spacing: 3px;
-    color: $tt-rose;
+    color: var(--category-color, $tt-rose);
   }
 }
 
@@ -206,7 +206,7 @@ h3 {
       content: "";
       width: 20%;
       margin-bottom: -10px;
-      border-bottom: solid $border-baseline $tt-sand;
+      border-bottom: solid $border-baseline var(--category-color, $tt-sand);
       position: absolute;
       left: 40%;
       bottom: 0;
@@ -476,14 +476,6 @@ a {
 
   .tt-header {
     color: white;
-
-    h1:after {
-      border-color: var(--category-color, $tt-sand);
-    }
-
-    span {
-      color: var(--category-color, $tt-rose);
-    }
   }
 }
 
@@ -501,14 +493,6 @@ a {
 
   .tt-header {
     color: white;
-
-    h1:after {
-      border-color: var(--category-color, $tt-sand);
-    }
-
-    span {
-      color: var(--category-color, $tt-rose);
-    }
   }
 }
 

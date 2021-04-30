@@ -349,6 +349,10 @@ $tt-media-margin: 20px;
     position: relative;
   }
 
+  .swiper-pagination-bullet-active {
+    background-color: $tt-rose;
+  }
+
   .tt-caption {
     display: block;
   }

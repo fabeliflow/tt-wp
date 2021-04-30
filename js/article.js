@@ -8,28 +8,20 @@ $jq(document).ready(function () {
 
   // Swiper card carousel
   var swiper = new Swiper(".tt-article__img--gallery", {
-    effect: "coverflow",
     centeredSlides: true,
     loop: true,
-    slidesPerView: "3",
+    slidesPerView: 'auto',
+    spaceBetween: 10,
     preloadImages: false,
     lazy: {
       loadPrevNext: false,
     },
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-    grabCursor: true,
     preventClicks: false,
     preventClicksPropagation: false,
-    navigation: {
-      nextEl: ".tt-arrow--right",
-      prevEl: ".tt-arrow--left"
-    },
     speed: 500,
-    coverflowEffect: {
-      rotate: 40,
-      depth: 200,
-      modifier: 1
-    }
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
   });
 });

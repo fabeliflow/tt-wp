@@ -264,7 +264,7 @@ Template Name: Post
                                             ?>
 
                                                 <div class="row justify-content-center">
-                                                    <div class="col col-xl-10 tt-img tt-article__img--gallery__cont">
+                                                    <div class="col tt-img tt-article__img--gallery__cont">
 
                                                         <div class="gallery__cont">
 
@@ -281,17 +281,7 @@ Template Name: Post
                                                                     <?php endforeach; ?>
                                                                 </div>
 
-                                                                <div>
-
-                                                                    <div class="tt-arrow tt-arrow--left">
-                                                                        <div></div>
-                                                                    </div>
-
-                                                                    <div class="tt-arrow tt-arrow--right">
-                                                                        <div></div>
-                                                                    </div>
-
-                                                                </div>
+                                                                <div class="swiper-pagination"></div>
 
                                                             </div>
 

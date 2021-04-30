@@ -41,6 +41,7 @@ get_header(); ?>
     foreach ($categories as $category) :
         $id = $category->term_id;
         $name = $category->name;
+        $color = get_field('category_color', $category);
         $link = get_category_link($category);
         $link_label = get_field('category_link_label', $category);
     ?>
@@ -64,7 +65,7 @@ get_header(); ?>
                         <div class="col col-xl-10">
 
                             <div class="tt-header--center__wrapper">
-                                <div class="tt-header tt-header--center">
+                                <div style="--category-color:<?php echo $color ?>;" class="tt-header tt-header--center">
                                     <span>Latest <?php echo $name ?></span>
                                     <h2>Latest <?php echo $name ?></h2>
                                 </div>
