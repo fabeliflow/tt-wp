@@ -351,7 +351,7 @@ Template Name: Post
                                     <div class="tt-header--center__wrapper">
                                         <div class="tt-header tt-header--center">
                                             <span><?php the_author_meta('display_name', get_post_field('post_author', get_the_ID())); ?></span>
-                                            <h3><?php the_author_meta('display_name', get_post_field('post_author', get_the_ID())); ?></h3>
+                                            <h2><?php the_author_meta('display_name', get_post_field('post_author', get_the_ID())); ?></h2>
                                         </div>
                                     </div>
                                     <div class="tt-member--bio">

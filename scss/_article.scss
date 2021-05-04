@@ -454,7 +454,7 @@ $tt-media-margin: 20px;
   }
   
   .tt-social {
-    margin-top: 15px;
+    margin-top: 25px;
 
     .tt-social__icon {
       color: $tt-rose;
@@ -478,8 +478,6 @@ $tt-media-margin: 20px;
 
   p {
     margin: 0;
-    font-size: 0.8em;
-    line-height: 1.25rem;
     font-style: italic;
   }
 }
@@ -493,31 +491,24 @@ $tt-media-margin: 20px;
   border: solid $border-baseline $tt-sand;
   width: 100%;
   height: 100%;
-  margin-top: 93px;
+  margin-top: 98px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
   .tt-member-card__img {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     img {
-      width: 50%;
+      width: 60%;
       border-radius: 50%;
-      margin-top: -120px;
+      margin-top: -123px;
       border: solid $border-baseline $tt-sand;
     }
   }
 
   .tt-header {
-    margin: 15px 0;
-
-    span {
-      font-size: .8em;
-    }
-
-    h3 {
-      margin: 0 0 15px 0;
-    }
+    margin: 25px 0 0 0;
   }
 }
 
