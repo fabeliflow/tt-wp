@@ -452,14 +452,18 @@ $tt-media-margin: 20px;
   @media (min-width: 992px) {
     width: 33.3333%;
   }
+  
+  .tt-social {
+    margin-top: 15px;
 
-  .tt-social__icon {
-    color: $tt-rose;
-
-    &:hover,
-    &:focus {
+    .tt-social__icon {
       color: $tt-rose;
-      text-shadow: 0 0 5px $tt-rose;
+  
+      &:hover,
+      &:focus {
+        color: $tt-rose;
+        text-shadow: 0 0 5px $tt-rose;
+      }
     }
   }
 }
@@ -473,7 +477,9 @@ $tt-media-margin: 20px;
   word-break: break-word;
 
   p {
-    margin-top: 0;
+    margin: 0;
+    font-size: 0.8em;
+    line-height: 1.25rem;
     font-style: italic;
   }
 }
@@ -495,7 +501,7 @@ $tt-media-margin: 20px;
     flex-direction: column;
     align-items: center;
     img {
-      width: 70%;
+      width: 50%;
       border-radius: 50%;
       margin-top: -120px;
       border: solid $border-baseline $tt-sand;
@@ -503,7 +509,15 @@ $tt-media-margin: 20px;
   }
 
   .tt-header {
-    margin: 30px 0 0 0;
+    margin: 15px 0;
+
+    span {
+      font-size: .8em;
+    }
+
+    h3 {
+      margin: 0 0 15px 0;
+    }
   }
 }
 

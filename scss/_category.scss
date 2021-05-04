@@ -131,14 +131,16 @@
       display: flex;
       flex-direction: column;
       text-align: right;
+      
       span {
+        font-size: 1.1em;
         letter-spacing: 3px;
       }
 
       span:first-child {
         font-family: $aurebesh;
         color: var(--category-color, $tt-sand);
-        font-size: 0.7em;
+        font-size: 0.8em;
       }
     }
 }
