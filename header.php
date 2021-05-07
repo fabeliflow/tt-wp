@@ -48,7 +48,7 @@
 
         <div id="navigation" class="tt-menu__slider">
 
-            <ul data-simplebar class="tt-menu__items">
+            <ul data-simplebar data-simplebar-auto-hide="false" class="tt-menu__items">
 
                 <?php echo wp_generate_menu('primary'); ?>
                 <?php
