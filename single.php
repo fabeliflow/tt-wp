@@ -275,7 +275,7 @@ Template Name: Post
                                                                     <?php foreach ($images as $image) : ?>
                                                                         <div class="swiper-slide tt-lightgallery--item" data-src="<?php echo $image['url']; ?>">
 
-                                                                            <img class="swiper-lazy" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                                                                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
 
                                                                         </div>
                                                                     <?php endforeach; ?>

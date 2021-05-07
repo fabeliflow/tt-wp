@@ -13,11 +13,7 @@ $jq(document).ready(function () {
     slidesPerView: 'auto',
     spaceBetween: 10,
     preloadImages: false,
-    lazy: {
-      loadPrevNext: false,
-    },
     preventClicks: false,
-    preventClicksPropagation: false,
     speed: 500,
     pagination: {
       el: '.swiper-pagination',
