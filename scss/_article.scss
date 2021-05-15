@@ -8,12 +8,6 @@ $tt-media-margin: 20px;
     margin: $tt-media-margin auto !important;
     max-width: 100% !important;
   }
-
-  @media (max-width: 1099px) {
-    .tt-footer__legal-links {
-      padding: 30px 0 100px 0;
-    }
-  }
 }
 
 .tt-article__cont {
