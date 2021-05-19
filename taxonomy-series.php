@@ -9,7 +9,7 @@ $term = get_queried_object();
 
 $custom_search = (isset($_GET['custom_search'])) ? $_GET['custom_search'] : '';
 
-$image = get_field('taxonomy_series_background', $term);
+$background = get_field('taxonomy_series_background', $term);
 $background_position = get_field('taxonomy_series_background_position', $term);
 $logo = get_field('taxonomy_series_logo', $term);
 $name = $term->name;
@@ -21,8 +21,8 @@ $tag = $_GET['article_tag'];
 <div class="tt-taxonomy-series">
 
     <div class="tt-masthead__cont">
-        <div class="tt-masthead" style="background-image: url('<?php echo $image['url']; ?>'); background-position: <?php echo $background_position ?>;">
-            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+        <div class="tt-masthead" style="background-image: url('<?php echo $background['url']; ?>'); background-position: <?php echo $background_position ?>;">
+            <img src="<?php echo $background['url']; ?>" alt="<?php echo $background['alt']; ?>">
         </div>
     </div>
 
@@ -34,7 +34,7 @@ $tag = $_GET['article_tag'];
                     <h1 class="tt-series__header">
                         <img class="tt-masthead__logo" src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt']; ?>">
                     </h1>
-                    <p><?php echo $description ?></p>
+                    <p class="tt-series__descr--text"><?php echo $description ?></p>
                     <form class="tt-search-form" method="get">
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="inputGroupSelect01">Author</label>

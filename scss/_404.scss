@@ -2,7 +2,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: white;
+  color: $tt-dark-theme-bg;
 }
 
 .tt-404__cont {
@@ -15,8 +15,8 @@
 
   span {
     display: block;
-    font-family: $aurebesh;
     letter-spacing: 3px;
+    color: $tt-sand-light;
   }
 }
 
@@ -24,5 +24,4 @@
   margin: 0;
   font-size: 4.5em !important;
   letter-spacing: 3px;
-  color: $tt-red;
 }

@@ -12,7 +12,7 @@ get_header(); ?>
             <div class="row justify-content-center">
                 <div class="col col-lg-6">
                     <div class="tt-header--center__wrapper">
-                        <div class="tt-header tt-header--center">
+                        <div class="tt-header tt-header--center tt-header--light">
                             <span>Tatooine Times</span>
                             <h1><?php the_field('description_title'); ?></h1>
                         </div>
@@ -55,14 +55,12 @@ get_header(); ?>
 
             <section class="tt-home__section tt-home__articles">
 
-
-
                 <div class="container-fluid">
                     <div class="row justify-content-center">
                         <div class="col col-xl-10">
 
                             <div class="tt-header--center__wrapper">
-                                <div style="--category-color:<?php echo $color ?>;" class="tt-header tt-header--center">
+                                <div class="tt-header tt-header--center tt-header--section">
                                     <span>Latest <?php echo $name ?></span>
                                     <h2>Latest <?php echo $name ?></h2>
                                 </div>
@@ -78,7 +76,7 @@ get_header(); ?>
                                     ?>
 
                                     <li class="tt-cat__cards__item">
-                                        <a href="<?php the_permalink() ?>" class="tt-cat__card" style="--category-color:<?php the_field('category_color', $category); ?>;">
+                                        <a href="<?php the_permalink() ?>" class="tt-cat__card">
 
                                             <?php if (have_rows('article_masthead')) : ?>
 
@@ -101,21 +99,10 @@ get_header(); ?>
 
                                             <div class="tt-cat__card__info">
 
-                                                <div class="tt-cat__card__cont">
-
-                                                    <h3 style="--category-color:<?php the_field('category_color', $category); ?>;">
-                                                        <?php the_title(); ?>
-                                                    </h3>
-
-                                                    <?php the_field('article_excerpt'); ?>
-
-                                                </div>
-
-                                                <div style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card__cat-info">
-                                                    <span><?php the_time('m/d/Y'); ?></span>
-                                                    <div>
+                                                <div class="tt-header--center__wrapper">
+                                                    <div class="tt-header tt-header--center tt-header--light">
                                                         <span><?php echo $category_name ?></span>
-                                                        <span><?php echo $category_name ?></span>
+                                                        <h3><?php the_title(); ?></h3>
                                                     </div>
                                                 </div>
 
@@ -130,7 +117,7 @@ get_header(); ?>
 
                             </ul>
 
-                            <a style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-btn tt-btn--cat" href="<?php echo $link ?>"><?php echo $link_label ?></a>
+                            <a class="tt-btn tt-btn--cat" href="<?php echo $link ?>"><?php echo $link_label ?></a>
 
                         </div>
                     </div>
@@ -141,22 +128,19 @@ get_header(); ?>
     <?php endforeach; ?>
 
     <section class="tt-home__section tt-home__series">
-
-        <img class="tt-home__series--banner" src="<?php echo get_field('series_background')['url'] ?>" alt="<?php echo get_field('series_background')['alt']; ?>">
-
         <div class="tt-home__series--cont">
             <div class="container-fluid">
                 <div class="row justify-content-center">
-                    <div class="col col-xl-10">
+                    <div class="col col-lg-6">
 
                         <div class="tt-header--center__wrapper">
-                            <div class="tt-header tt-header--center">
+                            <div class="tt-header tt-header--center tt-header--alt tt-header--section">
                                 <span>Latest Series</span>
                                 <h2>Latest Series</h2>
                             </div>
                         </div>
 
-                        <div class="tt-series__logos">
+                        <ul class="tt-series__logos">
 
                             <?php
 
@@ -179,17 +163,17 @@ get_header(); ?>
                                 $link = get_term_link($taxonomy);
                             ?>
 
-                                <h3 class="tt-series__logo">
+                                <li class="tt-series__logo">
                                     <a href="<?php echo $link ?>">
                                         <img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt']; ?>">
                                     </a>
-                                </h3>
+                                </li>
 
                             <?php endforeach; ?>
 
-                        </div>
+                        </ul>
 
-                        <a class="tt-btn tt-btn--fill" href="<?php the_field('series_button_url'); ?>"><?php the_field('series_button_text'); ?></a>
+                        <a class="tt-btn" href="<?php the_field('series_button_url'); ?>"><?php the_field('series_button_text'); ?></a>
 
                     </div>
                 </div>

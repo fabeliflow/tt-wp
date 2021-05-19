@@ -18,17 +18,24 @@ $author = $_GET['article_author'];
 $tag = $_GET['article_tag'];
 ?>
 
-<div class="tt-category">
+<div class="tt-taxonomy-series">
 
-    <div class="tt-masthead-with-content tt-masthead--overlay" style="background-image: url('<?php echo $background ?>'); background-position: <?php echo $background_position ?>">
+    <div class="tt-masthead__cont">
+    <div class="tt-masthead" style="background-image: url('<?php echo $background['url']; ?>'); background-position: <?php echo $background_position ?>;">
+            <img src="<?php echo $background['url']; ?>" alt="<?php echo $background['alt']; ?>">
+        </div>
+    </div>
+
+    <section class="tt-section__descr tt-series__descr">
+
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col col-lg-6">
-                    <div style="--category-color:<?php echo $color ?>;" class="tt-header tt-header--center">
+                    <div class="tt-header tt-header--center tt-header--light">
                         <span><?php echo $name ?></span>
                         <h1 class="tt-header--center"><?php echo $name ?></h1>
                     </div>
-                    <p><?php echo $description ?></p>
+                    <p class="tt-series__descr--text"><?php echo $description ?></p>
                     <form class="tt-search-form" method="get">
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="inputGroupSelect01">Author</label>
@@ -49,7 +56,8 @@ $tag = $_GET['article_tag'];
                 </div>
             </div>
         </div>
-    </div>
+
+    </section>
 
     <section class="tt-cat__cont">
 
@@ -61,8 +69,9 @@ $tag = $_GET['article_tag'];
 
                     <?php
                     $current_page = get_queried_object();
-                    $category     = $current_page->slug;
-                    echo do_shortcode('[ajax_load_more id="searchwp" container_type="ul" css_classes="tt-cat__cards" post_type="post" posts_per_page="6" category="' . $category . '" search="' . $custom_search . '" transition_container="false" author="' . $author . '" tag="' . $tag . '" images_loaded="true"]'); ?>
+                    $tax = $current_page->taxonomy;
+                    $tax_term = $current_page->slug;
+                    echo do_shortcode('[ajax_load_more id="searchwp" container_type="ul" css_classes="tt-cat__cards" post_type="post" posts_per_page="6" search="' . $custom_search . '" transition_container="false" author="' . $author . '" tag="' . $tag . '" images_loaded="true" taxonomy="' . $tax . '" taxonomy_terms="' . $tax_term . '" taxonomy_operator="IN"]'); ?>
 
                 </div>
             </div>

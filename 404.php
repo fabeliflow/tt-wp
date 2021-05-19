@@ -14,7 +14,7 @@ Template Name: 404
                 <div class="col col-lg-6">
                     <h1 class="tt-404__header"><?php the_field('404_header'); ?></h1>
                     <span><?php the_field('404_subheader'); ?></span>
-                    <a class="tt-btn tt-btn--error" href="<?php the_field('404_button_url'); ?>"><?php the_field('404_button_text'); ?>
+                    <a class="tt-btn tt-btn--fill" href="<?php the_field('404_button_url'); ?>"><?php the_field('404_button_text'); ?>
                     </a>
                 </div>
             </div>

@@ -35,7 +35,7 @@ Template Name: Post
     <?php endif; ?>
 
     <article>
-        <section class="tt-article__cont">
+        <section class="tt-article__cont tt-article__section">
             <div class="container-fluid">
                 <div class="row justify-content-center">
 
@@ -45,11 +45,12 @@ Template Name: Post
                         $article_category = get_the_category()[0];
                         $article_category_name = $article_category->cat_name;
                         $article_category_link = get_category_link($article_category);
+                        $article_id = $article_category->term_id;
                         ?>
 
-                        <header>
+                        <header class="tt-article__header">
                             <div class="tt-header--center__wrapper">
-                                <div class="tt-header tt-header--center tt-article__header" style="--category-color:<?php the_field('category_color', $article_category); ?>;">
+                                <div class="tt-header tt-header--center" style="--category-color:<?php the_field('category_color', $article_category); ?>;">
                                     <span class="tt-article__category">
                                         <?php echo $article_category_name  ?>
                                     </span>
@@ -63,17 +64,15 @@ Template Name: Post
                                 <?php the_field('article_excerpt'); ?>
                             </div>
 
-                            <ul class="tt-article__info">
-                                <li>
-                                    <?php echo get_wp_user_avatar(get_post_field('post_author', get_the_ID())); ?>
-                                </li>
-                                <li class="tt-article__info--author">
+                            <div class="tt-article__info">
+                                <?php echo get_wp_user_avatar(get_post_field('post_author', get_the_ID())); ?>
+                                <h3>
                                     <?php the_author_meta('display_name', get_post_field('post_author', get_the_ID())); ?>
-                                </li>
-                                <li>
+                                </h3>
+                                <span>
                                     <?php echo get_the_date('F j, Y @ g:ia'); ?>
-                                </li>
-                            </ul>
+                                </span>
+                            </div>
                         </header>
 
                     </div>
@@ -87,7 +86,7 @@ Template Name: Post
 
                         <?php if (get_row_layout() == 'spoiler') : ?>
 
-                            <div class="row justify-content-center">
+                            <div class="row justify-content-center tt-article_module">
                                 <div class="col-12 col-lg-6 tt-article__spoiler__cont">
 
                                     <div class="tt-article__spoiler">
@@ -102,7 +101,7 @@ Template Name: Post
 
                         <?php elseif (get_row_layout() == 'cta') : ?>
 
-                            <div class="row justify-content-center">
+                            <div class="row justify-content-center tt-article_module">
                                 <div class="col col-lg-6">
 
                                     <div class="tt-article__cta">
@@ -116,7 +115,7 @@ Template Name: Post
 
                         <?php elseif (get_row_layout() == 'text') : ?>
 
-                            <div class="row justify-content-center">
+                            <div class="row justify-content-center tt-article_module">
                                 <div class="col col-lg-6">
 
                                     <?php the_sub_field('text'); ?>
@@ -126,7 +125,7 @@ Template Name: Post
 
                         <?php elseif (get_row_layout() == 'quote') : ?>
 
-                            <div class="row justify-content-center">
+                            <div class="row justify-content-center tt-article_module">
 
                                 <?php
                                 $image_switch = get_sub_field('quote_image_switch');
@@ -163,7 +162,7 @@ Template Name: Post
 
                                 <?php elseif (get_row_layout() == 'video') : ?>
 
-                                    <div class="row justify-content-center">
+                                    <div class="row justify-content-center tt-article_module">
                                         <div class="col-12 col-lg-6 tt-video__cont">
                                             <div class="tt-video">
                                                 <iframe src="https://www.youtube.com/embed/<?php the_sub_field('video_id'); ?>" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -183,7 +182,7 @@ Template Name: Post
 
                                         <?php if (get_sub_field('image_type') == 'regular') : ?>
 
-                                            <div class="row justify-content-center">
+                                            <div class="row justify-content-center tt-article_module">
                                                 <div class="col-12 col-lg-6 tt-img tt-article__img--<?php the_sub_field('image_type'); ?>__cont">
 
                                                     <figure class="tt-article__img tt-article__img--regular">
@@ -204,7 +203,7 @@ Template Name: Post
 
                                         <?php elseif (get_sub_field('image_type') == 'full') : ?>
 
-                                            <div class="row justify-content-center">
+                                            <div class="row justify-content-center tt-article_module">
                                                 <div class="col-12 tt-img tt-article__img--<?php the_sub_field('image_type'); ?>__cont">
                                                     <figure class="tt-article__img">
                                                         <div class="tt-article__img--<?php the_sub_field('image_type'); ?> tt-lightgallery--item" data-src="<?php echo $image['url']; ?>" style="background-image: url('<?php echo $image['url']; ?>')">
@@ -225,11 +224,11 @@ Template Name: Post
 
                                             <?php if (get_sub_field('image_type') == 'left') : ?>
 
-                                                <div class="row justify-content-start">
+                                                <div class="row justify-content-start tt-article_module">
 
                                                 <?php elseif (get_sub_field('image_type') == 'right') : ?>
 
-                                                    <div class="row justify-content-end">
+                                                    <div class="row justify-content-end tt-article_module">
 
                                                     <?php endif; ?>
 
@@ -263,7 +262,7 @@ Template Name: Post
                                             if ($images) :
                                             ?>
 
-                                                <div class="row justify-content-center">
+                                                <div class="row justify-content-center tt-article_module">
                                                     <div class="col tt-img tt-article__img--gallery__cont">
 
                                                         <div class="gallery__cont">
@@ -310,7 +309,7 @@ Template Name: Post
 
         </section>
 
-        <section>
+        <section class="tt-article__section">
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col col-lg-6">
@@ -364,7 +363,7 @@ Template Name: Post
 
                                 <?php if (have_rows('social_media', ('user_' . get_post_field('post_author', get_the_ID())))) : ?>
 
-                                    <ul class="tt-social">
+                                    <ul class="tt-social tt-social--alt">
 
                                         <?php while (have_rows('social_media', ('user_' . get_post_field('post_author', get_the_ID())))) : the_row(); ?>
 
@@ -410,6 +409,25 @@ $exclude_posts = $author_posts;
 
 array_push($exclude_posts, get_the_ID());
 
+$taxonomy = get_the_terms($post->ID, 'series')[0];
+$taxonomy_name = $taxonomy->name;
+
+$taxonomy_posts = get_posts(array(
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'series',
+            'field'    => 'slug',
+            'terms'    => $taxonomy->slug,
+        ),
+    ),
+    'showposts' => 3,
+    'post_status' => 'publish',
+    'post__not_in' => $exclude_posts,
+    'fields' => 'ids'
+));
+
+array_push($exclude_posts, $taxonomy_posts);
+
 $related_posts = get_posts(array(
     'tag__in' => $post_tag_ids,
     'showposts' => 3,
@@ -422,7 +440,7 @@ $related_posts = get_posts(array(
 
 <?php if ($author_posts) : ?>
 
-    <section class="tt-cat__cont">
+    <section class="tt-cat__cont tt-article__more">
 
         <div class="container-fluid">
             <div class="row row-col justify-content-center">
@@ -430,7 +448,7 @@ $related_posts = get_posts(array(
                 <div class="col col-xl-10">
 
                     <div class="tt-header--center__wrapper">
-                        <div class="tt-header tt-header--center">
+                        <div class="tt-header tt-header--center tt-header--section">
                             <span>More by the Author</span>
                             <h2>More by the Author</h2>
                         </div>
@@ -469,23 +487,14 @@ $related_posts = get_posts(array(
 
                                     <div class="tt-cat__card__info">
 
-                                        <div class="tt-cat__card__cont">
-
-                                            <h3 style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card__title">
-                                                <?php the_title(); ?>
-                                            </h3>
-
-                                            <?php the_field('article_excerpt'); ?>
-
-                                        </div>
-
-                                        <div style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card__cat-info">
-                                            <span><?php the_time('m/d/Y'); ?></span>
-                                            <div>
+                                        <div class="tt-header--center__wrapper">
+                                            <div class="tt-header tt-header--center tt-header--light">
                                                 <span><?php echo $category_name ?></span>
-                                                <span><?php echo $category_name ?></span>
+                                                <h3><?php the_title(); ?></h3>
                                             </div>
                                         </div>
+
+                                        <span><?php echo get_the_date('F j, Y'); ?></span>
 
                                     </div>
 
@@ -505,9 +514,9 @@ $related_posts = get_posts(array(
 
 <?php endif; ?>
 
-<?php if ($related_posts) : ?>
+<?php if ($taxonomy_posts) : ?>
 
-    <section class="tt-cat__cont">
+    <section class="tt-cat__cont tt-article__more">
 
         <div class="container-fluid">
             <div class="row row-col justify-content-center">
@@ -515,15 +524,15 @@ $related_posts = get_posts(array(
                 <div class="col col-xl-10">
 
                     <div class="tt-header--center__wrapper">
-                        <div class="tt-header tt-header--center">
-                            <span>Related Articles</span>
-                            <h2>Related Articles</h2>
+                        <div class="tt-header tt-header--center tt-header--section">
+                            <span>More from <?php echo $taxonomy_name ?></span>
+                            <h2>More from <?php echo $taxonomy_name ?></h2>
                         </div>
                     </div>
 
                     <ul class="tt-cat__cards">
 
-                        <?php foreach ($related_posts as $post) : setup_postdata($post); ?>
+                        <?php foreach ($taxonomy_posts as $post) : setup_postdata($post); ?>
 
                             <?php
                             $category = get_the_category()[0];
@@ -554,23 +563,14 @@ $related_posts = get_posts(array(
 
                                     <div class="tt-cat__card__info">
 
-                                        <div class="tt-cat__card__cont">
-
-                                            <h3 style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card__title">
-                                                <?php the_title(); ?>
-                                            </h3>
-
-                                            <?php the_field('article_excerpt'); ?>
-
-                                        </div>
-
-                                        <div style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card__cat-info">
-                                            <span><?php the_time('m/d/Y'); ?></span>
-                                            <div>
+                                        <div class="tt-header--center__wrapper">
+                                            <div class="tt-header tt-header--center tt-header--light">
                                                 <span><?php echo $category_name ?></span>
-                                                <span><?php echo $category_name ?></span>
+                                                <h3><?php the_title(); ?></h3>
                                             </div>
                                         </div>
+
+                                        <span><?php echo get_the_date('F j, Y'); ?></span>
 
                                     </div>
 
@@ -588,31 +588,84 @@ $related_posts = get_posts(array(
 
     </section>
 
+<?php else : ?>
+
+    <?php if ($related_posts) : ?>
+
+        <section class="tt-cat__cont tt-article__more">
+
+            <div class="container-fluid">
+                <div class="row row-col justify-content-center">
+
+                    <div class="col col-xl-10">
+
+                        <div class="tt-header--center__wrapper">
+                            <div class="tt-header tt-header--center tt-header--section">
+                                <span>Related Articles</span>
+                                <h2>Related Articles</h2>
+                            </div>
+                        </div>
+
+                        <ul class="tt-cat__cards">
+
+                            <?php foreach ($related_posts as $post) : setup_postdata($post); ?>
+
+                                <?php
+                                $category = get_the_category()[0];
+                                $category_name = $category->cat_name;
+                                ?>
+
+                                <li class="tt-cat__cards__item">
+                                    <a href="<?php the_permalink() ?>" style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card">
+
+                                        <?php if (have_rows('article_masthead')) : ?>
+
+                                            <?php while (have_rows('article_masthead')) : the_row(); ?>
+
+                                                <?php
+
+                                                $image = get_sub_field('article_masthead_background');
+
+                                                if (!empty($image)) :
+                                                ?>
+
+                                                    <div class="tt-cat__card__img" style="background-image: url('<?php echo $image['url']; ?>');"></div>
+
+                                                <?php endif; ?>
+
+                                            <?php endwhile; ?>
+
+                                        <?php endif; ?>
+
+                                        <div class="tt-cat__card__info">
+
+                                            <div class="tt-header--center__wrapper">
+                                                <div class="tt-header tt-header--center tt-header--light">
+                                                    <span><?php echo $category_name ?></span>
+                                                    <h3><?php the_title(); ?></h3>
+                                                </div>
+                                            </div>
+
+                                            <span><?php echo get_the_date('F j, Y'); ?></span>
+
+                                        </div>
+
+                                    </a>
+                                </li>
+
+                            <?php endforeach; ?>
+
+                            <?php wp_reset_postdata(); ?>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    <?php endif; ?>
+
 <?php endif; ?>
-
-<div class="container-fluid">
-    <div class="row justify-content-center">
-
-        <div class="col-auto tt-article__more-articles-cta">
-
-            <?php
-
-            $taxonomy = get_the_terms($post->ID, 'series')[0];
-            $link = get_term_link($taxonomy->slug, 'series');
-
-            ?>
-
-            <?php if ($taxonomy) : ?>
-
-                <a href="<?php echo $link ?>" class="tt-btn tt-btn--fill">More from the Series</a>
-
-            <?php endif; ?>
-
-            <a style="--category-color:<?php the_field('category_color', $article_category); ?>;" class="tt-btn tt-btn--cat" href="<?php echo $article_category_link ?>">More <?php echo $article_category_name ?></a>
-
-        </div>
-
-    </div>
-</div>
 
 <?php get_footer(); ?>

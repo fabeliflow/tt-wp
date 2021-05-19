@@ -1,47 +1,35 @@
 .tt-series__logos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.tt-series__descr--cont {
+  margin-bottom: 30px;
 }
 
 .tt-series__logo {
-  display: flex;
-  flex-direction: row;
-  align-items: center;  
-  width: 100%;
-  position: relative;
-  margin: 0.6rem 0 !important;
+  padding: 1rem;
+  transition: all 0.2s ease-in;
+  background-color: $tt-dark-theme-bg-transp;
+  border: 2px solid transparent;
+  border-radius: 0 2rem;
+  
+  &:hover,
+  &:focus {
+    background-color: $tt-dark-theme-bg;
+    border-color: $tt-rose;
+    border-radius: 0 2rem;
+  }
 
   a {
-    padding: 25px;
-    border: solid $border-baseline transparent;
-    border-radius: 0 2rem;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-
-    &:hover,
-    &:focus {
-      background-color: $tt-dark-theme-bg-light;
-      border: solid $border-baseline $tt-rose;
-      text-decoration: none;
-      box-shadow: 0 0 5px 0 $tt-rose;
-    }
+    display: inline-block;
   }
-
-  @media (min-width: 768px) {
-    margin: 0.6rem !important;
-  }
-
-  @media (min-width: 48rem) {
-    width: 49%;
-  }
-
-  @media (min-width: 62rem) {
-    width: 23.5%;
-  }
-
+ 
   img {
     width: 100%;
-    z-index: 1;
+    aspect-ratio: 1/1;
+    object-fit: contain;
   }
 }
 
@@ -50,17 +38,47 @@
 }
 
 .tt-series__header {
+  width: 50%;
+  display: inline-block;
   text-align: center;
   img {
-    width: 80%;
+    width: 100%;
   }
 
-  margin: 0 0 20px;
+  margin: 0;
 }
 
-.tt-series__descr {
+.tt-series__descr,
+.tt-series__section {
+  text-align: center;
+  position: relative;
   margin: 0;
-  padding: $content-spacing 0;
-  background: $tt-dark-linear-gradient;
-  color: white;
+  padding: 50px 0;
+  background-image: url("/wp-content/uploads/2021/05/sand-bg-bw.jpg");
+  background-size: cover;
+  background-position: center;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparentize($tt-dark-theme-bg, 0.15);
+    z-index: 1;
+  }
+
+    & * {
+      z-index: 99;
+    }
+
+  .tt-search-form {
+    margin-top: 20px;
+  }
+}
+
+.tt-series__descr--text {
+  margin-top: 20px !important;
 }

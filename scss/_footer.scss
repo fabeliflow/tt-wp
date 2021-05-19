@@ -2,6 +2,93 @@ footer {
   width: 100%;
 }
 
+.tt-footer__logo {
+  display: inline-block;
+  width: 30%;
+}
+
+.tt-footer--margin {
+  margin-top: 50px;
+}
+
+.tt-footer__cont {
+  display: flex;
+  flex-direction: column;
+}
+
+.tt-footer {
+  padding: 100px 0;
+  position: relative;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 50vh;
+
+  text-align: center;
+  font-size: 0.8em;
+  color: $tt-sand-light;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $tt-dark-theme-bg-transp;
+    z-index: 1;
+  }
+
+  & * {
+    z-index: 99;
+  }
+
+  .tt-social,
+  .tt-copyright,
+  .tt-menu__items {
+    margin-top: 20px;
+  }
+
+  .tt-copyright {
+    span {
+      display: block;
+    }
+  }
+
+  .tt-menu__items {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    list-style-type: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .tt-menu__item {
+    margin: 5px;
+    font-family: $cta-font-family;
+  }
+
+  a {
+    color: $tt-rose;
+
+    img {
+      width: 100%;
+    }
+
+    &:hover,
+    &:focus {
+      color: $tt-rose-dark;
+      text-decoration: none;
+    }
+  }
+}
+
 .tt-footer__img {
   width: 100%;
   margin-bottom: -5px;
@@ -9,30 +96,6 @@ footer {
 
 .tt-footer-orbit {
   margin-top: -$content-spacing;
-}
-
-.tt-footer__cont {
-  padding-top: $content-spacing;
-  padding-bottom: $content-spacing;
-  text-align: center;
-
-  .tt-social {
-    margin-top: 0;
-
-    .tt-social__icon {
-      color: $tt-rose;
-  
-      &:hover,
-      &:focus {
-        color: $tt-rose;
-        text-shadow: 0 0 5px $tt-rose;
-      }
-    }
-  }
-}
-
-.tt-footer--sand .tt-footer__cont {
-  background-image: $tt-sand-linear-gradient;
 }
 
 .wpautoterms-footer {
@@ -58,61 +121,5 @@ footer {
 
   p {
     margin: 0;
-  }
-}
-
-.tt-footer__legal-links {
-  padding: 30px;
-  background-color: $tt-dark-theme-bg;
-  text-align: center;
-  font-size: 0.8em;
-  color: white;
-
-  @media (max-width: 1099px) {
-    padding: 30px 0 100px 0;
-  }
-
-  .tt-copyright {
-    margin-bottom: 4vh;
-
-    span {
-      display: block;
-
-      &:not(:last-child) {
-        margin-bottom: 1vh;
-      }
-    }
-  }
-
-  .tt-menu__items {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    list-style-type: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-  }
-
-  .tt-menu__item {
-    margin: 5px;
-  }
-
-  .tt-link--focused {
-    color: $tt-rose;
-  }
-
-  a {
-    color: white;
-    transition: all 0.2s ease-in;
-
-    &:hover,
-    &:focus {
-      color: $tt-rose;
-      text-decoration: none;
-    }
   }
 }

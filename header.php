@@ -29,10 +29,10 @@
 
 <?php if (is_front_page() || is_page('Series')) : ?>
 
-    <body class="tt-starfield-bg">
+    <body>
     <?php else : ?>
 
-        <body class="tt-sky-gradient">
+        <body>
         <?php endif; ?>
 
         <nav class="tt-menu">
@@ -42,7 +42,7 @@
                 </span>
             </button>
             <a class="tt-menu__logo" href="<?php echo get_home_url(); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/tt-new-logo.svg" alt="Tatooine Times Logo">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/tt-ultimate-logo.png" alt="Tatooine Times Logo">
             </a>
         </nav>
 

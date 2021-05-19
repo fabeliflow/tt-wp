@@ -9,11 +9,20 @@ Template Name: Legal
 <div>
 
     <div class="tt-legal__masthead">
-        <h1><?php the_title(); ?></h1>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col col-lg-6">
+                    <div class="tt-header tt-header--center tt-header--alt">
+                        <span><?php the_title(); ?></span>
+                        <h1 class="tt-header--center"><?php the_title(); ?></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <?php while (have_posts()) : the_post(); ?>
-        <section class="tt-legal__cont">
+        <section class="tt-article__cont">
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col col-lg-6">

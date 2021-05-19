@@ -1,80 +1,46 @@
-    <?php if (is_single() || is_tax() || is_category()) : ?>
+        <footer class="tt-footer" style="background-image: url('<?php echo the_field('footer_background', 'options'); ?>'); background-position: <?php echo the_field('footer_background_position', 'options'); ?>">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col col-lg-6">
+                        <a class="tt-footer__logo" href="<?php echo get_home_url(); ?>">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/tt-ultimate-logo.png" alt="Tatooine Times Logo">
+                        </a>
+                        <?php if (have_rows('social_media', 'options')) : ?>
 
-        <footer class="tt-footer--sand">
+                            <ul class="tt-social">
 
-            <img class="tt-footer__img" src="/wp-content/uploads/2021/02/tt-cityscape.png" alt="Tatooine Cityscape - Artwork by Ronnie Jensen">
+                                <?php while (have_rows('social_media', 'options')) : the_row(); ?>
 
-        <?php else : ?>
+                                    <li>
+                                        <a class="tt-social__icon" href="<?php the_sub_field('social_media_url'); ?>" target="_blank">
+                                            <i class="<?php the_sub_field('social_media_class'); ?> fa-fw"></i>
+                                        </a>
+                                    </li>
 
-            <footer>
+                                <?php endwhile; ?>
 
-            <?php endif; ?>
-            <div class="tt-footer__cont">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-auto">
-                            <div class="tt-header--center__wrapper">
-                                <div class="tt-header tt-header--center">
-                                    <span>Stay Connected</span>
-                                    <h2>Stay Connected</h2>
-                                </div>
-                            </div>
-                            <?php if (have_rows('social_media', 'options')) : ?>
-
-                                <ul class="tt-social">
-
-                                    <?php while (have_rows('social_media', 'options')) : the_row(); ?>
-
-                                        <li>
-                                            <a class="tt-social__icon" href="<?php the_sub_field('social_media_url'); ?>" target="_blank">
-                                                <i class="<?php the_sub_field('social_media_class'); ?> fa-fw"></i>
-                                            </a>
-                                        </li>
-
-                                    <?php endwhile; ?>
-
-                                </ul>
-
-                            <?php endif; ?>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <?php if (is_front_page() || is_page('Series')) : ?>
-
-                <img class="tt-footer__img tt-footer-orbit" src="/wp-content/uploads/2021/02/tt-orbit.png" alt="Tatooine Orbit - Artwork by Ronnie Jensen">
-
-                <div id="starfieldhome" class="starfield"></div>
-
-            <?php endif; ?>
-
-            <div class="tt-footer__legal-links">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-auto">
-                            <div class="tt-copyright">
-                                <span>© <?php echo date('Y'); ?> Tatooine Times. All rights reserved</span>
-                                <span>Designed and developed by Fabio Fiori</span>
-                                <span>Artwork by <a class="tt-link--focused" href="https://tegnemaskin.artstation.com/" target="_blank">Ronnie Jensen</a></span>
-                            </div>
-                            <ul class="tt-menu__items">
-                                <?php echo wp_generate_menu('legal-links'); ?>
                             </ul>
+
+                        <?php endif; ?>
+                        <div class="tt-copyright">
+                            <span>© <?php echo date('Y'); ?> Tatooine Times. All rights reserved</span>
+                            <span>Designed and developed by Fabio Fiori</span>
+                            <span>Artwork by <a class="tt-link--focused" href="https://tegnemaskin.artstation.com/" target="_blank">Ronnie Jensen</a></span>
                         </div>
+                        <ul class="tt-menu__items">
+                            <?php echo wp_generate_menu('legal-links'); ?>
+                        </ul>
                     </div>
                 </div>
             </div>
+        </footer>
 
-            </footer>
+        <?php wp_footer(); ?>
 
-            <?php wp_footer(); ?>
+        </div>
 
-            </div>
+        </div>
 
-            </div>
+        </body>
 
-            </body>
-
-            </html>
+        </html>

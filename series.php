@@ -7,12 +7,20 @@ get_header(); ?>
 
 <div class="tt-series">
 
-    <section class="tt-masthead-with-content tt-masthead--overlay" style="background-image: url('<?php the_field('series_background'); ?>'); background-position: <?php the_field('series_background_position'); ?>">
-        <div class="container">
-            <div class="row justify-content-center">
+    <div class="tt-masthead__cont">
+        <div class="tt-masthead" style="background-image: url('<?php echo get_field('series_background')['url']; ?>'); background-position: <?php echo get_field('series_background_position') ?>;">
+            <img src="<?php echo get_field('series_background')['url']; ?>" alt="<?php echo get_field('series_background')['alt']; ?>">
+        </div>
+    </div>
+
+    <section class="tt-series__section">
+
+        <div class="container-fluid">
+
+            <div class="row justify-content-center tt-series__descr--cont">
                 <div class="col col-lg-6">
                     <div class="tt-header--center__wrapper">
-                        <div class="tt-header tt-header--center">
+                        <div class="tt-header tt-header--center tt-header--light">
                             <span><?php the_title(); ?></span>
                             <h1><?php the_title(); ?></h1>
                         </div>
@@ -20,43 +28,41 @@ get_header(); ?>
                     <?php the_field('series_description'); ?>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="tt-series__section">
-
-        <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col col-xl-10 tt-series__logos">
+                <div class="col col-lg-6">
 
-                    <?php
+                    <ul class="tt-series__logos">
 
-                    $taxonomies = get_terms(array(
-                        'taxonomy' => 'series',
-                        'order' => 'DESC',
-                        'orderby' => 'meta_value',
-                        'meta_query' => array(
-                            array('key' => 'taxonomy_series_order')
-                        ),
-                        'hide_empty' => false,
-                    ));
+                        <?php
 
-                    foreach ($taxonomies as $taxonomy) :
+                        $taxonomies = get_terms(array(
+                            'taxonomy' => 'series',
+                            'order' => 'DESC',
+                            'orderby' => 'meta_value',
+                            'meta_query' => array(
+                                array('key' => 'taxonomy_series_order')
+                            ),
+                            'hide_empty' => false,
+                        ));
 
-                        $background = get_field('taxonomy_series_background', $taxonomy);
-                        $background_position = get_field('taxonomy_series_background_position', $taxonomy);
-                        $logo = get_field('taxonomy_series_logo', $taxonomy);
-                        $color = get_field('taxonomy_series_color', $taxonomy);
-                        $link = get_term_link($taxonomy);
-                    ?>
+                        foreach ($taxonomies as $taxonomy) :
 
-                        <h3 class="tt-series__logo">
-                            <a href="<?php echo $link ?>">
-                                <img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt']; ?>">
-                            </a>
-                        </h3>
+                            $background = get_field('taxonomy_series_background', $taxonomy);
+                            $background_position = get_field('taxonomy_series_background_position', $taxonomy);
+                            $logo = get_field('taxonomy_series_logo', $taxonomy);
+                            $color = get_field('taxonomy_series_color', $taxonomy);
+                            $link = get_term_link($taxonomy);
+                        ?>
 
-                    <?php endforeach; ?>
+                            <li class="tt-series__logo">
+                                <a href="<?php echo $link ?>">
+                                    <img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['alt']; ?>">
+                                </a>
+                            </li>
+
+                        <?php endforeach; ?>
+
+                    </ul>
 
                 </div>
             </div>

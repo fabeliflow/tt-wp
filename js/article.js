@@ -11,7 +11,7 @@ $jq(document).ready(function () {
     centeredSlides: true,
     loop: true,
     slidesPerView: 'auto',
-    spaceBetween: 10,
+    spaceBetween: 20,
     preloadImages: false,
     preventClicks: false,
     speed: 500,
