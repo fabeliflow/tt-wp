@@ -492,8 +492,6 @@ $related_posts = get_posts(array(
                                             </div>
                                         </div>
 
-                                        <span><?php echo get_the_date('F j, Y'); ?></span>
-
                                     </div>
 
                                 </a>
@@ -568,8 +566,6 @@ $related_posts = get_posts(array(
                                             </div>
                                         </div>
 
-                                        <span><?php echo get_the_date('F j, Y'); ?></span>
-
                                     </div>
 
                                 </a>
@@ -643,8 +639,6 @@ $related_posts = get_posts(array(
                                                     <h3><?php the_title(); ?></h3>
                                                 </div>
                                             </div>
-
-                                            <span><?php echo get_the_date('F j, Y'); ?></span>
 
                                         </div>
 
