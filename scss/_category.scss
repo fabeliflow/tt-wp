@@ -1,22 +1,21 @@
 .tt-cat__cards {
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  list-style: none;
-  text-align: left;
 }
 
 .tt-cat__cards__item {
   margin: 0 !important;
-  padding: 10px 0 !important;
   display: flex;
   flex: 0 0 100%;
 
+  &:not(:first-child) {
+    padding-top: $tt-spacing-xs !important;
+  }
+
   @media (min-width: 768px) {
     flex: 0 0 50%;
-    padding: 10px !important;
+    padding: $tt-spacing-xs !important;
   }
 
   @media (min-width: 992px) {
@@ -25,22 +24,21 @@
 }
 
 .tt-cat__card {
-  border: 2px solid $tt-rose;
-  border-radius: 0 2rem;
+  border: $border-baseline solid $tt-sand;
+  border-radius: $border-radius;
   width: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: $tt-dark-theme-bg;
+  background-color: $tt-purple-bg;
   color: $tt-sand-light;
   overflow: hidden;
-  cursor: pointer;
   text-decoration: none;
-  transition: all 0.3s ease-in;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: $transition;
 
   &:hover,
   &:focus {
+    border-color: $tt-sand-dark;
     text-decoration: none;
     color: $tt-sand-light;
   }
@@ -48,10 +46,6 @@
   span {
     font-size: .8rem;
   }
-
-  // .tt-header span {
-  //   color: $tt-sand;
-  // }
 }
 
 .tt-cat__card__img {
@@ -60,8 +54,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
-  transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
-
+  
   &:before {
     content: "";
     aspect-ratio: 4 / 3;
@@ -71,12 +64,18 @@
 
 .tt-cat__card__info {
   text-align: center;
-  padding: 20px;
+  padding: $tt-spacing-sm $tt-spacing-xs;
 
   h3 {
-    min-height: 100px;
-    max-height: 100px;
+    min-height: 80px;
+    max-height: 80px;
     overflow: hidden;
+    margin: 0;
+
+    @media (min-width: 992px) {
+      min-height: 120px;
+      max-height: 120px;
+    }
 
     &:before {
       content: "";
@@ -85,77 +84,18 @@
       position: absolute;
       left: 0;
       bottom: 0;
-      background: linear-gradient(to top, $tt-dark-theme-bg 0%, transparent 30%);
+      background: linear-gradient(to top, $tt-purple-bg 0%, transparent 30%);
     }
   }
 }
 
 .tt-cat__card__cont {
-  min-height: 180px;
-  max-height: 180px;
-
-  @media (min-width: 992px) {
-    min-height: 200px;
-    max-height: 200px;
-  }
-
   position: relative;
   overflow: hidden;
-
-  &:before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background: linear-gradient(
-      to top,
-      $tt-dark-theme-bg 0%,
-      rgba(16, 14, 23, 0) 30%
-    );
-  }
 
   h3 {
     margin: 0 0 15px 0;
     padding-left: 10px;
     border-left: solid $border-baseline var(--category-color, $tt-sand);
   }
-
-  p {
-    margin: 0;
-    flex: 1 1 auto;
-    font-size: 0.8em;
-    line-height: 1.25rem;
-    font-style: italic;
-  }
-}
-
-.tt-cat__card__cat-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-top: 15px;
-
-    span {
-      text-transform: uppercase;
-      font-family: $article-header-font-family;
-    }
-
-    div {
-      display: flex;
-      flex-direction: column;
-      text-align: right;
-      
-      span {
-        font-size: 1.1em;
-        letter-spacing: 3px;
-      }
-
-      span:first-child {
-        font-family: $aurebesh;
-        color: var(--category-color, $tt-sand);
-        font-size: 0.8em;
-      }
-    }
 }

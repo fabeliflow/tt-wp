@@ -2,7 +2,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: $tt-dark-theme-bg;
+  color: $tt-purple-bg;
 }
 
 .tt-404__cont {
@@ -12,16 +12,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  span {
-    display: block;
-    letter-spacing: 3px;
-    color: $tt-sand-light;
-  }
 }
 
 .tt-404__header {
-  margin: 0;
-  font-size: 4.5em !important;
-  letter-spacing: 3px;
+  letter-spacing: $tt-letter-spacing;
+
+  h1 {
+    margin: 0;
+    font-size: 4.5em !important;
+  }
+
+  span {
+    display: block;
+    
+    color: $tt-sand-light;
+  }
 }

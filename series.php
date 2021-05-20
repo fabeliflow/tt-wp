@@ -7,10 +7,8 @@ get_header(); ?>
 
 <div class="tt-series">
 
-    <div class="tt-masthead__cont">
-        <div class="tt-masthead" style="background-image: url('<?php echo get_field('series_background')['url']; ?>'); background-position: <?php echo get_field('series_background_position') ?>;">
-            <img src="<?php echo get_field('series_background')['url']; ?>" alt="<?php echo get_field('series_background')['alt']; ?>">
-        </div>
+    <div class="tt-masthead" style="background-image: url('<?php echo get_field('series_background')['url']; ?>'); background-position: <?php echo get_field('series_background_position') ?>;">
+        <img src="<?php echo get_field('series_background')['url']; ?>" alt="<?php echo get_field('series_background')['alt']; ?>">
     </div>
 
     <section class="tt-series__section">
@@ -29,7 +27,7 @@ get_header(); ?>
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col col-lg-6">
+                <div class="col col-xl-8">
 
                     <ul class="tt-series__logos">
 
@@ -46,11 +44,7 @@ get_header(); ?>
                         ));
 
                         foreach ($taxonomies as $taxonomy) :
-
-                            $background = get_field('taxonomy_series_background', $taxonomy);
-                            $background_position = get_field('taxonomy_series_background_position', $taxonomy);
                             $logo = get_field('taxonomy_series_logo', $taxonomy);
-                            $color = get_field('taxonomy_series_color', $taxonomy);
                             $link = get_term_link($taxonomy);
                         ?>
 

@@ -3,7 +3,7 @@
                 <div class="row justify-content-center">
                     <div class="col col-lg-6">
                         <a class="tt-footer__logo" href="<?php echo get_home_url(); ?>">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/tt-ultimate-logo.png" alt="Tatooine Times Logo">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/tt-logo.png" alt="Tatooine Times Logo">
                         </a>
                         <?php if (have_rows('social_media', 'options')) : ?>
 
@@ -34,6 +34,12 @@
                 </div>
             </div>
         </footer>
+
+        <?php if (is_front_page() || is_page('Series')) : ?>
+
+            <div id="starfieldhome" class="starfield"></div>
+
+        <?php endif; ?>
 
         <?php wp_footer(); ?>
 

@@ -18,10 +18,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f37257">
-    <meta name="msapplication-TileColor" content="#f37257">
-    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-    <meta name="theme-color" content="#ffffff">
 
     <?php wp_head(); ?>
 
@@ -29,7 +25,7 @@
 
 <?php if (is_front_page() || is_page('Series')) : ?>
 
-    <body>
+    <body class="tt-starfield-bg">
     <?php else : ?>
 
         <body>
@@ -42,7 +38,7 @@
                 </span>
             </button>
             <a class="tt-menu__logo" href="<?php echo get_home_url(); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/tt-ultimate-logo.png" alt="Tatooine Times Logo">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/tt-logo.png" alt="Tatooine Times Logo">
             </a>
         </nav>
 
@@ -68,7 +64,7 @@
                     $name = $category->cat_name;
                 ?>
 
-                    <li style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-menu__item tt-menu__item-cat">
+                    <li style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-menu__item">
                         <a href="<?php echo $url ?>">
                             <span><?php echo $name ?></span>
                             <span><?php echo $name ?></span>

@@ -1,23 +1,22 @@
-// Colors
-$tt-yellow: #f3c81a;
-$tt-red: #f63222;
-$tt-red-warning: #851104;
-$tt-red-transp: transparentize($tt-red, 0.7);
-$tt-orange: #f77529;
-$tt-pink: #edccca;
-$tt-rose: #f37257;
-$tt-rose-dark: darken($tt-rose, 5%);
-$tt-rose-transp: transparentize($tt-rose, 0.5);
-$tt-sand: #E8D2C4;
+$tt-sand: #dbcaac;
 $tt-sand-light: lighten($tt-sand, 25%);
 $tt-sand-dark: darken($tt-sand, 10%);
-$tt-sand-transp: transparentize($tt-sand, 0.9);
-$tt-dark-theme-bg: #100e17;
-$tt-dark-theme-bg-transp: transparentize($tt-dark-theme-bg, 0.1);
-$tt-dark-theme-bg-light: lighten($tt-dark-theme-bg, 5%);
-$tt-dark-theme-text: #a1a1af;
-$tt-dark-linear-gradient: linear-gradient(to bottom right, #100e17, lighten(#100e17, 15%));
-$tt-sand-linear-gradient: linear-gradient(to bottom, #d2b597, #e7d7c6);
+$tt-sand-transp: transparentize($tt-sand, 0.3);
+$tt-purple-bg: #100e17;
+$tt-purple-bg-transp: transparentize($tt-purple-bg, 0.1);
+$tt-purple-bg-light: lighten($tt-purple-bg, 5%);
+$tt-purple-bg-lighter: lighten($tt-purple-bg, 20%);
+$tt-text: #333333;
+$tt-text-light: lighten($tt-text, 20%);
+
+$tt-letter-spacing: 3px;
+$tt-line-height: 1.75rem;
+
+$tt-spacing-xs: 10px;
+$tt-spacing-sm: 20px;
+$tt-spacing-md: 30px;
+$tt-spacing-lg: 50px;
+$tt-spacing-xl: 100px;
 
 @font-face {
   font-family: 'Aurek-Besh Hand';
@@ -30,20 +29,6 @@ $tt-sand-linear-gradient: linear-gradient(to bottom, #d2b597, #e7d7c6);
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'AurebeshVaporatorBETA';
-  src: url('../fonts/AurebeshVaporator/AurebeshVaporatorBETA-Regular.eot');
-  src: url('../fonts/AurebeshVaporator/AurebeshVaporatorBETA-Regular.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/AurebeshVaporator/AurebeshVaporatorBETA-Regular.woff2') format('woff2'),
-      url('../fonts/AurebeshVaporator/AurebeshVaporatorBETA-Regular.woff') format('woff'),
-      url('../fonts/AurebeshVaporator/AurebeshVaporatorBETA-Regular.ttf') format('truetype'),
-      url('../fonts/AurebeshVaporator/AurebeshVaporatorBETA-Regular.svg#AurebeshVaporatorBETA-Regular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-// Fluid Typography Styles
 $min-width: 320px;
 $max-width: 2000px;
 $min-font: 16px;
@@ -56,17 +41,18 @@ $h3: 1em;
 $baseline: 1.5rem;
 
 $cta-font-family: "korolev", "sans-serif";
-$article-header-font-family: "korolev", sans-serif;
+$header-font-family: "korolev", sans-serif;
 $body-font-family: "lemonde-courrier", serif;
 $aurebesh: "Aurek-Besh Hand";
 
+$transition: all 0.2s ease-in-out;
+
 $border-baseline: 2px;
+
+$border-radius: 0 10px;
 
 $menu-height: 50px;
 
-$content-spacing: 50px;
-
-// General styles
 html,
 body {
   margin: 0;
@@ -76,14 +62,13 @@ body {
   font-weight: 400;
   font-style: normal;
   @include fluid-type($min-width, $max-width, $min-font, $max-font);
-  background-color: $tt-sand-light;
-  color: $tt-dark-theme-bg;
+  color: $tt-text;
 }
 
-.vertical-align {
-  height: 100%;
-  display: flex;
-  align-items: center;
+.tt-home__section {
+  padding: $tt-spacing-lg 0;
+  overflow: hidden;
+  text-align: center;
 }
 
 p {
@@ -92,7 +77,7 @@ p {
 
 p:not(.tt-cat__card__descr),
 q {
-  line-height: 1.75rem;
+  line-height: $tt-line-height;
 }
 
 h1 {
@@ -110,14 +95,13 @@ h3 {
   @include fluid-type($min-width, $max-width, $min-font * 1, $max-font * 1.5);
 }
 
-// Vertical Rhythm
 h1,
 h2,
 h3 {
   margin-bottom: $baseline / 2;
-  font-family: $article-header-font-family;
+  font-family: $header-font-family;
   font-weight: 900;
-  letter-spacing: 3px;
+  letter-spacing: $tt-letter-spacing;
   word-break: break-word;
 }
 
@@ -127,36 +111,56 @@ ul {
   list-style-type: none;
 }
 
-// Button styles
+.tt-starfield-bg {
+  background-image: linear-gradient(to bottom, #241f2c, #1d1924);
+  color: $tt-sand-light;
+}
+
+.starfield {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: -10;
+  top: 0;
+  left: 0;
+}
+
 .tt-btn {
   min-width: 200px;
-  margin-top: 20px;
+  margin-top: $tt-spacing-sm;
   padding: 10px 20px;
-  color: $tt-dark-theme-bg;
-  border: $border-baseline solid $tt-dark-theme-bg;
-  background-color: $tt-rose;
-  color: $tt-sand-light;
-  border: 2px solid $tt-rose;
-  border-radius: 0 2rem;
-  position: relative;
+  background-color: $tt-sand;
+  color: $tt-purple-bg;
+  border: $border-baseline solid $tt-sand;
+  border-radius: $border-radius;
   display: inline-block;
   font-family: $cta-font-family;
-  font-size: 0.8em;
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 3px;
   text-align: center;
-  outline: none !important;
   text-decoration: none;
-  transition: all 0.2s ease-in;
-  font-weight: 400;
+  transition: $transition;
 
   &:hover,
   &:focus {
-    color: $tt-sand-light;
-    background-color: $tt-rose-dark;
+    background-color: $tt-sand-dark;
+    border: $border-baseline solid $tt-sand-dark;
+    color: $tt-purple-bg;
     text-decoration: none;
-    transition: all 0.2s ease-out;
+  }
+}
+
+.tt-btn--ghost {
+  border: $border-baseline solid $tt-purple-bg-light;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    color: white;
+    background-color: $tt-purple-bg;
+    border: $border-baseline solid $tt-purple-bg;
+    text-decoration: none;
   }
 }
 
@@ -166,7 +170,6 @@ ul {
 
 .tt-header {
   display: inline-block;
-  color: $tt-dark-theme-bg;
 
   h1,
   h2,
@@ -180,13 +183,19 @@ ul {
     padding: 0 5%;
     display: block;
     font-family: $aurebesh;
-    letter-spacing: 3px;
-    color: $tt-rose;
+    letter-spacing: $tt-letter-spacing;
+    color: $tt-sand;
   }
 }
 
 .tt-header--light {
   color: $tt-sand-light;
+}
+
+.tt-header--alt {
+  span {
+    color: $tt-sand-light;
+  }
 }
 
 .tt-header--center {
@@ -196,7 +205,7 @@ ul {
   h2,
   h3 {
     padding-left: 0;
-    margin: 0 0 20px 0;
+    margin: 0 0 $tt-spacing-sm 0;
     border-left: none !important;
   }
 }
@@ -211,32 +220,26 @@ a {
   margin-top: $menu-height;
 }
 
-// Search bar styles
 .tt-search-form {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: $tt-spacing-md;
   text-align: center;
 
   .mb-3 {
     margin: 0 !important;
 
     &:not(:first-child) {
-      margin: 10px 0 0 0 !important;
+      margin: $tt-spacing-xs 0 0 0 !important;
     }
   }
 
   .input-group-text {
-    background-color: $tt-rose;
+    background-color: $tt-sand;
     color: $tt-sand-light;
     font-family: $aurebesh;
-  }
-
-  .form-select,
-  .form-control,
-  .input-group-text {
-    border: none;
+    border-color: $tt-sand;
   }
 
   .input-group-text,
@@ -246,12 +249,10 @@ a {
     border-radius: 0;
   }
 
-  .form-select {
-    background-color: $tt-sand-light;
-  }
-
   .form-select,
   .form-control {
+    border-color: white;
+    
     &:hover,
     &:focus {
       text-decoration: none;
@@ -267,22 +268,22 @@ a {
   }
 
   .btn {
-    background-color: $tt-rose;
-    border: none;
+    background-color: $tt-sand;
+    border-color: $tt-sand;
     color: $tt-sand-light;
-    transition: all 0.2s ease-in;;
+    transition: $transition;
 
     &:hover,
     &:focus {
       color: $tt-sand-light;
-      background-color: $tt-rose-dark;
+      background-color: $tt-sand-dark;
+      border-color: $tt-sand-dark;
       text-decoration: none;
-      transition: all 0.2s ease-out;
+      box-shadow: none;
     }
   }
 }
 
-// Arrow styles
 .tt-arrow {
   display: inline-block;
   &:focus {
@@ -311,7 +312,7 @@ a {
       top: 0;
       left: 0;
       display: block;
-      transition: all 0.2s ease-in;
+      transition: $transition;
     }
 
     &:before {
@@ -321,34 +322,6 @@ a {
     &:after {
       animation: bottom-arrow 1.65s infinite;
     }
-  }
-}
-
-.tt-arrow--left,
-.tt-arrow--right {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 9;
-}
-
-.tt-arrow--left {
-  left: 45px;
-  div {
-    transform: rotate(135deg);
-  }
-}
-
-.tt-arrow--right {
-  right: 45px;
-  div {
-    transform: rotate(-45deg);
-  }
-}
-
-.tt-arrow--down {
-  div {
-    transform: rotate(45deg);
   }
 }
 
@@ -366,14 +339,10 @@ a {
 .tt-arrow--scroll-top {
   position: fixed;
   bottom: 0;
-  right: 15px;
+  right: 20px;
   will-change: transform;
   display: none;
   z-index: 99;
-
-  @media (min-width: 768px) {
-    right: 25px;
-  }
 
   div {
     transform: rotate(225deg);
@@ -420,15 +389,13 @@ a {
   }
 }
 
-// Caption Styles
 .tt-caption {
   padding: 5px;
   word-wrap: break-word;
   font-size: 0.8em;
-  color: $tt-dark-theme-bg-light;
+  color: $tt-text-light;
 }
 
-// Masthead Styles
 .tt-masthead {
   aspect-ratio: 16 / 9;
   position: relative;
@@ -451,12 +418,12 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   color: $tt-sand-light;
-  padding: 50px 0;
+  padding: $tt-spacing-lg 0;
   min-height: 80vh;
 }
 
 .tt-section__descr {
-  margin-top: $content-spacing;
+  margin-top: $tt-spacing-lg;
   color: $tt-sand-light;
 
   p {
@@ -466,7 +433,6 @@ a {
 }
 
 .tt-masthead--overlay {
-
   &::after {
     content: "";
     width: 100%;
@@ -476,12 +442,12 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: transparentize($tt-dark-theme-bg, 0.5);
+    background-color: transparentize($tt-purple-bg, 0.5);
     z-index: 1;
   }
 
   & * {
-    z-index: 99;
+    z-index: 98;
   }
 
   p {
@@ -489,9 +455,8 @@ a {
   }
 }
 
-// Social Module Styles
 .tt-social {
-  margin-top: 4vh;
+  margin-top: $tt-spacing-lg;
   margin-bottom: 0;
   padding-left: 0;
   display: flex;
@@ -503,28 +468,27 @@ a {
 .tt-social--alt {
 
   .tt-social__icon {
-    color: $tt-sand-dark;
+    color: $tt-purple-bg-light;
 
     &:hover,
     &:focus {
-      color: $tt-sand-dark;
+      color: $tt-purple-bg;
     }
   }
 }
 
 .tt-social__icon {
-  color: $tt-rose;
+  color: $tt-sand;
   font-size: 1.8em;
   outline: none !important;
-  transition: all 0.2s ease-in;
+  transition: $transition;
 
   &:hover,
   &:focus {
-    color: $tt-rose-dark;
+    color: $tt-sand-dark;
   }
 }
 
-// Scrollable Area Styles
 .simplebar-scrollbar:before {
   background: $tt-sand-transp;
   border-radius: 0;
@@ -534,7 +498,6 @@ a {
   overflow-x: hidden !important;
 }
 
-// Social Warfare Styles
 .nc_wrapper.bottom {
   background-color: transparent !important;
 }
@@ -551,13 +514,18 @@ a {
   text-align: center;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 30px;
-  color: $tt-dark-theme-bg;
+  letter-spacing: $tt-letter-spacing;
+  margin-bottom: $tt-spacing-md;
+  color: $tt-purple-bg;
 }
 
 .tt-home__series, .tt-series__section {
   text-align: center;
+}
+
+.tt-series__section {
+  padding: $tt-spacing-lg;
+  color: white;
 }
 
 .tt-home__series {
@@ -565,18 +533,13 @@ a {
   position: relative;
 }
 
-.tt-home__series--banner {
-  width: 100%;
-}
-
 .tt-home__series--cont {
-  padding: $content-spacing 0;
+  padding: $tt-spacing-lg 0;
 }
 
 .tt-taxonomy-series {
   .tt-cat__cont {
-    background-color: $tt-sand-light;
     margin: 0;
-    padding: 50px 0;
+    padding: $tt-spacing-lg 0;
   }
 }

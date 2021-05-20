@@ -1,12 +1,10 @@
 .tt-legal__masthead {
   text-align: center;
-  padding: 100px 0;
+  padding: $tt-spacing-xl 0;
   position: relative;
-  margin: 0;
-  background-image: url("/wp-content/uploads/2021/05/sand-bg-bw.jpg");
+  background-image: url("../img/sand-bg.jpg");
   background-size: cover;
   background-position: center;
-  color: $tt-sand-light;
   &::after {
     content: "";
     width: 100%;
@@ -21,29 +19,10 @@
   }
 
   & * {
-    z-index: 99;
+    z-index: 98;
   }
 }
 
-#wpautoterms-top-fixed-container {
-  margin-top: 50px;
-}
-
-.wpautoterms-update-notice {
-  font-size: 0.8em;
-  border-bottom: 1px solid $tt-sand-transp;
-  padding: 15px 10px;
-  text-align: center;
-  background-color: $tt-dark-theme-bg-transp;
-  color: white !important;
-
-  a {
-    color: $tt-sand;
-
-    &:hover,
-    &:focus {
-      color: $tt-sand;
-      text-decoration: none;
-    }
-  }
+.tt-legal__cont {
+  margin-bottom: $tt-spacing-lg;
 }

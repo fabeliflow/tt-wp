@@ -38,7 +38,6 @@ get_header(); ?>
     foreach ($categories as $category) :
         $id = $category->term_id;
         $name = $category->name;
-        $color = get_field('category_color', $category);
         $link = get_category_link($category);
         $link_label = get_field('category_link_label', $category);
     ?>
@@ -53,14 +52,14 @@ get_header(); ?>
 
         <?php if ($recent_posts) : ?>
 
-            <section class="tt-home__section tt-home__articles">
+            <section class="tt-home__section">
 
                 <div class="container-fluid">
                     <div class="row justify-content-center">
                         <div class="col col-xl-10">
 
                             <div class="tt-header--center__wrapper">
-                                <div class="tt-header tt-header--center tt-header--section">
+                                <div class="tt-header tt-header--center tt-header--light">
                                     <span>Latest <?php echo $name ?></span>
                                     <h2>Latest <?php echo $name ?></h2>
                                 </div>
@@ -131,10 +130,10 @@ get_header(); ?>
         <div class="tt-home__series--cont">
             <div class="container-fluid">
                 <div class="row justify-content-center">
-                    <div class="col col-lg-6">
+                    <div class="col col-xl-8">
 
                         <div class="tt-header--center__wrapper">
-                            <div class="tt-header tt-header--center tt-header--alt tt-header--section">
+                            <div class="tt-header tt-header--center tt-header--light tt-header--section">
                                 <span>Latest Series</span>
                                 <h2>Latest Series</h2>
                             </div>
@@ -156,7 +155,6 @@ get_header(); ?>
                             ));
 
                             foreach ($taxonomies as $taxonomy) :
-
                                 $background = get_field('taxonomy_series_background', $taxonomy);
                                 $background_position = get_field('taxonomy_series_background_position', $taxonomy);
                                 $logo = get_field('taxonomy_series_logo', $taxonomy);

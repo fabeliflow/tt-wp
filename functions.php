@@ -49,11 +49,7 @@ function wpb_adding_styles_scripts()
 		wp_enqueue_script('starfield');
 	}
 
-	if (is_front_page()) {
-		wp_register_script('home', get_template_directory_uri() . '/js/minified/home.min.js', array('jquery', 'particles', 'swiper'), null, true);
-		wp_enqueue_script('home');
-		
-	} elseif (is_single()) {
+	if (is_single()) {
 		wp_register_style('swiper', 'https://unpkg.com/swiper/swiper-bundle.min.css');
 		wp_enqueue_style('swiper');
 

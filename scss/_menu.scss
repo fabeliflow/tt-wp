@@ -2,7 +2,7 @@
   height: 100%;
   width: 70vw;
   right: -70vw;
-  padding-top: 50px;
+  padding-top: $menu-height;
 
   @media (min-width: 768px) {
     width: 30vw;
@@ -25,8 +25,8 @@
   position: fixed;
   top: 0;
   will-change: transform;
-  background-color: transparentize($tt-dark-theme-bg, 0.10);
-  border-bottom: 1px solid $tt-sand-transp;
+  background-color: transparentize($tt-purple-bg, 0.10);
+  border-bottom: 1px solid $tt-purple-bg-light;
   height: $menu-height;
   width: 100%;
   z-index: 999;
@@ -40,18 +40,23 @@
   img {
     height: 100%;
     padding: 5px;
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: -o-crisp-edges; /* Opera */
+    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
   }
 }
 
 .no-transparency {
-  background-color: $tt-dark-theme-bg;
+  background-color: $tt-purple-bg;
 }
 
 .tt-menu__slider {
-  background-color: $tt-dark-theme-bg;
+  background-color: $tt-purple-bg;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid $tt-sand-transp;
+  border-right: 1px solid $tt-purple-bg-light;
   overflow-x: hidden;
 
   .simplebar-scroll-content {
@@ -71,43 +76,47 @@
   
     .tt-menu__item {
       list-style-type: none;
-      transition: all 0.2s ease-in;
       outline: none;
       cursor: pointer;
-      letter-spacing: 3px;
+      letter-spacing: $tt-letter-spacing;
       text-transform: uppercase;
-      border-bottom: 1px solid $tt-dark-theme-bg-light;
+      border-bottom: 1px solid $tt-purple-bg-light;
 
       a {
         display: flex;
         flex-direction: column;
-        padding: 20px;
+        padding: $tt-spacing-sm;
         color: $tt-sand-light;
-        border-left: solid $border-baseline transparent;
+        transition: $transition;
         
         &:hover,
         &:focus {
-          background-color: $tt-dark-theme-bg-light;
+          background-color: $tt-purple-bg-light;
           text-decoration: none;
+
+          span:first-child {
+            color: $tt-sand-dark;
+          }
         }
 
         span {
           font-family: $cta-font-family;
+          font-weight: 300;
           font-size: 1.1em;
         }
 
         span:first-child {
           font-family: $aurebesh;
           font-size: 0.8em;
-          color: $tt-rose;
+          color: $tt-sand;
         }
       }
     }
   }
 
   .tt-menu__social {
-    padding: 20px 10px;
-    border-top: 1px solid $tt-sand-transp;
+    padding: $tt-spacing-xs;
+    border-top: 1px solid $tt-purple-bg-light;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -118,15 +127,6 @@
       li {
         cursor: pointer;
       }
-    }
-  }
-}
-
-.tt-menu__item-cat {
-  a {
-    &:hover,
-    &:focus {
-      border-left: solid $border-baseline $tt-sand;
     }
   }
 }
@@ -155,17 +155,16 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: transparentize($tt-sand, 0.3);
+  background-color: $tt-sand-transp;
   z-index: 99;
 }
 
-// menu hamburger
 $hamburger-padding-x: 10px !default;
 $hamburger-padding-y: 10px !default;
 $hamburger-layer-width: 40px !default;
 $hamburger-layer-height: 4px !default;
 $hamburger-layer-spacing: 6px !default;
-$hamburger-layer-color: $tt-rose !default;
+$hamburger-layer-color: $tt-sand !default;
 $hamburger-layer-border-radius: 0 !default;
 $hamburger-hover-opacity: 0.7 !default;
 $hamburger-active-layer-color: $hamburger-layer-color !default;
@@ -187,7 +186,7 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
   font: inherit;
   color: inherit;
   text-transform: none;
-  background-color: $tt-dark-theme-bg;
+  background-color: $tt-purple-bg;
   border: 0;
   margin: 0;
   overflow: visible;

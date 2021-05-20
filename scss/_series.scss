@@ -5,21 +5,20 @@
 }
 
 .tt-series__descr--cont {
-  margin-bottom: 30px;
+  margin-bottom: $tt-spacing-md;
 }
 
 .tt-series__logo {
-  padding: 1rem;
-  transition: all 0.2s ease-in;
-  background-color: $tt-dark-theme-bg-transp;
-  border: 2px solid transparent;
-  border-radius: 0 2rem;
+  padding: $tt-spacing-sm;
+  transition: $transition;
+  background-color: $tt-purple-bg-transp;
+  border: 2px solid $tt-sand;
+  border-radius: $border-radius;
   
   &:hover,
   &:focus {
-    background-color: $tt-dark-theme-bg;
-    border-color: $tt-rose;
-    border-radius: 0 2rem;
+    background-color: $tt-purple-bg;
+    border-radius: $border-radius;
   }
 
   a {
@@ -33,10 +32,6 @@
   }
 }
 
-.tt-series__slide {
-  padding: 0 15px;
-}
-
 .tt-series__header {
   width: 50%;
   display: inline-block;
@@ -48,13 +43,12 @@
   margin: 0;
 }
 
-.tt-series__descr,
-.tt-series__section {
+.tt-series__descr {
   text-align: center;
   position: relative;
   margin: 0;
-  padding: 50px 0;
-  background-image: url("/wp-content/uploads/2021/05/sand-bg-bw.jpg");
+  padding: $tt-spacing-lg 0;
+  background-image: url("../img/sand-bg.jpg");
   background-size: cover;
   background-position: center;
   &::after {
@@ -66,19 +60,19 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: transparentize($tt-dark-theme-bg, 0.15);
+    background-color: transparentize($tt-purple-bg, 0.15);
     z-index: 1;
   }
 
     & * {
-      z-index: 99;
+      z-index: 98;
     }
 
   .tt-search-form {
-    margin-top: 20px;
+    margin-top: $tt-spacing-sm;
   }
 }
 
 .tt-series__descr--text {
-  margin-top: 20px !important;
+  margin-top: $tt-spacing-sm !important;
 }

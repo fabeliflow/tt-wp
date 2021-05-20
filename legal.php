@@ -14,7 +14,7 @@ Template Name: Legal
                 <div class="col col-lg-6">
                     <div class="tt-header tt-header--center tt-header--alt">
                         <span><?php the_title(); ?></span>
-                        <h1 class="tt-header--center"><?php the_title(); ?></h1>
+                        <h1><?php the_title(); ?></h1>
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@ Template Name: Legal
     </div>
 
     <?php while (have_posts()) : the_post(); ?>
-        <section class="tt-article__cont">
+        <section class="tt-article__section tt-legal__cont">
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col col-lg-6">

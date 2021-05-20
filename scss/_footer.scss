@@ -1,30 +1,12 @@
-footer {
-  width: 100%;
-}
-
-.tt-footer__logo {
-  display: inline-block;
-  width: 30%;
-}
-
-.tt-footer--margin {
-  margin-top: 50px;
-}
-
-.tt-footer__cont {
-  display: flex;
-  flex-direction: column;
-}
-
 .tt-footer {
-  padding: 100px 0;
+  width: 100%;
+  padding: $tt-spacing-xl 0;
   position: relative;
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 50vh;
-
   text-align: center;
   font-size: 0.8em;
   color: $tt-sand-light;
@@ -38,18 +20,18 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: $tt-dark-theme-bg-transp;
+    background-color: $tt-purple-bg-transp;
     z-index: 1;
   }
 
   & * {
-    z-index: 99;
+    z-index: 98;
   }
 
   .tt-social,
   .tt-copyright,
   .tt-menu__items {
-    margin-top: 20px;
+    margin-top: $tt-spacing-sm;
   }
 
   .tt-copyright {
@@ -66,60 +48,35 @@ footer {
     flex-wrap: wrap;
     list-style-type: none;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: $tt-letter-spacing;
   }
 
   .tt-menu__item {
-    margin: 5px;
     font-family: $cta-font-family;
+    font-weight: 300;
+    margin: 5px;
   }
 
   a {
-    color: $tt-rose;
+    color: $tt-sand;
 
     img {
       width: 100%;
+      image-rendering: -moz-crisp-edges; /* Firefox */
+      image-rendering: -o-crisp-edges; /* Opera */
+      image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+      image-rendering: crisp-edges;
+      -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
     }
 
     &:hover,
     &:focus {
-      color: $tt-rose-dark;
-      text-decoration: none;
+      color: $tt-sand-dark;
     }
   }
 }
 
-.tt-footer__img {
-  width: 100%;
-  margin-bottom: -5px;
-}
-
-.tt-footer-orbit {
-  margin-top: -$content-spacing;
-}
-
-.wpautoterms-footer {
-  position: absolute;
-  bottom: 0;
-  border-top: 1px solid $tt-sand-transp;
-  background-color: $tt-dark-theme-bg;
-  color: $tt-dark-theme-text;
-
-  a {
-    transition: all 0.2s ease-in;
-    &:hover,
-    &:focus {
-      color: white;
-      text-decoration: none;
-    }
-  }
-
-  a,
-  .separator {
-    color: $tt-dark-theme-text;
-  }
-
-  p {
-    margin: 0;
-  }
+.tt-footer__logo {
+  display: inline-block;
+  width: 30%;
 }

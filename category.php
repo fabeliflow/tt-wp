@@ -20,10 +20,8 @@ $tag = $_GET['article_tag'];
 
 <div class="tt-taxonomy-series">
 
-    <div class="tt-masthead__cont">
     <div class="tt-masthead" style="background-image: url('<?php echo $background['url']; ?>'); background-position: <?php echo $background_position ?>;">
-            <img src="<?php echo $background['url']; ?>" alt="<?php echo $background['alt']; ?>">
-        </div>
+        <img src="<?php echo $background['url']; ?>" alt="<?php echo $background['alt']; ?>">
     </div>
 
     <section class="tt-section__descr tt-series__descr">
@@ -33,7 +31,7 @@ $tag = $_GET['article_tag'];
                 <div class="col col-lg-6">
                     <div class="tt-header tt-header--center tt-header--light">
                         <span><?php echo $name ?></span>
-                        <h1 class="tt-header--center"><?php echo $name ?></h1>
+                        <h1><?php echo $name ?></h1>
                     </div>
                     <p class="tt-series__descr--text"><?php echo $description ?></p>
                     <form class="tt-search-form" method="get">

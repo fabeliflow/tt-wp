@@ -22,10 +22,8 @@ Template Name: Post
             if (!empty($image)) :
             ?>
 
-                <div class="tt-masthead__cont">
-                    <div class="tt-masthead tt-lightgallery--item" data-src="<?php echo $image['url']; ?>" style="background-image: url('<?php echo $image['url']; ?>'); background-position: <?php the_sub_field('article_masthead_background_position'); ?>">
-                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-                    </div>
+                <div class="tt-masthead tt-lightgallery--item" data-src="<?php echo $image['url']; ?>" style="background-image: url('<?php echo $image['url']; ?>'); background-position: <?php the_sub_field('article_masthead_background_position'); ?>">
+                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
                 </div>
 
             <?php endif; ?>
@@ -35,7 +33,7 @@ Template Name: Post
     <?php endif; ?>
 
     <article>
-        <section class="tt-article__cont tt-article__section">
+        <section class="tt-article__section">
             <div class="container-fluid">
                 <div class="row justify-content-center">
 
@@ -51,7 +49,7 @@ Template Name: Post
                         <header class="tt-article__header">
                             <div class="tt-header--center__wrapper">
                                 <div class="tt-header tt-header--center" style="--category-color:<?php the_field('category_color', $article_category); ?>;">
-                                    <span class="tt-article__category">
+                                    <span>
                                         <?php echo $article_category_name  ?>
                                     </span>
                                     <h1>
@@ -106,7 +104,7 @@ Template Name: Post
 
                                     <div class="tt-article__cta">
 
-                                        <a href="<?php the_sub_field('cta_link'); ?>" class="tt-btn tt-btn--fill" target="_blank"><?php the_sub_field('cta_text'); ?></a>
+                                        <a href="<?php the_sub_field('cta_link'); ?>" class="tt-btn tt-btn--ghost" target="_blank"><?php the_sub_field('cta_text'); ?></a>
 
                                     </div>
 
