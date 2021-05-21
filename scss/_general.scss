@@ -164,6 +164,19 @@ ul {
   }
 }
 
+.tt-btn--ghost-white {
+  border: $border-baseline solid white;
+  color: white;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    color: $tt-purple-bg;
+    background-color: $tt-sand-dark;
+    border-color: $tt-sand-dark;
+  }
+}
+
 .tt-header--center__wrapper {
   text-align: center;
 }
