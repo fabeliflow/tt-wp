@@ -5,21 +5,20 @@
 }
 
 .tt-cat__cards__item {
-  margin: 0 !important;
   display: flex;
   flex: 0 0 100%;
 
   &:not(:first-child) {
-    padding-top: $tt-spacing-xs !important;
+    margin-top: calc(1.666666666666667% * 2);
   }
 
   @media (min-width: 768px) {
-    flex: 0 0 50%;
-    padding: $tt-spacing-xs !important;
+    flex: 0 0 45%;
+    margin: 1.666666666666667% !important;
   }
 
   @media (min-width: 992px) {
-    flex: 0 0 33.333333%;
+    flex: 0 0 30%;
   }
 }
 

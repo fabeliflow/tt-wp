@@ -409,6 +409,7 @@ array_push($exclude_posts, get_the_ID());
 
 $taxonomy = get_the_terms($post->ID, 'series')[0];
 $taxonomy_name = $taxonomy->name;
+$taxonomy_link = get_term_link($taxonomy);
 
 $taxonomy_posts = get_posts(array(
     'tax_query' => array(
@@ -521,7 +522,7 @@ $related_posts = get_posts(array(
 
                     <div class="tt-header--center__wrapper">
                         <div class="tt-header tt-header--center tt-header--section">
-                            <span>More from <?php echo $taxonomy_name ?></span>
+                            <span>More from the Series</span>
                             <h2>More from <?php echo $taxonomy_name ?></h2>
                         </div>
                     </div>
@@ -576,6 +577,8 @@ $related_posts = get_posts(array(
                         <?php wp_reset_postdata(); ?>
 
                     </ul>
+
+                    <a class="tt-btn tt-btn--ghost" href="<?php echo $taxonomy_link ?>">Read More</a>
                 </div>
             </div>
         </div>

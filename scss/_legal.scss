@@ -14,7 +14,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: transparentize($tt-sand, 0.15);
+    background-color: $tt-sand-transp;
     z-index: 1;
   }
 

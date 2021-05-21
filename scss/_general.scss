@@ -1,7 +1,7 @@
 $tt-sand: #dbcaac;
 $tt-sand-light: lighten($tt-sand, 25%);
 $tt-sand-dark: darken($tt-sand, 10%);
-$tt-sand-transp: transparentize($tt-sand, 0.3);
+$tt-sand-transp: transparentize($tt-sand, 0.2);
 $tt-purple-bg: #100e17;
 $tt-purple-bg-transp: transparentize($tt-purple-bg, 0.1);
 $tt-purple-bg-light: lighten($tt-purple-bg, 5%);
@@ -66,9 +66,9 @@ body {
 }
 
 .tt-home__section {
-  padding: $tt-spacing-lg 0;
   overflow: hidden;
   text-align: center;
+  margin-top: $tt-spacing-lg;
 }
 
 p {
@@ -157,7 +157,7 @@ ul {
 
   &:hover,
   &:focus {
-    color: white;
+    color: $tt-sand;
     background-color: $tt-purple-bg;
     border: $border-baseline solid $tt-purple-bg;
     text-decoration: none;
@@ -524,17 +524,13 @@ a {
 }
 
 .tt-series__section {
-  padding: $tt-spacing-lg;
+  padding: $tt-spacing-lg 0;
   color: white;
 }
 
 .tt-home__series {
-  padding: 0 !important;
+  margin-bottom: $tt-spacing-lg;
   position: relative;
-}
-
-.tt-home__series--cont {
-  padding: $tt-spacing-lg 0;
 }
 
 .tt-taxonomy-series {
@@ -542,4 +538,13 @@ a {
     margin: 0;
     padding: $tt-spacing-lg 0;
   }
+}
+
+.alm-btn-wrap {
+  margin: 0;
+  padding: 0;
+}
+
+.ajax-load-more-wrap.infinite>.alm-btn-wrap .alm-load-more-btn.done {
+  display: none !important;
 }

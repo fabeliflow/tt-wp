@@ -4,7 +4,7 @@
   .instagram-media {
     display: block;
     max-width: 100%;
-    margin: $tt-spacing-sm auto !important;
+    margin: $tt-spacing-xs auto !important;
   }
 
   .fb-post {
@@ -15,7 +15,7 @@
 
   iframe {
     display: block;
-    margin: $tt-spacing-sm auto !important;
+    margin: $tt-spacing-xs auto !important;
     max-width: 100% !important;
   }
 
@@ -25,7 +25,7 @@
 }
 
 .tt-article__header {
-  margin-bottom: $tt-spacing-lg;
+  margin-bottom: $tt-spacing-md;
 
   h3, p {
     margin: 0;
@@ -44,6 +44,7 @@
 
 .tt-article__more {
   padding: $tt-spacing-lg 0;
+  text-align: center;
 
   &:nth-child(odd):not(:first-child) {
     position: relative;
@@ -97,7 +98,7 @@
   ul:not(.tt-article__info):not(.tt-social) {
     list-style-type: none;
     border-spacing: 0 $tt-spacing-xs;
-    margin: $tt-spacing-md 0 0 0;
+    margin: $tt-spacing-xs 0;
 
     li {
       display: table-row;
@@ -114,7 +115,7 @@
   }
 
   ol {
-    margin: $tt-spacing-md 0;
+    margin: $tt-spacing-xs 0;
     padding: 0;
     list-style-type: none;
 
@@ -485,7 +486,7 @@
   text-align: center;
 
   .tt-btn {
-    margin-top: $tt-spacing-sm;
+    margin: $tt-spacing-xs 0;
   }
 }
 
