@@ -46,7 +46,7 @@
   padding: $tt-spacing-lg 0;
   text-align: center;
 
-  &:nth-child(odd):not(:first-child) {
+  &:nth-child(2n+0) {
     position: relative;
     background-image: url("../img/sand-bg.jpg");
     background-size: cover;
