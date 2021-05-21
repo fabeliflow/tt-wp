@@ -97,6 +97,7 @@ h3 {
 h1,
 h2,
 h3 {
+  margin-top: $tt-spacing-md;
   margin-bottom: $baseline / 2;
   font-family: $header-font-family;
   font-weight: 900;
