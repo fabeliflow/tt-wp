@@ -1,11 +1,10 @@
 .tt-404 {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   color: white;
 }
 
 .tt-404__cont {
+  background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
   height: calc(100vh - 50px);
   display: flex;

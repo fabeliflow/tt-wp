@@ -6,9 +6,9 @@ Template Name: 404
 
 <?php get_header(); ?>
 
-<div class="tt-404" style="background-image: url('<?php the_field('404_background'); ?>')">
+<div class="tt-404">
 
-    <section class="tt-404__cont">
+    <section class="tt-404__cont tt-masthead--overlay" style="background-image: url('<?php echo get_field('404_background') ?>'); background-position: <?php echo get_field('404_background_position') ?>;">
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col col-lg-6 tt-404__header">
