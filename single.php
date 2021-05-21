@@ -405,6 +405,16 @@ Template Name: Post
 
     array_push($exclude_posts, get_the_ID());
 
+    $category_posts = get_posts(array(
+        'category_name' => $article_category->slug,
+        'showposts' => 3,
+        'post_status' => 'publish',
+        'post__not_in' => $exclude_posts,
+        'fields' => 'ids'
+    ));
+
+    $exclude_posts = array_unique(array_merge($exclude_posts, $category_posts), SORT_REGULAR);
+
     $taxonomy = get_the_terms($post->ID, 'series')[0];
     $taxonomy_name = $taxonomy->name;
     $taxonomy_link = get_term_link($taxonomy);
@@ -415,6 +425,7 @@ Template Name: Post
                 'taxonomy' => 'series',
                 'field'    => 'slug',
                 'terms'    => $taxonomy->slug,
+                'post__not_in' => $exclude_posts,
             ),
         ),
         'showposts' => 3,
@@ -423,7 +434,7 @@ Template Name: Post
         'fields' => 'ids'
     ));
 
-    array_push($exclude_posts, $taxonomy_posts);
+    $exclude_posts = array_unique(array_merge($exclude_posts, $taxonomy_posts), SORT_REGULAR);
 
     $related_posts = get_posts(array(
         'tag__in' => $post_tag_ids,
@@ -501,6 +512,83 @@ Template Name: Post
                             <?php wp_reset_postdata(); ?>
 
                         </ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    <?php endif; ?>
+
+    <?php if ($category_posts) : ?>
+
+        <section class="tt-cat__cont tt-article__more">
+
+            <div class="container-fluid">
+                <div class="row row-col justify-content-center">
+
+                    <div class="col col-xl-10">
+
+                        <div class="tt-header--center__wrapper">
+                            <div class="tt-header tt-header--center tt-header--section">
+                                <span>More <?php echo $article_category_name ?></span>
+                                <h2>More <?php echo $article_category_name ?></h2>
+                            </div>
+                        </div>
+
+                        <ul class="tt-cat__cards">
+
+                            <?php foreach ($category_posts as $post) : setup_postdata($post); ?>
+
+                                <?php
+                                $category = get_the_category()[0];
+                                $category_name = $category->cat_name;
+                                ?>
+
+                                <li class="tt-cat__cards__item">
+                                    <a href="<?php the_permalink() ?>" style="--category-color:<?php the_field('category_color', $category); ?>;" class="tt-cat__card">
+
+                                        <?php if (have_rows('article_masthead')) : ?>
+
+                                            <?php while (have_rows('article_masthead')) : the_row(); ?>
+
+                                                <?php
+
+                                                $image = get_sub_field('article_masthead_background');
+
+                                                if (!empty($image)) :
+                                                ?>
+
+                                                    <div class="tt-cat__card__img" style="background-image: url('<?php echo $image['url']; ?>');"></div>
+
+                                                <?php endif; ?>
+
+                                            <?php endwhile; ?>
+
+                                        <?php endif; ?>
+
+                                        <div class="tt-cat__card__info">
+
+                                            <div class="tt-header--center__wrapper">
+                                                <div class="tt-header tt-header--center tt-header--light">
+                                                    <span><?php echo $category_name ?></span>
+                                                    <h3><?php the_title(); ?></h3>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </a>
+                                </li>
+
+                            <?php endforeach; ?>
+
+                            <?php wp_reset_postdata(); ?>
+
+                        </ul>
+
+                        <a class="tt-btn tt-btn--ghost" href="<?php echo $article_category_link ?>">Read More</a>
+
                     </div>
                 </div>
             </div>
