@@ -541,8 +541,8 @@ a {
 }
 
 .alm-btn-wrap {
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .ajax-load-more-wrap.infinite>.alm-btn-wrap .alm-load-more-btn.done {

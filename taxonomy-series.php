@@ -35,12 +35,12 @@ $tag = $_GET['article_tag'];
                     <p class="tt-series__descr--text"><?php echo $description ?></p>
                     <form class="tt-search-form" method="get">
                         <div class="input-group mb-3">
-                            <label class="input-group-text" for="inputGroupSelect01">Author</label>
+                            <label class="input-group-text">Author</label>
                             <?php echo wp_generate_author_select($author); ?>
                         </div>
 
                         <div class="input-group mb-3">
-                            <label class="input-group-text" for="inputGroupSelect02">Tag</label>
+                            <label class="input-group-text">Tag</label>
                             <?php echo wp_generate_tag_select($tag); ?>
                         </div>
 
