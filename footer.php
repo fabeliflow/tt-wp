@@ -3,7 +3,7 @@
                 <div class="row justify-content-center">
                     <div class="col col-lg-6">
                         <a class="tt-footer__logo" href="<?php echo get_home_url(); ?>">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/tt-logo.png" alt="Tatooine Times Logo">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/tt-logo.png" alt="Tatooine Times Logo" width="1000" height="469">
                         </a>
                         <?php if (have_rows('social_media', 'options')) : ?>
 
