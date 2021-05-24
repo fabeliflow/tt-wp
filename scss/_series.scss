@@ -7,6 +7,10 @@
 
 .tt-series__descr--cont {
   margin-bottom: $tt-spacing-md;
+
+  p {
+    font-style: italic;
+  }
 }
 
 .tt-series__logo {
