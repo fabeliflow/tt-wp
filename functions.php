@@ -71,6 +71,21 @@ function wpb_adding_styles_scripts()
 
 add_action('wp_enqueue_scripts', 'wpb_adding_styles_scripts');
 
+function add_defer_attribute($tag, $handle)
+{
+	// add script handles to the array below
+	$scripts_to_defer = array('bootstrap', 'simplebar', 'swiper');
+
+	foreach ($scripts_to_defer as $defer_script) {
+		if ($defer_script === $handle) {
+			return str_replace(' src', ' defer="defer" src', $tag);
+		}
+	}
+	return $tag;
+}
+
+add_filter('script_loader_tag', 'add_defer_attribute', 1, 2);
+
 add_filter('404_template', 'custom_redirect_to_category');
 
 add_filter('alm_display_results', function () {
