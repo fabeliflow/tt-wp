@@ -25,4 +25,8 @@
 
 .tt-legal__cont {
   margin-bottom: $tt-spacing-lg;
+  
+  p {
+    margin-top: $tt-spacing-xs !important;
+  }
 }

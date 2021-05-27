@@ -19,8 +19,12 @@
     max-width: 100% !important;
   }
 
-  p, figure {
+  figure {
     margin: 0;
+  }
+
+  p {
+    margin-top: $tt-spacing-xs !important;
   }
 }
 
