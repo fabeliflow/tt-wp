@@ -3,6 +3,7 @@
 }
 
 .tt-404__cont {
+  position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
@@ -19,9 +20,5 @@
     margin: 0;
     font-size: 4.5em !important;
     letter-spacing: $tt-letter-spacing-sm;
-  }
-
-  span {
-    display: block;
   }
 }

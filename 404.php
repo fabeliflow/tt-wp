@@ -13,7 +13,7 @@ Template Name: 404
             <div class="row align-items-center justify-content-center">
                 <div class="col col-lg-6 tt-404__header">
                     <h1><?php the_field('404_header'); ?></h1>
-                    <span><?php the_field('404_subheader'); ?></span>
+                    <p><?php the_field('404_subheader'); ?></p>
                     <a class="tt-btn tt-btn--ghost tt-btn--ghost-white" href="<?php the_field('404_button_url'); ?>"><?php the_field('404_button_text'); ?>
                     </a>
                 </div>
