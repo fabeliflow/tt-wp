@@ -14,11 +14,11 @@
 }
 
 .tt-404__header {
-  letter-spacing: $tt-letter-spacing;
 
   h1 {
     margin: 0;
     font-size: 4.5em !important;
+    letter-spacing: $tt-letter-spacing-sm;
   }
 
   span {

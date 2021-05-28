@@ -9,7 +9,9 @@ $tt-purple-bg-lighter: lighten($tt-purple-bg, 20%);
 $tt-text: #333333;
 $tt-text-light: lighten($tt-text, 20%);
 
-$tt-letter-spacing: 3px;
+$tt-letter-spacing-sm: 1px;
+$tt-letter-spacing-md: 2px;
+
 $tt-line-height: 1.75rem;
 
 $tt-spacing-xs: 10px;
@@ -31,8 +33,8 @@ $tt-spacing-xl: 100px;
 
 $min_width: 320px;
 $max_width: 1400px;
-$min_font: 16px;
-$max_font: 18px;
+$min_font: 18px;
+$max_font: 20px;
 
 $baseline: 1.5rem;
 
@@ -101,7 +103,7 @@ h3 {
   margin-bottom: $baseline / 2;
   font-family: $header-font-family;
   font-weight: 900;
-  letter-spacing: $tt-letter-spacing;
+  letter-spacing: $tt-letter-spacing-sm;
   word-break: break-word;
 }
 
@@ -196,7 +198,7 @@ ul {
     padding: 0 5%;
     display: block;
     font-family: $aurebesh;
-    letter-spacing: $tt-letter-spacing;
+    letter-spacing: $tt-letter-spacing-md;
     color: $tt-sand;
   }
 }
@@ -528,7 +530,7 @@ a {
   text-align: center;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: $tt-letter-spacing;
+  letter-spacing: $tt-letter-spacing-md;
   margin-bottom: $tt-spacing-md;
   color: $tt-purple-bg;
 }

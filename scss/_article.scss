@@ -187,7 +187,7 @@
       margin-top: $tt-spacing-sm;
       font-style: inherit;
       font-weight: 700;
-      letter-spacing: $tt-letter-spacing;
+      letter-spacing: $tt-letter-spacing-sm;
     }
   }
 
@@ -242,7 +242,6 @@
   background-color: $tt-sand;
   text-align: center;
   position: relative;
-  letter-spacing: $tt-letter-spacing;
   text-transform: uppercase;
 
   &:before,
@@ -271,6 +270,7 @@
 
   span {
     font-family: $aurebesh;
+    letter-spacing: $tt-letter-spacing-md;
   }
 
   h2 {

@@ -63,7 +63,11 @@
 
 .tt-cat__card__info {
   text-align: center;
-  padding: $tt-spacing-sm $tt-spacing-xs;
+  padding: 0.5rem;
+
+  @media (min-width: 768px) {
+    padding: 1rem;
+  }
 
   h3 {
     min-height: 120px;
