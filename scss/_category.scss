@@ -66,8 +66,14 @@
   padding: $tt-spacing-sm $tt-spacing-xs;
 
   h3 {
-    min-height: 130px;
-    max-height: 130px;
+    min-height: 120px;
+    max-height: 120px;
+
+    @media (min-width: 992px) {
+      min-height: 155px;
+      max-height: 155px;
+    }
+
     overflow: hidden;
     margin: 0;
 

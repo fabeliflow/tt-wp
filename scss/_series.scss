@@ -54,11 +54,11 @@
   width: 50%;
   display: inline-block;
   text-align: center;
+  margin: 0 0 $tt-spacing-sm 0;
+  
   img {
     width: 100%;
   }
-
-  margin: 0;
 }
 
 .tt-series__descr {
@@ -89,8 +89,4 @@
   .tt-search-form {
     margin-top: $tt-spacing-sm;
   }
-}
-
-.tt-series__descr--text {
-  margin-top: $tt-spacing-sm !important;
 }
