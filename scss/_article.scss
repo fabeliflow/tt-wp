@@ -188,34 +188,34 @@
   }
 
   .tt-quote--with-img {
-    margin-top: $tt-spacing-lg;
-  }
-
-  .tt-quote__img {
     $tt-quote-img-size: 100px;
-    $tt-quote-img-size-half: calc(-#{$tt-quote-img-size} / 2);
-    width: $tt-quote-img-size;
-    height: $tt-quote-img-size;
-    margin-top: #{$tt-quote-img-size-half};
-    border-radius: 50%;
-    border: $border-baseline solid $tt-sand;
+    margin-top: calc(#{$tt-quote-img-size} / 2);;
+
+    .tt-quote__img {
+      $tt-quote-img-size: 100px;
+      width: $tt-quote-img-size;
+      height: $tt-quote-img-size;
+      margin-top: calc(-#{$tt-quote-img-size} / 2);
+      border-radius: 50%;
+      border: $border-baseline solid $tt-sand;
+    }
   }
 
-    a:not(.tt-btn):not(.tt-social__icon) {
-      padding: 1px 0;
-      font-weight: 700;
-      box-shadow: inset 0 -3px 0 $tt-sand;
-      transition: $transition;
+  a:not(.tt-btn):not(.tt-social__icon) {
+    padding: 1px 0;
+    font-weight: 700;
+    box-shadow: inset 0 -3px 0 $tt-sand;
+    transition: $transition;
+    color: $tt-text;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      outline: none;
       color: $tt-text;
-  
-      &:hover,
-      &:focus {
-        text-decoration: none;
-        outline: none;
-        color: $tt-text;
-        box-shadow: inset 0 -3px 0 $tt-sand-dark;
-      }
+      box-shadow: inset 0 -3px 0 $tt-sand-dark;
     }
+  }
 }
 
 .tt-article__header--excerpt {
@@ -413,19 +413,16 @@
 
 .tt-member-card__cont {
   $tt-member-img-size: 150px;
-  $tt-member-img-size-half: calc(-#{$tt-member-img-size} / 2);
-
-  margin-top: calc((#{$tt-member-img-size} / 2) + #{$tt-spacing-md});
+  margin-top: calc(#{$tt-member-img-size} / 2);
   border-top: $border-baseline solid $tt-sand;
   border-bottom: $border-baseline solid $tt-sand;
   text-align: center;
 
   .tt-member-card {
     img {
-      
       width: $tt-member-img-size;
       height: $tt-member-img-size;
-      margin-top: #{$tt-member-img-size-half};
+      margin-top: calc(-#{$tt-member-img-size} / 2);
       border-radius: 50%;
       border: $border-baseline solid $tt-sand;
       box-sizing: border-box;
