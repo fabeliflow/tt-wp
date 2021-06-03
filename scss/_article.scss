@@ -77,10 +77,6 @@
   }
 }
 
-.tt-article__info__social {
-  margin-bottom: $tt-spacing-md;
-}
-
 .tt-article__info {
   display: flex;
   flex-direction: column;
@@ -205,7 +201,7 @@
     border: $border-baseline solid $tt-sand;
   }
 
-    a:not(.tt-btn):not(.tt-social__icon):not(.nc_tweet) {
+    a:not(.tt-btn):not(.tt-social__icon) {
       padding: 1px 0;
       font-weight: 700;
       box-shadow: inset 0 -3px 0 $tt-sand;
@@ -454,34 +450,6 @@
     margin: 0;
     font-style: italic;
   }
-}
-
-// Facebook Terms Styles
-.fb-legal {
-  font-size: 0.8em;
-  margin-bottom: $tt-spacing-sm;
-}
-
-.swp_social_panel {
-  border: solid $border-baseline $tt-sand !important;
-  background-color: $tt-purple-bg !important;
-  border-radius: $border-radius !important;
-  z-index: 9;
-  margin: 0 !important;
-
-  .total_shares:before,
-  .total_shares span {
-    color: white !important;
-  }
-
-  .nc_tweetContainer:not(.total_shares):not(.total_sharesalt) {
-    border: none !important;
-  }
-}
-
-.nc_floater,
-.swp_social_panelSide {
-  background-color: transparentize($tt-purple-bg, 0.10) !important;
 }
 
 .tt-article__cta {

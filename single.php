@@ -8,9 +8,6 @@ Template Name: Post
 
 <div id="tt-lightgallery" class="tt-article">
 
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0&appId=222979458397550&autoLogAppEvents=1" nonce="ifUAz0CO"></script>
-
     <?php if (have_rows('article_masthead')) : ?>
 
         <?php while (have_rows('article_masthead')) : the_row(); ?>
@@ -309,38 +306,6 @@ Template Name: Post
 
         <section class="tt-article__section">
             <div class="container-fluid">
-                <div class="row justify-content-center">
-                    <div class="col col-lg-6">
-
-                        <div class="tt-article__info__social">
-
-                            <?php
-
-                            if (function_exists('social_warfare')) :
-                                social_warfare();
-                            endif;
-
-                            ?>
-
-                        </div>
-
-                        <div class="fb-content">
-
-                            <div class="fb-legal">
-                                Use a Facebook account to add a comment, subject to Facebook's
-                                <a href="https://www.facebook.com/legal/terms" target="_blank">Terms of Service</a>
-                                and <a href="https://www.facebook.com/about/privacy" target="_blank">Privacy Policy</a>.
-                                Your Facebook name, profile photo and other personal information you make public on Facebook
-                                (e.g., school, work, current city, age) will appear with your comment.
-                                <a href="https://tatooinetimes.com/legal-terms/terms-and-conditions/#facebook-comments-faq">Learn
-                                    More</a>.
-                            </div>
-
-                            <div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
-                        </div>
-
-                    </div>
-                </div>
 
                 <div class="row justify-content-center">
                     <div class="col col-lg-6 tt-member-card__cont">
