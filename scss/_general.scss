@@ -99,7 +99,7 @@ h3 {
 h1,
 h2,
 h3 {
-  margin-top: $tt-spacing-md;
+  margin-top: $tt-spacing-sm;
   margin-bottom: $baseline / 2;
   font-family: $header-font-family;
   font-weight: 900;
@@ -406,7 +406,7 @@ a {
 }
 
 .tt-caption {
-  padding: 5px;
+  padding: 5px 5px 0 5px;
   word-wrap: break-word;
   font-size: 0.8em;
   color: $tt-text-light;

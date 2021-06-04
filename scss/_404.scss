@@ -21,4 +21,8 @@
     font-size: 4.5em !important;
     letter-spacing: $tt-letter-spacing-sm;
   }
+
+  p, .tt-btn {
+    margin-top: $tt-spacing-sm !important;
+  }
 }

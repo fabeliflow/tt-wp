@@ -147,7 +147,7 @@ Template Name: Post
                                                 <q><?php the_sub_field('quote_text'); ?></q>
                                                 <i class="fas fa-quote-right"></i>
                                                 <footer>
-                                                    <cite><?php the_sub_field('quote_cite'); ?></cite>
+                                                    <cite class="tt-quote__cite"><?php the_sub_field('quote_cite'); ?></cite>
                                                 </footer>
                                             </div>
 

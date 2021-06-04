@@ -4,7 +4,7 @@
   .instagram-media {
     display: block;
     max-width: 100%;
-    margin: $tt-spacing-xs auto !important;
+    margin: $tt-spacing-sm auto !important;
   }
 
   .fb-post {
@@ -15,16 +15,12 @@
 
   iframe {
     display: block;
-    margin: $tt-spacing-xs auto !important;
+    margin: $tt-spacing-sm auto !important;
     max-width: 100% !important;
   }
 
   figure {
     margin: 0;
-  }
-
-  p {
-    margin-top: $tt-spacing-xs !important;
   }
 }
 
@@ -41,6 +37,14 @@
 .tt-article_module {
   &:not(:first-child) {
     margin-top: $tt-spacing-sm;
+  }
+
+  *:first-child:not(.tt-quote__cont) {
+    margin-top: 0 !important;
+  }
+
+  *:last-child:not(.tt-quote__cont) {
+    margin-bottom: 0 !important;
   }
 }
 
@@ -94,9 +98,10 @@
 
 .tt-article__section {
   ul:not(.tt-article__info):not(.tt-social) {
+    display: block;
     list-style-type: none;
     border-spacing: 0 $tt-spacing-xs;
-    margin: $tt-spacing-xs 0;
+    margin: $tt-spacing-sm 0;
 
     li {
       display: table-row;
@@ -113,7 +118,8 @@
   }
 
   ol {
-    margin: $tt-spacing-xs 0;
+    display: block;
+    margin: $tt-spacing-sm 0;
     padding: 0;
     list-style-type: none;
 
@@ -138,6 +144,10 @@
         color: $tt-sand-dark;
       }
     }
+  }
+
+  p {
+    margin: $tt-spacing-sm 0 !important;
   }
 
   .tt-quote__cont {
@@ -178,9 +188,9 @@
       margin-top: $tt-spacing-sm;
     }
 
-    cite {
+    .tt-quote__cite {
       display: block;
-      margin-top: $tt-spacing-sm;
+      margin-top: $tt-spacing-sm !important;
       font-style: inherit;
       font-weight: 700;
       letter-spacing: $tt-letter-spacing-sm;
@@ -189,13 +199,13 @@
 
   .tt-quote--with-img {
     $tt-quote-img-size: 100px;
-    margin-top: calc(#{$tt-quote-img-size} / 2);;
+    margin-top: calc(#{$tt-quote-img-size} / 2);
 
     .tt-quote__img {
       $tt-quote-img-size: 100px;
       width: $tt-quote-img-size;
       height: $tt-quote-img-size;
-      margin-top: calc(-#{$tt-quote-img-size} / 2);
+      margin-top: calc(-#{$tt-quote-img-size} / 2) !important;
       border-radius: 50%;
       border: $border-baseline solid $tt-sand;
     }
@@ -235,7 +245,7 @@
 
 .tt-article__spoiler {
   padding: $tt-spacing-md 0;
-  background-color: $tt-sand;
+  background-color: #fecd1b;
   text-align: center;
   position: relative;
   text-transform: uppercase;
@@ -249,8 +259,8 @@
     width: 100%;
     background: repeating-linear-gradient(
       -45deg,
-      $tt-purple-bg,
-      $tt-purple-bg 12px,
+      #801a0e,
+      #801a0e 12px,
       transparent 10px,
       transparent 23px
     );
@@ -402,11 +412,14 @@
 .tt-video {
   position: relative;
   height: 0;
-  padding-top: 56.25%;
+  padding-bottom: 56.25%;
 
   iframe,
   object,
   embed {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     margin: 0 !important;
@@ -453,10 +466,6 @@
 
 .tt-article__cta {
   text-align: center;
-
-  .tt-btn {
-    margin: $tt-spacing-xs 0;
-  }
 }
 
 .tt-lightgallery--item {
