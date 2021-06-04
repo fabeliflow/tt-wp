@@ -35,13 +35,18 @@
   }
 
   a {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+  
+    &::before {
+      content: "";
+      height: 0;
+      padding-top: 100%;
+    }
   }
  
   img {
     width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: contain;
     image-rendering: -moz-crisp-edges; /* Firefox */
     image-rendering: -o-crisp-edges; /* Opera */
     image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */

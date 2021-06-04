@@ -289,7 +289,8 @@
 .tt-article__img--full,
 .tt-article__img--left,
 .tt-article__img--right {
-  aspect-ratio: 16 / 9;
+  height: 0;
+  padding-top: 56.25%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -298,13 +299,13 @@
 .tt-article__img--left,
 .tt-article__img--right {
   @media (min-width: 992px) {
-    aspect-ratio: 16 / 8;
+    padding-top: 50%;
   }
 }
 
 .tt-article__img--full {
   @media (min-width: 992px) {
-    aspect-ratio: 16 / 7;
+    padding-top: 43.75%;
   }
 }
 
@@ -400,7 +401,8 @@
 
 .tt-video {
   position: relative;
-  aspect-ratio: 16 / 9;
+  height: 0;
+  padding-top: 56.25%;
 
   iframe,
   object,

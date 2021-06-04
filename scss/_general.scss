@@ -413,7 +413,8 @@ a {
 }
 
 .tt-masthead {
-  aspect-ratio: 16 / 9;
+  height: 0;
+  padding-top: 56.25%;
   position: relative;
   background-size: cover;
   background-position: center;
@@ -421,7 +422,7 @@ a {
   overflow: hidden;
 
   @media (min-width: 992px) {
-    aspect-ratio: 16 / 7;
+    padding-top: 43.75%;
   }
 }
 
