@@ -716,4 +716,8 @@ Template Name: Post
 
     <?php endif; ?>
 
+    <button class="tt-article__link" data-clipboard-text="<?php the_permalink() ?>" data-bs-placement="left">
+        <i class="fas fa-link"></i>
+    </button>
+
     <?php get_footer(); ?>

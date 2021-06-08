@@ -499,3 +499,38 @@
 .lg-actions .lg-prev {
   background-color: $tt-purple-bg-transp;
 }
+
+.tt-article__link {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  will-change: transform;
+  z-index: 99;
+  border-radius: 50%;
+  border: $border-baseline solid transparent;
+  background-color: $tt-purple-bg-transp;
+  color: $tt-sand;
+  transition: $transition;
+  display: flex;
+  padding: 1rem;
+  font-size: 1.5em;
+
+  &:hover,
+  &:focus {
+    color: $tt-sand-dark;
+    background-color: $tt-purple-bg;
+    outline: none;
+  }
+
+  .fa-link {
+    pointer-events: none;
+  }
+}
+
+.tooltip-inner {
+  background-color: $tt-purple-bg;
+}
+
+.tooltip-arrow::before {
+  border-left-color: $tt-purple-bg !important;
+}

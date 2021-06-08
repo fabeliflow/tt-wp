@@ -50,6 +50,8 @@ function wpb_adding_styles_scripts()
 	}
 
 	if (is_single()) {
+		wp_register_script('clipboard', 'https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js', null, null, true);
+
 		wp_register_style('swiper', 'https://unpkg.com/swiper/swiper-bundle.min.css');
 		wp_enqueue_style('swiper');
 
@@ -64,7 +66,7 @@ function wpb_adding_styles_scripts()
 
 		wp_register_script('lightgallery', get_template_directory_uri() . '/vendor/lightgallery/dist/js/lightgallery.min.js', array('jquery'), null, true);
 
-		wp_register_script('article', get_template_directory_uri() . '/js/minified/article.min.js', array('jquery', 'lightgallery', 'lg-fullscreen', 'lg-zoom', 'swiper'), null, true);
+		wp_register_script('article', get_template_directory_uri() . '/js/minified/article.min.js', array('jquery', 'clipboard', 'lightgallery', 'lg-fullscreen', 'lg-zoom', 'swiper'), null, true);
 		wp_enqueue_script('article');
 	}
 }

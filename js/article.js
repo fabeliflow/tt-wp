@@ -2,6 +2,18 @@ var $jq = jQuery.noConflict();
 
 $jq(document).ready(function () {
 
+  $jq('.tt-article__link').tooltip({ title: "Share Link Copied!", trigger: "manual" });
+
+  $jq('.tt-article__link').click(function () {
+    var that = $jq(this);
+    that.tooltip('show');
+    setTimeout(function () {
+      that.tooltip('hide');
+    }, 2000);
+  });
+
+  new ClipboardJS('.tt-article__link');
+
   $jq('#tt-lightgallery').lightGallery({
     selector: '.tt-lightgallery--item'
   });
